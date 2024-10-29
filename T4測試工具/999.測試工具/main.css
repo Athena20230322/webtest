@@ -1,0 +1,62 @@
+﻿#Navbar
+{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+body 
+{
+	background: #252515;
+	color: #FFF;
+}
+
+.navbar_table
+{
+	width:100%;
+}
+th
+{
+	cursor:pointer;
+	background:#23ADBD;
+	color:black;
+}
+
+select
+{
+	width:500px;
+	height:25px;
+	font-size:20px;
+	margin:10px 0 0 0;
+}
+
+table
+{
+	margin:10px 0 0 0
+}
+
+.active
+{
+	background:#1A8490;
+	color:#252530;
+}
+.light {
+    background: #FFF;
+    border: 1px solid black;
+}
+
+.light::part(number)        { color: #ef33b0 }
+.light::part(braces)        { color: #00b2e8 }
+.light::part(brackets)      { color: #d26a6a }
+.light::part(colon)         { color: #000000 }
+.light::part(comma)         { color: #000000 }
+.light::part(string)        { color: #7c0d29; background: rgb(224, 213, 151) }
+.light::part(string_quotes) { color: #112ba1 }
+.light::part(key)           { color: #1d0bbe; background: #20f5ff; }
+.light::part(key_quotes)    { color: #ff2032 }
+.light::part(null)          { color: #21d6ff; background: #000; }
+.light::part(true)          { color: #66ff66; background: #000; }
+.light::part(false)         { color: #ff6666; background: #000; }
+.light::part(value)         { border-bottom: 1px solid #000;}
