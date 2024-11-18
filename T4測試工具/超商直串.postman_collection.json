@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "665a4a4a-2ae6-4309-9d75-e325691d2563",
+		"name": "超商直串",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26191325"
+	},
+	"item": [
+		{
+			"name": "SETPay",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "NZeWYb2l3uiJ21UMwOeUZKDlxylVB+XSsl8X4vfyoUTmJTIn9hiYJ0n1m0G27DQGzFKxO0Jrjqut7PEdo6M8Z5ilNGPAyJ01AGSOgJPKi5KiDQ9Eh23kpEajf1XkQrAa0jqNmu83uG/3GQgkDEsihcXDeGxL322XGBUsl5WDvZWK3YJbfi47Zp7O9EUeRPwF4Pe0YQ552pM0HRGUmmfxlJWy9Lc3yKu4QFB2NdJcY0SshdMv2Cxlpf+Sv+kw3NyIeWuxZwL1kQnhCq3rjxOUBEA5/ns34dcOjS5nZIag7hx9mies5OboGgGsHxY6du/fN7hpAjw78296xrxgxh7cIA=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "QIMS+h0zp2B2qWYAwcnaeX4VMntjg1TBcqc041b+N5rYsKw1YSFt9D54i6LFKcFXXLjKNA73FWo17a/xAHmbEH0aInXBSFGfADULkTen8LrWNXEyjFTSKWOz3UCBsNI16u7TJKWHOux7oul32yiNh2QUBPyKDu2QZkDN0TAwsv5WyJvuLj/tl+kPA5Dksnthm6G0aD4sSF1Y/M7Zy9TYxWZu9TUf48vobx64vq/AhbZ5PJL0WdFIzZBDKLueKF0MIudRuo7vwYwesvmSFg98Kf7ZTu7g6tXKEvez8pYu+LabMy1NCddeIH2pZ37B6J34BRG3+JXjnSmifcWGT7yXg5jjBsV8z7hvhRWs4UsmaxbZk602iEYKsu3W+DPC1MlDPa6K3bEcmXEK9OFCz8z0X9DlcA3DHGh5TF5ipqz0uMCXUYsb+y2h03/0Zmkawh3Ew2hz+F2Q02zHE8z5RobSUPj3s//qHrdyCJox8/zBt7Wppgxw5kGRi6/a81HYGSkZz0AX5TUCh5EpO2YSYTDw4NxgDRM6k/5dwEUvIaYSWpLiQxhPzujD5QqsUnZgjW177BAYF7sypyFSYl9LvmZqh6+E+aFPhxlqevkWNNP5Cz4ZYP+LXM+egxeW4qSP2oink64E6G+ci2PLFer5N12NxulhCO3Qg0XsvE/VhUZRjOGdMndh4TrEmd0YtmdF6YGNhHteCTkGK/PP3h2cZSRUat78QUgW5tUEhxNG32CcDA0kX2mSJXZpvYZtujKrW+xJ6OyFfsURAWh4lymazoHAC8Yd3k6tgxwkIIJKgXcNLEuBHDTvVyJWqQjK/TFyIOMAUgVgGvV7W328ZlsBkQ1iMymTXAaZ7pWXXNXeVmzOXQXkAQSTQeakuHLbpkkBEevE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETPay",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244",
+								"type": "text"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "HGPVtqt8syC5wlyohmbhmigaAL0d5BwZMnhWW/ucko53NWjgcbZvwKh6Z0sSLHrYjn+toH50419ivUzMy+CmNrPz+U8D/S4GPrQ0vL3xKAoyXUFc2kCVVp/aZnFamTCH11XZFoyxMSwzTuRPu/ZKdAi4NONtOHqLVUisig9dhQesQwGjkQPlAqQ6yCHLJiVw9YlLlGWomdh5qPr8b+OzHHiGfImoYqZYfXap7dCz1G/mbuMFw4pXyD25AhYng2Io7F5awA6DR3DOWh7fBECl5gzAgWGvkMrS1FoAW7WEE/Np3wv945vipS4YfTamn4oY6SO0MSVGNsenaqSKQBzFWw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "FWjLRpo2NCb0w1JQRmnv/YbpaRNDidJobZnyd8PiuM5iBZzHILB6V41wAxf4LcGqADa2Idhp/JZPwnQmMgkFVGWB1fkAiCTGI/wXs7z3JuiRDmL3af/TcW6vVjZr/xUBFknKDNyEDDWwX0pYORv7NXePFc8xy1FzkqJUEb3J6x3kZtzSn+MAw5oP9vFQM/IWY0sP8fEUt25TuSKYtfl3iBL/xFxq3fTEOkegj9Q0LU7Lbl1IMKk5VjBUXzUbTsP0ZVRXGSwpJ6eeHbPPtZLCPcg6U+1NqxCygeDfx2X+qlU+IGP4KO1Yzeifp+P9EFlYesHUqBLitoS9jfrj1hV+ryeRc78RpTe9cE3rlXKxpuIZce0VB3ILDqlVQHxbAhWwjYYIVO1xfEgjMAArzvOYH0e+/vXlfroXS7rJheIT1iEIiIa2L4aea5g5ghO1CUw86p1zjB4qMgj+jsiDoTHud4BgwtvjCV2rfBC7O/hHfZx94WeMTa9KvS32Ij775Z9vqi4uWJ0D4GWr/lTKY1urppy+qefhXuscXDex/WgxmVOVECp9i+qr4vlSHrC+UOanRtPzbQSdZ+Rx5k2DL+DIHDa2seMn6yAwTJwOkhV8SrFMZFdSCILSrgpghLzmAP/44zNz3oYrmLVzvyxmf2nsc4tvA+02byRh22YwXGBUXNO64oREcM7gvBwepWitnR5sQcbVfCgSJtJ3LU1NRSa19lpRoOJyK12b21QiRMkWkAw=",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETPay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SETPayCancel",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "XC6Y0YvBDnDzDKR4Q7tcAn/R6Mm4DjMiJrFjx3PHhesQgbcSY3JtBDtDl842a0r3dK4xnsGsDVukW3P/FmIppsyh/0095a2rspIXw6Z2pnGP6UWD6jiETfHlG3K0fAzn5kfywgULjgoIi0TJf/RuXemfaWuoY/R1ua1b05ycslRNJwj5goYdGNKEeStGHPqIROD31c0EOdDAAXDsY8E55loV6n+s1K/p/SjpzxZZP3BalBVgFaofQRU4lfRJl9ux12LUiO+51m0mlpsktKwS36GnZRKYBsigJAA2keABj7+6+PaO96a14H6h0SnH8yJwBMWhcWIf12z0acW78csOgg=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "QIMS+h0zp2B2qWYAwcnaeX4VMntjg1TBcqc041b+N5px8vjg7w07r7F8QhLHQKTb678BXWewVkVBtptCjw5kHCnD1nYpde2NrFP9VZXmnd7p7Pd/Uk+jNpsqSuyxg8JcdXj4s0hubhbhjit/Q3NtUF46/0kEmmLFPgikiLvJpmDR0U7WAOB+i1FRizX/rNXzEfn+L9MciTXOVipmNZRxI1PzGIY3C6/5WrBw0gqjJkj/jOR2TwzxEhzDBUWJwbBcLcYnQI40KKwkemNULBm6s9P+MZVLp33jfvtm0TBBTAikeKRVSjxPkKwuSwMHdXJhJViOjvO6r7odcjLKLEtl6H6Ic9k2WW+MRMRRNhk4usihMdV5SBtmDuXqiwqVxgc0GR71jmOn+rAueTIOThJsf4zRwHm6AhOMmJUaDM1FCaolywP1nudllFAU6zmJklsYAaNkdJqjXVI+t4iOQbMtsmQuBCdC32EJSZhtXngM0nagMbBweHTlWYOuDSUvSoE0yuSJwZYymEN/PXyADF4DkOZZI9iLOgbWEI45UaIMLM7nejKgqHr88+dW2xMDAHLd4HtMLmOv8paLy9r47atgD8HvftoeaOlL0Yh9IuEg+Ut0wZ2k2xRtE32PF8/NcM4WKXOWPD06H7EMTvOpmvxSenjUzH2uVypfEE0YtpJgjO/FJjhyz+GRAfwiHFbiSISz8JjnRm2r7wt5vu5xoOJRept94Y0GYVZyk1XLpua3DqmnP7YWq47aY/oA3UZRWJN3y/WT9oyLGfofnLKkbvWOi4wNszDvN6swCks8uYTDGD0e+QSL7INIc8RTvUddH9f+7cioXeMao6DXIO4rDa1K5SMsmoYN2Xt+2f1sCh7ecxfOhB5IIMT94rHifXIn2wLzwt+FcGo72DlmEP75lNXs6g==",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETPayCancel",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPayCancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244",
+								"type": "text"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "HGPVtqt8syC5wlyohmbhmigaAL0d5BwZMnhWW/ucko53NWjgcbZvwKh6Z0sSLHrYjn+toH50419ivUzMy+CmNrPz+U8D/S4GPrQ0vL3xKAoyXUFc2kCVVp/aZnFamTCH11XZFoyxMSwzTuRPu/ZKdAi4NONtOHqLVUisig9dhQesQwGjkQPlAqQ6yCHLJiVw9YlLlGWomdh5qPr8b+OzHHiGfImoYqZYfXap7dCz1G/mbuMFw4pXyD25AhYng2Io7F5awA6DR3DOWh7fBECl5gzAgWGvkMrS1FoAW7WEE/Np3wv945vipS4YfTamn4oY6SO0MSVGNsenaqSKQBzFWw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "FWjLRpo2NCb0w1JQRmnv/YbpaRNDidJobZnyd8PiuM5iBZzHILB6V41wAxf4LcGqADa2Idhp/JZPwnQmMgkFVGWB1fkAiCTGI/wXs7z3JuiRDmL3af/TcW6vVjZr/xUBFknKDNyEDDWwX0pYORv7NXePFc8xy1FzkqJUEb3J6x3kZtzSn+MAw5oP9vFQM/IWY0sP8fEUt25TuSKYtfl3iBL/xFxq3fTEOkegj9Q0LU7Lbl1IMKk5VjBUXzUbTsP0ZVRXGSwpJ6eeHbPPtZLCPcg6U+1NqxCygeDfx2X+qlU+IGP4KO1Yzeifp+P9EFlYesHUqBLitoS9jfrj1hV+ryeRc78RpTe9cE3rlXKxpuIZce0VB3ILDqlVQHxbAhWwjYYIVO1xfEgjMAArzvOYH0e+/vXlfroXS7rJheIT1iEIiIa2L4aea5g5ghO1CUw86p1zjB4qMgj+jsiDoTHud4BgwtvjCV2rfBC7O/hHfZx94WeMTa9KvS32Ij775Z9vqi4uWJ0D4GWr/lTKY1urppy+qefhXuscXDex/WgxmVOVECp9i+qr4vlSHrC+UOanRtPzbQSdZ+Rx5k2DL+DIHDa2seMn6yAwTJwOkhV8SrFMZFdSCILSrgpghLzmAP/44zNz3oYrmLVzvyxmf2nsc4tvA+02byRh22YwXGBUXNO64oREcM7gvBwepWitnR5sQcbVfCgSJtJ3LU1NRSa19lpRoOJyK12b21QiRMkWkAw=",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETPay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SETPayRefund",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "KHin3oTOHOr7toEp4YzEjV5uKqnVJjKO+3Gj48sWxGSFCnDvehg9YZCZhOK6+SKqk5aAHv9D6LmPPyOPaICgrqa4qg97J9xMKGjBLw8Taedqe9RJ0QhAwhM4aEEkCBBtvFTHA50B30aOJGQ8/V4FoSJ7u9DSQ8T62urX4EGOIqOxNMI1EOpN+V3sxoORV74LZ8M8tJZZwi4mT9x1lfMPD5fMJJxpqKG6/O+6JHn1ZyxSi/B+/gkP7gv+FsntvixUYSjl6qMCu1S/0n2iqNtq1h5sFZIBii5nbNZ7VgTGVdRf4NjYxG7GOrgTXafmoZp7WHgNQJYgvAWUWQGfoXFMzg=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "YUQcZp0A7zu+TIWNP7ok8OFEHAY4zJGoykjV+89fEawbYkUhP5ZTvX2OqUM9gH1p8hEs8DhAhNELZtLi87AAcrB6mM7u+NSwWzJfILB6kZ2vEQqaRMwCA7DfGR6AynXpdQTLc5kj7FrJFJaRbo7oIhSwG7yp/22IA2gu/R7Xohf6q+5AQmqTN8cxhlNPWtrNrB+82ZutGtfCtpkR9YgK6QTFnu0IXW69snNWFxkVzwAi+7p0eB41h6zlqufB2WPitjeWnWzAqaTm2Lis3zgKW/HizKBNxF5O11jsa8x0ENMzX1Fsw9bJJA7BOXdrR+OZv/5ExMJGcIeGk1DqQKDq9y7vEOYq+zw4l1JYr3asY8o=",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETPayRefund",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPayRefund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "HGPVtqt8syC5wlyohmbhmigaAL0d5BwZMnhWW/ucko53NWjgcbZvwKh6Z0sSLHrYjn+toH50419ivUzMy+CmNrPz+U8D/S4GPrQ0vL3xKAoyXUFc2kCVVp/aZnFamTCH11XZFoyxMSwzTuRPu/ZKdAi4NONtOHqLVUisig9dhQesQwGjkQPlAqQ6yCHLJiVw9YlLlGWomdh5qPr8b+OzHHiGfImoYqZYfXap7dCz1G/mbuMFw4pXyD25AhYng2Io7F5awA6DR3DOWh7fBECl5gzAgWGvkMrS1FoAW7WEE/Np3wv945vipS4YfTamn4oY6SO0MSVGNsenaqSKQBzFWw=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "FWjLRpo2NCb0w1JQRmnv/YbpaRNDidJobZnyd8PiuM5iBZzHILB6V41wAxf4LcGqADa2Idhp/JZPwnQmMgkFVGWB1fkAiCTGI/wXs7z3JuiRDmL3af/TcW6vVjZr/xUBFknKDNyEDDWwX0pYORv7NXePFc8xy1FzkqJUEb3J6x3kZtzSn+MAw5oP9vFQM/IWY0sP8fEUt25TuSKYtfl3iBL/xFxq3fTEOkegj9Q0LU7Lbl1IMKk5VjBUXzUbTsP0ZVRXGSwpJ6eeHbPPtZLCPcg6U+1NqxCygeDfx2X+qlU+IGP4KO1Yzeifp+P9EFlYesHUqBLitoS9jfrj1hV+ryeRc78RpTe9cE3rlXKxpuIZce0VB3ILDqlVQHxbAhWwjYYIVO1xfEgjMAArzvOYH0e+/vXlfroXS7rJheIT1iEIiIa2L4aea5g5ghO1CUw86p1zjB4qMgj+jsiDoTHud4BgwtvjCV2rfBC7O/hHfZx94WeMTa9KvS32Ij775Z9vqi4uWJ0D4GWr/lTKY1urppy+qefhXuscXDex/WgxmVOVECp9i+qr4vlSHrC+UOanRtPzbQSdZ+Rx5k2DL+DIHDa2seMn6yAwTJwOkhV8SrFMZFdSCILSrgpghLzmAP/44zNz3oYrmLVzvyxmf2nsc4tvA+02byRh22YwXGBUXNO64oREcM7gvBwepWitnR5sQcbVfCgSJtJ3LU1NRSa19lpRoOJyK12b21QiRMkWkAw=",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETPayRefund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPayRefund"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SETTopUp",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "G2o7GjTBMk4FtUoBAEI8rA7cVi97c5i0lG9dfnUAMwuvRpSp/Cc77U69htIm+1+HjYPSZt7OpvAxwR86vAGipqlPO/YtAz4NTyA4IgOYPE8ZulMJkVc2uFbUmGs85ckh3rgceF4O2soAbr9+hQZo6qHxS49WYEd0spXY8HrcUNOeyFZoN669l7lUO2SPGMWWgXhl2FUoV+ZuzRpgwxCeeBQEhSj33HoJA+Oye8Y2ZDns+b6TUCyGC64F3cuQcosy5cKFR8fyKZDRVg9CwjMH4VWCSgxIWU3Yff5B2pntGMMb3Iw0iieyONfy/H30WCS1EV5tAIhhJCXF4lf2rHw5Tw=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "zE7tA7B+an7Pmek3dhH94N72Pui53V1bG6fha0qFIV90nrzsX2Z8tuRvajUGRd0lVJwOC+2FQmFmauXKaBCihNEGGv36lBYRDn/E6k24CUz/44/UOOqUMX47IwpDzSDGVQBYdlVBy8KKzTxLPV1IQSyZDoJUbzGmrQPS4y6qIs4uXHjnTpqWosLaPp2v7EZTH25ngWXSFIS07yPJ2+9PFwowccxHShFthHojqbbScfEEbB0xtwbooBRvNX8HCVroBBKhld4jcizN+meuQFI5Wna7+6Y22yLwKnxMelZb7BBC4f7oZwHdHwWoPgA4hacSyU4IxyIOcUOPsbnwHobJ7FIqbTHRWxbwFd5JqrRVU9q3H5Y5CcbPvzUvRKeDzSKX",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETTopUp",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETTopUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244",
+								"type": "text"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "HGPVtqt8syC5wlyohmbhmigaAL0d5BwZMnhWW/ucko53NWjgcbZvwKh6Z0sSLHrYjn+toH50419ivUzMy+CmNrPz+U8D/S4GPrQ0vL3xKAoyXUFc2kCVVp/aZnFamTCH11XZFoyxMSwzTuRPu/ZKdAi4NONtOHqLVUisig9dhQesQwGjkQPlAqQ6yCHLJiVw9YlLlGWomdh5qPr8b+OzHHiGfImoYqZYfXap7dCz1G/mbuMFw4pXyD25AhYng2Io7F5awA6DR3DOWh7fBECl5gzAgWGvkMrS1FoAW7WEE/Np3wv945vipS4YfTamn4oY6SO0MSVGNsenaqSKQBzFWw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "FWjLRpo2NCb0w1JQRmnv/YbpaRNDidJobZnyd8PiuM5iBZzHILB6V41wAxf4LcGqADa2Idhp/JZPwnQmMgkFVGWB1fkAiCTGI/wXs7z3JuiRDmL3af/TcW6vVjZr/xUBFknKDNyEDDWwX0pYORv7NXePFc8xy1FzkqJUEb3J6x3kZtzSn+MAw5oP9vFQM/IWY0sP8fEUt25TuSKYtfl3iBL/xFxq3fTEOkegj9Q0LU7Lbl1IMKk5VjBUXzUbTsP0ZVRXGSwpJ6eeHbPPtZLCPcg6U+1NqxCygeDfx2X+qlU+IGP4KO1Yzeifp+P9EFlYesHUqBLitoS9jfrj1hV+ryeRc78RpTe9cE3rlXKxpuIZce0VB3ILDqlVQHxbAhWwjYYIVO1xfEgjMAArzvOYH0e+/vXlfroXS7rJheIT1iEIiIa2L4aea5g5ghO1CUw86p1zjB4qMgj+jsiDoTHud4BgwtvjCV2rfBC7O/hHfZx94WeMTa9KvS32Ij775Z9vqi4uWJ0D4GWr/lTKY1urppy+qefhXuscXDex/WgxmVOVECp9i+qr4vlSHrC+UOanRtPzbQSdZ+Rx5k2DL+DIHDa2seMn6yAwTJwOkhV8SrFMZFdSCILSrgpghLzmAP/44zNz3oYrmLVzvyxmf2nsc4tvA+02byRh22YwXGBUXNO64oREcM7gvBwepWitnR5sQcbVfCgSJtJ3LU1NRSa19lpRoOJyK12b21QiRMkWkAw=",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETPay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETPay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SETTopUpRefund",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "FSBgmBSGeG0Mn00OSumchDVK9XMdLa6dKpQCo5AfYmhl4fOaggO1kUD28OJPZYMbFCIATwYNd3NHP0AU7tXQZZpLRK3ibI143uKn0DMYlgflt7fH+svbSol7ITd0Ag/cAm8mMGBXVgvojqDhEksXebCEg14ty6PCAMBgdMeIZ1fHVOsSMOOu5kLmMtHlQEdobRMBCCihK60ANt6+qXrf3uJnWqqE9/YkDpUqoVK9SSutQeCiaB7VQoOuhg0qSlV5nkGvjwZJaXLXtmcvEJfZzLo3kEISLA9JQyhY7kIPvfX71eX9HciQD9zIkIxrZ53be83/RhTGMymMEg1udiI7Nw=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "2+D7yMh8qosZdWPVhAFmhPoWNqyaNZgfGdh34nV8a7te3Qm9TSlmTD8cORBTQI3Sfu2SaeJBbnR8EONRWOhmKLnWIiDLIklMeYZIDUpKxcxWdbqmuc2ExOntTY+wBF9RpelhhsBtWP5/eRZiPBV2T84j7MxXN55lp88TqVDk8fxui0faHyY72rL3/xgnzz9TGFSeqmWAHGIsHVj5LG7e0lvyUpoLzUpJ2XVJl3stG9Avkj+XDJeYpEc8eyQAm/gky86M/CU8gveRt/Qrt4GoVpvhPj0daSdilb4WSq0FBUa5diCr/ST2YDpcxzAKsgm4PauUV/t8fLndAdV+8wEjRp+I3KA5teLll39BkLcTxBismjythHCKODest9keQA/CYSeH9O2T0JEQBQG0bmQ/OKfTBMfpEYcCWzq55HvD7Md/krLymmoGRT0cMDb7TpTR",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETTopUpRefund",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETTopUpRefund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244",
+								"type": "text"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "kX1EtDW/cmDfTrpLH4M6k45msARniDQoyOGvNhivF0qCSzGf2vxwLRFmK84s4pNNEWIBzgVPb6U0nXTOOQ94G+28uxNkO0kKtfVGfqMfpo4FDR+nEPnAzx9l3UxkLQZqLXj3wDxOIXSe0jD7iBpMqIVn7as74fHy7yo9+orCdNaoi690qGQvp7rDUOQdNk1GsW45YDnLEUe1FyWj/Ty4+qpucRefRltYiOb0B3I3URiff8tBgFLQALFrrH5MiWCPTqNwX2Kj0OunTEvcqf9il3H9LVPKibvjh8rkKAjXwbD7zMjQ7eptV6HyVmsngVrHHWGEj/yZcC3Q0UmZVfXAVQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "4medBfgUoaX8dwCoCaPLO6ECKTC2QrKBPAfaYh+4LuvkIMYeGROwZ2wI0uRuxOy6Uur098Z+gVQqQBXFCzXzJCqHoxxAiYgNVDSZy0QbcHSvMOVHL+UR7aCgzgS/ypBRmBAeVLHF5TfQYN5WL/fjo3CppDRwa0h/XWKBHqgVfQPwzDwPGygcacntwzObUaweAXeCKfUt0cfmcilwad8dcNhd6qyolP84/3eZk/VWze35v4rQvLo+kx1MHDDZV7UzLDzQK4n0T/R/Ry81EHd8ZUfNoFpr7k7g+hV6o7H/c0nlhfa05UaxP/pmnDVs9zKoRNcRa1UPLhzH4iqPA1oZUCNOZTQu7uxsG9/atNsOt+xXq5BIJz81Fo2V5foNQ9D5/bU38Ljqnf7uH2o02vyWorQxY4miI3B+KtQOewVnRI+Q1f+ETVlWIq94yYNKGU4y",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETTopUpRefund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETTopUpRefund"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SETTopUpCancel",
+			"item": [
+				{
+					"name": "Stage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "274221"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "Ce4xkZ8wxpP5A8+C+hdIaiUvaKuBAiEbVrOOd0z6zIvcLIBIyWw5hr/X73mH+42lB/dl1NR7LSuTsR5+6M7lFJEVDahdF/S/U7PuxafjWS7e6o3fYvdzGPS2o4Pkno3vegWahPJ66tBwEBC35BLsFjL0obXdTfS0ZD6frMQEfkMIODedoZcYU53MslzpTLYKpijKnmc1mJdMwVv/UJkrPmKnSpGZg/Ds8v9ehWhfx8YneDg1JAOwlV4FSP3oTHTM207pQkxf1Xmqh0T7snojYuuH4SND7nrqDTC65PkCJJ6IOrLaP3LV6J6V0bdqOc0yy/jpq5PQ9GhlklCNQZHzmQ=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "2+D7yMh8qosZdWPVhAFmhPoWNqyaNZgfGdh34nV8a7tWF0MVaREpkr9URxj6JSL8Q9o5nK2y/ggVS5BKeemMxC8ebrNZkyV/+ONYStP2OyTR92kYoiaXFvCFgqPnrvmi/pnabwEzUP+ECB+AZDZh8w==",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETTopUpCancel",
+							"protocol": "https",
+							"host": [
+								"icp-payment-stage",
+								"icashpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETTopUpCancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-iCP-EncKeyId",
+								"value": "23244"
+							},
+							{
+								"key": "X-iCP-Signature",
+								"value": "WsvpuUdVnMhWc1uywjD3lXyKQ3JKIGfWMq423OxwyWsurGCHouyUb+SjV4zI1j9juXXS6DMrdxf+e//4Wk5do0k+AdQOauef6NHMhnrApqVdQaZqYrQ32Klv3HN1G2FNYzivOpzUqHmywpRdZYjGaRf7LBEbSaeCGUZhTbFBJSqmBdLc6xbyOKO9HH0JiFz8U2QTyHAW2/qvny07qYjFgGG8W58kmNyeX8dmHKI2BouKsoOQ/YsRmUK6RJU3L1zE+uLmhuXCh6eSseq6WzV0WN8++2Nnmq6p98+TkU/D6ri4MADeq26IkAOYmHOzZlPrpDI/jD6PiPHllRtyXNgUMQ=="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "EncData",
+									"value": "2+D7yMh8qosZdWPVhAFmhPoWNqyaNZgfGdh34nV8a7tuUWoH1YLsieeSl1OUPCBkKtFLsQWPJJnNanwsJAYxRSireawFbXx4+Dt2ImQIFlKoKBP6zJL/Lx/xcpimrZgN/Md8AwXBKDZbj57EVVwLR+wR/Ysp/Ot9cHt7pAkac+281NDeaUCwnnDwJ85NZyj8jYh0t7VGxp1w9TYrKi1Ze/1JsdZtio7VxhMN31/SozzsDRoX0HXuJ5iKc88t23Iaw80ENx93vXk5b94pLzaztyjDzb2Ox7VzgIGD9NKFNvTKliP/44qaG7Sb3Bz1ToMyy4/dgtZEPweEih+XAymQiEWWaJ8oXdxXNzPQfDORkKxNUZkXfvGV+DsjTdoB1NDvuOBDBMSreT8LkIF6w18zFpr0AqqtveYAJl44XUwMdq5o0V5VmLgNBlqo91gE+B5x",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3312/api/V2/Payment/POS/SETTopUpRefund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"V2",
+								"Payment",
+								"POS",
+								"SETTopUpRefund"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QueryOrderForSET",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Develop",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "X-iCP-EncKeyID",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "X-iCP-Signature",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "Stage",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "X-iCP-EncKeyID",
+						"value": "274221"
+					},
+					{
+						"key": "X-iCP-Signature",
+						"value": "GyaKfwQK5H5EFJTPoct5TGQhgTHMS0xHZhEBAjRSTO2/fCW+xJzf8VOwP9CkHoKsT5RUR8wF0vaEunQyJCTNjgA/Y9s7M9rzBwbd2DkWORtndhnHmgGwdHcG7FG2oNk+vfPd+MKVOg6s8m2RJ0FwrsDeFI2nYb9gLKiYWk/z/SHXIXehRfhV/oXBomPQTHi7JWKz7JG1G+CU+XfOdweZszB+hmbloNxLzec5ZRxAxLV6fd5EmykjKOzabU40X0HeeoWRkiV1U8HAHsHV/xtS17ETRlF69t6GpxwvqDguN0pQdqVkXBl7ZToHjh31hGz6+8DEKz0O0yKxt9ygBztcTQ=="
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "EncData",
+							"value": "qFx8zSOd+Dwjm48HhXU9V+9ChKcyKjXCBf8kMFoBME3C30wwI57yUGXuWzjZgQP/",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{paymentDomain}}api/Payment/Cashier/QueryOrderForSET",
+					"host": [
+						"{{paymentDomain}}api"
+					],
+					"path": [
+						"Payment",
+						"Cashier",
+						"QueryOrderForSET"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

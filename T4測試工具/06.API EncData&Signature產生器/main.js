@@ -51,7 +51,7 @@ $(function () {
 	pid_input=document.getElementById('PlatformID')
 	bc_input=document.getElementById('BarCode')
 	sbc_input=document.getElementById('StoreBarCode')
-	buyid_input=document.getElementById('BarCode')
+	buyid_input=document.getElementById('BuyerID')
 	stob_input=document.getElementById('儲值金額')
 	ti_input=document.getElementById('TransactionID')
 	icpmid_input=document.getElementById("168ID")
@@ -150,6 +150,7 @@ function change_api_new(id,e){
 
 	mid_input.value=MID
 	bc_input.value=""
+	buyid_input.value=""
 	icpmid_input.value=""
 	suid_input.value=""
 	ti_input.value=""
@@ -191,7 +192,7 @@ function change_api_new(id,e){
 			bc_input.parentNode.parentNode.style.display=""
 			sbc_input.parentNode.parentNode.style.display=""
 			stob_input.parentNode.parentNode.style.display=""
-			icpmid_input.parentNode.parentNode.style.display="none"
+			icpmid_input.parentNode.parentNode.style.display=""
 			suid_input.parentNode.parentNode.style.display="none"
 			ti_input.parentNode.parentNode.style.display="none"
 			rta_input.parentNode.parentNode.style.display="none"
@@ -325,7 +326,7 @@ function change_api_new(id,e){
 			case 9:
 			mid_input.parentNode.parentNode.style.display=""
 			bc_input.parentNode.parentNode.style.display="none"
-			//buyid_input.parentNode.parentNode.style.display="none"
+			buyid_input.parentNode.parentNode.style.display=""
 			icpmid_input.parentNode.parentNode.style.display="none"
 			suid_input.parentNode.parentNode.style.display="none"
 			motn_input.parentNode.parentNode.style.display="none"
@@ -361,6 +362,46 @@ function change_api_new(id,e){
 			cu_input.parentNode.parentNode.style.display="none"
 			ru_input.parentNode.parentNode.style.display="none"
 			document.getElementById('qrcode').innerHTML=""
+		break;
+		
+	    case 11:
+			mid_input.parentNode.parentNode.style.display=""
+			bc_input.parentNode.parentNode.style.display="none"
+			buyid_input.parentNode.parentNode.style.display=""
+			icpmid_input.parentNode.parentNode.style.display="none"
+			suid_input.parentNode.parentNode.style.display="none"
+			motn_input.parentNode.parentNode.style.display="none"
+			rta_input.parentNode.parentNode.style.display="none"
+			eki_input.parentNode.parentNode.style.display=""
+			signature_input.parentNode.parentNode.style.display=""
+			ed_input.parentNode.parentNode.style.display=""
+			edj_input.parentNode.parentNode.style.display=""
+			red_input.parentNode.parentNode.style.display=""
+			redj_input.parentNode.parentNode.style.display=""
+			ta_input.parentNode.parentNode.style.display=""
+			bt_input.parentNode.parentNode.style.display=""
+			cu_input.parentNode.parentNode.style.display="none"
+			ru_input.parentNode.parentNode.style.display="none"
+		break;
+		
+		case 12:
+			mid_input.parentNode.parentNode.style.display=""
+			bc_input.parentNode.parentNode.style.display="none"
+			buyid_input.parentNode.parentNode.style.display=""
+			icpmid_input.parentNode.parentNode.style.display="none"
+			suid_input.parentNode.parentNode.style.display="none"
+			motn_input.parentNode.parentNode.style.display="none"
+			rta_input.parentNode.parentNode.style.display="none"
+			eki_input.parentNode.parentNode.style.display=""
+			signature_input.parentNode.parentNode.style.display=""
+			ed_input.parentNode.parentNode.style.display=""
+			edj_input.parentNode.parentNode.style.display=""
+			red_input.parentNode.parentNode.style.display=""
+			redj_input.parentNode.parentNode.style.display=""
+			ta_input.parentNode.parentNode.style.display=""
+			bt_input.parentNode.parentNode.style.display=""
+			cu_input.parentNode.parentNode.style.display="none"
+			ru_input.parentNode.parentNode.style.display="none"
 		break;
 
 	}
@@ -407,6 +448,10 @@ function create_postman_data(){
     //var test_MTN = "MTN"+MID+hours+mins+secs+Math.floor(Math.random()*1001)
 	var test_MTN = `Sample${new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 17)}`;
 	var test_PayType = "Token"
+	var test_buyid = "ic"+buyid_input.value
+	var test_sbuyid = "88"+buyid_input.value
+	
+	var test_pid = "10523860"
     var test_ITN = ti_input.value
     var test_IA = icpmid_input.value
     var test_MMID = suid_input.value
@@ -415,13 +460,13 @@ function create_postman_data(){
     var test_TT = "TT00000001"
     var test_SI = "TM01"
 	var test_topup = "100"
-	var test_txamt = "50"
+	var test_txamt = "10"
 	var test_ccy = "TWD"
     var test_SN = "測試商戶1"
     var test_INO = "001"
     var test_IN = "測試商品1"
     var test_BC = "ic"+bc_input.value
-	var test_BUYID = "ic"+bc_input.value
+	//var test_BUYID = "ic"+bc_input.value
 	var test_SBC ="88"+sbc_input.value
 	var test_CU = cu_input.value
 	var test_RU = ru_input.value
@@ -436,6 +481,8 @@ function create_postman_data(){
 					  "https://icp-member-preprod.icashpay.com.tw/api/Member/MemberInfo/CancelBindingMMember",
 					  "https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Binding/CreateICPBinding",
 					  "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETPay",
+					  "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETPayCancel",
+					  "https://icp-payment-stage.icashpay.com.tw/api/V2/Payment/POS/SETTopUp",
 					  "https://icp-payment-stage.icashpay.com.tw/api/Payment/POS/TopUp"
 
 					 ]
@@ -595,11 +642,11 @@ function create_postman_data(){
                     break;
                 case 4://ICPO008
                     data = {
-                        PlatformID: MID,
+                        PlatformID: "10523923",
                         MerchantID: mid_input.value,
                         MerchantTradeNo: test_MTN,
-                        StoreID: test_SI,
-                        StoreName: test_SN,
+                        StoreID: "ICASH-001",
+                        StoreName: "測試店名",
                         MerchantTradeDate: today,
                         TotalAmount: test_AMT,
                         ItemAmt: test_AMT,
@@ -614,8 +661,8 @@ function create_postman_data(){
                         }],
                         TradeMode: 2,
                         CallbackURL: test_CU,
-                        RedirectURL: test_RU,
-                        AuthICPAccount: ''
+                        RedirectURL: test_RU
+                     
                     }
 
                     EncDataJSON.value=JSON.stringify(data);
@@ -720,6 +767,7 @@ function create_postman_data(){
                  case 9://ICPOS001
                     data = {
 						PayType: test_PayType,
+						BuyerID: test_buyid,
                         CcY: test_ccy,
                         TxAmt: test_txamt,
                         NonRedeemAmt: "0",
@@ -727,22 +775,31 @@ function create_postman_data(){
                         StoreId: "217477",
                         StoreName: "見晴",
                         PosNo: "01",
-                        OPSeq: "202405104747701741702122901",
+                        OPSeq: test_MTN,
                         OPTime: today,
+						ReceiptNo : null,
+						ReceiptReriod: null,
                         TaxID: "70804847",
                         CorpID: "22555003",
+						Vehicle: null,
+						Donate: null,
                         ItemAmt: "10",
                         UtilityAmt: "0",
                         CommAmt: "0",
                         ExceptAmt1: "0",
                         ExceptAmt2: "0",
                         BonusType: "ByWallet",
+						BonusCategory : null,
+						BonusID : null,
                         PaymentNo: "038",
                         Remark: "741702",
-                        ReceiptPrint: "N",
+						Itemlist: [{
+             
+                        }],
+                        ReceiptPrint: "N"
 						//BuyerID: "IC5324523456"
 						//BuyerID: test_BUYID.toUpperCase()
-                        BuyerID: "IC131BJC1225A84UZT"
+                        
                     }
 
                     EncDataJSON.value=JSON.stringify(data);
@@ -789,6 +846,77 @@ function create_postman_data(){
                     signature_input.value=X_iCP_Signature;
 
                     break;
+		     case 11://ICPOS003
+                    data = {
+                        OPSeq: "Sample20241115092412958",                    
+                        CorpID: "22555003"
+						//BuyerID: "IC5324523456"
+						//BuyerID: test_BUYID.toUpperCase()
+                        
+                    }
+
+                    EncDataJSON.value=JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+
+                    ed_input.value=encdata;
+                    signature_input.value=X_iCP_Signature;
+
+                    break;
+			case 12://ICPOS004
+                    data = {
+						//PayType: test_PayType,
+						BuyerID: test_sbuyid,
+                        CcY: test_ccy,
+                        TopUpAmt: test_topup,
+						StoreId: "217477",
+                        StoreName: "見晴",
+						PosNo: "01",
+						OPSeq: test_MTN,
+						OPTime: today,
+						CorpID: "22555003",
+						PaymentNo: "038",
+						Remark: "741702",
+						///ReceiptNo : null,
+						//ReceiptReriod: null,
+                        
+                       
+						Itemlist: [{
+             
+                        }],
+						Remark:"123123"
+						//BuyerID: "IC5324523456"
+						//BuyerID: test_BUYID.toUpperCase()
+                        
+                    }
+
+                    EncDataJSON.value=JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+
+                    ed_input.value=encdata;
+                    signature_input.value=X_iCP_Signature;
+
+                    break;
+			
+			
+					
 
 
 

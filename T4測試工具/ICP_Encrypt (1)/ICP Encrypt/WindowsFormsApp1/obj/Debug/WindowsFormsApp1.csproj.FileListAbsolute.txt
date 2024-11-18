@@ -1,0 +1,36 @@
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\georg\OneDrive\桌面\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\georg\OneDrive\桌面\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
