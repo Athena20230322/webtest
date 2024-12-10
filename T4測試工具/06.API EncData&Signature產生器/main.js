@@ -642,7 +642,7 @@ function create_postman_data(){
                     break;
                 case 4://ICPO008
                     data = {
-                        PlatformID: "10523923",
+                        PlatformID: "10525512",
                         MerchantID: mid_input.value,
                         MerchantTradeNo: test_MTN,
                         StoreID: "ICASH-001",
