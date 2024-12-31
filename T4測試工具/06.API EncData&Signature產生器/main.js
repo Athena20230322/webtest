@@ -543,7 +543,7 @@ function create_postman_data(){
 
 				case 1://ICPOF001
                     data = {
-                        PlatformID: MID,
+                        PlatformID: "",
                         MerchantID: mid_input.value,
                         MerchantTradeNo: test_MTN,
                         StoreID: test_SI,
