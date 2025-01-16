@@ -342,6 +342,25 @@ function change_api_new(id,e){
 			cu_input.parentNode.parentNode.style.display="none"
 			ru_input.parentNode.parentNode.style.display="none"
 		break;
+		case 91:
+			mid_input.parentNode.parentNode.style.display=""
+			bc_input.parentNode.parentNode.style.display="none"
+			buyid_input.parentNode.parentNode.style.display=""
+			icpmid_input.parentNode.parentNode.style.display="none"
+			suid_input.parentNode.parentNode.style.display="none"
+			motn_input.parentNode.parentNode.style.display="none"
+			rta_input.parentNode.parentNode.style.display="none"
+			eki_input.parentNode.parentNode.style.display=""
+			signature_input.parentNode.parentNode.style.display=""
+			ed_input.parentNode.parentNode.style.display=""
+			edj_input.parentNode.parentNode.style.display=""
+			red_input.parentNode.parentNode.style.display=""
+			redj_input.parentNode.parentNode.style.display=""
+			ta_input.parentNode.parentNode.style.display=""
+			bt_input.parentNode.parentNode.style.display=""
+			cu_input.parentNode.parentNode.style.display="none"
+			ru_input.parentNode.parentNode.style.display="none"
+		break;
 
 		case 10:
 			mid_input.parentNode.parentNode.style.display=""
@@ -448,7 +467,7 @@ function create_postman_data(){
     //var test_MTN = "MTN"+MID+hours+mins+secs+Math.floor(Math.random()*1001)
 	var test_MTN = `Sample${new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 17)}`;
 	var test_PayType = "Token"
-	var test_buyid = "ic"+buyid_input.value
+	var test_buyid = "IC"+buyid_input.value
 	var test_sbuyid = "88"+buyid_input.value
 	
 	var test_pid = "10523860"
@@ -459,7 +478,7 @@ function create_postman_data(){
 	var test_OMTN= motn_input.value
     var test_TT = "TT00000001"
     var test_SI = "TM01"
-	var test_topup = "100"
+	var test_topup = "200"
 	var test_txamt = "10"
 	var test_ccy = "TWD"
     var test_SN = "測試商戶1"
@@ -543,7 +562,7 @@ function create_postman_data(){
 
 				case 1://ICPOF001
                     data = {
-                        PlatformID: "",
+                        PlatformID: MID,
                         MerchantID: mid_input.value,
                         MerchantTradeNo: test_MTN,
                         StoreID: test_SI,
@@ -818,8 +837,10 @@ function create_postman_data(){
                     signature_input.value=X_iCP_Signature;
 
                     break;
+					
+		         
 
-			case 10://WC014
+			     case 10://WC014
                     data = {
                         PlatformID: MID,
                         MerchantID: mid_input.value,
