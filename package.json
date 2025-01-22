@@ -1,4 +1,10 @@
 {
+  "name": "webtest",
+  "version": "1.0.0",
+  "main": "cosmed.js",
+  "scripts": {
+    "start": "node cosmed.js"
+  },
   "dependencies": {
     "crypto-js": "^4.2.0",
     "form-data": "^4.0.1",

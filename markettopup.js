@@ -37,7 +37,7 @@ const data = {
         { },
         
     ],
-    BuyerID: "88141012C3E1S2XLA2",
+    BuyerID: "88164012CDNT7EL7RA",
 };
 
 // AES 密鑰與 IV
