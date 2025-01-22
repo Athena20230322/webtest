@@ -1,4 +1,5 @@
 const https = require('https');
+const readline = require('readline');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 
@@ -16,6 +17,31 @@ function getCurrentTime() {
         tradeDate: `${yyyy}/${MM}/${dd} ${hh}:${mm}:${ss}`,
     };
 }
+// AES 加密
+function encryptAES_CBC_256(data, key, iv) {
+  const encrypted = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
+      iv: CryptoJS.enc.Utf8.parse(iv),
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+  });
+  return encrypted.toString();
+}
+
+// RSA 簽名
+function signData(data, privateKey) {
+  const rsa = forge.pki.privateKeyFromPem(privateKey);
+  const md = forge.md.sha256.create();
+  md.update(data, 'utf8');
+  return rsa.sign(md);
+}
+
+// 啟動 readline 等待使用者輸入
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question('請輸入條碼 (BarCode): ', (inputBarCode) => {
 
 // 取得當前時間
 const { tradeNo, tradeDate } = getCurrentTime();
@@ -40,7 +66,7 @@ const data = {
         { ItemNo: "001", ItemName: "測試商品1", Quantity: "1" },
         { ItemNo: "002", ItemName: "測試商品2", Quantity: "1" },
     ],
-    BarCode: "IC142J02A9VQUOWSF3",
+    BarCode: inputBarCode.trim(), // 使用者輸入的條碼
 };
 
 // AES 密鑰與 IV
@@ -51,24 +77,6 @@ const AES_IV = "Vrtbhp93GzFrYu39";
 const Client_Private_Key = `-----BEGIN PRIVATE KEY-----
 MIIEowIBAAKCAQEAx3Yo+1mvPE3GJH7W4qlGU3k3S0aOQfq6n7tyJoqEnel7Xtujg691mmKPOSSWhs0NPO1vmTYABbKKv0JmpvWr3sXGVL/eo5T9MUsGsKlLSjWThEySkN7OM8HrL2M4e4g2tRsOgMDa5LipcGVUdJJ6aKa0BHrKoCrwrS8vEFnE/txrM4WceE9g/LTzUuSdpEuvt62z3o/LGcv7YY5jAtJZFlBDx+u6+a3OXl/kR8WvVUqJfmW32TL27ledziBS+yc3aHPtqtmCnp9x+WV4rkMMXJfs4RCvG4cUlrSkpS1KYWuqsBJqtXbYm0Jb8zShWZXpSMJYdBELnBNsWKDIgzPkRQIDAQABAoIBABJNU85YeN1aL5O6tcH/kU3ogfvcwgHo3UX536wMqsWInoLiOXtEVtCvOYAfTNaaqxvLl6Fh1JexPcz17VBlm3sp/5xYLLgq3B6xSTBdoGRzTRFnK02yvA4AvbFP8+dV5NsyW97Rk2RIU3fWPG0j4aqHnV4J3FzdA8+IVFO2QP63lkkBYX2FJruOh+6D9RTgdOLUC61yTEsXWCxW5zQWmKhj/Vz8fZDxNeFBIpGtxA4hnQzOvw+pEIXrilWCq+x9HvEQ3tO3iTw1hK5GCVsNEB8JJJg0ZQUEG9XzoGBHd8gc69QIbBdjJ0JkV263Z+6h/D0VgreS9Ik4rjOQS8iU9XECgYEA+kYeHgvjDC1DvkueFGaX+sTtjFQJO+BAzbLBXbduQXhSYPAf8X5jIOtJT9KdxiFyH3eL1aWwmQHHOuApjw3vlo3rJHT3UAFcbGEZdW+wCiut/qaC92NhQ/H7XfvDJF+66+zZX2Vk6SveHp6Oxnto1f2NpKDmsmbWabwHlKijHfkCgYEAzAZty2VZsh3pEOI+W71kR5fCHMrUearXF6UBnXxbJFM7IoI8G6rlPRtDitLBSKwO8JNNFgORr0Gjo5I+pimqgkIuXrc4QbzhlPCfTA7l+MzMD8KBEIanUmsQJjSbViacrO1mYHvi6NWvYnil/2Rc7jYqTWVNzin4F1rIsmaie60CgYEA+cj7jB9vBxsyLn4IEvJmIvli4RiKcsEZzHLpPOCzYRJ2nZtrNjpfM17BN7LMlw+QeEl3Pc91lvBIaMGLmOReyFNyaVt37di95slugF/tQelgafTEZ6Y/UHH14FJC7E3DIG6ucOCgu3t13/d+JijLdC/wq2uPdGThAHyS0FMTIfkCgYAEIZExkCDL0X05oUsf8mrIZFNC3/yDZikqymWI+c6ioqjM3xQ2fzRbE2U/t1rAjPNUfbcO3g2iHdMhacGo/aj9MDfeJRmXgyqSKHkhQh/39LWhEBAq9H8I1TAjhecrTGbZvYjYJUoH6uO9O7IoxLB5BlG+9XEo3oKufmEX86oQlQKBgBZcVTplSVX2dSLZHGiLTRxVjf05JXOh8Fj9I1mwrfa67qbzAQtlR3raRFkhqRXoUU3yOBNFpy2ks5kliuP/KwdIF9TP6lkk38AboI0hUHmB7+lVnEy3CjQbFywh+fUa+4zYxGXoTKR3QPi/WdmazKkqdyG0y7Md3VRMuZEph9wx
 -----END PRIVATE KEY-----`;
-
-// AES 加密
-function encryptAES_CBC_256(data, key, iv) {
-    const encrypted = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7,
-    });
-    return encrypted.toString();
-}
-
-// RSA 簽名
-function signData(data, privateKey) {
-    const rsa = forge.pki.privateKeyFromPem(privateKey);
-    const md = forge.md.sha256.create();
-    md.update(data, 'utf8');
-    return rsa.sign(md);
-}
 
 // 加密與簽名
 const encdata = encryptAES_CBC_256(JSON.stringify(data), AES_Key, AES_IV);
@@ -91,13 +99,12 @@ const options = {
 };
 
 const req = https.request(options, (res) => {
-  let data = '';
+  let responseData = '';
   res.on('data', (chunk) => {
-    data += chunk;
+      responseData += chunk;
   });
   res.on('end', () => {
-    console.log('Response:', data);
-    // 你可以在這裡處理回傳的數據
+      console.log('Response:', responseData);
   });
 });
 
@@ -105,7 +112,9 @@ req.on('error', (e) => {
   console.error('Error:', e);
 });
 
-// 在此將加密過的資料作為請求的 body 發送
-const encodedEncData = `EncData=${encodeURIComponent(encdata)}`; // 使用 `encodeURIComponent` 編碼 `encdata` 的內容
+const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
 req.write(encodedEncData);
 req.end();
+
+rl.close();
+});
