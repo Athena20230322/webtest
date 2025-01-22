@@ -27,7 +27,6 @@ const data = {
     Ccy:"TWD",
     TopUpAmt:"300",
     OPSeq: tradeNo, // 動態 OPSeq
-    StoreID: "217477",
     StoreName: "見晴",
     PosNo:"01",
     OPTime: tradeDate, // OPTime
@@ -38,7 +37,7 @@ const data = {
         { },
         
     ],
-    BuyerID: "88104012C73U2T35QJ",
+    BuyerID: "88141012C3E1S2XLA2",
 };
 
 // AES 密鑰與 IV
