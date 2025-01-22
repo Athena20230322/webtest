@@ -40,7 +40,7 @@ const data = {
         { ItemNo: "001", ItemName: "測試商品1", Quantity: "1" },
         { ItemNo: "002", ItemName: "測試商品2", Quantity: "1" },
     ],
-    BarCode: "IC144J3UEADFJ2CEYM",
+    BarCode: "IC146OD8GRE5YUNUKF",
 };
 
 // AES 密鑰與 IV

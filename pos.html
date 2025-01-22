@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS Machine Barcode Scanner</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+  <style>
+    #barcode-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    #scanner-container {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+    }
+
+    #barcode-display {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="barcode-container">
+    <h2>POS Machine Barcode Scanner</h2>
+    <div id="scanner-container"></div>
+    <div id="barcode-display">No barcode scanned yet</div>
+  </div>
+
+  <script>
+    // POS條碼掃描初始化
+    function startBarcodeScanner() {
+      Quagga.init({
+        inputStream: {
+          name: "Live",
+          type: "LiveStream",
+          target: document.querySelector('#scanner-container'), // 指定顯示條碼掃描影像的容器
+          constraints: {
+            facingMode: "environment" // 使用環境相機（後鏡頭）
+          }
+        },
+        decoder: {
+          readers: ["ean_reader", "ean_8_reader", "code_128_reader"] // 設定要識別的條碼類型
+        }
+      }, function(err) {
+        if (err) {
+          console.log(err);
+          alert('Error initializing scanner!');
+          return;
+        }
+        Quagga.start();
+      });
+
+      // 條碼掃描完成後觸發事件
+      Quagga.onDetected(function(result) {
+        const barcode = result.codeResult.code; // 獲取掃描到的條碼內容
+        document.getElementById('barcode-display').textContent = `Scanned Barcode: ${barcode}`;
+        
+        // 將條碼資料載入到程式中的 barcode 變數
+        loadBarcodeData(barcode);
+      });
+    }
+
+    // 處理掃描結果並載入到程式中的 barcode 變數
+    function loadBarcodeData(barcode) {
+      // 假設 barcode 是我們模擬 POS 機中需要的條碼資料
+      const barcodeData = barcode; // 將掃描到的條碼資料載入變數
+
+      console.log("Barcode loaded into program:", barcodeData);
+      // 在這裡可以將 barcode 資料進一步處理或發送到伺服器
+    }
+
+    // 開始掃描
+    startBarcodeScanner();
+  </script>
+</body>
+</html>
