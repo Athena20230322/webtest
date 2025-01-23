@@ -1,6 +1,7 @@
 const https = require('https');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
+const { exec } = require('child_process');
 
 // 動態生成當前時間的函式
 function getCurrentTime() {
@@ -24,19 +25,17 @@ const { tradeNo, tradeDate } = getCurrentTime();
 const data = {
     PlatformID: "10525512",
     MerchantID: "10525512",
-    MerchantTradeNo: tradeNo, // 動態 MerchantTradeNo
+    MerchantTradeNo: tradeNo,
     StoreID: "ICASH-001",
     StoreName: "Books",
-    MerchantTradeDate: tradeDate, // 動態 MerchantTradeDate
+    MerchantTradeDate: tradeDate,
     TotalAmount: "10000",
     ItemAmt: "10000",
     UtilityAmt: "0",
     ItemNonRedeemAmt: "0",
     UtilityNonRedeemAmt: "0",
     NonPointAmt: "0",
-    Item: [
-        { ItemNo: "001", ItemName: "測試商品1", Quantity: "1" },
-    ],
+    Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
     TradeMode: "2",
     CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FICPOB002%2Frun&sv=1.0&sig=81SiqqBYwWTplvxc3OSCCU6sk9oNT6nI4w5t9Z8v6j4",
     RedirectURL: "https://www.google.com",
@@ -107,11 +106,28 @@ const req = https.request(options, (res) => {
     res.on('end', () => {
         console.log('Response:', response);
 
-        // 假設回應包含加密的 EncData
-        const responseData = JSON.parse(response);
-        if (responseData.EncData) {
-            const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
-            console.log('Decrypted Response Data:', decryptedData);
+        try {
+            const responseData = JSON.parse(response);
+            if (responseData.EncData) {
+                const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
+                console.log('Decrypted Response Data:', decryptedData);
+
+                const parsedData = JSON.parse(decryptedData);
+                if (parsedData.PaymentURL) {
+                    console.log('Payment URL:', parsedData.PaymentURL);
+
+                    // 在系統上開啟 PaymentURL
+                    const command = process.platform === 'win32' ? 'start' :
+                                    process.platform === 'darwin' ? 'open' : 'xdg-open';
+                    exec(`${command} ${parsedData.PaymentURL}`, (err) => {
+                        if (err) {
+                            console.error('Failed to open URL:', err);
+                        }
+                    });
+                }
+            }
+        } catch (e) {
+            console.error('Failed to process response:', e);
         }
     });
 });
@@ -120,7 +136,7 @@ req.on('error', (e) => {
     console.error('Error:', e);
 });
 
-// 在此將加密過的資料作為請求的 body 發送
+// 發送請求
 const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
 req.write(encodedEncData);
 req.end();
