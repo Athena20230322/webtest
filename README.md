@@ -2,11 +2,16 @@
 
 測試操作方式如下
 
-執行前確認已安裝Node.js
+執行前需確認已安裝Node.js
+
 已安裝完成，需可以顯示版本號
-PS C:\webtest> node -v
+
+C:\webtest> node -v
+
 v18.12.1
-PS C:\webtest> npm -v
+
+C:\webtest> npm -v
+
 8.19.2
 
 指令輸入方式範例如下:
