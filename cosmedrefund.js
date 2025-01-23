@@ -1,4 +1,5 @@
 const https = require('https');
+const fs = require('fs');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 
@@ -17,24 +18,55 @@ function getCurrentTime() {
     };
 }
 
+// 讀取檔案並解析內容
+function getTransactionDetails(filePath) {
+    try {
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const transactionDetails = {};
+
+        fileContent.split('\n').forEach((line) => {
+            const [key, value] = line.split(':').map(item => item.trim());
+            if (key && value) {
+                transactionDetails[key] = value;
+            }
+        });
+
+        return transactionDetails;
+    } catch (error) {
+        console.error('Error reading transaction details file:', error);
+        return null;
+    }
+}
+
 // 取得當前時間
 const { tradeNo, tradeDate } = getCurrentTime();
+
+// 讀取交易細節
+const transactionDetails = getTransactionDetails('C:/webtest/TransactionDetails.txt');
+if (!transactionDetails) {
+    console.error('Failed to retrieve transaction details. Exiting.');
+    process.exit(1);
+}
+
+// 使用讀取的值
+const OMerchantTradeNo = transactionDetails.MerchantTradeNo;
+const MerchantTradeNo = transactionDetails.MerchantTradeNo;
+const TransactionID = transactionDetails.TransactionID;
 
 // 模擬店家數據
 const data = {
     PlatformID: "10536635",
     MerchantID: "10536635",
-    OMerchantTradeNo: "Sample20250122102007", // 輸入MerchantTradeNo原交易編號
-    TransactionID: "20250122102008253756", //原交易成功的交易編號
+    OMerchantTradeNo: OMerchantTradeNo, // 載入 MerchantTradeNo 的值
+    TransactionID: TransactionID,       // 載入 TransactionID 的值
     StoreID: "TM01",
     StoreName: "COSMED",
-    MerchantTradeNo: "Sample20250122102007", // 退貨交易的特店業者交易序號
+    MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
     RefundTotalAmount: "10000",
     RefundItemAmt: "10000",
     RefundUtilityAmt: "0",
     RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,
-    
 };
 
 // AES 密鑰與 IV
