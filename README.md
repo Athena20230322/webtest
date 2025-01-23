@@ -16,8 +16,13 @@ cosmedrefund.js -->康事美退款交易，需手動入訂單號，需用Key and
 http://107.173.165.164/onlineaes.php
 
 ai-rider.js -->剛鈺停車場反掃扣款-->ICPOF001
+
 marketpayment-->超商反掃付款交易-->ICPOS002
+
 markettopup.js-->超商值值交易_ICPOS004
+
 markettoprefund.js-->超商值值退款_ICPOS005
+
 booksweb.js-->博客來掃瞄web付款 -->ICPO0008
+
 statbucksbinding-->星巴克(悠遊生活)授權綁定-->ICPOB0000
