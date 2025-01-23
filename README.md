@@ -27,4 +27,6 @@ markettoprefund.js-->超商值值退款_ICPOS005
 
 booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
-statbucksbinding-->星巴克(悠遊生活)授權綁定-->ICPOB0000
+statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000
+
+Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000
