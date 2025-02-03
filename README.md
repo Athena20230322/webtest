@@ -38,4 +38,4 @@ booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000
 
-Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000
+Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
