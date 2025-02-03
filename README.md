@@ -26,6 +26,8 @@ http://107.173.165.164/onlineaes.php
 
 ai-rider.js -->剛鈺停車場反掃扣款-->ICPOF001
 
+books.js -->博客來股份有限公司-->ICPOF001
+
 marketpayment-->超商反掃付款交易-->ICPOS002
 
 markettopup.js-->超商值值交易_ICPOS004
