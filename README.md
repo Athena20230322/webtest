@@ -22,6 +22,8 @@ commed.js -->康事美反掃扣款-->ICPOF001
 
 cosmedrefund.js -->康事美退款交易-->ICPO004 (需先執行康事美反掃扣款，執行康事美退款交易才能成功)
 
+cosmedquerytrade.js-->康事美為例查詢交易結果API -->ICPO0005 , EncData主要載入 MerchantTradeNo
+
 http://107.173.165.164/onlineaes.php
 
 ai-rider.js -->剛鈺停車場反掃扣款-->ICPOF001
