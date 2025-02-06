@@ -1,2 +1,2 @@
-TransactionID: 20250203095538253884
-MerchantTradeNo: Sample20250203095537
+TransactionID: undefined
+MerchantTradeNo: undefined
