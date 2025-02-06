@@ -38,6 +38,7 @@ booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
+testcosmedm.js-->此為康事美反掃連續多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
 
 statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
 
