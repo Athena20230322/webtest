@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 TransactionID: undefined
 MerchantTradeNo: undefined
+=======
+TransactionID: 20250205153432253974
+MerchantTradeNo: Sample20250205153431
+>>>>>>> 5c7fdd8 (update02060944:)
