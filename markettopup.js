@@ -59,7 +59,7 @@ rl.question('請輸入儲值金額 (TopUpAmt): ', (inputTopUpAmt) => {
             Ccy: "TWD",
             TopUpAmt: inputTopUpAmt.trim(),
             OPSeq: tradeNo,
-            StoreName: "見晴",
+            StoreName: "鑫和睦",
             PosNo: "01",
             OPTime: tradeDate,
             CorpID: "22555003",

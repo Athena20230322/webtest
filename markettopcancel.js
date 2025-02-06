@@ -38,17 +38,17 @@ const data = {
    // PlatformID: "10000266",
     //MerchantID: "10000266",
     //Ccy: "TWD",
-    BuyerID: marketData.BuyerID,
+   // BuyerID: marketData.BuyerID,
     OPSeq: marketData.OPSeq,
-    BankSeq: marketData.BankSeq,
-    TopUpAmt: marketData.TopUpAmt,  // 讀取 markettoprefund.txt 的 TopUpAmt
-    OPRefundSeq: marketData.BankSeq,
-    OPRefundTime: tradeDate,
-    StoreID: "982351",
-    StoreName: "鑫和睦",
-    PosNo: "01",
+   // BankSeq: marketData.BankSeq,
+   // TopUpAmt: marketData.TopUpAmt,  // 讀取 markettoprefund.txt 的 TopUpAmt
+  //  OPRefundSeq: marketData.BankSeq,
+  //  OPRefundTime: tradeDate,
+  //  StoreID: "982351",
+  //  StoreName: "鑫和睦",
+   // PosNo: "01",
     CorpID: "22555003",
-    Remark: "123456",
+   // Remark: "123456",
     //Itemlist: [{}],
    
 };
@@ -86,7 +86,7 @@ console.log("X-iCP-Signature:", X_iCP_Signature);
 
 const options = {
     hostname: 'icp-payment-stage.icashpay.com.tw',
-    path: '/api/V2/Payment/Pos/SETTopUpRefund',
+    path: '/api/V2/Payment/Pos/SETTopUpCancel',
     method: 'POST',
     headers: {
         'X-iCP-EncKeyID': '288768',

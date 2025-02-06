@@ -30,7 +30,7 @@ ai-rider.js -->剛鈺停車場反掃扣款-->ICPOF001
 
 books.js -->博客來股份有限公司反掃扣款-->ICPOF001
 
-marketpayment.js-->超商反掃付款交易-->ICPOS002
+marketpayment.js-->超商反掃付款交易-->ICPOS001
 
 markettopup.js-->超商儲值交易_ICPOS004
 
