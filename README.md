@@ -32,7 +32,7 @@ marketpayment.js-->超商反掃付款交易-->ICPOS002
 
 markettopup.js-->超商儲值交易_ICPOS004
 
-markettoprefund.js-->超商儲值退款_ICPOS005
+markettoprefund.js-->超商儲值退款_ICPOS005 (目前執行顯示退貨/取消失敗，必須在儲值的同一家分店辦理退貨/取消)_2025/02/06
 
 booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
