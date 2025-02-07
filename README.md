@@ -16,9 +16,9 @@ C:\webtest> npm -v
 
 指令輸入方式範例如下:
 
-C:\webtest node commed.js 
+C:\webtest node cosmed.js 
 
-commed.js -->康事美反掃扣款-->ICPOF001
+cosmed.js -->康事美反掃扣款-->ICPOF001
 
 cosmedrefund.js -->康事美退款交易-->ICPO004 (需先執行康事美反掃扣款，執行康事美退款交易才能成功)
 
