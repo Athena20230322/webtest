@@ -3,7 +3,7 @@ name: Notify Slack on Push
 on:
   push:
     branches:
-      - main  # 可根據需要修改監聽的分支名稱
+      - main  # 根據需求修改為監聽的分支
 
 jobs:
   notify:
@@ -12,7 +12,7 @@ jobs:
       - name: Send Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}  # 使用 GitHub Secrets 中儲存的 Webhook URL
           SLACK_MESSAGE: '{"text": "🚀 *New push to main branch!* 🔗 [View commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})"}'
           SLACK_USERNAME: "GitHub Actions"
           SLACK_COLOR: "#36a64f"
