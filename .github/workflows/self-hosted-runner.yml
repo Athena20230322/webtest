@@ -1,0 +1,17 @@
+name: Self-Hosted Runner Test
+
+on:
+  push:
+    branches:
+      - main  # 當推送到 main 分支時觸發
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  test-runner:
+    runs-on: self-hosted  # 指定使用「自託管 Runner」
+    steps:
+      - name: Check Runner
+        run: echo "🎉 Self-hosted runner is working!"
+
+      - name: List files
+        run: ls -la
