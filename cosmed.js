@@ -53,7 +53,7 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question('請輸入條碼 (BarCode): ', (inputBarCode) => {
+rl.question('請輸入付款條碼 (BarCode): ', (inputBarCode) => {
     // 取得當前時間
     const { tradeNo, tradeDate } = getCurrentTime();
 
@@ -63,7 +63,7 @@ rl.question('請輸入條碼 (BarCode): ', (inputBarCode) => {
         MerchantID: "10536635",
         MerchantTradeNo: tradeNo, // 動態 MerchantTradeNo
         StoreID: "TM01",
-        StoreName: "COSMED",
+        StoreName: "COSMEDabcdefghijklmno我是第二行",
         MerchantTradeDate: tradeDate, // 動態 MerchantTradeDate
         TotalAmount: "10000",
         ItemAmt: "10000",

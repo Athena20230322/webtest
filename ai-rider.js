@@ -41,7 +41,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question('請輸入條碼 (BarCode): ', (inputBarCode) => {
+rl.question('請輸入付款條碼 (BarCode): ', (inputBarCode) => {
 
 // 取得當前時間
 const { tradeNo, tradeDate } = getCurrentTime();

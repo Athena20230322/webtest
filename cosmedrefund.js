@@ -60,7 +60,7 @@ const data = {
     OMerchantTradeNo: OMerchantTradeNo, // 載入 MerchantTradeNo 的值
     TransactionID: TransactionID,       // 載入 TransactionID 的值
     StoreID: "TM01",
-    StoreName: "COSMED",
+    StoreName: "COSMEDabcdefghijklmno我是第二行",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
     RefundTotalAmount: "10000",
     RefundItemAmt: "10000",
