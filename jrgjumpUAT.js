@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require('fs'); // 引入 fs 模組以進行檔案操作
 
 // 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 // 取得當前時間
 function getCurrentTime() {
