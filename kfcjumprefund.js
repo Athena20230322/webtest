@@ -1,16 +1,13 @@
 const https = require('https');
+const fs = require('fs');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
-const axios = require('axios');
 
-// 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
-
-// 取得當前時間
+// 動態生成當前時間的函式
 function getCurrentTime() {
     const now = new Date();
     const yyyy = now.getFullYear();
-    const MM = String(now.getMonth() + 1).padStart(2, '0'); 
+    const MM = String(now.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始
     const dd = String(now.getDate()).padStart(2, '0');
     const hh = String(now.getHours()).padStart(2, '0');
     const mm = String(now.getMinutes()).padStart(2, '0');
@@ -21,26 +18,55 @@ function getCurrentTime() {
     };
 }
 
+// 讀取檔案並解析內容
+function getTransactionDetails(filePath) {
+    try {
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const transactionDetails = {};
+
+        fileContent.split('\n').forEach((line) => {
+            const [key, value] = line.split(':').map(item => item.trim());
+            if (key && value) {
+                transactionDetails[key] = value;
+            }
+        });
+
+        return transactionDetails;
+    } catch (error) {
+        console.error('Error reading transaction details file:', error);
+        return null;
+    }
+}
+
+// 取得當前時間
 const { tradeNo, tradeDate } = getCurrentTime();
 
-// 交易數據
+// 讀取交易細節
+const transactionDetails = getTransactionDetails('C:/webtest/TransactionDetails.txt');
+if (!transactionDetails) {
+    console.error('Failed to retrieve transaction details. Exiting.');
+    process.exit(1);
+}
+
+// 使用讀取的值
+const OMerchantTradeNo = transactionDetails.MerchantTradeNo;
+const MerchantTradeNo = transactionDetails.MerchantTradeNo;
+const TransactionID = transactionDetails.TransactionID;
+
+// 模擬店家數據
 const data = {
     PlatformID: "10537061",
     MerchantID: "10537061",
-    MerchantTradeNo: tradeNo,
+    OMerchantTradeNo: OMerchantTradeNo, // 載入 MerchantTradeNo 的值
+    TransactionID: TransactionID,       // 載入 TransactionID 的值
     StoreID: "TM01",
     StoreName: "KFC",
+    MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
+    RefundTotalAmount: "10000",
+    RefundItemAmt: "10000",
+    RefundUtilityAmt: "0",
+    RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,
-    TotalAmount: "10000",
-    ItemAmt: "10000",
-    UtilityAmt: "0",
-    ItemNonRedeemAmt: "0",
-    UtilityNonRedeemAmt: "0",
-    NonPointAmt: "0",
-    Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
-    TradeMode: "2",
-    CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke",
-    RedirectURL: "https://www.google.com",
 };
 
 // AES 密鑰與 IV
@@ -62,32 +88,12 @@ function encryptAES_CBC_256(data, key, iv) {
     return encrypted.toString();
 }
 
-// AES 解密
-function decryptAES_CBC_256(encryptedData, key, iv) {
-    const decrypted = CryptoJS.AES.decrypt(encryptedData, CryptoJS.enc.Utf8.parse(key), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7,
-    });
-    return CryptoJS.enc.Utf8.stringify(decrypted);
-}
-
 // RSA 簽名
 function signData(data, privateKey) {
     const rsa = forge.pki.privateKeyFromPem(privateKey);
     const md = forge.md.sha256.create();
     md.update(data, 'utf8');
     return rsa.sign(md);
-}
-
-// 發送 Slack 訊息
-async function sendToSlack(message) {
-    try {
-        await axios.post(SLACK_WEBHOOK_URL, { text: message });
-        console.log("✅ Sent to Slack successfully");
-    } catch (error) {
-        console.error("❌ Error sending to Slack:", error);
-    }
 }
 
 // 加密與簽名
@@ -100,58 +106,32 @@ console.log("X-iCP-Signature:", X_iCP_Signature);
 
 // 發送 HTTP 請求
 const options = {
-    hostname: 'icp-payment-stage.icashpay.com.tw',
-    path: '/api/V2/Payment/Cashier/CreateTradeICPO',
-    method: 'POST',
-    headers: {
-        'X-iCP-EncKeyID': '282316',
-        'X-iCP-Signature': X_iCP_Signature,
-        'Content-Type': 'application/x-www-form-urlencoded',
-    },
+  hostname: 'icp-payment-stage.icashpay.com.tw',
+  path: '/api/V2/Payment/Cashier/RefundICPO',
+  method: 'POST',
+  headers: {
+    'X-iCP-EncKeyID': '282316',
+    'X-iCP-Signature': X_iCP_Signature,
+    'Content-Type': 'application/x-www-form-urlencoded', // 你可以根據需要修改 Content-Type
+  },
 };
 
 const req = https.request(options, (res) => {
-    let response = '';
-    res.on('data', (chunk) => {
-        response += chunk;
-    });
-    res.on('end', async () => {
-        console.log('Response:', response);
-
-        try {
-            const responseData = JSON.parse(response);
-            if (responseData.EncData) {
-                const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
-                console.log('Decrypted Response Data:', decryptedData);
-
-                const parsedData = JSON.parse(decryptedData);
-                if (parsedData.TradeToken) {
-                    console.log('Trade Token:', parsedData.TradeToken);
-
-                    // 產生 ICP 支付 URL
-                    const icpPaymentUrl = `https://icpbridge.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
-                    console.log('ICP Payment URL:', icpPaymentUrl);
-
-                    // 傳送到 Slack
-                    await sendToSlack(`🚀 **ICP Payment URL**\n${icpPaymentUrl}`);
-
-                    // 在系統上開啟 URL
-                    const command = process.platform === 'win32' ? 'start' :
-                                    process.platform === 'darwin' ? 'open' : 'xdg-open';
-                    require('child_process').exec(`${command} "${icpPaymentUrl}"`);
-                }
-            }
-        } catch (e) {
-            console.error('❌ Failed to process response:', e);
-        }
-    });
+  let data = '';
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+  res.on('end', () => {
+    console.log('Response:', data);
+    // 你可以在這裡處理回傳的數據
+  });
 });
 
 req.on('error', (e) => {
-    console.error('❌ Error:', e);
+  console.error('Error:', e);
 });
 
-// 發送請求
-const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
+// 在此將加密過的資料作為請求的 body 發送
+const encodedEncData = `EncData=${encodeURIComponent(encdata)}`; // 使用 `encodeURIComponent` 編碼 `encdata` 的內容
 req.write(encodedEncData);
 req.end();
