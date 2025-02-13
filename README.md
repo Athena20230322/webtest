@@ -1,4 +1,4 @@
-#WEBTEST_2025_02081600更新
+#WEBTEST_2025_0213更新
 
 測試操作方式如下:
 
@@ -44,6 +44,8 @@ C:\webtest\BAT
 
 和泰聯網付款Qrcode.bat
 
+富利餐飲(KFC)產出跳轉付款URL.bat
+
 金箍棒JGBWeb掃瞄web付款Qrcode_UAT.bat
 
 星巴克(悠遊生活)授權綁定_目前無法使用要V1切至V2.bat
@@ -84,6 +86,8 @@ booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
 hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)
+
+kfcjump.js -->模擬富利餐飲產出跳付款URL跨平台購物產生URL(IPCO0002)_2025/02/13
 
 JGBwebUAT.js -->金箍棒JGBWeb付款-房東001-->ICPO008
 

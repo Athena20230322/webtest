@@ -6,6 +6,7 @@
     "start": "node cosmed.js"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "crypto-js": "^4.2.0",
     "expo-barcode-scanner": "^13.0.1",
     "express": "^4.21.2",
