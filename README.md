@@ -89,6 +89,10 @@ hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001
 
 kfcjump.js -->模擬富利餐飲產出跳付款URL跨平台購物產生URL(IPCO0002)_2025/02/13
 
+kfcjumpquerytrade.js -->富利餐飲付款URL已付款完成進行查詢交易結果-->ICPO005_2025/02/23
+
+kfcjumprefund.js -->需先完成查易交易結果後，再執行退款-->ICPO0004_2025/02/23
+
 JGBwebUAT.js -->金箍棒JGBWeb付款-房東001-->ICPO008
 
 testcosmedm.js-->此為康事美反掃連續多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款

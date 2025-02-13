@@ -42,7 +42,7 @@ function getTransactionDetails(filePath) {
 const { tradeNo, tradeDate } = getCurrentTime();
 
 // 讀取交易細節
-const transactionDetails = getTransactionDetails('C:/webtest/TransactionDetails.txt');
+const transactionDetails = getTransactionDetails('C:/webtest/kfcTransactionDetails.txt');
 if (!transactionDetails) {
     console.error('Failed to retrieve transaction details. Exiting.');
     process.exit(1);

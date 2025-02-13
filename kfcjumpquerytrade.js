@@ -49,16 +49,13 @@ if (!transactionDetails) {
 }
 
 // 使用讀取的值
-//const OMerchantTradeNo = transactionDetails.MerchantTradeNo;
 const MerchantTradeNo = transactionDetails.MerchantTradeNo;
-//const TransactionID = transactionDetails.TransactionID;
 
 // 模擬店家數據
 const data = {
     PlatformID: "10537061",
     MerchantID: "10537061",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
-      
 };
 
 // AES 密鑰與 IV
@@ -78,6 +75,16 @@ function encryptAES_CBC_256(data, key, iv) {
         padding: CryptoJS.pad.Pkcs7,
     });
     return encrypted.toString();
+}
+
+// AES 解密
+function decryptAES_CBC_256(encryptedData, key, iv) {
+    const decrypted = CryptoJS.AES.decrypt(encryptedData, CryptoJS.enc.Utf8.parse(key), {
+        iv: CryptoJS.enc.Utf8.parse(iv),
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7,
+    });
+    return decrypted.toString(CryptoJS.enc.Utf8);
 }
 
 // RSA 簽名
@@ -109,13 +116,30 @@ const options = {
 };
 
 const req = https.request(options, (res) => {
-  let data = '';
+  let responseData = '';
   res.on('data', (chunk) => {
-    data += chunk;
+    responseData += chunk;
   });
   res.on('end', () => {
-    console.log('Response:', data);
-    // 你可以在這裡處理回傳的數據
+    console.log('Response:', responseData);
+
+    // 解析回傳的 JSON 數據
+    const responseJson = JSON.parse(responseData);
+    const encryptedResponseData = responseJson.EncData;
+
+    // 解密回傳的 EncData
+    const decryptedResponseData = decryptAES_CBC_256(encryptedResponseData, AES_Key, AES_IV);
+    console.log('Decrypted Response Data:', decryptedResponseData);
+    const parsedResponse = JSON.parse(decryptedResponseData);
+    console.log("Decrypted Response:", parsedResponse);
+
+     // 取得 TransactionID 和 MerchantTradeNo
+    const { TransactionID, MerchantTradeNo } = parsedResponse;
+    // 儲存到 .txt 檔案
+    const output = `TransactionID: ${TransactionID}\nMerchantTradeNo: ${MerchantTradeNo}`;
+    fs.writeFileSync('kfcTransactionDetails.txt', output);
+    console.log("Transaction details have been saved to kfcTransactionDetails.txt");
+
   });
 });
 
