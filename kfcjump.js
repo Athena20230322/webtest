@@ -2,9 +2,10 @@ const https = require('https');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 const axios = require('axios');
+const fs = require('fs'); // 引入 fs 模組以進行檔案操作
 
 // 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 // 取得當前時間
 function getCurrentTime() {
@@ -155,3 +156,9 @@ req.on('error', (e) => {
 const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
 req.write(encodedEncData);
 req.end();
+
+// 取得 MerchantTradeNo 並儲存到 .txt 檔案
+const merchantTradeNo = tradeNo; // 從 getCurrentTime 函式中取得
+const fileName = 'kfcMerchantTradeNo.txt';
+fs.writeFileSync(fileName, `MerchantTradeNo: ${merchantTradeNo}`);
+console.log(`MerchantTradeNo 已儲存到 ${fileName}`);
