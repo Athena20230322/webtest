@@ -36,7 +36,7 @@ C:\webtest\BAT
 
 統一超商儲值交易.bat
 
-統一超商儲值退款_目前無法正常執行.bat
+統一超商儲值退款.bat
 
 博客來掃瞄web付款Qrcode.bat
 
