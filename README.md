@@ -50,6 +50,8 @@ C:\webtest\BAT
 
 星巴克(悠遊生活)授權綁定_目前無法使用要V1切至V2.bat
 
+星巴克(儲值)產出跳轉付款URL.bat
+
 大都會車隊授權綁定.bat
 
 元大證券投資信託授權綁定.bat
@@ -106,6 +108,8 @@ testcosmedm.js-->此為康事美反掃連續多筆反掃扣款，現行需搭配
 testmarketpayment.js 此為超商多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
 
 statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
+
+starbucksjump.js-->星巴克(儲值)產出跳轉付款URL-->(IPCO0002)_2025/02/24
 
 yoxibindingUAT.js--->YOXI授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
 
