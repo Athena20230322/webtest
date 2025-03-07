@@ -1,4 +1,4 @@
 @echo off
-cd /d \webtes20250123\
+cd /d \webtest\
 node starbucksjump.js
 pause
