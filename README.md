@@ -115,6 +115,8 @@ starbucksjump.js-->星巴克(儲值)產出跳轉付款URL-->(IPCO0002)_2025/02/2
 
 yoxibindingUAT.js--->YOXI授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
 
+yoxibinding.js --->Yoxi授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
+
 Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
 
 yuantabinding.js -->元大證券投資信託授權綁定-->ICPOB000 (不固定可設定每月扣款金額上限)
