@@ -1,4 +1,4 @@
-#WEBTEST_2025_0213更新
+#WEBTEST_2025_0214更新
 
 測試操作方式如下:
 
@@ -36,7 +36,7 @@ C:\webtest\BAT
 
 統一超商儲值交易.bat
 
-統一超商儲值退款_目前無法正常執行.bat
+統一超商儲值退款.bat
 
 博客來掃瞄web付款Qrcode.bat
 
@@ -50,11 +50,19 @@ C:\webtest\BAT
 
 星巴克(悠遊生活)授權綁定_目前無法使用要V1切至V2.bat
 
+星巴克(儲值)產出跳轉付款URL.bat
+
 大都會車隊授權綁定.bat
 
 元大證券投資信託授權綁定.bat
 
 YOXI 授權綁定UAT.bat
+
+Step1富利餐飲(KFC)產出跳轉付款URL.bat 
+
+Step2富利餐飲(KFC)付款完成查詢交易結果.bat
+
+Step3富利餐飲(KFC)退款交易.bat
 
 ==============================================================================================================
 指令輸入方式範例如下:
@@ -81,6 +89,8 @@ markettopup.js-->超商儲值交易_ICPOS004
 
 markettoprefund.js-->超商儲值退款_ICPOS005 (目前執行顯示退貨/取消失敗，必須在儲值的同一家分店辦理退貨/取消)_2025/02/06
 
+marketpaidUAT.js -->超商付費會員授權綁定-->ICPOB0000(訂閱制固定金額711元，目前尚未確認規格)_2025/03/07
+
 booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
@@ -97,10 +107,18 @@ JGBwebUAT.js -->金箍棒JGBWeb付款-房東001-->ICPO008
 
 testcosmedm.js-->此為康事美反掃連續多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
 
+testmarketpayment.js 此為超商多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
+
 statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
+
+starbucksjump.js-->星巴克(儲值)產出跳轉付款URL-->(IPCO0002)_2025/02/24
 
 yoxibindingUAT.js--->YOXI授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
 
+yoxibinding.js --->Yoxi授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
+
 Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
+
+Mertotaxibindingtoslack.js 大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限) 傳送至slack
 
 yuantabinding.js -->元大證券投資信託授權綁定-->ICPOB000 (不固定可設定每月扣款金額上限)

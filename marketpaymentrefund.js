@@ -69,7 +69,7 @@ const rl = readline.createInterface({
         const data = {
             OPSeq: opSeq, // 從 marketpaymentrefund.txt 載入 OPSeq
             BankSeq: bankSeq, // 從 marketpaymentrefund.txt 載入 BankSeq
-            TxAmt: "10",
+            TxAmt: "36",
             OPRefundSeq: bankSeq, // 這裡假設 OPRefundSeq 使用 BankSeq 作為參數
             OPRefundTime: tradeDate, //OPRefundTime
             StoreId: "217477",

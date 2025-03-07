@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require('fs'); // 引入 fs 模組以進行檔案操作
 
 // 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 // 取得當前時間
 function getCurrentTime() {
@@ -26,14 +26,14 @@ const { tradeNo, tradeDate } = getCurrentTime();
 
 // 交易數據
 const data = {
-    PlatformID: "10537061",
-    MerchantID: "10537061",
+    PlatformID: "10524652",
+    MerchantID: "10524652",
     MerchantTradeNo: tradeNo,
     StoreID: "TM01",
-    StoreName: "KFC",
+    StoreName: "星巴克icashpay支付",
     MerchantTradeDate: tradeDate,
-    TotalAmount: "10000",
-    ItemAmt: "10000",
+    TotalAmount: "50000",
+    ItemAmt: "50000",
     UtilityAmt: "0",
     ItemNonRedeemAmt: "0",
     UtilityNonRedeemAmt: "0",
@@ -45,12 +45,12 @@ const data = {
 };
 
 // AES 密鑰與 IV
-const AES_Key = "Tu62LBOEUYRZYPXKPDpe4Ta5F3WoxBmR";
-const AES_IV = "2weaUNr9QyqzA6Sx";
+const AES_Key = "obix0KiPMQqlDrDKEwtCGHaXPuoytAJZ";
+const AES_IV = "yJQHlnghifLjKLqJ";
 
 // 客戶端私鑰
 const Client_Private_Key = `-----BEGIN PRIVATE KEY-----
-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
+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
 -----END PRIVATE KEY-----`;
 
 // AES 加密
@@ -105,7 +105,7 @@ const options = {
     path: '/api/V2/Payment/Cashier/CreateTradeICPO',
     method: 'POST',
     headers: {
-        'X-iCP-EncKeyID': '282316',
+        'X-iCP-EncKeyID': '218069',
         'X-iCP-Signature': X_iCP_Signature,
         'Content-Type': 'application/x-www-form-urlencoded',
     },

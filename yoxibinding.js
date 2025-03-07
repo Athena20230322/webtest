@@ -1,17 +1,13 @@
 const https = require('https');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
-const axios = require('axios');
-const fs = require('fs'); // 引入 fs 模組以進行檔案操作
+const QRCode = require('qrcode');
 
-// 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
-
-// 取得當前時間
+// 動態生成當前時間的函式
 function getCurrentTime() {
     const now = new Date();
     const yyyy = now.getFullYear();
-    const MM = String(now.getMonth() + 1).padStart(2, '0'); 
+    const MM = String(now.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始
     const dd = String(now.getDate()).padStart(2, '0');
     const hh = String(now.getHours()).padStart(2, '0');
     const mm = String(now.getMinutes()).padStart(2, '0');
@@ -22,26 +18,26 @@ function getCurrentTime() {
     };
 }
 
+// 取得當前時間
 const { tradeNo, tradeDate } = getCurrentTime();
 
-// 交易數據
+// 模擬店家數據
 const data = {
     PlatformID: "10537061",
     MerchantID: "10537061",
-    MerchantTradeNo: tradeNo,
-    StoreID: "TM01",
-    StoreName: "KFC",
-    MerchantTradeDate: tradeDate,
-    TotalAmount: "10000",
-    ItemAmt: "10000",
-    UtilityAmt: "0",
-    ItemNonRedeemAmt: "0",
-    UtilityNonRedeemAmt: "0",
-    NonPointAmt: "0",
-    Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
-    TradeMode: "2",
-    CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke",
-    RedirectURL: "https://www.google.com",
+    BindingTradeNo: tradeNo, // 動態 MerchantTradeNo
+    StoreName: "測試商戶1",
+    BindingMode: "1",
+    CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FICPOB002%2Frun&sv=1.0&sig=81SiqqBYwWTplvxc3OSCCU6sk9oNT6nI4w5t9Z8v6j4",
+    RedirectURL: "",
+    merchantUserID: tradeDate, // 動態 merchantUserID
+    DisplayInformation:"綁定測試",
+    BindingSubject:"YOXI綁定",
+    RedeemFlag:"0",
+    ExpiredType:"1",
+    TotalAmtLimit:"10000",
+    NonPointAmt: "0", 
+    MaxMonthAmt: "30000000",
 };
 
 // AES 密鑰與 IV
@@ -81,16 +77,6 @@ function signData(data, privateKey) {
     return rsa.sign(md);
 }
 
-// 發送 Slack 訊息
-async function sendToSlack(message) {
-    try {
-        await axios.post(SLACK_WEBHOOK_URL, { text: message });
-        console.log("✅ Sent to Slack successfully");
-    } catch (error) {
-        console.error("❌ Error sending to Slack:", error);
-    }
-}
-
 // 加密與簽名
 const encdata = encryptAES_CBC_256(JSON.stringify(data), AES_Key, AES_IV);
 const signature = signData(encdata, Client_Private_Key);
@@ -102,7 +88,7 @@ console.log("X-iCP-Signature:", X_iCP_Signature);
 // 發送 HTTP 請求
 const options = {
     hostname: 'icp-payment-stage.icashpay.com.tw',
-    path: '/api/V2/Payment/Cashier/CreateTradeICPO',
+    path: '/api/V2/Payment/Binding/CreateICPBinding',
     method: 'POST',
     headers: {
         'X-iCP-EncKeyID': '282316',
@@ -119,46 +105,70 @@ const req = https.request(options, (res) => {
     res.on('end', async () => {
         console.log('Response:', response);
 
-        try {
-            const responseData = JSON.parse(response);
-            if (responseData.EncData) {
-                const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
-                console.log('Decrypted Response Data:', decryptedData);
+        // 假設回應包含加密的 EncData
+        const responseData = JSON.parse(response);
+        if (responseData.EncData) {
+            const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
+            console.log('Decrypted Response Data:', decryptedData);
 
-                const parsedData = JSON.parse(decryptedData);
-                if (parsedData.TradeToken) {
-                    console.log('Trade Token:', parsedData.TradeToken);
+            // 解析回應並提取 ApproveBindingToken
+            const parsedData = JSON.parse(decryptedData);
+            const approveBindingToken = parsedData.ApproveBindingToken;
 
-                    // 產生 ICP 支付 URL
-                    const icpPaymentUrl = `https://icpbridge.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
-                    console.log('ICP Payment URL:', icpPaymentUrl);
+           if (approveBindingToken) {
+    console.log('ApproveBindingToken:', approveBindingToken);
 
-                    // 傳送到 Slack
-                    await sendToSlack(`🚀 **ICP Payment URL**\n${icpPaymentUrl}`);
+    // 確保生成 QR Code
+    try {
+        // 輸出至終端
+        const qrCode = await QRCode.toString(approveBindingToken, { type: 'terminal' });
+        console.log('QR Code for ApproveBindingToken:\n', qrCode);
 
-                    // 在系統上開啟 URL
-                    const command = process.platform === 'win32' ? 'start' :
-                                    process.platform === 'darwin' ? 'open' : 'xdg-open';
-                    require('child_process').exec(`${command} "${icpPaymentUrl}"`);
-                }
-            }
-        } catch (e) {
-            console.error('❌ Failed to process response:', e);
+        // 儲存為圖片檔案
+        await QRCode.toFile('qrcode.png', approveBindingToken, {
+            width: 300,
+            margin: 2,
+        });
+        console.log('QR Code saved as qrcode.png');
+    } catch (err) {
+        console.error('Error generating QR Code:', err);
+    }
+} else {
+    console.error('ApproveBindingToken not found in response data.');
+}
+
+           if (approveBindingToken) {
+    console.log('ApproveBindingToken:', approveBindingToken);
+
+
+    // 確保生成 QR Code
+    try {
+        // 輸出至終端
+        const qrCode = await QRCode.toString(approveBindingToken, { type: 'terminal' });
+        console.log('QR Code for ApproveBindingToken:\n', qrCode);
+
+        // 儲存為圖片檔案
+        await QRCode.toFile('qrcode.png', approveBindingToken, {
+            width: 300,
+            margin: 2,
+        });
+        console.log('QR Code saved as qrcode.png');
+    } catch (err) {
+        console.error('Error generating QR Code:', err);
+    }
+} else {
+    console.error('ApproveBindingToken not found in response data.');
+}
+
         }
     });
 });
 
 req.on('error', (e) => {
-    console.error('❌ Error:', e);
+    console.error('Error:', e);
 });
 
-// 發送請求
+// 在此將加密過的資料作為請求的 body 發送
 const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
 req.write(encodedEncData);
 req.end();
-
-// 取得 MerchantTradeNo 並儲存到 .txt 檔案
-const merchantTradeNo = tradeNo; // 從 getCurrentTime 函式中取得
-const fileName = 'kfcMerchantTradeNo.txt';
-fs.writeFileSync(fileName, `MerchantTradeNo: ${merchantTradeNo}`);
-console.log(`MerchantTradeNo 已儲存到 ${fileName}`);

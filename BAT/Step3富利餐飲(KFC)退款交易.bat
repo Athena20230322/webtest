@@ -1,4 +1,4 @@
 @echo off
-cd /d C:\webtest\
+cd /d \webtes20250123\
 node kfcjumprefund.js
 pause
