@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<title>小工具</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script src='js/json-editor.js'></script>
+		<script src="js/qrcode.js"></script>
+		<script src="js/jsencrypt.js"></script>
+		<script src="js/crypto-js.js"></script>
+		<script src="js/js-cookie.js"></script>
+		<script src='data/variable.js'></script>
+		<script src='data/dbdata.js'></script>
+		<script src='js/main.js'></script>
+		<link href="main.css" rel="stylesheet" type="text/css"></link>
+	</head>
+	<body>
+		<div id="NavbarContainer">
+			<table class="navbar_table">
+				<tr>
+					<th class="button active" style="width:33%" onclick="function_selector(0,this)">API</th>
+					<th class="button" style="width:33%" onclick="function_selector(1,this)">資料庫RTN查詢</th>
+					<th class="button" style="width:33%"onclick="function_selector(2,this)">資料庫RTN查詢</th>
+				</tr>
+			</table>
+		</div>
+		<div id="page_container" style="clear:both">
+			<div id="page1">
+				<select id="key_selector" onchange="select_merchant(this)">
+					<option value=''>請選擇特約機構</option>
+				</select>
+				<div style="width:100%">
+					<div style="width:50%;float: inline-start;">
+						<label> SIT APP</label>
+						<div id="sit_app" style="width:50%">
+						</div>
+					</div>
+					<div style="width:50%;float: inline-end;">
+						<label> UAT APP</label>
+						<div id="uat_app" style="width:50%">
+						</div>
+					</div>
+				</div>
+				
+				<table style="width:100%">
+					<tr>
+						<th onclick="change_version(0,this)" >V1</th>
+						<th onclick="change_version(1,this)" class="active">V2</th>
+					</tr>
+					<tr>
+						<th onclick="api_change(0,this)" class="active">ICPO001</th>
+						<th onclick="api_change(1,this)" class="">ICPOF001</th>
+						<th onclick="api_change(2,this)" class="">ICPO004</th>
+						<th onclick="api_change(3,this)" class="">ICPO005</th>
+						<th onclick="api_change(4,this)" class="">ICPO007</th>
+						<th onclick="api_change(5,this)" class="">ICPO008</th>
+						<th onclick="api_change(6,this)" class="">ICPO009</th>
+						<th onclick="api_change(7,this)" class="">ICPOB000</th>
+						<th onclick="api_change(8,this)" class="">ICPOB004</th>
+						<th onclick="api_change(9,this)" class="">CHK201</th>
+						<th onclick="api_change(10,this)" class="">CHK202</th>
+					</tr>
+					<tr>
+						<td colspan="5" style="width:700px;height:500px;"><json-editor id="json_editor1" style="width:700px;height: 100%;"></json-editor></td>
+						<td style="width:20%;text-align:center;">
+							<input type="button" value="加密" onclick="encrypt_decrypt(0)"/>
+							<input type="button" value="解密" onclick="encrypt_decrypt(1)"/>
+						</td>
+						<td colspan="5" style="width:700px;height:500px;"><json-editor id="json_editor2" style="width:700px;height: 100%;"></json-editor></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="page2" style="">
+				
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+

@@ -1,0 +1,76 @@
+[
+  {
+    "FiscRC": "0601",
+    "RtnMsg": "交易逾時，請重新操作或洽客服(02)2657-6388協助處理(0601)。",
+    "Remark": "FiscRC"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "000002",
+    "RtnMsg": "驗證失敗，尚未開放此帳戶驗證，請改以其他帳戶重新操作(000002)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "000003",
+    "RtnMsg": "驗證失敗，尚未開放此帳戶驗證，請改以其他帳戶重新操作(000003)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "000013",
+    "RtnMsg": "驗證失敗，尚未開放此帳戶驗證，請改以其他帳戶重新操作(000013)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "000099",
+    "RtnMsg": "驗證失敗，請確認帳戶並重新操作或與銀行客服聯繫(000099)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "0001",
+    "RtnMsg": "驗證失敗，請確認帳戶並重新操作或與銀行客服聯繫(0001)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "0099",
+    "RtnMsg": "驗證失敗，請確認帳戶並重新操作或與銀行客服聯繫(0099)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "01",
+    "RtnMsg": "驗證失敗，身分證統一編號錯誤，請確認後重新操作(01)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "02",
+    "RtnMsg": "驗證失敗，請確認您留存於金融機構之手機號碼，是否與 icash Pay 帳號留存一致(02)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4001",
+    "StatusCode": "99",
+    "RtnMsg": "驗證失敗，請重新操作或洽客服(02)2657-6388協助處理(99)。",
+    "Remark": "VerifyMemo"
+  },
+  {
+    "FiscRC": "4401",
+    "RtnMsg": "驗證失敗，請確認帳戶是否正確並重新操作(4401)。",
+    "Remark": "FiscRC"
+  },
+  {
+    "FiscRC": "4414",
+    "RtnMsg": "驗證失敗，請確認帳戶是否正確並重新操作(4414)。",
+    "Remark": "FiscRC"
+  },
+  {
+    "FiscRC": "otherError",
+    "RtnMsg": "驗證失敗，請重新操作或洽客服(02-2657-6388)協助處理(代碼)。",
+    "Remark": "FiscRC"
+  }
+]

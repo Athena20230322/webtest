@@ -2,6 +2,7 @@ const https = require('https');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 const QRCode = require('qrcode');
+const fs = require('fs'); // 引入 fs 模組用於寫入檔案
 
 // 動態生成當前時間的函式
 function getCurrentTime() {
@@ -111,35 +112,47 @@ const req = https.request(options, (res) => {
             const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
             console.log('Decrypted Response Data:', decryptedData);
 
-            // 解析回應並提取 ApproveBindingToken
+            // 解析回應並提取 ApproveBindingToken 和 BindingTradeID
             const parsedData = JSON.parse(decryptedData);
             const approveBindingToken = parsedData.ApproveBindingToken;
+            const bindingTradeID = parsedData.BindingTradeID;
 
-           if (approveBindingToken) {
-    console.log('ApproveBindingToken:', approveBindingToken);
+            if (approveBindingToken) {
+                console.log('ApproveBindingToken:', approveBindingToken);
 
+                // 確保生成 QR Code
+                try {
+                    // 輸出至終端
+                    const qrCode = await QRCode.toString(approveBindingToken, { type: 'terminal' });
+                    console.log('QR Code for ApproveBindingToken:\n', qrCode);
 
-    // 確保生成 QR Code
-    try {
-        // 輸出至終端
-        const qrCode = await QRCode.toString(approveBindingToken, { type: 'terminal' });
-        console.log('QR Code for ApproveBindingToken:\n', qrCode);
+                    // 儲存為圖片檔案
+                    await QRCode.toFile('Mertotaxi.png', approveBindingToken, {
+                        width: 300,
+                        margin: 2,
+                    });
+                    console.log('QR Code saved as Mertotaxi.png');
+                } catch (err) {
+                    console.error('Error generating QR Code:', err);
+                }
+            } else {
+                console.error('ApproveBindingToken not found in response data.');
+            }
 
-        // 儲存為圖片檔案
-        await QRCode.toFile('Mertotaxi.png', approveBindingToken, {
-            width: 300,
-            margin: 2,
-        });
-        console.log('QR Code saved as Mertotaxi.png');
-    } catch (err) {
-        console.error('Error generating QR Code:', err);
+            if (bindingTradeID) {
+                console.log('BindingTradeID:', bindingTradeID);
 
-        
-    }
-} else {
-    console.error('ApproveBindingToken not found in response data.');
-}
-
+                // 將 BindingTradeID 寫入檔案
+                fs.writeFile('BindingTradeID.txt', bindingTradeID.toString(), (err) => {
+                    if (err) {
+                        console.error('Error writing BindingTradeID to file:', err);
+                    } else {
+                        console.log('BindingTradeID saved to BindingTradeID.txt');
+                    }
+                });
+            } else {
+                console.error('BindingTradeID not found in response data.');
+            }
         }
     });
 });

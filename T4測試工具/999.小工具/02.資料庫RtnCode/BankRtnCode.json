@@ -1,0 +1,6820 @@
+[
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼:0000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息代碼:0001，用戶帳戶重複約定綁定。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "用戶帳戶重複約定綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0002",
+    "RtnMsg": "訊息代碼:0002，用戶身分證字號或帳號輸入錯誤。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "用戶身分證字號或帳號輸入錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0003",
+    "RtnMsg": "訊息代碼:0003，該帳號為非本人帳戶。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "該帳號為非本人帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0004",
+    "RtnMsg": "訊息代碼:0004，該帳戶無法受理申請之帳戶類別。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "該帳戶無法受理申請之帳戶類別",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0005",
+    "RtnMsg": "訊息代碼:0005，申請用戶未達本行年齡開放資格。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "申請用戶未達本行年齡開放資格",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "0006",
+    "RtnMsg": "訊息代碼:0006，該帳戶不可入扣帳。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "該帳戶不可入扣帳",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "1001",
+    "RtnMsg": "訊息代碼:1001，缺少必要參數或數值加密等不正確。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "缺少必要參數或數值加密等不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "1002",
+    "RtnMsg": "訊息代碼:1002，伺服器發生例外錯誤。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "伺服器發生例外錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "1003",
+    "RtnMsg": "訊息代碼:1003，簽驗章驗證錯誤。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "簽驗章驗證錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "1004",
+    "RtnMsg": "訊息代碼:1004，內部連線異常或逾時。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "內部連線異常或逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "1005",
+    "RtnMsg": "訊息代碼:1005，時間戳記超出系統允許時間。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "時間戳記超出系統允許時間",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3001",
+    "RtnMsg": "訊息代碼:3001，存取資格已失效或逾時。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "存取資格已失效或逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3002",
+    "RtnMsg": "訊息代碼:3002，本行未留存手機或信箱。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "本行未留存手機或信箱",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3003",
+    "RtnMsg": "訊息代碼:3003，網銀帳號登入驗證錯誤超過次數。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "網銀帳號登入驗證錯誤超過次數",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3004",
+    "RtnMsg": "訊息代碼:3004，簡訊驗證碼超出當次傳送次數。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "簡訊驗證碼超出當次傳送次數",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3005",
+    "RtnMsg": "訊息代碼:3005，存取令牌Session未發現或逾時。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "存取令牌Session未發現或逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3101",
+    "RtnMsg": "訊息代碼:3101，網銀登入驗證失敗。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "網銀登入驗證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3102",
+    "RtnMsg": "訊息代碼:3102，簡訊驗證碼驗證失敗。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "簡訊驗證碼驗證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3103",
+    "RtnMsg": "訊息代碼:3103，簡訊驗證碼已過期或失效。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "簡訊驗證碼已過期或失效",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "3104",
+    "RtnMsg": "訊息代碼:3104，簡訊驗證碼錯誤超過次數。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "簡訊驗證碼錯誤超過次數",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5001",
+    "RtnMsg": "訊息代碼:5001，帳戶餘額不足。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "帳戶餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5002",
+    "RtnMsg": "訊息代碼:5002，未授權約定扣款帳戶。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "未授權約定扣款帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5003",
+    "RtnMsg": "訊息代碼:5003，付款儲值交易序號重複。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "付款儲值交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5004",
+    "RtnMsg": "訊息代碼:5004，儲值付款類別錯誤。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "儲值付款類別錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5005",
+    "RtnMsg": "訊息代碼:5005，付款金額超出授權額度。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "付款金額超出授權額度",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5006",
+    "RtnMsg": "訊息代碼:5006，約定扣款帳戶不存在或未綁定。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "約定扣款帳戶不存在或未綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5007",
+    "RtnMsg": "訊息代碼:5007，退款提領交易序號重複。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "退款提領交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5008",
+    "RtnMsg": "訊息代碼:5008，退款提領類別錯誤。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "退款提領類別錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5009",
+    "RtnMsg": "訊息代碼:5009，查無交易序號紀錄。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "查無交易序號紀錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5010",
+    "RtnMsg": "訊息代碼:5010，原交易序號已有退款紀錄。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "原交易序號已有退款紀錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5011",
+    "RtnMsg": "訊息代碼:5011，交易懸置中。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "交易懸置中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "5012",
+    "RtnMsg": "訊息代碼:5012，該筆交易無法退款。請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "該筆交易無法退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "7401",
+    "RtnMsg": "訊息代碼:7401，目前系統忙碌中，請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "連線逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "004",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼:9999，目前系統忙碌中，請洽臺灣銀行客服02-21821901",
+    "BankRtnMsg": "未知的錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "0000",
+    "RtnMsg": "執行成功",
+    "BankRtnMsg": "執行成功，無錯誤發生",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息接收成功",
+    "BankRtnMsg": "訊息接收成功 ",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1001",
+    "RtnMsg": "訊息代碼:1001，基本資料取得失敗或異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "基本資料取得失敗或異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1002",
+    "RtnMsg": "訊息代碼:1002，帳戶資料取得失敗或異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "帳戶資料取得失敗或異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1003",
+    "RtnMsg": "訊息代碼:1003，您的帳戶無法執行帳戶連結設定，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "您的帳戶無法執行帳戶連結設定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1004",
+    "RtnMsg": "訊息代碼:1004，帳戶餘額資料取得失敗或異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "帳戶餘額資料取得失敗或異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1005",
+    "RtnMsg": "訊息代碼:1005，圖形驗證碼錯誤 ，請再次確認。",
+    "BankRtnMsg": "圖形驗證碼錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1006",
+    "RtnMsg": "訊息代碼:1006，未約定行動電話，您可透過土地銀行各營業單位或個人網路銀行方式進行變更，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "未約定行動電話，您可透過土地銀行各營業單位或個人網路銀行方式進行變更。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1007",
+    "RtnMsg": "訊息代碼:1007，未約定電子郵件，您可透過土地銀行各營業單位或個人網路銀行方式進行變更，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "未約定電子郵件，您可透過土地銀行各營業單位或個人網路銀行方式進行變更。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1008",
+    "RtnMsg": "訊息代碼:1008，無生日資料 ，請重新輸入。",
+    "BankRtnMsg": "無生日資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11006",
+    "RtnMsg": "訊息代碼:11006，幣別錯誤，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "幣別錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11071",
+    "RtnMsg": "訊息代碼:11071，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "程式邏輯錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11074",
+    "RtnMsg": "訊息代碼:11074，此帳號不可設定為綁定或提領帳戶，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "此帳號不可設定為綁定或提領帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11079",
+    "RtnMsg": "訊息代碼:11079，日期錯誤，請重新輸入，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "日期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11080",
+    "RtnMsg": "訊息代碼:11080，交易金額錯誤或超出轉帳金額上限，請重新輸入，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易金額錯誤或超出轉帳金額上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11082",
+    "RtnMsg": "訊息代碼:11082，存摺餘額不符，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "存摺餘額不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11088",
+    "RtnMsg": "訊息代碼:11088，此帳號不接受入帳交易，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "此帳號不接受入帳交易(EX:公教戶、犯罪被害補償金)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "1109",
+    "RtnMsg": "訊息代碼: 1109，餘額不足。",
+    "BankRtnMsg": "餘額不足。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11090",
+    "RtnMsg": "訊息代碼:11090，查無資料，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "查無資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11092",
+    "RtnMsg": "訊息代碼:11092，餘額不足，請儲值後再行交易。",
+    "BankRtnMsg": "餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11093",
+    "RtnMsg": "訊息代碼:11093，您已銷戶 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "該戶已銷戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11098",
+    "RtnMsg": "訊息代碼:11098，您已止付，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "該戶已止付",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11103",
+    "RtnMsg": "訊息代碼:11103，請先做補登摺交易再行交易，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "請先做補登摺交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11109",
+    "RtnMsg": "訊息代碼11109，該戶未申請通用印鑑卡或聯行代付",
+    "BankRtnMsg": "未申請通用印鑑卡或聯行代付",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11147",
+    "RtnMsg": "訊息代碼11147，文號或項目錯誤",
+    "BankRtnMsg": "文號或項目錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11206",
+    "RtnMsg": "訊息代碼:11206，已有該筆交易 。",
+    "BankRtnMsg": "已有該筆交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11366",
+    "RtnMsg": "訊息代碼 : 11366 ，暫停自動化交易及電子支付功能",
+    "BankRtnMsg": "暫停自動化交易及電子支付功能",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11375",
+    "RtnMsg": "訊息代碼11375，提領帳號須本人帳號",
+    "BankRtnMsg": "提領帳號須本人帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11625",
+    "RtnMsg": "訊息代碼:11625，帳號錯誤，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "帳號錯誤 (無原存行資料(解款行))",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11901",
+    "RtnMsg": "訊息代碼11901，未申請網路銀行用戶",
+    "BankRtnMsg": "未申請網路銀行用戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11903",
+    "RtnMsg": "訊息代碼11903，密碼錯誤(若錯誤次數達3次帳戶將予以鎖定，須臨櫃辦理密碼重)",
+    "BankRtnMsg": "密碼錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "11904",
+    "RtnMsg": "訊息代碼11904，帳號密碼錯誤三次已鎖定",
+    "BankRtnMsg": "帳號密碼錯誤三次已鎖定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "2001",
+    "RtnMsg": "訊息代碼:2001，身分資料檢核錯誤，請再次確認，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "身分資料檢核錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "2002",
+    "RtnMsg": "訊息代碼:2002，身分資料檢核錯誤 ，請再次確認，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "身分資料檢核錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5001",
+    "RtnMsg": "訊息代碼:5001，會員服務狀態異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "會員服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5002",
+    "RtnMsg": "訊息代碼:5002，會員未開通服務，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "會員未開通服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5011",
+    "RtnMsg": "訊息代碼:5011，平台資料不存在，請再次確認，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "平台資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5012",
+    "RtnMsg": "訊息代碼:5012，平台服務狀態異常 ，請稍後再試，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "平台服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5021",
+    "RtnMsg": "訊息代碼:5021，連結帳號不存在，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "連結帳號不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5022",
+    "RtnMsg": "訊息代碼:5022，連結帳號狀態異常 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "連結帳號狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5023",
+    "RtnMsg": "訊息代碼:5023，連結帳號已綁定。",
+    "BankRtnMsg": "連結帳號已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5024",
+    "RtnMsg": "訊息代碼:5024，連結帳號綁定處理異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "連結帳號綁定處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5025",
+    "RtnMsg": "訊息代碼:5025，查無連結帳號綁定記錄，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "查無連結帳號綁定記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "5030",
+    "RtnMsg": "訊息代碼:5030，會員平台服務狀態異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "會員平台服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "6001",
+    "RtnMsg": "訊息代碼:6001，交易金額超出帳號限額，請重新輸入。",
+    "BankRtnMsg": "交易金額超出帳號限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "6002",
+    "RtnMsg": "訊息代碼:6002，交易金額超出轉帳金額上限 ，請重新輸入。",
+    "BankRtnMsg": "交易金額超出轉帳金額上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "6003",
+    "RtnMsg": "訊息代碼:6003，交易金額超出法定限額，請重新輸入。",
+    "BankRtnMsg": "交易金額超出法定限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "6004",
+    "RtnMsg": "訊息代碼:6004，該項服務系統無法連線，請稍後再試 ，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "該項服務系統無法連線，請稍後再試",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "6005",
+    "RtnMsg": "訊息代碼:6005，交易錯誤，原交易逾時，請重新執行，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易錯誤，原交易逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7001",
+    "RtnMsg": "訊息代碼:7001，退款交易(原交易資料)不存在，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "退款交易(原交易資料)不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7002",
+    "RtnMsg": "訊息代碼:7002，已超過退款期限，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "已超過退款期限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7003",
+    "RtnMsg": "訊息代碼:7003，退款金額超出原訂單金額，請重新確認。",
+    "BankRtnMsg": "退款金額超出原訂單金額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7004",
+    "RtnMsg": "訊息代碼:7004，交易訂單編號重覆，請重新確認，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易訂單編號重覆",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7005",
+    "RtnMsg": "訊息代碼:7005，虛擬帳號檢核失敗，與平台企業編號不符，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "虛擬帳號檢核失敗，與平台企業編號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7006",
+    "RtnMsg": "訊息代碼:7006，交易資料不存在 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7007",
+    "RtnMsg": "訊息代碼:7007，轉出帳號檢核錯誤，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "轉出帳號檢核錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7010",
+    "RtnMsg": "訊息代碼:7010，交易失敗，請重新嘗試，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7011",
+    "RtnMsg": "訊息代碼:7011，交易不明，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7012",
+    "RtnMsg": "訊息代碼:7012，交易時間過長，請重新嘗試，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易時間過長",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7013",
+    "RtnMsg": "訊息代碼:7013，交易已更正 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "交易已更正",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "7021",
+    "RtnMsg": "訊息代碼:7021，累計交易金額異常，請重新調整額度再行嘗試，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "累計交易金額異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9000",
+    "RtnMsg": "訊息代碼:9000，參數不正確，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "參數不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9100",
+    "RtnMsg": "訊息代碼:9100，來源IP不正確 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "來源IP不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9101",
+    "RtnMsg": "訊息代碼:9101，綁定結果通知IP不正確，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "綁定結果通知IP不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9200",
+    "RtnMsg": "訊息代碼:9200，身分認證失敗，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9201",
+    "RtnMsg": "訊息代碼:9201，訊息序號重複，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "訊息序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9400",
+    "RtnMsg": "訊息代碼:9400，驗章失敗，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9401",
+    "RtnMsg": "訊息代碼:9401，憑證資料未約定，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "憑證資料未約定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9402",
+    "RtnMsg": "訊息代碼:9402，解密失敗，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "解密失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9500",
+    "RtnMsg": "訊息代碼:9500，MAC值不符，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "MAC值不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9501",
+    "RtnMsg": "訊息代碼:9501，OTP驗證失敗，請重新輸入，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "OTP驗證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9502",
+    "RtnMsg": "訊息代碼:9502，OTP發送失敗，請重新嘗試，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "OTP發送失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9503",
+    "RtnMsg": "訊息代碼:9503，OTP驗證失敗，請重新輸入，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "OTP驗證失敗，網頁識別碼為空",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9504",
+    "RtnMsg": "訊息代碼:9504，OTP驗證失敗，請重新輸入，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "OTP驗證失敗，找不到銀行序號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9505",
+    "RtnMsg": "訊息代碼:9505，OTP錯誤次數已達上限，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "OTP錯誤次數已達上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9900",
+    "RtnMsg": "訊息代碼:9900，您已取消操作，如有需要請重新操作。",
+    "BankRtnMsg": "使用者取消操作",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9997",
+    "RtnMsg": "訊息代碼:9997，資料處理異常，請重新操作，或聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "資料處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9998",
+    "RtnMsg": "訊息代碼:9998，系統處理中，交易不明 ，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "系統處理中，交易不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼:9999，系統處理異常，請聯繫土銀客服電話：0800-231-590",
+    "BankRtnMsg": "系統處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "005",
+    "BankRtnCode": "RRRR",
+    "RtnMsg": "訊息代碼: RRRR，使用者按下回上一頁。",
+    "BankRtnMsg": "使用者按下回上一頁。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，執行成功，無錯誤發生",
+    "BankRtnMsg": "執行成功, 無錯誤發生",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息代碼: 0001，訊息接收成功",
+    "BankRtnMsg": "訊息接收成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1001",
+    "RtnMsg": "訊息代碼: 1001，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "基本資料取得失敗或異常 (取得 CIF 資料失敗)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1002",
+    "RtnMsg": "訊息代碼: 1002，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "帳戶資料取得失敗或異常(歸戶電文發送失敗)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1003",
+    "RtnMsg": "訊息代碼: 1003，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "無可綁定之帳戶資料 (沒有符合條件的帳戶)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1005",
+    "RtnMsg": "訊息代碼: 1005，訊息代碼不存在(01-1005)。",
+    "BankRtnMsg": "訊息代碼不存在。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1998",
+    "RtnMsg": "訊息代碼: 1998，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "未約定手機號碼無法連結帳戶，請洽分行辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "1999",
+    "RtnMsg": "訊息代碼: 1999，此帳號已被綁定",
+    "BankRtnMsg": "帳戶已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5011",
+    "RtnMsg": "訊息代碼: 5011，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "平台資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5012",
+    "RtnMsg": "訊息代碼: 5012，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "平台服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5021",
+    "RtnMsg": "訊息代碼: 5021，連結帳戶不存在，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "連結帳戶不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5022",
+    "RtnMsg": "訊息代碼: 5022，連結帳戶狀態異常，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "連結帳戶狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5023",
+    "RtnMsg": "訊息代碼: 5023，連結帳戶已綁定",
+    "BankRtnMsg": "連結帳戶已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5024",
+    "RtnMsg": "訊息代碼: 5024，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "連結帳戶綁定處理異常 (DB異動失敗,找不到session key)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5025",
+    "RtnMsg": "訊息代碼: 5025，查無連結帳戶綁定記錄，請重新綁定",
+    "BankRtnMsg": "查無連結帳戶綁定記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "5030",
+    "RtnMsg": "訊息代碼: 5030，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "會員平台服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "6001",
+    "RtnMsg": "訊息代碼: 6001，交易金額超出限額，請重新輸入",
+    "BankRtnMsg": "交易金額超出限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "6002",
+    "RtnMsg": "訊息代碼: 6002，交易金額超出限額，請重新輸入",
+    "BankRtnMsg": "交易金額超出限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "6003",
+    "RtnMsg": "訊息代碼: 6003，交易金額超出帳戶自訂限額，請重新輸入",
+    "BankRtnMsg": "交易金額超出帳戶自訂限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7001",
+    "RtnMsg": "訊息代碼: 7001，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "退款交易(原交易資料)不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7002",
+    "RtnMsg": "訊息代碼: 7002，已超過退款期限，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "已超過退款期限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7003",
+    "RtnMsg": "訊息代碼: 7003，退款金額超出原訂單金額，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "退款金額超出原訂單金額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7004",
+    "RtnMsg": "訊息代碼: 7004，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "交易訂單編號重覆",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7005",
+    "RtnMsg": "訊息代碼: 7005，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "虛擬帳戶檢核失敗, 與平台企業編號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7006",
+    "RtnMsg": "訊息代碼: 7006，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "交易資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7010",
+    "RtnMsg": "訊息代碼: 7010，交易失敗，請重新操作",
+    "BankRtnMsg": "交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7011",
+    "RtnMsg": "訊息代碼: 7011，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "交易不明 (電文發送失敗, 通訊異常)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7021",
+    "RtnMsg": "訊息代碼: 7021，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "累計交易金額異常 (累算日月額度失敗-異動資料)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "7401",
+    "RtnMsg": "訊息代碼: 7401，連線逾時，請重新操作。",
+    "BankRtnMsg": "連線逾時，請重新操作。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9000",
+    "RtnMsg": "訊息代碼: 9000，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "參數不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9025",
+    "RtnMsg": "訊息代碼: 9025，交易逾時未回應",
+    "BankRtnMsg": "交易逾時未回應",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9100",
+    "RtnMsg": "訊息代碼: 9100，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "來源 IP 不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9200",
+    "RtnMsg": "訊息代碼: 9200，身分認證失敗，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9201",
+    "RtnMsg": "訊息代碼: 9201，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "訊息序號(msg_no)重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9400",
+    "RtnMsg": "訊息代碼: 9400，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9401",
+    "RtnMsg": "訊息代碼: 9401，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "憑證資料未約定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9900",
+    "RtnMsg": "訊息代碼: 9900，使用者取消操作",
+    "BankRtnMsg": "使用者取消操作",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9997",
+    "RtnMsg": "訊息代碼: 9997，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "資料處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9998",
+    "RtnMsg": "訊息代碼: 9998，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "系統處理中, 交易不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999，請聯繫第一銀行客服(02)2181-1111",
+    "BankRtnMsg": "系統處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "E724",
+    "RtnMsg": "訊息代碼: 系統忙碌中請稍後再試",
+    "BankRtnMsg": "系統忙碌中請稍後再試",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M019",
+    "RtnMsg": "訊息代碼: M019，餘額不足。",
+    "BankRtnMsg": "餘額不足。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M0GK",
+    "RtnMsg": "逾第三類數位存款帳戶單筆交易限額",
+    "BankRtnMsg": "逾第三類數位存款帳戶單筆交易限額",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M0GL",
+    "RtnMsg": "使用第三類數存帳戶單月累計扣款超過5萬元",
+    "BankRtnMsg": "使用第三類數存帳戶單月累計扣款超過5萬元",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M0GM",
+    "RtnMsg": "使用第三類數存帳戶單日累計扣款超過3萬元",
+    "BankRtnMsg": "使用第三類數存帳戶單日累計扣款超過3萬元",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M1HX",
+    "RtnMsg": "逾數位帳戶每月累計交易限額",
+    "BankRtnMsg": "逾數位帳戶每月累計交易限額",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "M1HY",
+    "RtnMsg": "使用第一或第二類數存帳戶單日扣款累計扣款超過10萬元",
+    "BankRtnMsg": "使用第一或第二類數存帳戶單日扣款累計扣款超過10萬元",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "007",
+    "BankRtnCode": "Z724",
+    "RtnMsg": "訊息代碼: 系統忙碌中請稍後再試",
+    "BankRtnMsg": "系統忙碌中請稍後再試",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "00000",
+    "RtnMsg": "訊息代碼: 00000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "000000",
+    "RtnMsg": "訊息代碼: 000000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "0601",
+    "RtnMsg": "訊息代碼: 0601，顧客交易未完成或交易逾時",
+    "BankRtnMsg": "顧客交易未完成或交易逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "106",
+    "RtnMsg": "訊息代碼:106，清算日有誤。",
+    "BankRtnMsg": "清算日有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "4806",
+    "RtnMsg": "訊息代碼: 4806，約定存款帳號與客戶ID不符",
+    "BankRtnMsg": "約定存款帳號與客戶ID不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "4808",
+    "RtnMsg": "訊息代碼: 4808，非華銀網路銀行用戶",
+    "BankRtnMsg": "非華銀網路銀行用戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "9900",
+    "RtnMsg": "訊息代碼: 9900，交易結果不明",
+    "BankRtnMsg": "交易結果不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "991",
+    "RtnMsg": "訊息代碼:991，轉帳金額超過轉帳月限額",
+    "BankRtnMsg": "轉帳金額超過轉帳月限額",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "992",
+    "RtnMsg": "訊息代碼 : 992，轉帳金額超過轉帳日限額",
+    "BankRtnMsg": "轉帳金額超過轉帳日限額",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "994",
+    "RtnMsg": "訊息代碼: 994，非正常使用中網路客戶",
+    "BankRtnMsg": "非正常使用中網路客戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "999",
+    "RtnMsg": "訊息代碼 : 999，資料庫處理有誤",
+    "BankRtnMsg": "資料庫處理有誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "AC0001",
+    "RtnMsg": "訊息代碼: AC0001，查無原訂單交易紀錄，無法進行退款作業",
+    "BankRtnMsg": "查無原訂單交易紀錄，無法進行退款作業",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "AC0002",
+    "RtnMsg": "訊息代碼: AC0002，退款金額大於原訂單可退款餘額",
+    "BankRtnMsg": "退款金額大於原訂單可退款餘額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "AC0003",
+    "RtnMsg": "訊息代碼: AC0003，訂單號碼6個月內不可重複",
+    "BankRtnMsg": "訂單號碼6個月內不可重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "AC02",
+    "RtnMsg": "訊息代碼: AC02，其他錯誤",
+    "BankRtnMsg": "其他錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK01",
+    "RtnMsg": "訊息代碼: ALK01，交易類別錯誤",
+    "BankRtnMsg": "交易類別錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK02",
+    "RtnMsg": "訊息代碼: ALK02，客戶非本國自然人",
+    "BankRtnMsg": "客戶非本國自然人",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK03",
+    "RtnMsg": "訊息代碼: ALK03，出生日期錯誤",
+    "BankRtnMsg": "出生日期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK04",
+    "RtnMsg": "訊息代碼: ALK04，資料來源錯誤",
+    "BankRtnMsg": "資料來源錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK05",
+    "RtnMsg": "訊息代碼: ALK05，綁定身分未滿二十歲",
+    "BankRtnMsg": "綁定身分未滿二十歲",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK06",
+    "RtnMsg": "訊息代碼: ALK06，線上開立之帳戶不可綁定",
+    "BankRtnMsg": "線上開立之帳戶不可綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK07",
+    "RtnMsg": "訊息代碼: ALK07，綁定帳號科目錯誤",
+    "BankRtnMsg": "綁定帳號科目錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK08",
+    "RtnMsg": "訊息代碼: ALK08，綁定帳號為問題戶",
+    "BankRtnMsg": "綁定帳號為問題戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK09",
+    "RtnMsg": "訊息代碼: ALK09，綁定帳號性質別有誤",
+    "BankRtnMsg": "綁定帳號性質別有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK10",
+    "RtnMsg": "訊息代碼: ALK10，電支業者已註銷",
+    "BankRtnMsg": "電支業者已註銷",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK11",
+    "RtnMsg": "訊息代碼: ALK11，電支業者建檔資料有誤",
+    "BankRtnMsg": "電支業者建檔資料有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK12",
+    "RtnMsg": "訊息代碼: ALK12，綁定帳號非申請ID之帳號",
+    "BankRtnMsg": "綁定帳號非申請ID之帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK20",
+    "RtnMsg": "訊息代碼: ALK20，客戶主檔資料",
+    "BankRtnMsg": "客戶主檔資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK21",
+    "RtnMsg": "訊息代碼: ALK21，訂單編號錯誤",
+    "BankRtnMsg": "訂單編號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK22",
+    "RtnMsg": "訊息代碼: ALK22，原訂單編號不存在無法退款",
+    "BankRtnMsg": "原訂單編號不存在無法退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK23",
+    "RtnMsg": "訊息代碼: ALK23，退款帳號與原交易帳號不同無法退款",
+    "BankRtnMsg": "退款帳號與原交易帳號不同無法退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK24",
+    "RtnMsg": "訊息代碼: ALK24，交易序號重複",
+    "BankRtnMsg": "交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK25",
+    "RtnMsg": "訊息代碼: ALK25，累計退款金額超過原交易金額無法退款",
+    "BankRtnMsg": "累計退款金額超過原交易金額無法退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK26",
+    "RtnMsg": "訊息代碼 : ALK26，退款失敗！原交易序號非正常狀態。",
+    "BankRtnMsg": "退款失敗！原交易序號非正常狀態。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK27",
+    "RtnMsg": "訊息代碼 : ALK27，交易失敗！原交易序號交易類別有誤。",
+    "BankRtnMsg": "交易失敗！原交易序號交易類別有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK65",
+    "RtnMsg": "訊息代碼: ALK65，未申請帳戶綁定",
+    "BankRtnMsg": "未申請帳戶綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK66",
+    "RtnMsg": "訊息代碼: ALK66，超過可綁定帳號的上限",
+    "BankRtnMsg": "超過可綁定帳號的上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK74",
+    "RtnMsg": "訊息代碼: ALK74，此帳號已綁定",
+    "BankRtnMsg": "此帳號已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK75",
+    "RtnMsg": "訊息代碼: ALK75，交易序號重複傳送",
+    "BankRtnMsg": "交易序號重複傳送",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK76",
+    "RtnMsg": "訊息代碼: ALK76，交易帳戶已解除綁定",
+    "BankRtnMsg": "交易帳戶已解除綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "ALK99",
+    "RtnMsg": "訊息代碼: ALK99，其他錯誤",
+    "BankRtnMsg": "其他錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB0000",
+    "RtnMsg": "訊息代碼: EB0000，訊息檢核異常",
+    "BankRtnMsg": "訊息檢核異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB0001",
+    "RtnMsg": "訊息代碼: EB0001，訊息格式或內容編輯錯誤",
+    "BankRtnMsg": "訊息格式或內容編輯錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB0002",
+    "RtnMsg": "訊息代碼: EB0002，委託單位交易序號重複",
+    "BankRtnMsg": "委託單位交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB8002",
+    "RtnMsg": "訊息代碼: EB8002，查無該筆正負項交易紀錄",
+    "BankRtnMsg": "查無該筆正負項交易紀錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB8101",
+    "RtnMsg": "訊息代碼: EB8101，該交易序號筆交易紀錄回傳內容不符合上傳條件",
+    "BankRtnMsg": "該交易序號筆交易紀錄回傳內容不符合上傳條件",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB9900",
+    "RtnMsg": "訊息代碼: EB9900，交易結果不明(與主機驗證有誤)",
+    "BankRtnMsg": "交易結果不明(與主機驗證有誤)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB9990",
+    "RtnMsg": "訊息代碼: EB9990，交易結果不明",
+    "BankRtnMsg": "交易結果不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "EB9998",
+    "RtnMsg": "訊息代碼: EB9998，系統無回應，請稍後再試",
+    "BankRtnMsg": "系統無回應，請稍後再試",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK01",
+    "RtnMsg": "訊息代碼: LK01，無可使用安控機制",
+    "BankRtnMsg": "無可使用安控機制",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK02",
+    "RtnMsg": "訊息代碼: LK02，登入網銀代碼或密碼有誤",
+    "BankRtnMsg": "登入網銀代碼或密碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK03",
+    "RtnMsg": "訊息代碼: LK03，客戶取消網銀登入",
+    "BankRtnMsg": "客戶取消網銀登入",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK04",
+    "RtnMsg": "訊息代碼: LK04，客戶登入後取消作業",
+    "BankRtnMsg": "客戶登入後取消作業",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK05",
+    "RtnMsg": "訊息代碼: LK05，客戶於安控驗證時(簡訊OTP或隨行保鑣)取消作業",
+    "BankRtnMsg": "客戶於安控驗證時(簡訊OTP或隨行保鑣)取消作業",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK06",
+    "RtnMsg": "訊息代碼: LK06，客戶存款帳號申請(註銷)結果帳務主機確認中，請稍後再查詢",
+    "BankRtnMsg": "客戶存款帳號申請(註銷)結果帳務主機確認中，請稍後再查詢",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK07",
+    "RtnMsg": "訊息代碼: LK07，加密金要更新失敗，請稍後再試",
+    "BankRtnMsg": "加密金要更新失敗，請稍後再試",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK08",
+    "RtnMsg": "訊息代碼: LK08，簡訊OTP驗證碼已逾時",
+    "BankRtnMsg": "簡訊OTP驗證碼已逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK09",
+    "RtnMsg": "訊息代碼: LK09，簡訊OTP驗證碼有誤",
+    "BankRtnMsg": "簡訊OTP驗證碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK10",
+    "RtnMsg": "訊息代碼: LK10，隨行保鑣交易訊息回復逾時",
+    "BankRtnMsg": "隨行保鑣交易訊息回復逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK11",
+    "RtnMsg": "訊息代碼: LK11，隨行保鑣驗證有誤",
+    "BankRtnMsg": "隨行保鑣驗證有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK12",
+    "RtnMsg": "訊息代碼: LK12，隨行保鑣交易訊息回覆逾時",
+    "BankRtnMsg": "隨行保鑣交易訊息回覆逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK13",
+    "RtnMsg": "訊息代碼: LK13，隨行保鑣驗證有誤",
+    "BankRtnMsg": "隨行保鑣驗證有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK98",
+    "RtnMsg": "訊息代碼: LK98，查無資料",
+    "BankRtnMsg": "查無資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "LK99",
+    "RtnMsg": "訊息代碼: LK99，其他錯誤",
+    "BankRtnMsg": "其他錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "M01",
+    "RtnMsg": "訊息代碼: M01，付款金額超過限額",
+    "BankRtnMsg": "付款金額超過限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "M02",
+    "RtnMsg": "訊息代碼 : M02，付款金額不可小於等於零",
+    "BankRtnMsg": "付款金額不可小於等於零",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "M03",
+    "RtnMsg": "訊息代碼 : M03，付款人帳戶餘額不足。",
+    "BankRtnMsg": "付款人帳戶餘額不足。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "M08",
+    "RtnMsg": "訊息代碼 : M08，付款金額檢核錯誤。",
+    "BankRtnMsg": "付款金額檢核錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "O01",
+    "RtnMsg": "訊息代碼 : O01，行動裝置OTP驗證碼驗證錯誤一次。",
+    "BankRtnMsg": "行動裝置OTP驗證碼驗證錯誤一次。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "O02",
+    "RtnMsg": "訊息代碼 : O02，行動裝置OTP驗證碼驗證錯誤二次。",
+    "BankRtnMsg": "行動裝置OTP驗證碼驗證錯誤二次。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "O03",
+    "RtnMsg": "訊息代碼 : O03，行動裝置OTP驗證碼驗證錯誤三次。",
+    "BankRtnMsg": "行動裝置OTP驗證碼驗證錯誤三次。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P02",
+    "RtnMsg": "訊息代碼 : P02，付款銀行代號有誤。",
+    "BankRtnMsg": "付款銀行代號有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P04",
+    "RtnMsg": "訊息代碼 : P04，付款人帳號檢核有誤。",
+    "BankRtnMsg": "付款人帳號檢核有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P05",
+    "RtnMsg": "訊息代碼 : P05，付款人帳號檢核有誤或帳號餘額不足。",
+    "BankRtnMsg": "付款人帳號檢核有誤或帳號餘額不足。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P07",
+    "RtnMsg": "訊息代碼 : P07，付款人帳號與統一編號不符。",
+    "BankRtnMsg": "付款人帳號與統一編號不符。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P08",
+    "RtnMsg": "訊息代碼: P08，此用戶不得扣該付款人帳號(非網銀約摒晚出帳號)",
+    "BankRtnMsg": "此用戶不得扣該付款人帳號(非網銀約摒晚出帳號)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P16",
+    "RtnMsg": "訊息代碼: P16，已關閉非約定轉帳功能，不可執行非約轉",
+    "BankRtnMsg": "已關閉非約定轉帳功能，不可執行非約轉",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P19",
+    "RtnMsg": "訊息代碼 : P19，非約定轉帳失敗 付款帳號已關閉台幣 非約定轉帳功能。",
+    "BankRtnMsg": "非約定轉帳失敗 付款帳號已關閉台幣 非約定轉帳功能。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P20",
+    "RtnMsg": "訊息代碼 : P20，非約定轉帳失敗 付款帳號已關閉外幣非約定轉帳功能。",
+    "BankRtnMsg": "非約定轉帳失敗 付款帳號已關閉外幣非約定轉帳功能。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P21",
+    "RtnMsg": "訊息代碼 : P21，非約定轉帳失敗 付款帳號尚未開啟非約定轉帳功能。",
+    "BankRtnMsg": "非約定轉帳失敗 付款帳號尚未開啟非約定轉帳功能。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "P22",
+    "RtnMsg": "訊息代碼 : P22，其他錯誤。",
+    "BankRtnMsg": "其他錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "R02",
+    "RtnMsg": "訊息代碼 : R02，收款銀行代號錯誤。",
+    "BankRtnMsg": "收款銀行代號錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "R04",
+    "RtnMsg": "收款帳號檢核有誤。",
+    "BankRtnMsg": "訊息代碼 : R04，收款帳號檢核有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "R05",
+    "RtnMsg": "訊息代碼 : R05，收帳號號檢核有誤 帳戶非正常使用中 。",
+    "BankRtnMsg": "收帳號號檢核有誤 帳戶非正常使用中 。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "008",
+    "BankRtnCode": "R08",
+    "RtnMsg": "訊息代碼 : R08，收帳帳號與收款統一編號不符。",
+    "BankRtnMsg": "收帳帳號與收款統一編號不符。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG913",
+    "RtnMsg": "訊息代碼:XG913，單筆提款轉帳超過非約定限額全行",
+    "BankRtnMsg": "單筆提款轉帳超過非約定限額全行",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG914",
+    "RtnMsg": "訊息代碼:XG914，單筆轉帳超過約定轉帳限額全行",
+    "BankRtnMsg": "單筆轉帳超過約定轉帳限額全行",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG916",
+    "RtnMsg": "訊息代碼:XG916，單筆轉帳金額超過非約定限額個人",
+    "BankRtnMsg": "單筆轉帳金額超過非約定限額個人",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG917",
+    "RtnMsg": "訊息代碼:XG917，單筆轉帳金額超過約定限額個人",
+    "BankRtnMsg": "單筆轉帳金額超過約定限額個人",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG919",
+    "RtnMsg": "訊息代碼:XG919，累計轉帳超過每日非約定轉帳限額個人",
+    "BankRtnMsg": "累計轉帳超過每日非約定轉帳限額個人",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG920",
+    "RtnMsg": "訊息代碼:XG920，累計轉帳超過每日約定轉帳限額個人",
+    "BankRtnMsg": "累計轉帳超過每日約定轉帳限額個人",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG921",
+    "RtnMsg": "訊息代碼:XG921，禁止自動化非約定轉帳",
+    "BankRtnMsg": "禁止自動化非約定轉帳",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG959",
+    "RtnMsg": "訊息代碼:XG959，累計非約定轉帳超過非約定轉帳限額全行",
+    "BankRtnMsg": "累計非約定轉帳超過非約定轉帳限額全行",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG960",
+    "RtnMsg": "訊息代碼:XG960，累計非約定轉帳超過約定轉帳限額全行",
+    "BankRtnMsg": "累計非約定轉帳超過約定轉帳限額全行",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG961",
+    "RtnMsg": "訊息代碼:XG961，累計約定轉帳金額超過約定轉帳限額（全行）",
+    "BankRtnMsg": "累計約定轉帳金額超過約定轉帳限額（全行）",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XG989",
+    "RtnMsg": "訊息代碼:XG989，累計非約定轉帳超過非約定轉帳限額全行（月）",
+    "BankRtnMsg": "累計非約定轉帳超過非約定轉帳限額全行（月）",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP001",
+    "RtnMsg": "訊息代碼:XP001，該戶已轉靜止戶",
+    "BankRtnMsg": "該戶已轉靜止戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP036",
+    "RtnMsg": "訊息代碼:XP036，活期存款主檔讀取錯誤",
+    "BankRtnMsg": "活期存款主檔讀取錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP037",
+    "RtnMsg": "訊息代碼:XP037，活期存款主檔鎖定錯誤",
+    "BankRtnMsg": "活期存款主檔鎖定錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP040",
+    "RtnMsg": "訊息代碼:XP040，活期存款主檔寫檔錯誤",
+    "BankRtnMsg": "活期存款主檔寫檔錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP072",
+    "RtnMsg": "訊息代碼:XP072，查無活期存款主檔",
+    "BankRtnMsg": "查無活期存款主檔",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP077",
+    "RtnMsg": "訊息代碼:XP077，資料庫讀取錯誤",
+    "BankRtnMsg": "資料庫讀取錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP078",
+    "RtnMsg": "訊息代碼:XP078，查無資料",
+    "BankRtnMsg": "查無資料",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP079",
+    "RtnMsg": "訊息代碼:XP079，日期錯誤",
+    "BankRtnMsg": "日期錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP105",
+    "RtnMsg": "訊息代碼:XP105，幣別輸入錯誤",
+    "BankRtnMsg": "幣別輸入錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP127",
+    "RtnMsg": "訊息代碼:XP127，資料輸入錯誤",
+    "BankRtnMsg": "資料輸入錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP153",
+    "RtnMsg": "訊息代碼:XP153，客戶統一編號與主檔內容不符",
+    "BankRtnMsg": "客戶統一編號與主檔內容不符",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP194",
+    "RtnMsg": "訊息代碼:XP194，主檔內容檢查有誤",
+    "BankRtnMsg": "主檔內容檢查有誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP195",
+    "RtnMsg": "訊息代碼:XP195，與規定不符，不准交易",
+    "BankRtnMsg": "與規定不符，不准交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP201",
+    "RtnMsg": "訊息代碼:XP201，請先補摺再執行交易",
+    "BankRtnMsg": "請先補摺再執行交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP202",
+    "RtnMsg": "訊息代碼:XP202，該存戶已申請止付",
+    "BankRtnMsg": "該存戶已申請止付",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP203",
+    "RtnMsg": "訊息代碼:XP203，該活存戶已申請止付",
+    "BankRtnMsg": "該活存戶已申請止付",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP205",
+    "RtnMsg": "訊息代碼:XP205，餘額不足",
+    "BankRtnMsg": "餘額不足",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP206",
+    "RtnMsg": "訊息代碼:XP206，交易金額錯誤",
+    "BankRtnMsg": "交易金額錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP219",
+    "RtnMsg": "訊息代碼:XP219，活存支號不符",
+    "BankRtnMsg": "活存支號不符",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP221",
+    "RtnMsg": "訊息代碼:XP221，該存戶已銷戶",
+    "BankRtnMsg": "該存戶已銷戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP222",
+    "RtnMsg": "訊息代碼:XP222，該活存戶已銷戶",
+    "BankRtnMsg": "該活存戶已銷戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP231",
+    "RtnMsg": "訊息代碼:XP231，餘額不足，提款金額不可超過最高可提款金額",
+    "BankRtnMsg": "餘額不足，提款金額不可超過最高可提款金額",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP232",
+    "RtnMsg": "訊息代碼:XP232，僅提供ＡＴＭ可作此交易",
+    "BankRtnMsg": "僅提供ＡＴＭ可作此交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP282",
+    "RtnMsg": "訊息代碼:XP282，票券款項交割專戶限轉帳交易",
+    "BankRtnMsg": "票券款項交割專戶限轉帳交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP283",
+    "RtnMsg": "訊息代碼:XP283，票券款項交割專戶限原存行提款",
+    "BankRtnMsg": "票券款項交割專戶限原存行提款",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP290",
+    "RtnMsg": "訊息代碼:XP290，該帳號為解繳帳號請執行代理類交易",
+    "BankRtnMsg": "該帳號為解繳帳號請執行代理類交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP292",
+    "RtnMsg": "訊息代碼:XP292，守護天使保險金信託專戶限臨櫃",
+    "BankRtnMsg": "守護天使保險金信託專戶限臨櫃整批及 BIO",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP300",
+    "RtnMsg": "訊息代碼:XP300，ＴＩＴＡ長度錯誤",
+    "BankRtnMsg": "ＴＩＴＡ長度錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP348",
+    "RtnMsg": "訊息代碼:XP348，該戶已失蹤",
+    "BankRtnMsg": "該戶已失蹤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP349",
+    "RtnMsg": "訊息代碼:XP349，該戶已死亡",
+    "BankRtnMsg": "該戶已死亡",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP350",
+    "RtnMsg": "訊息代碼:XP350，該戶為禁制客戶",
+    "BankRtnMsg": "該戶為禁制客戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP351",
+    "RtnMsg": "訊息代碼:XP351，該戶禁止提款",
+    "BankRtnMsg": "該戶禁止提款",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP357",
+    "RtnMsg": "訊息代碼:XP357，本戶為警示帳戶",
+    "BankRtnMsg": "本戶為警示帳戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP358",
+    "RtnMsg": "訊息代碼:XP358，該戶帳戶暫禁",
+    "BankRtnMsg": "該戶帳戶暫禁",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP363",
+    "RtnMsg": "訊息代碼:XP363，自動化現金 / 自動化現金轉帳限額檔讀取錯誤",
+    "BankRtnMsg": "自動化現金 / 自動化現金轉帳限額檔讀取錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP365",
+    "RtnMsg": "訊息代碼:XP365，交易來源錯誤",
+    "BankRtnMsg": "交易來源錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP378",
+    "RtnMsg": "訊息代碼:XP378，科目錯誤",
+    "BankRtnMsg": "科目錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP387",
+    "RtnMsg": "訊息代碼:XP387，警示帳戶衍生之管制帳戶，僅能作臨櫃存提",
+    "BankRtnMsg": "警示帳戶衍生之管制帳戶，僅能作臨櫃存提",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP389",
+    "RtnMsg": "訊息代碼:XP389，自行篩選管制帳戶，僅能作臨櫃交易",
+    "BankRtnMsg": "自行篩選管制帳戶，僅能作臨櫃交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP390",
+    "RtnMsg": "訊息代碼:XP390，該帳戶已登錄暫停自動化交易付款",
+    "BankRtnMsg": "該帳戶已登錄暫停自動化交易付款",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP399",
+    "RtnMsg": "訊息代碼:XP399，該戶已凍結",
+    "BankRtnMsg": "該戶已凍結",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP458",
+    "RtnMsg": "訊息代碼:XP458，本帳戶有止扣、事故及連絡事項尚未解除，請洽原存行辦理　　",
+    "BankRtnMsg": "本帳戶有止扣、事故及連絡事項尚未解除，請洽原存行辦理　　",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP480",
+    "RtnMsg": "訊息代碼:XP480，未完成盡職調查作業，限制交易。",
+    "BankRtnMsg": "未完成盡職調查作業，限制交易。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP482",
+    "RtnMsg": "訊息代碼:XP482，密碼錯誤",
+    "BankRtnMsg": "密碼錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "009",
+    "BankRtnCode": "XP483",
+    "RtnMsg": "訊息代碼:XP483，您有資料未更新，請儘速與營業單位或客服中心聯繫Ｆ６１００",
+    "BankRtnMsg": "您有資料未更新，請儘速與營業單位或客服中心聯繫Ｆ６１００",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼 : 0000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0108",
+    "RtnMsg": "訊息代碼:0108，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "id沒有對應的帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0110",
+    "RtnMsg": "訊息代碼:0110，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "帳戶已結清",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0266",
+    "RtnMsg": "訊息代碼:0266，帳戶餘額不足，如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "可用餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "5749",
+    "RtnMsg": "訊息代碼:5749，今天交易限額已用完囉！當日累積交易金額不能超過十萬元喔！如有疑問，請洽台北富邦銀行客服中心02-8751-6665。",
+    "BankRtnMsg": "統編交易金額超過當日累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "6246",
+    "RtnMsg": "訊息代碼 : 6246，該用戶帳戶戶況有問題，請與北富銀客服聯絡",
+    "BankRtnMsg": "該用戶帳戶戶況有問題，請與北富銀客服聯絡",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "7546",
+    "RtnMsg": "訊息代碼:7546，這個月交易限額用完囉！當月累積交易金額不能超過二十萬元喔！如有疑問，請洽台北富邦銀行客服中心02-8751-6665。",
+    "BankRtnMsg": "統編交易金額超過當月累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E@75",
+    "RtnMsg": "訊息代碼:E@75，當日累積交易金額不能超過十萬元喔！如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "統編交易金額超過當日累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E@76",
+    "RtnMsg": "訊息代碼:E@76，當月累積交易金額不能超過二十萬元喔！如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "統編交易金額超過當月累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E001",
+    "RtnMsg": "訊息代碼:E001，目前系統忙碌中，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "尚未產生OTP或找不到此綁定帳戶無法處理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E002",
+    "RtnMsg": "訊息代碼:E002，帳戶無法執行帳戶連結設定，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "存款帳號科目錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E003",
+    "RtnMsg": "訊息代碼:E003，輸入的生日錯誤",
+    "BankRtnMsg": "生日比較錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E004",
+    "RtnMsg": "訊息代碼:E004，目前系統忙碌中，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "驗章錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E005",
+    "RtnMsg": "訊息代碼:E003，輸入的驗證碼錯誤",
+    "BankRtnMsg": "檢核交易驗證碼錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E200",
+    "RtnMsg": "訊息代碼:E200，請洽請洽台北富邦銀行24小時客服中心02-8751-6665",
+    "BankRtnMsg": "帳戶目前未綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E207",
+    "RtnMsg": "訊息代碼:E207，您所輸入的帳號已完成帳戶連結設定",
+    "BankRtnMsg": "該電支帳號已被綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E208",
+    "RtnMsg": "訊息代碼:E208，您在台北富邦銀行尚未留存手機號碼，請洽台北富邦銀行24小時客服中心02-8751-6665",
+    "BankRtnMsg": "客戶無留存手機",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E249",
+    "RtnMsg": "訊息代碼:E249，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "死亡戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E277",
+    "RtnMsg": "訊息代碼:E277，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "法院扣押戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E337",
+    "RtnMsg": "訊息代碼:E337，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "問題戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E365",
+    "RtnMsg": "訊息代碼:E365，交易失敗，您的帳戶餘額不足喔！",
+    "BankRtnMsg": "提款金額（解約轉帳餘額）大於餘額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E381",
+    "RtnMsg": "訊息代碼:E381，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "結清戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E439",
+    "RtnMsg": "訊息代碼:E439，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "靜止尾存戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E903",
+    "RtnMsg": "訊息代碼:E903，目前系統忙碌中，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "電文通訊發生錯誤(X105..ESB無法連線等)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E905",
+    "RtnMsg": "訊息代碼:E905，帳戶無法執行帳戶連結設定，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "此帳戶不為此人所有",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E999",
+    "RtnMsg": "訊息代碼:E999，目前系統忙碌中，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "未知的錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA31",
+    "RtnMsg": "訊息代碼:E431，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "退休人員已存款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA32",
+    "RtnMsg": "訊息代碼:EA32，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "備償專戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA33",
+    "RtnMsg": "訊息代碼:EA33，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "靜止尾存戶總戶不允許有摺交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA61",
+    "RtnMsg": "訊息代碼:EA61，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "退休戶不允許ＡＴＭ存入",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA64",
+    "RtnMsg": "訊息代碼:EA64，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "警示戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA75",
+    "RtnMsg": "訊息代碼:EA759，當日累積交易金額不能超過十萬元喔！如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "交易金額超過當日累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA76",
+    "RtnMsg": "訊息代碼:EA76，當月累積交易金額不能超過二十萬元喔！如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "交易金額超過當月累積限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA78",
+    "RtnMsg": "訊息代碼:EA78，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "戶況為網路市集戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA80",
+    "RtnMsg": "訊息代碼:EA80，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "家庭發展戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA83",
+    "RtnMsg": "訊息代碼:EA83，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "暫時禁提戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA93",
+    "RtnMsg": "訊息代碼:EA93，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "應收帳款專戶，不可提款，轉支限 888",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EA95",
+    "RtnMsg": "訊息代碼:EA95，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "政治獻金戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EC67",
+    "RtnMsg": "訊息代碼:EC679，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "救助專戶不可執行",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EC75",
+    "RtnMsg": "訊息代碼:EC75，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "靜止尾存戶總戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "ED45",
+    "RtnMsg": "訊息代碼:ED45，該筆交易失敗，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "衍生管制戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EP99",
+    "RtnMsg": "單筆交易金額不能超過五萬元喔!如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "交易金額超過單筆限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "EQ82",
+    "RtnMsg": "訊息代碼:EQ82，提領帳戶限綁定本人存款帳戶！如有疑問，請洽台北富邦客服02-8751-6665",
+    "BankRtnMsg": "入帳統編與主檔統編不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，交易成功",
+    "BankRtnMsg": "交易成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL01",
+    "RtnMsg": "訊息代碼: AL01，帳戶狀況有問題，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "帳戶狀況有問題",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL02",
+    "RtnMsg": "訊息代碼: AL02，持卡人與帳戶ID不符，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "持卡人與帳戶ID不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL03",
+    "RtnMsg": "訊息代碼: AL03，此帳號已申請，請重新申請或使用舊帳號登入",
+    "BankRtnMsg": "此卡片帳號已申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL04",
+    "RtnMsg": "訊息代碼: AL04，此帳號已啟用，請直接登入使用",
+    "BankRtnMsg": "此卡片帳號已啟用",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL05",
+    "RtnMsg": "訊息代碼: AL05，查無回寫資料",
+    "BankRtnMsg": "查無回寫資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL06",
+    "RtnMsg": "訊息代碼: AL06，綁定-查無回寫資料",
+    "BankRtnMsg": "綁定-查無回寫資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL07",
+    "RtnMsg": "訊息代碼: AL07，請設定交易額度",
+    "BankRtnMsg": "找不到法定交易額度設定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL08",
+    "RtnMsg": "訊息代碼: AL08，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "圈存電文發生錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL09",
+    "RtnMsg": "訊息代碼: AL09，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "電文內部轉換錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL10",
+    "RtnMsg": "訊息代碼: AL10，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "不合法的憑證簽章值",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL11",
+    "RtnMsg": "訊息代碼: AL11，連結帳戶已綁定",
+    "BankRtnMsg": "連結帳戶已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL12",
+    "RtnMsg": "訊息代碼: AL12，無此Access Token紀錄，請重新綁定",
+    "BankRtnMsg": "無此Access Token記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL13",
+    "RtnMsg": "訊息代碼: AL13，查無此綁定紀錄，請重新綁定",
+    "BankRtnMsg": "查無此綁定記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL14",
+    "RtnMsg": "訊息代碼: AL14，連結帳戶已紀錄，請重新綁定",
+    "BankRtnMsg": "連結帳戶已取消",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL15",
+    "RtnMsg": "訊息代碼: AL15，扣款失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "扣款失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL16",
+    "RtnMsg": "訊息代碼: AL16，餘額不足，請加值後再進行交易或設定自動加值/差額加值",
+    "BankRtnMsg": "餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL17",
+    "RtnMsg": "訊息代碼: AL17，查無此付款紀錄",
+    "BankRtnMsg": "查無此付款記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL18",
+    "RtnMsg": "訊息代碼: AL18，退款金額大於原訂單金額，請重新設定或聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "退款金額大於原訂單金額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL19",
+    "RtnMsg": "訊息代碼: AL19，提領入帳失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "提領入帳失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL20",
+    "RtnMsg": "訊息代碼: AL20，查無交易紀錄",
+    "BankRtnMsg": "查無交易紀錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL21",
+    "RtnMsg": "訊息代碼: AL21，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "綁定資料(尚未做Token 驗證不奏)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL22",
+    "RtnMsg": "訊息代碼: AL22，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL23",
+    "RtnMsg": "訊息代碼: AL23，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "此卡片帳號尚未啟用",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL24",
+    "RtnMsg": "訊息代碼: AL24，交易金額超過您設定的單筆限額，請重新設定",
+    "BankRtnMsg": "交易金額超過客戶設定單筆限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL25",
+    "RtnMsg": "訊息代碼: AL25，交易金額超過您設定的每日限額，請重新設定",
+    "BankRtnMsg": "交易金額超過客戶設定每日限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL26",
+    "RtnMsg": "訊息代碼: AL26，交易金額超過您設定的每月限額，請重新設定",
+    "BankRtnMsg": "交易金額超過客戶設定每月限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL27",
+    "RtnMsg": "訊息代碼: AL27，交易金額超過法定交易單筆限額50萬元，交易失敗",
+    "BankRtnMsg": "交易金額超過法定交易單筆限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL28",
+    "RtnMsg": "訊息代碼: AL28，交易金額超過法定交易每日限額50萬元，交易失敗",
+    "BankRtnMsg": "交易金額超過法定交易每日限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL29",
+    "RtnMsg": "訊息代碼: AL29，付款類型不紀錄，請重新綁定",
+    "BankRtnMsg": "付款類型不等於1 || 此筆交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL30",
+    "RtnMsg": "訊息代碼: AL30，退款金額超過可退金額，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "退款金額超過可退金額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL31",
+    "RtnMsg": "訊息代碼: AL31，交易金額超過法定交易每月限額，交易失敗",
+    "BankRtnMsg": "交易金額超過法定交易每月限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL32",
+    "RtnMsg": "訊息代碼: AL32，廠商帳號未紀錄，請重新綁定",
+    "BankRtnMsg": "廠商帳號未設定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL33",
+    "RtnMsg": "訊息代碼: AL33，廠商名稱未紀錄，請重新綁定",
+    "BankRtnMsg": "廠商名稱未設定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL34",
+    "RtnMsg": "訊息代碼: AL34，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "本行業務規範，一個業者只可綁一個帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL35",
+    "RtnMsg": "訊息代碼: AL35，傳送信件失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Send Mail is failure",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL36",
+    "RtnMsg": "訊息代碼: AL36，接收信件失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "get Mail is failure",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL37",
+    "RtnMsg": "訊息代碼: AL37，接收ID失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "get IDType is failure",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL38",
+    "RtnMsg": "訊息代碼: AL38，官網未綁定存款帳號，請進行綁定",
+    "BankRtnMsg": "官網未綁定存款帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL39",
+    "RtnMsg": "訊息代碼: AL39，系統處理時間逾時(超過10秒)",
+    "BankRtnMsg": "系統日期時間 - sendMsgTime > 10秒",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL40",
+    "RtnMsg": "訊息代碼: AL40，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "限額檔不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL41",
+    "RtnMsg": "訊息代碼: AL41，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "法定限額檔不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL42",
+    "RtnMsg": "訊息代碼: AL42，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Call HsmService is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL43",
+    "RtnMsg": "訊息代碼: AL43，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Call CMSService is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL44",
+    "RtnMsg": "訊息代碼: AL44，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Call BANCSService is timed out",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL45",
+    "RtnMsg": "訊息代碼: AL45，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Call BANCSService is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL46",
+    "RtnMsg": "訊息代碼: AL46，生日欄位輸入錯誤，請重新輸入",
+    "BankRtnMsg": "Parsing birthday is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL47",
+    "RtnMsg": "訊息代碼: AL47，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Getting StatementNav is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL48",
+    "RtnMsg": "訊息代碼: AL48，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "交易失效時間未設定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL49",
+    "RtnMsg": "訊息代碼: AL49，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Call BANCSService is error,HttpStatus not = OK",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL50",
+    "RtnMsg": "訊息代碼: AL50，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "OrderNo is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL51",
+    "RtnMsg": "訊息代碼: AL51，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "MbrIdno is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL52",
+    "RtnMsg": "訊息代碼: AL52，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "MbrActNo is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL53",
+    "RtnMsg": "訊息代碼: AL53，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "BnkActNo is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL54",
+    "RtnMsg": "訊息代碼: AL54，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "TxnAmt is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL55",
+    "RtnMsg": "訊息代碼: AL55，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "CooPerAtor is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL56",
+    "RtnMsg": "訊息代碼: AL56，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "FuseId is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL57",
+    "RtnMsg": "訊息代碼: AL57，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Msgid is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL58",
+    "RtnMsg": "訊息代碼: AL58，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "SendMsgTime is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL59",
+    "RtnMsg": "訊息代碼: AL59，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Txnseq is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL60",
+    "RtnMsg": "訊息代碼: AL60，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "get IDType is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL61",
+    "RtnMsg": "訊息代碼: AL61，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "get Content is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL62",
+    "RtnMsg": "訊息代碼: AL62，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "廠商名稱未設定(Mail)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL63",
+    "RtnMsg": "訊息代碼: AL63，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "同業者與存款帳號的訂單編號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL64",
+    "RtnMsg": "訊息代碼: AL64，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "電文欄位格式有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL65",
+    "RtnMsg": "訊息代碼: AL65，您的ID與綁定資料不相符，請重新輸入",
+    "BankRtnMsg": "客戶ID與綁定資料不相符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL66",
+    "RtnMsg": "訊息代碼: AL66，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Get clearData is error",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL67",
+    "RtnMsg": "訊息代碼: AL67，系統維護中，請稍後再嘗試",
+    "BankRtnMsg": "系統維護中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL68",
+    "RtnMsg": "訊息代碼: AL68，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "此Access Token狀態已使用",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL69",
+    "RtnMsg": "訊息代碼: AL69，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "TransType is invalid",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL70",
+    "RtnMsg": "訊息代碼: AL70，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "上行電文ID與Bancs取得之ID不相符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL71",
+    "RtnMsg": "訊息代碼: AL71，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "FNSCIF0003 returnCode is not 0000",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL86",
+    "RtnMsg": "訊息代碼: AL86，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "貸方類交易_提領轉帳無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL87",
+    "RtnMsg": "訊息代碼: AL87，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "InTxnLog無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL88",
+    "RtnMsg": "訊息代碼: AL88，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "Validate無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL89",
+    "RtnMsg": "訊息代碼: AL89，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "OutTxnLog無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL90",
+    "RtnMsg": "訊息代碼: AL90，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "綁定類交易_綁定交易無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL91",
+    "RtnMsg": "訊息代碼: AL91，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "綁定類交易_官網TOKEN驗證無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL92",
+    "RtnMsg": "訊息代碼: AL92，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "綁定類交易_官網綁定帳號回覆無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL93",
+    "RtnMsg": "訊息代碼: AL93，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "綁定類交易_取消綁定交易無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL94",
+    "RtnMsg": "訊息代碼: AL94，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "借方類交易_付款無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL95",
+    "RtnMsg": "訊息代碼: AL95，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "借方類交易_儲值無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL96",
+    "RtnMsg": "訊息代碼: AL96，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "貸方類交易_退款無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL97",
+    "RtnMsg": "訊息代碼: AL97，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "貸方類交易_提領無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL98",
+    "RtnMsg": "訊息代碼: AL98，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "查詢類交易_綁定查詢無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "AL99",
+    "RtnMsg": "訊息代碼: AL99，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "查詢類交易_交易查詢無預期錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "ALXX",
+    "RtnMsg": "訊息代碼: ALXX，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "帳戶系統處理中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA01",
+    "RtnMsg": "訊息代碼: CA01，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(UnknownHostException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA02",
+    "RtnMsg": "訊息代碼: CA02，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(ConnectException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA03",
+    "RtnMsg": "訊息代碼: CA03，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(SocketTimeoutException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA04",
+    "RtnMsg": "訊息代碼: CA04，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS To CA(Other Exception)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA05",
+    "RtnMsg": "訊息代碼: CA05，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "CA Error(DatatypeConfigurationException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "CA06",
+    "RtnMsg": "訊息代碼: CA06，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "CA Error(Sign Check)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "FU01",
+    "RtnMsg": "訊息代碼: FU01，系統異常，請稍後再嘗試",
+    "BankRtnMsg": "系統異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "FU02",
+    "RtnMsg": "訊息代碼: FU02，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "查無FNS代號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "FU03",
+    "RtnMsg": "訊息代碼: FU03，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "FNS電文錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "HS01",
+    "RtnMsg": "訊息代碼: HS01，個資欄位加解密失敗，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "個資欄位加解密失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK01",
+    "RtnMsg": "訊息代碼: TK01，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Insert Data)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK02",
+    "RtnMsg": "訊息代碼: TK02，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Get Return Web Page)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK03",
+    "RtnMsg": "訊息代碼: TK03，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Get Token info from DB)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK04",
+    "RtnMsg": "訊息代碼: TK04，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Access TokenTime Format)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK05",
+    "RtnMsg": "訊息代碼: TK05，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Get Token Timeout Paramater)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "TK06",
+    "RtnMsg": "訊息代碼: TK06，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "AlsToken Error(Input Data not Match)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "WS01",
+    "RtnMsg": "訊息代碼: WS01，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(UnknownHostException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "WS02",
+    "RtnMsg": "訊息代碼: WS02，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(ConnectException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "WS03",
+    "RtnMsg": "訊息代碼: WS03，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(SocketTimeoutException)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "WS04",
+    "RtnMsg": "訊息代碼: WS04，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(Other Exception)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "WS05",
+    "RtnMsg": "訊息代碼: WS05，請聯繫國泰世華銀行客服 (02)2383-1000",
+    "BankRtnMsg": "WS ToBancs(Transfor XML Data)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，交易完成",
+    "BankRtnMsg": "交易完成",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "0302",
+    "RtnMsg": "訊息代碼: 0302，押碼錯誤",
+    "BankRtnMsg": "押碼錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "9200",
+    "RtnMsg": "訊息代碼: 9200， 身分認證失敗",
+    "BankRtnMsg": "身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "9400",
+    "RtnMsg": "訊息代碼: 9400， 驗章失敗",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "9992",
+    "RtnMsg": "訊息代碼: 9992， 手機號碼未留存",
+    "BankRtnMsg": "手機號碼未留存",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999， 系統處理異常",
+    "BankRtnMsg": " 系統處理異常",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E001",
+    "RtnMsg": "訊息代碼: E001，查無此筆帳號",
+    "BankRtnMsg": "查無此筆帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E002",
+    "RtnMsg": "訊息代碼: E002，未申請網路銀行",
+    "BankRtnMsg": "未申請網路銀行",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E003",
+    "RtnMsg": "訊息代碼: E003，該綁定帳號已結清",
+    "BankRtnMsg": "該綁定帳號已結清",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E006",
+    "RtnMsg": "訊息代碼: E006，讀取資料庫錯誤",
+    "BankRtnMsg": "讀取資料庫錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E007",
+    "RtnMsg": "訊息代碼: E007，查無欲查詢之交易",
+    "BankRtnMsg": "查無欲查詢之交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E010",
+    "RtnMsg": "訊息代碼: E010，會員生日輸入錯誤",
+    "BankRtnMsg": "會員生日輸入錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E013",
+    "RtnMsg": "訊息代碼: E013，未留存電子信箱",
+    "BankRtnMsg": "未留存電子信箱",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E019",
+    "RtnMsg": "訊息代碼: E019，會員代號錯誤",
+    "BankRtnMsg": "會員代號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E025",
+    "RtnMsg": "訊息代碼: E025，交易類別錯誤",
+    "BankRtnMsg": "交易類別錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E033",
+    "RtnMsg": "訊息代碼: E033，超過限額",
+    "BankRtnMsg": "超過限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E035",
+    "RtnMsg": "訊息代碼: E035，該帳戶未開放轉帳",
+    "BankRtnMsg": "該帳戶未開放轉帳",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E036",
+    "RtnMsg": "訊息代碼: E036，欲綁定帳號無網銀",
+    "BankRtnMsg": "欲綁定帳號無網銀",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E038",
+    "RtnMsg": "訊息代碼: E038，存款餘額不足",
+    "BankRtnMsg": "存款餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E047",
+    "RtnMsg": "訊息代碼: E047，身分證號錯誤",
+    "BankRtnMsg": "身分證號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E048",
+    "RtnMsg": "訊息代碼: E048，僅限個人戶使用",
+    "BankRtnMsg": "僅限個人戶使用",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E049",
+    "RtnMsg": "訊息代碼: E049，該綁定帳號已拒絕",
+    "BankRtnMsg": "該綁定帳號已拒絕",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E057",
+    "RtnMsg": "訊息代碼: E057，交易帳號錯誤",
+    "BankRtnMsg": "交易帳號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E150",
+    "RtnMsg": "訊息代碼: E150，金額不符",
+    "BankRtnMsg": "金額不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "050",
+    "BankRtnCode": "E524",
+    "RtnMsg": "訊息代碼: E524， 首次綁定不可綁定第三類數位存款帳戶",
+    "BankRtnMsg": "首次綁定不可綁定第三類數位存款帳戶",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，綁定成功(一般台幣存款帳戶)",
+    "BankRtnMsg": "綁定成功(一般台幣存款帳戶)",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息代碼: 0001，綁定成功(第一類數位存款帳戶)",
+    "BankRtnMsg": "綁定成功(第一類數位存款帳戶)",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "0002",
+    "RtnMsg": "訊息代碼: 0002，綁定成功(第二類數位存款帳戶)",
+    "BankRtnMsg": "綁定成功(第二類數位存款帳戶)",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "0003",
+    "RtnMsg": "訊息代碼: 0003，綁定成功(第三類數位存款帳戶)",
+    "BankRtnMsg": "綁定成功(第三類數位存款帳戶)",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "-1",
+    "RtnMsg": "訊息代碼: -1，銀行端交易處理中",
+    "BankRtnMsg": "交易查詢結果",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "2001",
+    "RtnMsg": "訊息代碼: 2001，本次交易可輸入交易驗證碼的時間已逾時，請重新操作",
+    "BankRtnMsg": "本次交易可輸入交易驗證碼的時間已逾時，請重新操作",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "2002",
+    "RtnMsg": "訊息代碼: 2002，您輸入的驗證碼有誤，請重新輸入",
+    "BankRtnMsg": "您輸入的驗證碼有誤，請重新確認後再輸入。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "2003",
+    "RtnMsg": "訊息代碼: 2003，您輸入的交易驗證碼錯誤超過上限，請重新操作",
+    "BankRtnMsg": "您輸入的交易驗證碼錯誤超過上限，請重新操作。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "2004",
+    "RtnMsg": "訊息代碼: 2004，您未留存正確手機號碼，請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "您未留存正確手機號碼，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "2005",
+    "RtnMsg": "訊息代碼: 2005，很抱歉，目前無法進行簡訊發送， 如有疑問請洽新光銀行客服專線(02)2171-1055",
+    "BankRtnMsg": "很抱歉，目前無法進行簡訊發送， 如有疑問，請洽新光銀行客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3001",
+    "RtnMsg": "訊息代碼: 3001，帳戶連結未開放外幣帳戶及定存帳戶，請重新確認後再進行連結設定服務",
+    "BankRtnMsg": "帳戶連結未開放外幣帳戶及定存帳戶，請重新確認後再進行連結設定服務。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3002",
+    "RtnMsg": "訊息代碼: 3002，帳戶無法連結，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶無法連結，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3003",
+    "RtnMsg": "訊息代碼: 3003，非本人帳號無法設定，請重新確認後再進行連結設定服務",
+    "BankRtnMsg": "非本人帳號無法設定，請重新確認後再進行連結設定服務。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3004",
+    "RtnMsg": "訊息代碼: 3004，帳戶餘額不足，請重新確認後再進行付款/儲值",
+    "BankRtnMsg": "此帳戶餘額不足，請重新確認後再進行付款/儲值。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3005",
+    "RtnMsg": "訊息代碼: 3005，帳戶已連結，請重新確認後再進行連結設定服務",
+    "BankRtnMsg": "此帳戶已連結，請重新確認後再進行連結設定服務。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3006",
+    "RtnMsg": "訊息代碼: 3006，資料錯誤次數已達上限，請於隔日再進行帳號連結設定",
+    "BankRtnMsg": "資料錯誤次數已達上限，請於隔日再進行帳號連結設定。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3007",
+    "RtnMsg": "訊息代碼: 3007，您未完成帳戶連結設定，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "您未完成帳戶連結設定，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3008",
+    "RtnMsg": "訊息代碼: 3008，帳戶無法提領/退款，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶無法提領/退款，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3009",
+    "RtnMsg": "訊息代碼: 3009，帳戶無法提領/退款，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "已超過此帳戶交易限額，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3010",
+    "RtnMsg": "訊息代碼: 3010，已超過此帳戶交易限額，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "已超過此帳戶交易限額，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3011",
+    "RtnMsg": "訊息代碼: 3011，已超過此帳戶交易限額，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶無法付款/儲值，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3012",
+    "RtnMsg": "訊息代碼: 3012，已超過此帳戶交易限額，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶無法付款/儲值，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3013",
+    "RtnMsg": "訊息代碼: 3013，帳戶無法付款/儲值，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶無法付款/儲值，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3014",
+    "RtnMsg": "訊息代碼: 3014，帳戶無法付款/儲值，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶目前無法進行交易，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3015",
+    "RtnMsg": "訊息代碼: 3015，帳戶目前無法進行交易，請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "此帳戶目前無法進行交易，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3016",
+    "RtnMsg": "訊息代碼: 3016，查無此交易資料，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "查無此交易資料，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3017",
+    "RtnMsg": "訊息代碼: 3017，您的退款金額已超過原訂單金額，無法進行退款，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "您的退款金額已超過原訂單金額，無法進行退款，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3018",
+    "RtnMsg": "訊息代碼: 3018，操作已逾時，請重新操作",
+    "BankRtnMsg": "您已逾時，請重新操作。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3019",
+    "RtnMsg": "訊息代碼: 3019，操作已逾時，請重新操作",
+    "BankRtnMsg": "您已逾時，請重新操作",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3020",
+    "RtnMsg": "訊息代碼: 3020，您所輸入的資料有誤，請重新確認",
+    "BankRtnMsg": "您所輸入的資料有誤，請重新確認。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3021",
+    "RtnMsg": "訊息代碼: 3021，您所輸入的資料有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "您所輸入的資料有誤，請重新確認或洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3022",
+    "RtnMsg": "訊息代碼: 3022，您所輸入的資料有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "您所輸入的資料有誤，請重新確認或洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3023",
+    "RtnMsg": "訊息代碼: 3023，交易處理中，請稍後查詢，如有疑問請洽客服專線(02)2171-1055",
+    "BankRtnMsg": "交易處理中，請稍後查詢，若有疑問，請洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "3024",
+    "RtnMsg": "訊息代碼: 3024，系統維護中，請稍候再操作，不便之處，敬請見諒",
+    "BankRtnMsg": "系統目前正進行維護中，請您稍候再使用，不便之處，敬請見諒。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "7401",
+    "RtnMsg": "訊息代碼: 7401，連線逾時，請重新操作。",
+    "BankRtnMsg": "連線逾時，請重新操作。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "7402",
+    "RtnMsg": "訊息代碼: 7402，連線失敗。",
+    "BankRtnMsg": "連線失敗。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9901",
+    "RtnMsg": "訊息代碼: 9901，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1055。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9902",
+    "RtnMsg": "訊息代碼: 9902，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1056。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9903",
+    "RtnMsg": "訊息代碼: 9903，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1057。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9904",
+    "RtnMsg": "訊息代碼: 9904，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1058。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9905",
+    "RtnMsg": "訊息代碼: 9905，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1059。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9906",
+    "RtnMsg": "訊息代碼: 9906，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1060。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9907",
+    "RtnMsg": "訊息代碼: 9907，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1061。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9908",
+    "RtnMsg": "訊息代碼: 9908，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1062。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9909",
+    "RtnMsg": "訊息代碼: 9909，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1063。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "103",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999，資料驗證有誤，請重新確認或洽客服專線(02)2171-1055",
+    "BankRtnMsg": "資料驗證有誤，請重新確認或洽客服專線(02)2171-1064。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "0000",
+    "RtnMsg": "執行成功",
+    "BankRtnMsg": "執行成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "0020",
+    "RtnMsg": "訊息代碼: 0020，ＣＡＰＦＬＡＧ不符。",
+    "BankRtnMsg": "ＣＡＰＦＬＡＧ不符。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1005",
+    "RtnMsg": "訊息代碼:1005，查無此帳號，請再次確認，謝謝",
+    "BankRtnMsg": "無此帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1007",
+    "RtnMsg": "訊息代碼:1007，此為終止戶，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "終止戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1012",
+    "RtnMsg": "訊息代碼:1012，存款餘額不足，請進行儲值作業，謝謝。",
+    "BankRtnMsg": "存款餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1014",
+    "RtnMsg": "訊息代碼:1014，帳戶已轉移，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳戶已轉移",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1016",
+    "RtnMsg": "訊息代碼:1016，帳戶為拒絕往來戶，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳戶為拒絕往來戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1205",
+    "RtnMsg": "訊息代碼:1205，您所輸入的帳號無資料，請再次確認，謝謝。",
+    "BankRtnMsg": "您所輸入的帳號無資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1208",
+    "RtnMsg": "訊息代碼:1208，系統因故無法處理交易，請電洽郵局客服人員為您服務",
+    "BankRtnMsg": "檔案存取錯誤通知中心",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1215",
+    "RtnMsg": "訊息代碼: 1215，系統維護中。",
+    "BankRtnMsg": "系統維護中。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "1901",
+    "RtnMsg": "訊息代碼: 1901，暫停狀態此交易暫停作業。",
+    "BankRtnMsg": "暫停狀態此交易暫停作業。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2002",
+    "RtnMsg": "訊息代碼:2002，已綁定郵局帳戶",
+    "BankRtnMsg": "已申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2028",
+    "RtnMsg": "訊息代碼:2028，提款超出上限，請重新設定",
+    "BankRtnMsg": "提款超出上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2054",
+    "RtnMsg": "訊息代碼:2054，重複綁定郵局帳戶，請再次確認，謝謝。",
+    "BankRtnMsg": "重複建檔",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2092",
+    "RtnMsg": "訊息代碼:2092，已終止轉帳",
+    "BankRtnMsg": "綁定帳戶付款已解除",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2204",
+    "RtnMsg": "訊息代碼:2204，已申請終止網路服務，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "已申請終止網路服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2210",
+    "RtnMsg": "訊息代碼:2210，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2211",
+    "RtnMsg": "訊息代碼:2211，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2232",
+    "RtnMsg": "訊息代碼:2232，您申請的網路郵局使用者代號及網路密碼已逾期失效，請以網路ATM或攜帶相關證件至郵局臨櫃辦理重設。",
+    "BankRtnMsg": "您申請的網路郵局使用者代號及網路密碼已逾期失效，請以網路ATM或攜帶相關證件至郵局臨櫃辦理重設。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2248",
+    "RtnMsg": "訊息代碼:2248，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2262",
+    "RtnMsg": "訊息代碼:2262，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2310",
+    "RtnMsg": "訊息代碼:2310，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2345",
+    "RtnMsg": "訊息代碼:2345，帳戶為靜止戶，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳戶為靜止戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2359",
+    "RtnMsg": "訊息代碼:2359，身分證字號檢核有誤，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "身分證號檢核有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2426",
+    "RtnMsg": "訊息代碼:2426，手機及E-mail未建檔，請先進行建檔，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "手機及eMail未鍵檔",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2468",
+    "RtnMsg": "訊息代碼:2468，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "2533",
+    "RtnMsg": "訊息代碼: 2533，ROUTING CODE NOT ACTIVE 。",
+    "BankRtnMsg": "ROUTING CODE NOT ACTIVE 。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "5104",
+    "RtnMsg": "訊息代碼:5104，您申請的網路郵局使用者代號及網路密碼已逾期失效，請以網路ATM或攜帶相關證件至郵局臨櫃辦理重設。",
+    "BankRtnMsg": "您申請的網路郵局使用者代號及網路密碼已逾期失效，請以網路ATM或攜帶相關證件至郵局臨櫃辦理重設。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "5249",
+    "RtnMsg": "訊息代碼:5249，帳戶已轉出，無法登入，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳戶已轉出，無法登入",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "5281",
+    "RtnMsg": "訊息代碼:5281，您目前無法使用身分證字號登入功能，如您有申請網路帳號，請以「存簿/劃撥帳號」登入，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您目前無法使用身分證號登入功能，如您有申請網路帳號，請以「存簿/劃撥帳號」登入。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "5286",
+    "RtnMsg": "訊息代碼:5286，您尚未申辦網路郵局服務，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您尚未申辦網路郵局服務。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "5289",
+    "RtnMsg": "訊息代碼:5289，您的登入方式為「身分證字號」登入，請使用身分證字號登入網路郵局！",
+    "BankRtnMsg": "您的登入方式為「身分證號」登入，請使用身分證號登入網路郵局！",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6005",
+    "RtnMsg": "訊息代碼:6005，您的資料有問題，請洽郵局",
+    "BankRtnMsg": "轉入帳戶為問題帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6502",
+    "RtnMsg": "訊息代碼:6502，密碼錯誤，請重新輸入，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "密碼錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6537",
+    "RtnMsg": "訊息代碼:6537，公教戶不得做此交易",
+    "BankRtnMsg": "公教戶無法辦理提領交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6585",
+    "RtnMsg": "訊息代碼:6585，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6600",
+    "RtnMsg": "訊息代碼:6600，基於網路交易安全考量，首次登入網路郵局者，請至網路郵局利用「變更網路密碼及使用者代號功能」，立即變更「網路密碼」及「使用者代號」，以維護帳戶安全，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "基於網路交易安全考量，首次登入網路郵局者，請至網路郵局利用「變更網路密碼及使用者代號功能」，立即變更「網路密碼」及「使用者代號」，以維帳戶安全",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6632",
+    "RtnMsg": "訊息代碼:6632，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6642",
+    "RtnMsg": "訊息代碼:6642，密碼錯誤次數連續超過5次，請明日再做嘗試。",
+    "BankRtnMsg": "密碼錯誤次數連續超過5次",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6643",
+    "RtnMsg": "使用者代號錯誤，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "使用者代號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6644",
+    "RtnMsg": "訊息代碼:6644，使用者代號錯誤次數連續超過5次，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "使用者代號錯誤次數連續超過5次",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6646",
+    "RtnMsg": "訊息代碼:6646，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6657",
+    "RtnMsg": "訊息代碼:6657，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "6667",
+    "RtnMsg": "訊息代碼:6667，特殊專戶不受理其他存款",
+    "BankRtnMsg": "特殊專戶無法辦理提領交易",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9000",
+    "RtnMsg": "訊息代碼:9000，輸入資料有誤，請重新輸入，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "輸入資料有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9001",
+    "RtnMsg": "訊息代碼:9001，交易失敗，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9002",
+    "RtnMsg": "訊息代碼:9002，帳號錯誤，請重新輸入，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9100",
+    "RtnMsg": "訊息代碼:9100，來源IP 不正確，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "來源IP 不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9101",
+    "RtnMsg": "訊息代碼:9101，中華郵政服務停用中，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "服務停用中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9200",
+    "RtnMsg": "訊息代碼:9200，身分認證失敗，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9201",
+    "RtnMsg": "訊息代碼:9201，帳號未約定，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "帳號未約定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9202",
+    "RtnMsg": "訊息代碼:9202，交易資料不存在，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "交易資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9203",
+    "RtnMsg": "訊息代碼:9003，未綁定郵保鑣，身分認證失敗",
+    "BankRtnMsg": "未綁定郵保鑣，身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9204",
+    "RtnMsg": "訊息代碼:9004，未申請郵保鑣，且未留存email資料",
+    "BankRtnMsg": "未申請郵保鑣，且未留存email資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9205",
+    "RtnMsg": "訊息代碼:9005，已申請郵保鑣但尚未完成綁定，且未留存email資料",
+    "BankRtnMsg": "已申請郵保鑣但尚未完成綁定，且未留存email資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9206",
+    "RtnMsg": "訊息代碼:9006，已完成郵保鑣綁定，但未留存email資料",
+    "BankRtnMsg": "已完成郵保鑣綁定，但未留存email資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9207",
+    "RtnMsg": "訊息代碼:9007，未申請郵保鑣綁定",
+    "BankRtnMsg": "未申請郵保鑣綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9208",
+    "RtnMsg": "訊息代碼:9008，已申請郵保鑣但尚未完成綁定",
+    "BankRtnMsg": "已申請郵保鑣但尚未完成綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9209",
+    "RtnMsg": "訊息代碼:9209，EMAIL資料建檔錯誤，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "EMAIL資料建檔錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9210",
+    "RtnMsg": "訊息代碼:9210，留存郵局之手機號碼或E-mail資料有誤，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "留存郵局之手機號碼或EMAIL資料有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9300",
+    "RtnMsg": "訊息代碼:9300，驗章失敗，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9301",
+    "RtnMsg": "訊息代碼:9301，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "解密失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9401",
+    "RtnMsg": "訊息代碼:9401，憑證資料未約定，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "憑證資料未約定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9500",
+    "RtnMsg": "訊息代碼:9500，MAC值不符，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "MAC值不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9600",
+    "RtnMsg": "訊息代碼:9600，郵局系統維護中，無法連結郵局帳戶交易，維護時間請洽郵局客服專線：0800-700-365",
+    "BankRtnMsg": "系統維護中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9901",
+    "RtnMsg": "訊息代碼:9901，首次登入，為維護帳戶安全，請先至網路郵局變更「使用者代號」及「網路密碼」。請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "首次登入，為維護帳戶安全，請先至網路郵局變更「使用者代號」及「網路密碼」。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9902",
+    "RtnMsg": "訊息代碼:9902，您的登入帳號與設定連結帳號不符，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的登入帳號與設定連結帳號不符。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9903",
+    "RtnMsg": "訊息代碼:9903，您登入帳號的身分證字號與進行驗證的身分證字號不符，請重新確認，謝謝，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您登入帳號的身分證號與進行驗證的身分證號不符。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9904",
+    "RtnMsg": "訊息代碼:9904，您登入的身分證號與進行驗證的身分證字號不符，請重新確認，謝謝，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您登入的身分證號與進行驗證的身分證號不符。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9905",
+    "RtnMsg": "訊息代碼:9905，您帳戶總覽資料無此連結帳號，請重新確認，謝謝，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您帳戶總覽資料無此連結帳號。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9906",
+    "RtnMsg": "訊息代碼:9906，您的身分證領補換資料有誤。如為本日領證者，請次一營業日再進行本查驗作業。請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的身分證領補換資料有誤。如為本日領證者，請次一營業日再進行本查驗作業。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9907",
+    "RtnMsg": "訊息代碼:9907，您的資料有問題，請聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "您的資料有問題，我們無法為您服務，請於營業時間內洽立帳郵局辦理。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9908",
+    "RtnMsg": "訊息代碼:9908，簡訊驗證碼輸入錯誤，請重新設定，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "簡訊驗證碼輸入錯誤，請重新設定。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9909",
+    "RtnMsg": "訊息代碼:9909，授權驗證作業操作逾時，請重新設定，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "授權驗證作業操作逾時，請重新設定。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "700",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼:9999，系統異常，請稍後再嘗試，或聯繫郵局客服專線：0800-700-365",
+    "BankRtnMsg": "系統異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息代碼: 0001，必要欄位未提供",
+    "BankRtnMsg": "必要欄位未提供",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0002",
+    "RtnMsg": "訊息代碼: 0002，參數不正確",
+    "BankRtnMsg": "參數不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0003",
+    "RtnMsg": "訊息代碼: 0003，您已取消帳戶連結綁定",
+    "BankRtnMsg": "您已取消帳戶連結綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0004",
+    "RtnMsg": "訊息代碼: 0004，來源IP不正確",
+    "BankRtnMsg": "來源IP不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0005",
+    "RtnMsg": "訊息代碼: 0005，資料處理異常",
+    "BankRtnMsg": "資料處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0006",
+    "RtnMsg": "訊息代碼: 0006，驗章失敗",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0100",
+    "RtnMsg": "訊息代碼: 0100，OTP簡訊錯誤次數已達3次",
+    "BankRtnMsg": "OTP簡訊錯誤次數已達3次",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0101",
+    "RtnMsg": "訊息代碼: 0101，驗證OTP資料不存在",
+    "BankRtnMsg": "驗證OTP資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0102",
+    "RtnMsg": "訊息代碼: 0102，申請綁定的OTP資料不一致",
+    "BankRtnMsg": "申請綁定的OTP資料不一致",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0103",
+    "RtnMsg": "訊息代碼: 0103，非約轉密碼驗證失敗",
+    "BankRtnMsg": "非約轉密碼驗證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "0104",
+    "RtnMsg": "訊息代碼: 0104，手機號碼格式錯誤",
+    "BankRtnMsg": "手機號碼格式錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1000",
+    "RtnMsg": "訊息代碼: 1000，本服務僅限自然人申請",
+    "BankRtnMsg": "本服務僅限自然人申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1001",
+    "RtnMsg": "訊息代碼: 1001，您於元大銀行的帳戶已有綁定icash Pay。",
+    "BankRtnMsg": "您於元大銀行的帳戶已有綁定icash Pay。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1002",
+    "RtnMsg": "訊息代碼: 1002，此非您名下的帳號，請輸入本人的存款帳號。",
+    "BankRtnMsg": "此非您名下的帳號，請輸入本人的存款帳號。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1003",
+    "RtnMsg": "訊息代碼: 1003，您輸入的資料與元大銀行留存的資料不一致，請重新確認。",
+    "BankRtnMsg": "您輸入的資料與元大銀行留存的資料不一致，請重新確認。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1004",
+    "RtnMsg": "訊息代碼: 1004，未符合可綁定或儲值的帳戶類別。",
+    "BankRtnMsg": "未符合可綁定或儲值的帳戶類別。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1005",
+    "RtnMsg": "訊息代碼: 1005，未符合綁定或約定連結扣款/提領條件。",
+    "BankRtnMsg": "未符合綁定或約定連結扣款/提領條件。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1006",
+    "RtnMsg": "訊息代碼: 1006，未符合綁定或約定連結扣款/提領條件。",
+    "BankRtnMsg": "未符合綁定或約定連結扣款/提領條件。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1010",
+    "RtnMsg": "訊息代碼: 1010，您於元大銀行未留存手機號碼",
+    "BankRtnMsg": "您於元大銀行未留存手機號碼",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1011",
+    "RtnMsg": "訊息代碼: 1011，您於元大銀行未留存e-mail",
+    "BankRtnMsg": "您於元大銀行未留存e-mail",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1012",
+    "RtnMsg": "訊息代碼: 1012，此帳戶非約定連結扣款帳戶",
+    "BankRtnMsg": "此帳戶非約定連結扣款帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1013",
+    "RtnMsg": "訊息代碼: 1013，電支帳戶號碼有誤",
+    "BankRtnMsg": "電支帳戶號碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1014",
+    "RtnMsg": "訊息代碼: 1014，您的帳戶餘額不足",
+    "BankRtnMsg": "您的帳戶餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1015",
+    "RtnMsg": "訊息代碼: 1015，您已超出轉出限額規範",
+    "BankRtnMsg": "您已超出轉出限額規範",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1016",
+    "RtnMsg": "訊息代碼: 1016，交易失敗",
+    "BankRtnMsg": "交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1017",
+    "RtnMsg": "訊息代碼: 1017，非電支業者轉出帳號",
+    "BankRtnMsg": "非電支業者轉出帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1018",
+    "RtnMsg": "訊息代碼: 1018，icash Pay會員代號未綁定",
+    "BankRtnMsg": "icash Pay會員代號未綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1019",
+    "RtnMsg": "訊息代碼: 1019，目前無法使用提領交易，請稍後再試",
+    "BankRtnMsg": "目前無法使用提領交易，請稍後再試",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1020",
+    "RtnMsg": "訊息代碼: 1020，請確認與本行往來狀態",
+    "BankRtnMsg": "請確認與本行往來狀態",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1021",
+    "RtnMsg": "訊息代碼: 1021，未符合綁定或約定連結扣款/提領條件。",
+    "BankRtnMsg": "未符合綁定或約定連結扣款/提領條件。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1022",
+    "RtnMsg": "訊息代碼: 1022，未符合綁定或約定連結扣款/提領條件。",
+    "BankRtnMsg": "未符合綁定或約定連結扣款/提領條件。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1023",
+    "RtnMsg": "訊息代碼: 1023，您已超出轉出限額規範",
+    "BankRtnMsg": "您已超出轉出限額規範",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1024",
+    "RtnMsg": "訊息代碼: 1024，您已超出轉出限額規範",
+    "BankRtnMsg": "您已超出轉出限額規範",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1025",
+    "RtnMsg": "訊息代碼: 1025，轉帳失敗-該帳戶尚有證券待繳款",
+    "BankRtnMsg": "轉帳失敗-該帳戶尚有證券待繳款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1026",
+    "RtnMsg": "訊息代碼: 1026，存款帳號輸入錯誤，請再次確認",
+    "BankRtnMsg": "存款帳號輸入錯誤，請再次確認",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1027",
+    "RtnMsg": "訊息代碼: 1027，會員代號錯誤。",
+    "BankRtnMsg": "會員代號錯誤。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1028",
+    "RtnMsg": "訊息代碼: 1028，查無此資料",
+    "BankRtnMsg": "查無此資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1029",
+    "RtnMsg": "訊息代碼: 1029，您已取消帳戶連結綁定",
+    "BankRtnMsg": "您已取消帳戶連結綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1030",
+    "RtnMsg": "訊息代碼: 1030，您於元大銀行設定夜間暫停交易服務，該時段無法進行交易。",
+    "BankRtnMsg": "您於元大銀行設定夜間暫停交易服務，該時段無法進行交易。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1032",
+    "RtnMsg": "訊息代碼 : 1032，您的數位帳戶無法執行此交易，請至臨櫃或線上辦理帳戶升級。",
+    "BankRtnMsg": "您的數位帳戶無法執行此交易，請至臨櫃或線上辦理帳戶升級。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1998",
+    "RtnMsg": "訊息代碼: 1998，交易處理中",
+    "BankRtnMsg": "交易處理中",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "1999",
+    "RtnMsg": "訊息代碼: 1999，交易狀態不明",
+    "BankRtnMsg": "交易狀態不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "806",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999，交易錯誤",
+    "BankRtnMsg": "交易錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，成功",
+    "BankRtnMsg": "成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0100",
+    "RtnMsg": "訊息代碼: 0100，JSON訊息封套格式錯誤",
+    "BankRtnMsg": "JSON訊息封套格式錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0101",
+    "RtnMsg": "訊息代碼: 0101，交易內文訊息格式錯誤",
+    "BankRtnMsg": "交易內文訊息格式錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0200",
+    "RtnMsg": "訊息代碼: 0200，HSM亂碼化設備故障",
+    "BankRtnMsg": "HSM亂碼化設備故障",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0201",
+    "RtnMsg": "訊息代碼: 0201，交易簽章驗證錯誤",
+    "BankRtnMsg": "交易簽章驗證錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0202",
+    "RtnMsg": "訊息代碼: 0202，交易內文解密失敗",
+    "BankRtnMsg": "交易內文解密失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0300",
+    "RtnMsg": "訊息代碼: 0300，資料欄位不允許空值",
+    "BankRtnMsg": "資料欄位不允許空值",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0301",
+    "RtnMsg": "訊息代碼: 0301，資料查度過長",
+    "BankRtnMsg": "資料查度過長",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0302",
+    "RtnMsg": "訊息代碼: 0302，資料格式有誤",
+    "BankRtnMsg": "資料格式有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0303",
+    "RtnMsg": "訊息代碼: 0303，交易編號重複",
+    "BankRtnMsg": "交易編號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0304",
+    "RtnMsg": "訊息代碼: 0304，商戶代號與公司代碼不符",
+    "BankRtnMsg": "商戶代號與公司代碼不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0305",
+    "RtnMsg": "訊息代碼: 0305，會員編號與身分證字號不符",
+    "BankRtnMsg": "會員編號與身分證字號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0306",
+    "RtnMsg": "訊息代碼: 0306，該身分證字號已有會員編號",
+    "BankRtnMsg": "該身分證字號已有會員編號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0307",
+    "RtnMsg": "訊息代碼: 0307，該身分證字號已開戶或申請中",
+    "BankRtnMsg": "該身分證字號已開戶或申請中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0308",
+    "RtnMsg": "訊息代碼: 0308，無此(申請)交易編號或該交易失敗",
+    "BankRtnMsg": "無此(申請)交易編號或該交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0309",
+    "RtnMsg": "訊息代碼: 0309，會員編號或身分證字號不符",
+    "BankRtnMsg": "會員編號或身分證字號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0400",
+    "RtnMsg": "訊息代碼: 0400，查無使用者於本行存戶資料",
+    "BankRtnMsg": "查無使用者於本行存戶資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0401",
+    "RtnMsg": "訊息代碼: 0401，使用者已綁定帳號",
+    "BankRtnMsg": "使用者已綁定帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0402",
+    "RtnMsg": "訊息代碼: 0402，申請連結約定帳戶時效已過",
+    "BankRtnMsg": "申請連結約定帳戶時效已過",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0403",
+    "RtnMsg": "訊息代碼: 0403，無此商戶代號",
+    "BankRtnMsg": "無此商戶代號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0404",
+    "RtnMsg": "訊息代碼: 0404，商戶代號與公司代號不符",
+    "BankRtnMsg": "商戶代號與公司代號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0405",
+    "RtnMsg": "訊息代碼: 0405，該會員已綁定",
+    "BankRtnMsg": "該會員已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0406",
+    "RtnMsg": "訊息代碼: 0406，無此會員代號",
+    "BankRtnMsg": "無此會員代號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0407",
+    "RtnMsg": "訊息代碼: 0407，無此token",
+    "BankRtnMsg": "無此token",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0408",
+    "RtnMsg": "訊息代碼: 0408，商戶或商戶會員資料錯誤",
+    "BankRtnMsg": "商戶或商戶會員資料錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0409",
+    "RtnMsg": "訊息代碼: 0409，MMA綁定步驟錯誤",
+    "BankRtnMsg": "MMA綁定步驟錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0410",
+    "RtnMsg": "訊息代碼: 0410，已有交易帳號綁定",
+    "BankRtnMsg": "已有交易帳號綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0411",
+    "RtnMsg": "訊息代碼: 0411，token失效或逾期",
+    "BankRtnMsg": "token失效或逾期",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0412",
+    "RtnMsg": "訊息代碼: 0412，交易編號重複",
+    "BankRtnMsg": "交易編號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0413",
+    "RtnMsg": "訊息代碼: 0413，虛擬帳號與專業代號不符",
+    "BankRtnMsg": "虛擬帳號與專業代號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0414",
+    "RtnMsg": "訊息代碼: 0414，使用者於本行已有實體帳戶",
+    "BankRtnMsg": "使用者於本行已有實體帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0415",
+    "RtnMsg": "訊息代碼: 0415，使用者於本行已有數位帳戶",
+    "BankRtnMsg": "使用者於本行已有數位帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0416",
+    "RtnMsg": "訊息代碼: 0416，數位帳戶不符",
+    "BankRtnMsg": "數位帳戶不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0500",
+    "RtnMsg": "訊息代碼: 0500，交易帳號未綁定",
+    "BankRtnMsg": "交易帳號未綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0501",
+    "RtnMsg": "訊息代碼: 0501，交易帳號已解除綁定",
+    "BankRtnMsg": "交易帳號已解除綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0502",
+    "RtnMsg": "訊息代碼: 0502，交易帳號失效",
+    "BankRtnMsg": "交易帳號失效",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0503",
+    "RtnMsg": "訊息代碼: 0503，無此交易帳號",
+    "BankRtnMsg": "無此交易帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0504",
+    "RtnMsg": "訊息代碼: 0504，無此訂單號",
+    "BankRtnMsg": "無此訂單號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0505",
+    "RtnMsg": "訊息代碼: 0505，交易金額不符",
+    "BankRtnMsg": "交易金額不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0506",
+    "RtnMsg": "訊息代碼: 0506，該訂單已退款",
+    "BankRtnMsg": "該訂單已退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0507",
+    "RtnMsg": "訊息代碼: 0507，無此交易編號",
+    "BankRtnMsg": "無此交易編號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0508",
+    "RtnMsg": "訊息代碼: 0508，無此自有資金帳號",
+    "BankRtnMsg": "無此自有資金帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0509",
+    "RtnMsg": "訊息代碼: 0509，ID與交易帳號持有人不一致",
+    "BankRtnMsg": "ID與交易帳號持有人不一致",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0600",
+    "RtnMsg": "訊息代碼: 0600，使用者帳戶餘額不足",
+    "BankRtnMsg": "使用者帳戶餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0601",
+    "RtnMsg": "訊息代碼: 0601，單筆交易金額超過限額",
+    "BankRtnMsg": "單筆交易金額超過限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0602",
+    "RtnMsg": "訊息代碼: 0602，當日交易額度已滿",
+    "BankRtnMsg": "當日交易額度已滿",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0603",
+    "RtnMsg": "訊息代碼: 0603，當月交易額度已滿",
+    "BankRtnMsg": "當月交易額度已滿",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0604",
+    "RtnMsg": "訊息代碼: 0604，帳戶餘額低於被止扣圈存金額或嘴高提領款額或授信額度不足",
+    "BankRtnMsg": "帳戶餘額低於被止扣圈存金額或嘴高提領款額或授信額度不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0605",
+    "RtnMsg": "訊息代碼: 0605，主機發生錯誤交易失敗",
+    "BankRtnMsg": "主機發生錯誤交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0700",
+    "RtnMsg": "訊息代碼: 0700，交易代碼有誤",
+    "BankRtnMsg": "交易代碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0701",
+    "RtnMsg": "訊息代碼: 0701，公司英文代碼有誤",
+    "BankRtnMsg": "公司英文代碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0800",
+    "RtnMsg": "訊息代碼: 0800，查無相關資料",
+    "BankRtnMsg": "查無相關資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0801",
+    "RtnMsg": "訊息代碼: 0801，查詢條件不足",
+    "BankRtnMsg": "查詢條件不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0900",
+    "RtnMsg": "訊息代碼: 0900，交易結果Email通知失敗",
+    "BankRtnMsg": "交易結果Email通知失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "0901",
+    "RtnMsg": "訊息代碼: 0901，約定帳戶連結結果通知失敗",
+    "BankRtnMsg": "約定帳戶連結結果通知失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "9000",
+    "RtnMsg": "訊息代碼: 9000，系統服務暫停",
+    "BankRtnMsg": "系統服務暫停",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "9001",
+    "RtnMsg": "訊息代碼: 9001，主機連線逾時",
+    "BankRtnMsg": "主機連線逾時",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "807",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999，系統發生不明錯誤",
+    "BankRtnMsg": "系統發生不明錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "0000",
+    "RtnMsg": "執行成功",
+    "BankRtnMsg": "執行成功, 無錯誤發生",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息接收成功",
+    "BankRtnMsg": "訊息接收成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "0112",
+    "RtnMsg": "訊息代碼：0112，系統忙錄中，請稍後再試，如需服務，請洽詢台新銀行24小時客服專線(02)2655-3355。",
+    "BankRtnMsg": "系統忙錄中，請稍後再試，如需服務，請洽詢台新銀行24小時客服專線(02)2655-3355。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "0113",
+    "RtnMsg": "訊息代碼：0113，該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "BankRtnMsg": "該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "0266",
+    "RtnMsg": "訊息代碼:0266，餘額不足，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1001",
+    "RtnMsg": "訊息代碼:1001，基本資料取得失敗或異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "基本資料取得失敗或異常 (取得 CIF 資料失敗)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1002",
+    "RtnMsg": "訊息代碼:1002，帳戶資料取得失敗或異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "帳戶資料取得失敗或異常(歸戶電文發送失敗)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1003",
+    "RtnMsg": "訊息代碼:1003，無可綁定之帳號資料 ，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "無可綁定之帳號資料 (沒有符合條件的帳號)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1004",
+    "RtnMsg": "訊息代碼:1004，帳戶餘額資料取得失敗或異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "帳戶餘額資料取得失敗或異常(餘額電文發送失敗)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1007",
+    "RtnMsg": "訊息代碼:1007，帳戶為終止戶",
+    "BankRtnMsg": "帳戶為終止戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1014",
+    "RtnMsg": "訊息代碼:1014，帳戶已轉移",
+    "BankRtnMsg": "帳戶已轉移",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1016",
+    "RtnMsg": "訊息代碼:1016，帳戶為拒絕往來戶",
+    "BankRtnMsg": "帳戶為拒絕往來戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1017",
+    "RtnMsg": "訊息代碼:1017，帳戶非網銀客戶",
+    "BankRtnMsg": "帳戶非網銀客戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1205",
+    "RtnMsg": "訊息代碼:1205，查無資料",
+    "BankRtnMsg": "查無資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "2003",
+    "RtnMsg": "訊息代碼:2003，交易須本人帳號",
+    "BankRtnMsg": "交易須本人帳號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "2345",
+    "RtnMsg": "訊息代碼:2345，帳戶為靜止戶",
+    "BankRtnMsg": "帳戶為靜止戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "2426",
+    "RtnMsg": "訊息代碼:2426，手機或E-mail未建檔",
+    "BankRtnMsg": "手機或E-mail未建檔",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5001",
+    "RtnMsg": "訊息代碼:5001，會員服務狀態異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "會員服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5002",
+    "RtnMsg": "訊息代碼:5002，會員未開通服務，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "會員未開通服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5011",
+    "RtnMsg": "訊息代碼:5011，平台資料不存在，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "平台資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5012",
+    "RtnMsg": "訊息代碼:5012，平台服務狀態異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "平台服務狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5021",
+    "RtnMsg": "訊息代碼:5021，連結帳號不存在，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "連結帳號不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5022",
+    "RtnMsg": "訊息代碼:5022，連結帳號狀態異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "連結帳號狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5023",
+    "RtnMsg": "訊息代碼:5023，連結帳號已綁定，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "連結帳號已綁定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5024",
+    "RtnMsg": "訊息代碼:5024，連結帳號綁定處理異常 ，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "連結帳號綁定處理異常 (DB 異動失敗, 找不到 session key)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5025",
+    "RtnMsg": "訊息代碼:5025，查無連結帳號綁定記錄，請再次確認，或聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "查無連結帳號綁定記錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5026",
+    "RtnMsg": "訊息代碼：5026，該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "BankRtnMsg": "該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5030",
+    "RtnMsg": "訊息代碼：5030，會員電商平台服務狀態為暫停。",
+    "BankRtnMsg": "會員電商平台服務狀態為暫停",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5031",
+    "RtnMsg": "訊息代碼:5031，非跨場域店商不可傳入APPOS_ID",
+    "BankRtnMsg": "非跨場域店商不可傳入APPOS_ID",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5032",
+    "RtnMsg": "訊息代碼:5032，APPOS_ID不存在特店資料檔",
+    "BankRtnMsg": "APPOS_ID不存在特店資料檔",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5033",
+    "RtnMsg": "訊息代碼:5033，特店合約不存在",
+    "BankRtnMsg": "特店合約不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5034",
+    "RtnMsg": "訊息代碼:5034，特店合約已逾期",
+    "BankRtnMsg": "特店合約已逾期",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5459",
+    "RtnMsg": "訊息代碼：5459，該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "BankRtnMsg": "該帳戶無法使用，若有問題請洽詢本行24小時客服專線(02)2655-3355。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "6001",
+    "RtnMsg": "訊息代碼:6001，交易金額超出法定限額，請重新輸入。",
+    "BankRtnMsg": "交易金額超出法定限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "6002",
+    "RtnMsg": "訊息代碼:6002，交易金額超出自訂限額，請重新輸入。",
+    "BankRtnMsg": "交易金額超出自訂限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "6003",
+    "RtnMsg": "訊息代碼:6003，交易金額超出帳號限額，請重新輸入。",
+    "BankRtnMsg": "交易金額超出帳號限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7001",
+    "RtnMsg": "訊息代碼:7001，退款交易(原交易資料)不存在，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "退款交易(原交易資料)不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7002",
+    "RtnMsg": "訊息代碼:7002，已超過退款期限。",
+    "BankRtnMsg": "已超過退款期限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7003",
+    "RtnMsg": "訊息代碼:7003，退款金額超出原訂單金額，請重新確認。",
+    "BankRtnMsg": "退款金額超出原訂單金額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7004",
+    "RtnMsg": "訊息代碼:7004，交易訂單編號重覆，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "交易訂單編號重覆",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7005",
+    "RtnMsg": "訊息代碼:7005，虛擬帳號檢核失敗, 與平台企業編號不符，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "虛擬帳號檢核失敗, 與平台企業編號不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7006",
+    "RtnMsg": "訊息代碼:7006，交易資料不存在，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "交易資料不存在",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7010",
+    "RtnMsg": "訊息代碼:7010，交易失敗，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "交易失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7011",
+    "RtnMsg": "訊息代碼:7011，交易不明，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "交易不明 (1045 / 84023 電文發送失敗, 通訊異常)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7012",
+    "RtnMsg": "訊息代碼:7012，當日類累計交易金額不足，禁止退款",
+    "BankRtnMsg": "當日類累計交易金額不足，禁止退款",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7013",
+    "RtnMsg": "訊息代碼:7013，銷帳編號檢核失敗，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "銷帳編號檢核失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7021",
+    "RtnMsg": "訊息代碼:7021，累計交易金額異常，請重新設定或輸入，或聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "累計交易金額異常 (累算日月額度失敗-異動資料)",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9000",
+    "RtnMsg": "訊息代碼:9000，參數不正確，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "參數不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9001",
+    "RtnMsg": "訊息代碼:9001，跨場域電商未輸入APPOS_ID",
+    "BankRtnMsg": "跨場域電商未輸入APPOS_ID",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9100",
+    "RtnMsg": "訊息代碼:9100，來源IP 不正確，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "來源IP 不正確",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9101",
+    "RtnMsg": "訊息代碼:9101，MSG_NO參數重複",
+    "BankRtnMsg": "MSG_NO參數重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9200",
+    "RtnMsg": "訊息代碼:9200，身分認證失敗，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "身分認證失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9400",
+    "RtnMsg": "訊息代碼:9400，驗章失敗，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9401",
+    "RtnMsg": "訊息代碼:9401，憑證資料未約定，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "憑證資料未約定",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9500",
+    "RtnMsg": "訊息代碼:9500，MAC值不符",
+    "BankRtnMsg": "MAC值不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9900",
+    "RtnMsg": "訊息代碼:9900，您已取消操作，請重新操作，或聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "使用者取消操作",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9997",
+    "RtnMsg": "訊息代碼:9997，資料處理異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "資料處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9998",
+    "RtnMsg": "訊息代碼:9998，系統處理中, 交易不明，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "系統處理中, 交易不明",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼:9999，系統處理異常，請聯繫台新客服電話： (02)2655-3355",
+    "BankRtnMsg": "系統處理異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0000",
+    "RtnMsg": "訊息代碼: 0000，交易成功",
+    "BankRtnMsg": "交易成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0001",
+    "RtnMsg": "訊息代碼: 0001，Invalid JSON Format。",
+    "BankRtnMsg": "Invalid JSON Format。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0002",
+    "RtnMsg": "訊息代碼: 0002，銀行端交易處理中",
+    "BankRtnMsg": "ESB連線錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0003",
+    "RtnMsg": "訊息代碼: 0003，銀行端交易處理中",
+    "BankRtnMsg": "主機未定義ErrorCode",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0004",
+    "RtnMsg": "訊息代碼: 0004，Transaction Fail。",
+    "BankRtnMsg": "Transaction Fail。",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0005",
+    "RtnMsg": "訊息代碼: 0005，銀行端交易處理中",
+    "BankRtnMsg": "簽章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0006",
+    "RtnMsg": "訊息代碼: 0006，銀行端交易處理中",
+    "BankRtnMsg": "驗章失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0801",
+    "RtnMsg": "訊息代碼: 0801，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "系統忙碌中，請稍後再試",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "2999",
+    "RtnMsg": "訊息代碼: 2999，帳務系統暫停服務，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "帳務系統暫停服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "3011",
+    "RtnMsg": "訊息代碼: 3011，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "MAC驗證錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7003",
+    "RtnMsg": "訊息代碼: 7003，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "系統忙碌中，請稍後再試",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7005",
+    "RtnMsg": "訊息代碼: 7005，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "系統忙碌中，請稍後再試",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7006",
+    "RtnMsg": "訊息代碼: 7006，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "系統忙碌中，請稍後再試",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8200",
+    "RtnMsg": "訊息代碼: 8200，未留存Email，請重新輸入",
+    "BankRtnMsg": "未留存Email",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8201",
+    "RtnMsg": "訊息代碼: 8201，未申請OTP，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "未申請OTP",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8202",
+    "RtnMsg": "訊息代碼: 8202，未申請方便付連結帳戶，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "未申請方便付連結帳戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8204",
+    "RtnMsg": "訊息代碼: 8204，身分別非本國/外國自然人",
+    "BankRtnMsg": "身分別非本國/外國自然人",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8205",
+    "RtnMsg": "訊息代碼: 8205，資料驗證錯誤次數已超過當日上限，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "資料驗證錯誤次數已超過當日上限",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8206",
+    "RtnMsg": "訊息代碼: 8206，資料驗證有誤，請重新輸入",
+    "BankRtnMsg": "資料驗證有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8207",
+    "RtnMsg": "訊息代碼: 8207，交易金額超過帳戶每日限額，請重新輸入",
+    "BankRtnMsg": "交易金額超過帳戶每日限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8208",
+    "RtnMsg": "訊息代碼: 8208，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "沒有交易扣款紀錄，不可沖正",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8209",
+    "RtnMsg": "訊息代碼: 8209，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "沖正交易僅可沖正一次",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8210",
+    "RtnMsg": "訊息代碼: 8210，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "沖正交易與原交易扣款轉出入帳戶不同或金額不同，不可沖正",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8211",
+    "RtnMsg": "訊息代碼: 8211，交易金額超過帳戶單筆限額，請重新輸入，若有疑問請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "交易金額超過帳戶單筆限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8212",
+    "RtnMsg": "訊息代碼: 8212，交易金額超過帳戶每月限額，請重新輸入，若有疑問請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "交易金額超過帳戶每月限額",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8213",
+    "RtnMsg": "訊息代碼: 8213，無交易紀錄，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "無交易紀錄",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8215",
+    "RtnMsg": "訊息代碼: 8215，轉出帳號有誤，請重新輸入",
+    "BankRtnMsg": "轉出帳號與業者提供的不同",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8217",
+    "RtnMsg": "訊息代碼: 8217，系統定期維護中，暫時停止服務",
+    "BankRtnMsg": "系統因進行定期維護及程式更新暫時停止服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8218",
+    "RtnMsg": "訊息代碼: 8218，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "企業識別碼有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8219",
+    "RtnMsg": "訊息代碼: 8219，重複申請，請先確認帳戶連結狀態，或聯繫中國信託客服0203-08988",
+    "BankRtnMsg": "重複申請，請先確認帳戶連結狀態",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8220",
+    "RtnMsg": "訊息代碼: 8220，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "扣款交易帳號有誤，檢查碼不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8221",
+    "RtnMsg": "訊息代碼: 8221，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "扣款交易帳號不可重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8230",
+    "RtnMsg": "訊息代碼: 8230，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "業者代號(MerchantId)有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8234",
+    "RtnMsg": "訊息代碼: 8234，未成年人未經法定代理人同意申請，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "未成年人未經法定代理人同意申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8250",
+    "RtnMsg": "訊息代碼: 8250，OTP已申請未啟用，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "OTP已申請未啟用",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8299",
+    "RtnMsg": "訊息代碼: 8299，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "此筆查詢交易已沖正",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8888",
+    "RtnMsg": "訊息代碼: 8888，信用卡卡號錯誤，請重新輸入",
+    "BankRtnMsg": "Credit卡號錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9001",
+    "RtnMsg": "訊息代碼: 9001，身分證字號格式錯誤，請重新輸入",
+    "BankRtnMsg": "身份證字號格式錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9007",
+    "RtnMsg": "訊息代碼: 9007，網路銀行功能異常，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "網路銀行功能非正常可使用狀態",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9051",
+    "RtnMsg": "訊息代碼: 9051，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "此服務項目暫不開放",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9099",
+    "RtnMsg": "訊息代碼: 9099，系統暫停服務，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "系統暫停服務",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9101",
+    "RtnMsg": "訊息代碼: 9101，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "所選擇的查詢條件無資料",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9104",
+    "RtnMsg": "訊息代碼: 9104，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "結清戶",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9105",
+    "RtnMsg": "訊息代碼: 9105，帳戶狀態異常，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "帳戶狀態異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9107",
+    "RtnMsg": "訊息代碼: 9107，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "1.交易電文與綁定交易電文與綁定帳號帳號ID不符,2.解綁時電支帳號與帳戶持有人資料不符",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9234",
+    "RtnMsg": "訊息代碼: 9234，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "支存戶不可申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9257",
+    "RtnMsg": "訊息代碼: 9257，銀行端交易處理中",
+    "BankRtnMsg": "銀行系統忙碌中",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9258",
+    "RtnMsg": "訊息代碼: 9258，銀行端交易處理失敗",
+    "BankRtnMsg": "銀行端交易處理失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9303",
+    "RtnMsg": "訊息代碼: 9303，Debit卡/信用卡資料檢核失敗，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "Credit/Debit資料檢核失敗",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9402",
+    "RtnMsg": "訊息代碼: 9402，轉出帳號有誤，請重新輸入",
+    "BankRtnMsg": "轉出帳號有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9403",
+    "RtnMsg": "訊息代碼: 9403，轉入帳號有誤，請重新輸入",
+    "BankRtnMsg": "轉入帳號有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9404",
+    "RtnMsg": "訊息代碼: 9404，帳戶餘額不足，請重新輸入",
+    "BankRtnMsg": "帳戶餘額不足",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9426",
+    "RtnMsg": "訊息代碼: 9426，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "帳務交易序號重複",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9464",
+    "RtnMsg": "訊息代碼: 9464，未申請網銀，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "未申請網銀",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9560",
+    "RtnMsg": "訊息代碼: 9560，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "暫時無法受理此客戶交易，請客戶洽中信分行或客服查詢客戶洽中信分行或客服查詢",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9639",
+    "RtnMsg": "訊息代碼: 9639，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "未於本行留存統一證號",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9653",
+    "RtnMsg": "訊息代碼: 9653，外幣帳號不可申請",
+    "BankRtnMsg": "外幣帳號不可申請",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9924",
+    "RtnMsg": "訊息代碼: 9924，交易金額不得為零",
+    "BankRtnMsg": "交易金額不得為零",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9940",
+    "RtnMsg": "訊息代碼: 9940，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "OTP狀態有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9985",
+    "RtnMsg": "訊息代碼: 9985，請重新輸入",
+    "BankRtnMsg": "檔案有誤或系統異常",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9999",
+    "RtnMsg": "訊息代碼: 9999，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "系統忙碌中，請稍後再試(系統忙碌中或發生其他系統異常，若持續發生，請洽中國信託並請提供完整response 查詢)",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E801",
+    "RtnMsg": "訊息代碼: E801，Response 格式有誤",
+    "BankRtnMsg": "Response 格式有誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E803",
+    "RtnMsg": "訊息代碼: E803，系統忙碌中，請稍後再試",
+    "BankRtnMsg": "ESB 連線 time-out",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E904",
+    "RtnMsg": "Request 格式有誤",
+    "BankRtnMsg": "Request 格式有誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E999",
+    "RtnMsg": "電文內部錯誤",
+    "BankRtnMsg": "電文內部錯誤",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "HSMCE21",
+    "RtnMsg": "訊息代碼: HSMCE21，請聯繫中國信託銀行客服 0203-08988",
+    "BankRtnMsg": "帳戶暫禁，錯誤達三次",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "HSMCE23",
+    "RtnMsg": "訊息代碼: HSMCE23，密碼驗證錯誤，與前次輸入的驗證碼不同",
+    "BankRtnMsg": "密碼驗證錯誤，兩次輸入的驗證碼不同",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "HSMCE39",
+    "RtnMsg": "訊息代碼: HSMCE39，請重新輸入",
+    "BankRtnMsg": "授權碼已失效",
+    "MappingRtnCode": "7455"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0000",
+    "RtnMsg": "交易成功",
+    "BankRtnMsg": "交易成功",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0051",
+    "RtnMsg": "QRcode有誤，請重新確認(0051)。",
+    "BankRtnMsg": "[跨QR Code解析驗證交易]非財金標準QR Code解析驗證交易]非財金標準QR Code。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0052",
+    "RtnMsg": "QRcode有誤，請重新確認(0052)。",
+    "BankRtnMsg": "[跨QR Code解析驗證交易]財金標準QR Code規格欄位檢核異常。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0053",
+    "RtnMsg": "FIELD_48.tag40欄位進行EMVCo QR Code檢查CRC失敗。",
+    "BankRtnMsg": "FIELD_48.tag40欄位進行EMVCo QR Code檢查CRC失敗。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0054",
+    "RtnMsg": "已逾期，請重新確認(0054)。",
+    "BankRtnMsg": "已逾期，請重新確認(0054)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0087",
+    "RtnMsg": "尚未支援此交易服務，請重新確認(0087)。",
+    "BankRtnMsg": "尚未支援此交易服務，請重新確認(0087)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0089",
+    "RtnMsg": "驗證失敗，請重新確認(0089)。",
+    "BankRtnMsg": "驗證失敗，請重新確認(0089)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0101",
+    "RtnMsg": "訊息格式或內容編輯錯誤。",
+    "BankRtnMsg": "訊息格式或內容編輯錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0102",
+    "RtnMsg": "無效之回應代碼。",
+    "BankRtnMsg": "無效之回應代碼。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0104",
+    "RtnMsg": "財金公司與第三參加單位間之訊息發生一般檢核類之錯誤。",
+    "BankRtnMsg": "財金公司與第三參加單位間之訊息發生一般檢核類之錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0108",
+    "RtnMsg": "財金公司切換CD/ATM轉帳作業營業日至跨行結帳時段，財金公司檢核轉帳通知訊息之RESPONSE CODE非0001。",
+    "BankRtnMsg": "財金公司切換CD/ATM轉帳作業營業日至跨行結帳時段，財金公司檢核轉帳通知訊息之RESPONSE CODE非0001。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0201",
+    "RtnMsg": "發信單位未參加該跨行業務或系統暫時無法運作以致交易訊息無法傳送或FTAM 之屬性檔資料產生單位有誤。",
+    "BankRtnMsg": "發信單位未參加該跨行業務或系統暫時無法運作以致交易訊息無法傳送或FTAM 之屬性檔資料產生單位有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0202",
+    "RtnMsg": "發信單位該項跨行業務停止或暫停營業。",
+    "BankRtnMsg": "發信單位該項跨行業務停止或暫停營業。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0203",
+    "RtnMsg": "發信單位主機未在跨行作業運作狀態。",
+    "BankRtnMsg": "發信單位主機未在跨行作業運作狀態。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0204",
+    "RtnMsg": "收信單位未參加該跨行業務，或系統暫時無法運作以致交易訊息無法傳送或 FTAM 之屬性檔資料產生單位有誤。",
+    "BankRtnMsg": "收信單位未參加該跨行業務，或系統暫時無法運作以致交易訊息無法傳送或 FTAM 之屬性檔資料產生單位有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0205",
+    "RtnMsg": "收信單位該項跨行業務停止或暫停營業。",
+    "BankRtnMsg": "收信單位該項跨行業務停止或暫停營業。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0206",
+    "RtnMsg": "收信單位主機未在跨行作業運作狀態。",
+    "BankRtnMsg": "收信單位主機未在跨行作業運作狀態。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0301",
+    "RtnMsg": "押碼基碼(KEY)不同步。",
+    "BankRtnMsg": "押碼基碼(KEY)不同步。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0302",
+    "RtnMsg": "訊息押碼錯誤。",
+    "BankRtnMsg": "訊息押碼錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0304",
+    "RtnMsg": "亂碼化設備故障，或亂碼化設備因故無法正常回應。",
+    "BankRtnMsg": "亂碼化設備故障，或亂碼化設備因故無法正常回應。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0401",
+    "RtnMsg": "訊息之 MAPPING 欄位資料與原交易相關訊息之欄位資料不相符。",
+    "BankRtnMsg": "訊息之 MAPPING 欄位資料與原交易相關訊息之欄位資料不相符。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0501",
+    "RtnMsg": "端末機故障。",
+    "BankRtnMsg": "端末機故障。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0601",
+    "RtnMsg": "交易逾時，請返回並重新操作(0601)。",
+    "BankRtnMsg": "交易訊息發生 TIMEOUT。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0602",
+    "RtnMsg": "交易逾時，請返回並重新操作(0602)。",
+    "BankRtnMsg": "轉出單位交易訊息發生 TIMEOUT。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0701",
+    "RtnMsg": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理(0701)。",
+    "BankRtnMsg": "財金公司該項跨行業務暫停或停止營業。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0702",
+    "RtnMsg": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理(0702)。",
+    "BankRtnMsg": "財金公司主機未在跨行作業運作狀態。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0703",
+    "RtnMsg": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理(0703)。",
+    "BankRtnMsg": "財金公司跨行業務系統錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "0801",
+    "RtnMsg": "檔案故障。",
+    "BankRtnMsg": "檔案故障。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "1018",
+    "RtnMsg": "尚未支援此交易服務，請重新確認(1018)。",
+    "BankRtnMsg": "發信單位未參加該跨行業務或系統暫時無法運作以致交易訊息無法傳送或FTAM 之屬性檔資料產生單位有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "2999",
+    "RtnMsg": "其他類檢核錯誤，請重新操作或icash Pay24小時客服專線(0800-233-888)(2999)。",
+    "BankRtnMsg": "其他類檢核錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4201",
+    "RtnMsg": "提款、轉帳、預先授權、授權完成等交易之金額超過每次限額。",
+    "BankRtnMsg": "提款、轉帳、預先授權、授權完成等交易之金額超過每次限額。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4202",
+    "RtnMsg": "提款、預先授權、授權完成等交易之累計金額超過累計限額，或金融卡國際提款交易金額超過限額。",
+    "BankRtnMsg": "提款、預先授權、授權完成等交易之累計金額超過累計限額，或金融卡國際提款交易金額超過限額。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4203",
+    "RtnMsg": "提款、預先授權、授權完成等交易金額或金融卡國際提款交易金額錯誤。",
+    "BankRtnMsg": "提款、預先授權、授權完成等交易金額或金融卡國際提款交易金額錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4205",
+    "RtnMsg": "感應式交易金額超過累計限額。",
+    "BankRtnMsg": "感應式交易金額超過累計限額。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4206",
+    "RtnMsg": "存入或轉入單位檢核入帳交易金額，超過累計最高金額限額(4206)。",
+    "BankRtnMsg": "存入或轉入單位檢核入帳交易金額，超過累計最高金額限額。",
+    "MappingRtnCode": "2073"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4414",
+    "RtnMsg": "請重新確認卡號(4414)。",
+    "BankRtnMsg": "卡號有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4507",
+    "RtnMsg": "轉入帳戶檢核錯誤，請確認轉入帳戶資料是否正確並重新操作(4507)。",
+    "BankRtnMsg": "轉入帳戶狀況檢核。",
+    "MappingRtnCode": "2149"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4509",
+    "RtnMsg": "已約定之轉帳帳戶。",
+    "BankRtnMsg": "已約定之轉帳帳戶。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4511",
+    "RtnMsg": "無法檢核帳號，請重試確認(4511)。",
+    "BankRtnMsg": "發卡行回覆無法檢核帳號",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4601",
+    "RtnMsg": "提款累計次數超過累計限制次數，或累計交易次數超過免補登存摺之最高限制次數，或國際信用卡交易累計次數超過限制次數，需進行人工授權交易。",
+    "BankRtnMsg": "提款累計次數超過累計限制次數，或累計交易次數超過免補登存摺之最高限制次數，或國際信用卡交易累計次數超過限制次數，需進行人工授權交易。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4603",
+    "RtnMsg": "存入或轉入單位檢核入帳交易次數，超過累計最高次數。",
+    "BankRtnMsg": "存入或轉入單位檢核入帳交易次數，超過累計最高次數。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4701",
+    "RtnMsg": "無此交易。",
+    "BankRtnMsg": "無此交易。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4705",
+    "RtnMsg": "拒絕交易",
+    "BankRtnMsg": "拒絕交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4801",
+    "RtnMsg": "繳款類別有誤，請重新確認(4801)。",
+    "BankRtnMsg": "繳款類別有誤，請重新確認(4801)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4802",
+    "RtnMsg": "銷帳編號有誤，請重新確認(4802)。",
+    "BankRtnMsg": "銷帳編號檢查碼有誤 ；銷帳編號有誤 。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4803",
+    "RtnMsg": "繳款金額有誤，請重新確認(4803)。",
+    "BankRtnMsg": "繳款金額有誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4804",
+    "RtnMsg": "繳款期限有誤，請重新確認(4804)。",
+    "BankRtnMsg": "繳款期限有誤；逾期／未到",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4806",
+    "RtnMsg": "身分證號/營利事業統一編號有誤(4806)。",
+    "BankRtnMsg": "身份証號／營利事業統一編號有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4808",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(4808)。",
+    "BankRtnMsg": "此繳費項目暫停服務，請稍後再試(4808)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "4809",
+    "RtnMsg": "帳單已被繳納，請稍後再試(4809)。",
+    "BankRtnMsg": "帳單已被繳納，請稍後再試(4809)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "5004",
+    "RtnMsg": "中文欄位或變動長度欄位長度錯誤。",
+    "BankRtnMsg": "中文欄位或變動長度欄位長度錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "6101",
+    "RtnMsg": "跨行可用餘額小於零，不得交易。",
+    "BankRtnMsg": "跨行可用餘額小於零，不得交易。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "6102",
+    "RtnMsg": "結帳資料相符。",
+    "BankRtnMsg": "結帳資料相符。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8037",
+    "RtnMsg": "購貨日期錯誤。",
+    "BankRtnMsg": "購貨日期錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8101",
+    "RtnMsg": "IC金融卡交易驗證碼檢核錯誤。",
+    "BankRtnMsg": "IC金融卡交易驗證碼檢核錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8102",
+    "RtnMsg": "端末機交易驗證碼檢核錯誤。",
+    "BankRtnMsg": "端末機交易驗證碼檢核錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8104",
+    "RtnMsg": "IC金融卡交易序號重覆。",
+    "BankRtnMsg": "IC金融卡交易序號重覆。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8108",
+    "RtnMsg": "IC卡片序號錯誤，回發卡單位處理。",
+    "BankRtnMsg": "IC卡片序號錯誤，回發卡單位處理。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8115",
+    "RtnMsg": "IC卡備註欄位檢核有誤。",
+    "BankRtnMsg": "IC卡備註欄位檢核有誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8116",
+    "RtnMsg": "原交易已沖正。",
+    "BankRtnMsg": "原交易已沖正。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8117",
+    "RtnMsg": "交易狀態錯誤。",
+    "BankRtnMsg": "交易狀態錯誤。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8118",
+    "RtnMsg": "超出沖正允許期間。",
+    "BankRtnMsg": "超出沖正允許期間。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "8119",
+    "RtnMsg": "原交易為失敗交易。",
+    "BankRtnMsg": "原交易為失敗交易。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9004",
+    "RtnMsg": "請重新確認繳納資料後重新操作(9004)。",
+    "BankRtnMsg": "關貿連結之申報或自繳資料不存在 。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9006",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(9006)。",
+    "BankRtnMsg": "此繳費項目暫停服務，請稍後再試(9006)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9007",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(9007)。",
+    "BankRtnMsg": "此繳費項目暫停服務，請稍後再試(9007)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9101",
+    "RtnMsg": "帳單資料有誤，請重新確認(9101)。",
+    "BankRtnMsg": "帳單資料有誤，請重新確認(9101)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9102",
+    "RtnMsg": "查無資料，請檢查後重新操作(9102)。",
+    "BankRtnMsg": "無帳單資料",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9902",
+    "RtnMsg": "交易逾時，請返回並重新操作(9902)。",
+    "BankRtnMsg": "交易逾時",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "9999",
+    "RtnMsg": "無法交易，請重新操作或洽icash Pay24小時客服專線(0800-233-888)協助處理(9999)。",
+    "BankRtnMsg": "系統發生不明錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A002",
+    "RtnMsg": "轉入帳戶資料錯誤，請重新確認轉入帳戶資料並重新操作(A002)。",
+    "BankRtnMsg": "轉入帳戶資料錯誤，請重新確認轉入帳戶資料並重新操作(A002)。",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A101",
+    "RtnMsg": "取得連線或流程資訊失敗",
+    "BankRtnMsg": "取得連線或流程資訊失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A102",
+    "RtnMsg": "系統性錯誤，無法取得內部相關服務",
+    "BankRtnMsg": "系統性錯誤，無法取得內部相關服務",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A103",
+    "RtnMsg": "轉換成後端系統電文失敗",
+    "BankRtnMsg": "轉換成後端系統電文失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A104",
+    "RtnMsg": "轉換成電支電文失敗",
+    "BankRtnMsg": "轉換成電支電文失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A105",
+    "RtnMsg": "呼叫亂碼化設備異常",
+    "BankRtnMsg": "呼叫亂碼化設備異常",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A106",
+    "RtnMsg": "安控運算異常",
+    "BankRtnMsg": "安控運算異常",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A601",
+    "RtnMsg": "判斷為重複交易",
+    "BankRtnMsg": "判斷為重複交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A701",
+    "RtnMsg": "無法發送請求電文",
+    "BankRtnMsg": "無法發送請求電文",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A702",
+    "RtnMsg": "請求電文其他 HTTP 錯誤",
+    "BankRtnMsg": "請求電文其他 HTTP 錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A801",
+    "RtnMsg": "Insert DB 時發生資料鍵值重複",
+    "BankRtnMsg": "Insert DB 時發生資料鍵值重複",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A802",
+    "RtnMsg": "操作 DB 時發生資料問題錯誤",
+    "BankRtnMsg": "操作 DB 時發生資料問題錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A803",
+    "RtnMsg": "JWS/JWE 檢核失敗",
+    "BankRtnMsg": "JWS/JWE 檢核失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A804",
+    "RtnMsg": "JWS/JWE/APP 電文格式錯誤",
+    "BankRtnMsg": "JWS/JWE/APP 電文格式錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A901",
+    "RtnMsg": "查無對應交易",
+    "BankRtnMsg": "查無對應交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A902",
+    "RtnMsg": "查詢結果不明",
+    "BankRtnMsg": "查詢結果不明",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "A903",
+    "RtnMsg": "交易尚未完成，請稍後再查",
+    "BankRtnMsg": "交易尚未完成，請稍後再查",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "B101",
+    "RtnMsg": "金融機構尚未支援此交易",
+    "BankRtnMsg": "金融機構尚未支援此交易",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "B102",
+    "RtnMsg": "連結帳戶已約定",
+    "BankRtnMsg": "連結帳戶已約定",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "950",
+    "BankRtnCode": "othrTaxErr",
+    "RtnMsg": "無法交易，請重新操作或icash Pay24小時客服專線(0800-233-888)(錯誤代碼: 其他財金帶來之錯誤代碼)。",
+    "BankRtnMsg": "系統發生不明錯誤",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0041",
+    "RtnMsg": "台銀批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "004"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0042",
+    "RtnMsg": "台銀批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "004"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0044",
+    "RtnMsg": "台銀批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "004"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0051",
+    "RtnMsg": "土地批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "005"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0052",
+    "RtnMsg": "土地批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "005"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0054",
+    "RtnMsg": "土地批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "005"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0072",
+    "RtnMsg": "第一批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "007"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0074",
+    "RtnMsg": "第一批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "007"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0081",
+    "RtnMsg": "華南批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "008"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0082",
+    "RtnMsg": "華南批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "008"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0084",
+    "RtnMsg": "華南批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "008"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0091",
+    "RtnMsg": "彰化批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "009"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0092",
+    "RtnMsg": "彰化批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "009"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0094",
+    "RtnMsg": "彰化批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "009"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0111",
+    "RtnMsg": "上海批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "011"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0112",
+    "RtnMsg": "上海批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "011"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0114",
+    "RtnMsg": "上海批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "011"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0121",
+    "RtnMsg": "富邦批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "012"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0122",
+    "RtnMsg": "富邦批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "012"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0124",
+    "RtnMsg": "富邦批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "012"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0131",
+    "RtnMsg": "國泰批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "013"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0132",
+    "RtnMsg": "國泰批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "013"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0134",
+    "RtnMsg": "國泰批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "013"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0501",
+    "RtnMsg": "臺企銀批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "050"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0502",
+    "RtnMsg": "臺企銀批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "050"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "0504",
+    "RtnMsg": "臺企銀批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "050"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "1031",
+    "RtnMsg": "新光批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "103"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "1032",
+    "RtnMsg": "新光批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "103"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "1034",
+    "RtnMsg": "新光批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "103"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "7001",
+    "RtnMsg": "郵局批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "700"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "7002",
+    "RtnMsg": "郵局批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "700"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "7004",
+    "RtnMsg": "郵局批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "700"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8061",
+    "RtnMsg": "元大批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "806"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8062",
+    "RtnMsg": "元大批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "806"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8064",
+    "RtnMsg": "元大批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "806"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8071",
+    "RtnMsg": "永豐-批次反查開關(Y/N)-1 支付 2 儲值 4 提領",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "807"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8072",
+    "RtnMsg": "永豐-批次反查開關(Y/N)-1 支付 2 儲值 4 提領",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "807"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8074",
+    "RtnMsg": "永豐-批次反查開關(Y/N)-1 支付 2 儲值 4 提領",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "807"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8121",
+    "RtnMsg": "台新批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "812"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8122",
+    "RtnMsg": "台新批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "812"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8124",
+    "RtnMsg": "台新批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "812"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8221",
+    "RtnMsg": "中信批次反查",
+    "BankRtnMsg": "支付",
+    "MappingRtnCode": "822"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8222",
+    "RtnMsg": "中信批次反查",
+    "BankRtnMsg": "儲值",
+    "MappingRtnCode": "822"
+  },
+  {
+    "BankCode": "996",
+    "BankRtnCode": "8224",
+    "RtnMsg": "中信批次反查",
+    "BankRtnMsg": "提領",
+    "MappingRtnCode": "822"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7006",
+    "RtnMsg": "訊息代碼: 7006，作業逾時",
+    "BankRtnMsg": "作業逾時",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7401",
+    "RtnMsg": "訊息代碼: 7401，處理逾時",
+    "BankRtnMsg": "處理逾時",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7402",
+    "RtnMsg": "訊息代碼: 7402，處理逾時",
+    "BankRtnMsg": "處理逾時",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7408",
+    "RtnMsg": "訊息代碼: 7408，解密失敗",
+    "BankRtnMsg": "解密失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7410",
+    "RtnMsg": "訊息代碼: 7410，簽章驗證失敗",
+    "BankRtnMsg": "簽章驗證失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7426",
+    "RtnMsg": "訊息代碼: 7426，AES解密失敗",
+    "BankRtnMsg": "AES解密失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7428",
+    "RtnMsg": "訊息代碼: 7428，RSA解密失敗",
+    "BankRtnMsg": "RSA解密失敗",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7454",
+    "RtnMsg": "訊息代碼: 7454，銀行端交易處理中",
+    "BankRtnMsg": "銀行端交易處理中",
+    "MappingRtnCode": "NULL"
+  },
+  {
+    "BankCode": "ICP",
+    "BankRtnCode": "7455",
+    "RtnMsg": "訊息代碼: 7455，銀行端交易處理失敗",
+    "BankRtnMsg": "銀行端交易處理失敗",
+    "MappingRtnCode": "NULL"
+  }
+]

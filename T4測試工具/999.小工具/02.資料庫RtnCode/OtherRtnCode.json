@@ -1,0 +1,98 @@
+[
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "001",
+    "ResultDictionaryRtnCode": "201001",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "001",
+    "ResultDictionaryRtnCode": "201010",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "002",
+    "ResultDictionaryRtnCode": "201002",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "002",
+    "ResultDictionaryRtnCode": "201011",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "003",
+    "ResultDictionaryRtnCode": "201003",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "003",
+    "ResultDictionaryRtnCode": "201012",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "004",
+    "ResultDictionaryRtnCode": "201004",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "004",
+    "ResultDictionaryRtnCode": "201013",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "005",
+    "ResultDictionaryRtnCode": "201005",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "005",
+    "ResultDictionaryRtnCode": "201014",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "006",
+    "ResultDictionaryRtnCode": "201006",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "006",
+    "ResultDictionaryRtnCode": "201015",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "998",
+    "ResultDictionaryRtnCode": "201007",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "998",
+    "ResultDictionaryRtnCode": "201016",
+    "Remark": "iCash2Verify"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "999",
+    "ResultDictionaryRtnCode": "201007",
+    "Remark": "iCash2Binding"
+  },
+  {
+    "Type": "1",
+    "TypeApiStatusCode": "999",
+    "ResultDictionaryRtnCode": "201017",
+    "Remark": "iCash2Verify"
+  }
+]

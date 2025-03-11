@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+</head>
+</body>
+	<button onclick="generate(0)">產生身份證</button>
+	<button onclick="generate(1)">產生統編</button>
+	<div id="Result">
+	</div>
+	<script>  
+	function generate(type)
+	{
+		var result_container=document.getElementById("Result")
+		var result;
+		
+		switch(type)
+		{
+			case 0:
+				
+				while(1)
+				{
+					result=generateTaiwanID()
+					if(result[1]==1||result[1]==2)
+					{
+						break;
+					}
+				}
+				result="身份證："+result
+			break;
+			case 1:
+				result=generateBusinessNumber()
+				result="統一編號："+result
+			break;
+		}
+
+		if(result_container.innerText=="")
+		{
+			result_container.innerText=result
+		}
+		else
+		{
+			var cl=document.createElement("br")
+			result_container.appendChild(cl)
+			result_container.innerHTML+=result
+		}
+	}
+	function generateTaiwanID() {
+		const letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+		const letter = letters[Math.floor(Math.random() * letters.length)];
+		const digits = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10)).join('');
+		const id = letter + digits;
+
+		// Calculate the checksum
+		const letterValue = letters.indexOf(letter) + 10;
+		const checksum = (letterValue % 10) * 9 + Math.floor(letterValue / 10) + digits.split('').reduce((sum, digit, index) => sum + digit * (8 - index), 0);
+		const checkDigit = (10 - (checksum % 10)) % 10;
+
+		console.log(checkDigit[0])
+		return id + checkDigit;
+	}
+
+
+	function generateBusinessNumber() {
+		const weights = [1, 2, 1, 2, 1, 2, 4, 1];
+		let digits = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10));
+  
+		// Calculate the checksum
+		const checksum = digits.reduce((sum, digit, index) => {
+			const product = digit * weights[index];
+			return sum + Math.floor(product / 10) + (product % 10);
+		}, 0);
+
+		// Adjust the last digit if necessary
+		if (checksum % 10 !== 0) {
+			digits[6] = (digits[6] + 1) % 10;
+		}
+
+		return digits.join('');
+	}
+
+console.log(generateBusinessNumber());
+
+	</script>
+</body>
+</html>

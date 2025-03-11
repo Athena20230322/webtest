@@ -131,12 +131,7 @@ const req = https.request(options, (res) => {
 
                     // 在系統上開啟 TradeToken
                     const command = process.platform === 'win32' ? 'start' :
-                                    process.platform === 'darwin' ? 'open' : 'xdg-open';
-                   
-                   
-                   
-                   
-                   
+                                    process.platform === 'darwin' ? 'open' : 'xdg-open';       
                 }
             }
         } catch (e) {

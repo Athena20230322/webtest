@@ -1,0 +1,2478 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>正式環境交易推播</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        //id=queryResult
+
+        var oFileIn;
+        var data
+        var merchantdata
+        var paymentdata = [];
+        var table_select_now = 1
+
+        var textfilefunction = '';
+        var db_notify_data = [
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "0",
+                "Notes": "台新銀行_全行卡",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "1",
+                "Notes": "台新銀行_超商費率",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "2",
+                "Notes": "台新銀行_BU費率",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "3",
+                "Notes": "中國信託_超商費率",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "4",
+                "Notes": "中國信託_BU費率",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "6",
+                "Notes": "台新銀行_代收費率",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "7",
+                "Notes": "富邦-超商",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "8",
+                "Notes": "富邦-一般",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "9",
+                "Notes": "富邦-網路消費",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "11",
+                "Notes": "富邦-網路代收",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "12",
+                "Notes": "台新全行-超商線下",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "13",
+                "Notes": "台新全行-超商線上",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "14",
+                "Notes": "國泰-超商實體",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "26",
+                "Notes": "愛金卡—政府規費",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "27",
+                "Notes": "愛金卡—統一超商",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "28",
+                "Notes": "愛金卡—統一超商禮券",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "29",
+                "Notes": "愛金卡—一般通路",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "1",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "icashpay電支帳戶",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "AccountLink_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "2",
+                "Notes": "AccountLink_中國信託",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "3",
+                "Notes": "AccountLink_國泰世華",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "4",
+                "Notes": "AccountLink_新光銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "5",
+                "Notes": "AccountLink_中華郵政",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "6",
+                "Notes": "AccountLink_土地銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "7",
+                "Notes": "AccountLink_台新銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "8",
+                "Notes": "AccountLink_台北富邦",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "10",
+                "Notes": "AccountLink_臺灣銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "11",
+                "Notes": "AccountLink_華南銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "12",
+                "Notes": "AccountLink_元大銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "14",
+                "Notes": "AccountLink_永豐銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "15",
+                "Notes": "AccountLink_臺灣中小企業銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "3",
+                "NotifyKey": "transaction",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "16",
+                "Notes": "AccountLink_彰化商業銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  {{BonusAmt}}</span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": "4",
+                "NotifyKey": "topup_merchant",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "4",
+                "PaymentNotes": "現金",
+                "PaymentSubTypeID": "1",
+                "Notes": "統一超商",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值成功】現金儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br />  儲值金額：{{Amount}}元<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "現金儲值"
+            },
+            {
+                "NotifyID": "5",
+                "NotifyKey": "topup_merchant_cancel",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "4",
+                "PaymentNotes": "現金",
+                "PaymentSubTypeID": "1",
+                "Notes": "統一超商",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【取消儲值成功】現金儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br />  儲值金額：{{Amount}}元<br />  儲值時間：{{PaymentDate}}<br />  取消儲值時間：{{RefundDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "現金儲值取消"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "AccountLink_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "2",
+                "Notes": "AccountLink_中國信託",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "3",
+                "Notes": "AccountLink_國泰世華",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "4",
+                "Notes": "AccountLink_新光銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "5",
+                "Notes": "AccountLink_中華郵政",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "6",
+                "Notes": "AccountLink_土地銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "7",
+                "Notes": "AccountLink_台新銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "8",
+                "Notes": "AccountLink_台北富邦",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "10",
+                "Notes": "AccountLink_臺灣銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "11",
+                "Notes": "AccountLink_華南銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "12",
+                "Notes": "AccountLink_元大銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "14",
+                "Notes": "AccountLink_永豐銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "15",
+                "Notes": "AccountLink_臺灣中小企業銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "6",
+                "NotifyKey": "topup_accountlink",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "16",
+                "Notes": "AccountLink_彰化商業銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": "7",
+                "NotifyKey": "topup_voice",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "5",
+                "PaymentNotes": "中獎發票",
+                "PaymentSubTypeID": "1",
+                "Notes": "統一超商",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值成功】中獎發票儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br />  儲值金額：{{Amount}}元<br />  儲值時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "發票儲值"
+            },
+            {
+                "NotifyID": "12",
+                "NotifyKey": "transfer_receive",
+                "TradeModeID": "3",
+                "TradeModeCName": "轉帳",
+                "PaymentTypeID": "6",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "2",
+                "Notes": "轉帳轉入",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "收款{{TransferStatus}}通知",
+                "Body": "<span style=\"\">收款金額：NT$ {{Amount}}<br />  轉帳者資訊：{{PayCName}}{{PayICPMID}}<br />  轉出時間：{{PaymentDate}}<br />  {{Remark}}{{ErrorMsg}}</span>",
+                "Description": "轉帳轉入"
+            },
+            {
+                "NotifyID": "19",
+                "NotifyKey": "topup_atm",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值通知】儲值金額{{Amount}}元",
+                "Body": "<table cellpadding=\"5\"rules=\"all\"style=\"border:1px #000000 solid;padding:5px;\">   <tbody>    <tr>     <td>編號</td>     <td>{{TradeNo}}</td>    </tr>    <tr>     <td>建立時間</td>     <td>{{CreateDate}}</td>    </tr>    <tr>     <td>交易狀態</td>     <td>{{TradeStatusName}}</td>    </tr>    <tr>     <td>儲值方式</td>     <td>{{PaymentTypeName}}</td>    </tr>    <tr>     <td>儲值金額</td>     <td>NT$ {{Amount}}</td>    </tr>    <tr>     <td>轉入銀行</td>     <td>{{BankCode}} {{BankName}}</td>    </tr>    <tr>     <td>轉入帳號</td>     <td>{{BankAccount}}</td>    </tr>    <tr>     <td>轉帳截止日期</td>     <td>{{ExpireDate}}</td>    </tr>   </tbody>  </table>",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "29",
+                "NotifyKey": "transfer_pay",
+                "TradeModeID": "3",
+                "TradeModeCName": "轉帳",
+                "PaymentTypeID": "6",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "轉帳轉出",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "轉帳{{TransferStatus}}通知",
+                "Body": "<span style=\"\">轉帳金額：NT$ {{Amount}}<br />  收款者資訊：{{ReceiveCName}}{{ReceiveICPMID}}<br />  轉出時間：{{PaymentDate}}<br />  {{Remark}}{{ErrorMsg}}</span>",
+                "Description": "轉帳轉出"
+            },
+            {
+                "NotifyID": "40",
+                "NotifyKey": "withdraw_success",
+                "TradeModeID": "4",
+                "TradeModeCName": "提領",
+                "PaymentTypeID": "7",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "提領",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "提領成功通知",
+                "Body": "<span style=\"\">建立時間：{{CreateDate}}<br />  完成時間：{{SuccessDate}}<br />  轉入帳戶：{{BankName}}<br />  提領帳號：{{BankAccount}}<br />  提領金額：NT$ {{ActualAmount}}<br />  編號：{{TradeNo}} </span>",
+                "Description": "提領成功通知"
+            },
+            {
+                "NotifyID": "45",
+                "NotifyKey": "withdraw_fail",
+                "TradeModeID": "4",
+                "TradeModeCName": "提領",
+                "PaymentTypeID": "7",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "2",
+                "Notes": "提領失敗",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "提領失敗通知",
+                "Body": "<span style=\"\">建立時間：{{CreateDate}}<br />  轉入帳戶：{{BankName}}<br />  提領帳號：{{BankAccount}}<br />  提領金額：NT$ {{ActualAmount}}<br />  失敗原因：{{ErrorMsg}}<br />  編號：{{TradeNo}} </span>",
+                "Description": "提領失敗通知"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "0",
+                "Notes": "台新銀行_全行卡",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "1",
+                "Notes": "台新銀行_超商費率",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "2",
+                "Notes": "台新銀行_BU費率",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "3",
+                "Notes": "中國信託_超商費率",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "4",
+                "Notes": "中國信託_BU費率",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "6",
+                "Notes": "台新銀行_代收費率",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "7",
+                "Notes": "富邦-超商",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "8",
+                "Notes": "富邦-一般",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "9",
+                "Notes": "富邦-網路消費",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "11",
+                "Notes": "富邦-網路代收",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "12",
+                "Notes": "台新全行-超商線下",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "13",
+                "Notes": "台新全行-超商線上",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "14",
+                "Notes": "國泰-超商實體",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "26",
+                "Notes": "愛金卡—政府規費",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "27",
+                "Notes": "愛金卡—統一超商",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "28",
+                "Notes": "愛金卡—統一超商禮券",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "0",
+                "PaymentNotes": "信用卡",
+                "PaymentSubTypeID": "29",
+                "Notes": "愛金卡—一般通路",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "1",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "icashpay電支帳戶",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "1",
+                "Notes": "AccountLink_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "2",
+                "Notes": "AccountLink_中國信託",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "3",
+                "Notes": "AccountLink_國泰世華",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "4",
+                "Notes": "AccountLink_新光銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "5",
+                "Notes": "AccountLink_中華郵政",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "6",
+                "Notes": "AccountLink_土地銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "7",
+                "Notes": "AccountLink_台新銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "8",
+                "Notes": "AccountLink_台北富邦",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "10",
+                "Notes": "AccountLink_臺灣銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "11",
+                "Notes": "AccountLink_華南銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "12",
+                "Notes": "AccountLink_元大銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "14",
+                "Notes": "AccountLink_永豐銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "15",
+                "Notes": "AccountLink_臺灣中小企業銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "49",
+                "NotifyKey": "transaction_refund",
+                "TradeModeID": "1",
+                "TradeModeCName": "交易",
+                "PaymentTypeID": "2",
+                "PaymentNotes": "連結扣款帳戶",
+                "PaymentSubTypeID": "16",
+                "Notes": "AccountLink_彰化商業銀行",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br />  付款方式：{{PaymentTypeName}}<br />  訂單時間：{{CreateDate}}<br />  訂單金額：{{Amount}}元<br />  受理時間：{{RefundDate}}<br />  退款金額(不含點數折抵)：{{RefundAmount}}元<br />  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。</span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": "51",
+                "NotifyKey": "topup_atm_success",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "2",
+                "Status": "1",
+                "Title": "【儲值成功】虛擬帳號儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  轉入銀行： {{BankCode}} {{BankName}}<br />  轉入帳號： {{BankAccount}}<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10022",
+                "NotifyKey": "transferinFisc",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "13",
+                "PaymentNotes": "跨行轉帳轉入",
+                "PaymentSubTypeID": "1",
+                "Notes": "財金共用平台",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【跨行轉入{{PaymentStatus}}】{{Amount}}元",
+                "Body": "<span style=\"\">轉入金額：{{Amount}}元<br />  銀行帳戶：{{BankCode}}{{BankName}}<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br />  轉入時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}<br />  {{ErrorMsg}}</span>",
+                "Description": "跨行轉入"
+            },
+            {
+                "NotifyID": "10023",
+                "NotifyKey": "transferoutFisc_success",
+                "TradeModeID": "4",
+                "TradeModeCName": "提領",
+                "PaymentTypeID": "7",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "3",
+                "Notes": "跨行轉帳轉出",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "跨行轉出成功通知",
+                "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br />  完成時間：{{SuccessDate}}<br />  收款帳戶：{{BankName}}<br />  轉出帳號：{{BankAccount}}<br />  轉出金額：NT$ {{ActualAmount}}<br />  編號：{{TradeNo}} </span>",
+                "Description": "跨行轉出成功通知"
+            },
+            {
+                "NotifyID": "10024",
+                "NotifyKey": "transferoutFisc_fail",
+                "TradeModeID": "4",
+                "TradeModeCName": "提領",
+                "PaymentTypeID": "7",
+                "PaymentNotes": "電支帳戶",
+                "PaymentSubTypeID": "4",
+                "Notes": "跨行轉帳轉出失敗",
+                "WantPush": "1",
+                "NotifyType": "1",
+                "Status": "1",
+                "Title": "跨行轉出失敗通知",
+                "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br />  收款帳戶：{{BankName}}<br />  收款帳號：{{BankAccount}}<br />  轉出金額：NT$ {{ActualAmount}}<br />  失敗原因：{{ErrorMsg}}<br />  編號：{{TradeNo}} </span>",
+                "Description": "跨行轉出失敗通知"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "29",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "31",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "21",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "23",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "25",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "27",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10035",
+                "NotifyKey": "topup_atm_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "19",
+                "Status": "1",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "20",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "28",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "26",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "24",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "22",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "32",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10036",
+                "NotifyKey": "topup_atm_success_bu",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "3",
+                "PaymentNotes": "ATM",
+                "PaymentSubTypeID": "1",
+                "Notes": "ATM_第一銀行",
+                "WantPush": "1",
+                "NotifyType": "30",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：虛擬帳號儲值<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ATM儲值成功"
+            },
+            {
+                "NotifyID": "10037",
+                "NotifyKey": "topup_bucash",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "14",
+                "PaymentNotes": "企業禮金儲值",
+                "PaymentSubTypeID": "1",
+                "Notes": "愛金卡股份有限公司",
+                "WantPush": "0",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />儲值方式：{{PaymentTypeName}}<br />入帳時間：{{PaymentDate}}<br />訂單編號：{{TradeNo}}</span>",
+                "Description": "企業儲值禮金"
+            },
+            {
+                "NotifyID": "10038",
+                "NotifyKey": "topup_icpcash",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "15",
+                "PaymentNotes": "回饋金儲值",
+                "PaymentSubTypeID": "1",
+                "Notes": "ICashPay電支帳戶",
+                "WantPush": "0",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}</span>",
+                "Description": "ICP回饋金"
+            },
+            {
+                "NotifyID": "10045",
+                "NotifyKey": "topup_blcaash",
+                "TradeModeID": "2",
+                "TradeModeCName": "儲值",
+                "PaymentTypeID": "16",
+                "PaymentNotes": "儲值卡餘額轉置",
+                "PaymentSubTypeID": "1",
+                "Notes": "愛金卡股份有限公司(客服退費)",
+                "WantPush": "1",
+                "NotifyType": "0",
+                "Status": "1",
+                "Title": "【儲值成功】儲值卡餘額轉置",
+                "Body": "儲值金額：{{Amount}}元<br />  儲值方式：{{PaymentTypeName}}<br />  入帳時間：{{PaymentDate}}<br />  訂單編號：{{TradeNo}}",
+                "Description": "儲值卡餘額轉置"
+            }
+        ]
+        var db_notify_data2 = [
+            {
+                "NotifyID": 1,
+                "NotifyKey": "common",
+                "Title": "預設版型",
+                "Body": "<style type=\"text\/css\">* {   font-size: 14px  }    @media only screen       and (min-width : 370px)       and (-webkit-device-pixel-ratio : 3) {    * {     font-size: 16px    }    }  <\/style>  <meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0;\"\/>{{content}}",
+                "Description": "預設版型"
+            },
+            {
+                "NotifyID": 2,
+                "NotifyKey": "auth_teenagers_confirm",
+                "Title": "未成年使用者待核准通知",
+                "Body": "未成年人{{CName}}擬註冊icash Pay尚須您(法定代理人)的核准，請點擊前往<a href=\"https:\/\/www.icashpay.com.tw\/users\/login\">https:\/\/www.icashpay.com.tw\/users\/login<\/a>，並於{{ExpireDate}}前完成核准作業。",
+                "Description": "未成年使用者待核准通知"
+            },
+            {
+                "NotifyID": 3,
+                "NotifyKey": "transaction",
+                "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+                "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br \/>  付款方式：{{PaymentTypeName}}<br \/>  訂單時間：{{CreateDate}}<br \/>  訂單金額：{{Amount}}元<br \/>  {{BonusAmt}}<\/span>",
+                "Description": "交易付款通知"
+            },
+            {
+                "NotifyID": 4,
+                "NotifyKey": "topup_merchant",
+                "Title": "【儲值成功】現金儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": "現金儲值"
+            },
+            {
+                "NotifyID": 5,
+                "NotifyKey": "topup_merchant_cancel",
+                "Title": "【取消儲值成功】現金儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  取消儲值時間：{{RefundDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": "現金儲值取消"
+            },
+            {
+                "NotifyID": 6,
+                "NotifyKey": "topup_accountlink",
+                "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  銀行帳戶：{{BankCode}}{{BankName}}<br \/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<br \/>  {{ErrorMsg}}<\/span>",
+                "Description": "連結帳戶儲值"
+            },
+            {
+                "NotifyID": 7,
+                "NotifyKey": "topup_voice",
+                "Title": "【儲值成功】中獎發票儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": "發票儲值"
+            },
+            {
+                "NotifyID": 12,
+                "NotifyKey": "transfer_receive",
+                "Title": "收款{{TransferStatus}}通知",
+                "Body": "<span style=\"\">收款金額：NT$ {{Amount}}<br \/>  轉帳者資訊：{{PayCName}}{{PayICPMID}}<br \/>  轉出時間：{{PaymentDate}}<br \/>  {{Remark}}{{ErrorMsg}}<\/span>",
+                "Description": "轉帳轉入"
+            },
+            {
+                "NotifyID": 19,
+                "NotifyKey": "topup_atm",
+                "Title": "【儲值通知】儲值金額{{Amount}}元",
+                "Body": "<table cellpadding=\"5\" rules=\"all\" style=\"border:1px #000000 solid;padding:5px;\">   <tbody>    <tr>     <td>編號</td>     <td>{{TradeNo}}</td>    </tr>    <tr>     <td>建立時間</td>     <td>{{CreateDate}}</td>    </tr>    <tr>     <td>交易狀態</td>     <td>{{TradeStatusName}}</td>    </tr>    <tr>     <td>儲值方式</td>     <td>{{PaymentTypeName}}</td>    </tr>    <tr>     <td>儲值金額</td>     <td>NT$ {{Amount}}</td>    </tr>    <tr>     <td>轉入銀行</td>     <td>{{BankCode}} {{BankName}}</td>    </tr>    <tr>     <td>轉入帳號</td>     <td>{{BankAccount}}</td>    </tr>    <tr>     <td>轉帳截止日期</td>     <td>{{ExpireDate}}</td>    </tr>   </tbody>  </table>",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": 29,
+                "NotifyKey": "transfer_pay",
+                "Title": "轉帳{{TransferStatus}}通知",
+                "Body": "<span style=\"\">轉帳金額：NT$ {{Amount}}<br \/>  收款者資訊：{{ReceiveCName}}{{ReceiveICPMID}}<br \/>  轉出時間：{{PaymentDate}}<br \/>  {{Remark}}{{ErrorMsg}}<\/span>",
+                "Description": "轉帳轉出"
+            },
+            {
+                "NotifyID": 40,
+                "NotifyKey": "withdraw_success",
+                "Title": "提領成功通知",
+                "Body": "<span style=\"\">建立時間：{{CreateDate}}<br \/>  完成時間：{{SuccessDate}}<br \/>  轉入帳戶：{{BankName}}<br \/>  提領帳號：{{BankAccount}}<br \/>  提領金額：NT$ {{ActualAmount}}<br \/>  編號：{{TradeNo}} <\/span>",
+                "Description": "提領成功通知"
+            },
+            {
+                "NotifyID": 45,
+                "NotifyKey": "withdraw_fail",
+                "Title": "提領失敗通知",
+                "Body": "<span style=\"\">建立時間：{{CreateDate}}<br \/>  轉入帳戶：{{BankName}}<br \/>  提領帳號：{{BankAccount}}<br \/>  提領金額：NT$ {{ActualAmount}}<br \/>  失敗原因：{{ErrorMsg}}<br \/>  編號：{{TradeNo}} <\/span>",
+                "Description": "提領失敗通知"
+            },
+            {
+                "NotifyID": 46,
+                "NotifyKey": "bankaccount_auth_success",
+                "Title": "第二類使用者升級通知",
+                "Body": "<span style=\"\">您已升級為第二類使用者，可進行轉帳交易，付款與儲值額度亦已提升。<\/span>",
+                "Description": "第二類使用者升級通知"
+            },
+            {
+                "NotifyID": 47,
+                "NotifyKey": "bankaccount_auth_success_acl",
+                "Title": "連結扣款帳戶綁定成功通知",
+                "Body": "<span style=\"\">您已成功綁定{{BankName}}存款帳戶，可做為付款\/儲值\/提領使用。<\/span>",
+                "Description": "連結扣款帳戶綁定成功通知"
+            },
+            {
+                "NotifyID": 48,
+                "NotifyKey": "bankaccount_auth_fail",
+                "Title": "銀行升級驗證失敗通知",
+                "Body": "<span style=\"\">銀行升級驗證失敗，若要再次驗證請至銀行帳號設定新增連結扣款帳戶<\/span>",
+                "Description": "銀行升級驗證失敗通知"
+            },
+            {
+                "NotifyID": 49,
+                "NotifyKey": "transaction_refund",
+                "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>  付款方式：{{PaymentTypeName}}<br \/>  訂單時間：{{CreateDate}}<br \/>  訂單金額：{{Amount}}元<br \/>  受理時間：{{RefundDate}}<br \/>  退款金額(不含點數折抵)：{{RefundAmount}}元<br \/>  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。<\/span>",
+                "Description": "退款訊息"
+            },
+            {
+                "NotifyID": 50,
+                "NotifyKey": "auth_idno_success",
+                "Title": "恭喜您已成為icash Pay會員",
+                "Body": "<span style=\"font-size:14px;\">您已通過完成第三類使用者申請，可以使用icashpay儲值與支付。<br \/>  建議您繼續驗證您的金融工具升級成為第二類使<\/span><a href=\"https:\/\/admin.icashpay.com.tw\/Admin\/MailLibraryManage\/EditNotify\/50#\" title=\"儲存\">儲存<\/a><span style=\"font-size:14px;\">用者，以開通轉帳功能及提升額度。<\/span>",
+                "Description": "恭喜您已成為icash Pay會員"
+            },
+            {
+                "NotifyID": 51,
+                "NotifyKey": "topup_atm_success",
+                "Title": "【儲值成功】虛擬帳號儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：虛擬帳號儲值<br \/>  轉入銀行： {{BankCode}} {{BankName}}<br \/>  轉入帳號： {{BankAccount}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": " ATM儲值成功"
+            },
+            {
+                "NotifyID": 52,
+                "NotifyKey": "InvoiceAward",
+                "Title": "恭喜~您的發票中獎囉！",
+                "Body": "<span style=\"font-size:12pt\"><span> <span></span>恭喜</span>~<span>您的發票中獎囉！</span></span></span> <table class=\"Table\" height=\"131\" style=\"border-collapse: collapse; border: 1pt solid windowtext;\" width=\"246\"> <tbody> <tr style=\"height:87.1pt\"> <td style=\"border:solid windowtext 1.0pt; width:168.1pt; padding:0cm 5.4pt 0cm 5.4pt; height:87.1pt\" valign=\"top\" width=\"224\"><br /> <span style=\"font-size:12pt\"><span><span>發票日期：</span></span></span>{{Invoice_Time}}<br /> <br /> <span style=\"font-size:12pt\"><span><span>發票號碼：</span></span></span>{{Invoice_Number}}<br /> <br /> <span style=\"font-size:12pt\"><span><span>隨機碼：</span></span></span>{{Random_Number}}</td> </tr> </tbody> </table> <ol> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>請至全台</span>7-ELEVEN <span>門市</span>ibon<span>機台列印出該中獎發票進行兌換，列印操作流程：生活服務&rarr;</span> <span>電子發票</span>(<span>中獎查詢</span>)<span>&rarr;</span> <span>統一資訊&rarr;</span> <span>同意，繼續下一步&rarr;</span> <span>輸入發票日期&rarr;</span> <span>輸入四碼隨機碼&rarr;</span> <span>確認列印。</span></span></span></li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>若您在開獎月</span>25<span>日</span>00:00<span>前完成</span>icash Pay<span>載具歸戶，並且在開獎月</span>25<span>日</span>00:00<span>前於財政部電子發票整合服務平台完成領獎設定，中獎獎金將於開獎月次月</span>10<span>日前匯入您指定帳戶，您無需另行兌獎，若超過指定時間完成規定或領獎設定者，仍需請您至全台</span>7-ELEVEN<span>門市</span>ibon<span>機台進行兌換。</span></span></span> </li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>如中獎發票為提領手續費發票且需紙本兌獎之民眾，可進線愛金卡客服，將由愛金卡協助列印並寄送，約</span>15<span>個工作日，並酌收郵寄費</span>32<span>元。</span></span></span> </li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>如有其他中獎發票問題請洽</span>icash Pay<span>客服中心手機請撥：</span>02-2657-6388 / <span>市話請撥：</span>0800-233-888<span>，或透過電子郵件信箱來信：</span><a href=\"mailto:icashpay_service@mail.icash.com.tw\"><span style=\"text-decoration:none\"><span style=\"text-underline:none\">icashpay_service@mail.icash.com.tw</span></span></a></span></span> </li> </ol>",
+                "Description": "發票中獎訊息"
+            },
+            {
+                "NotifyID": 53,
+                "NotifyKey": "auth_Teenagers_success",
+                "Title": "恭喜您!註冊申請已核准通過",
+                "Body": "您的icash Pay註冊申請已核准通過，請以註冊時填寫的帳號密碼進行登入，一鍵開啟各項便利服務。",
+                "Description": "管理後台未成年審核通過"
+            },
+            {
+                "NotifyID": 54,
+                "NotifyKey": "auth_Teenagers_Fail",
+                "Title": "很抱歉，您的註冊審核未能通過",
+                "Body": "親愛的用戶，您的法定代理人資料有誤或不齊全，註冊審核未能通過，請再次申請註冊，並確認您的法定代理人資訊與證明文件皆完整無誤，謝謝您的配合。",
+                "Description": "管理後台未成年審核不通過"
+            },
+            {
+                "NotifyID": 55,
+                "NotifyKey": "MemberTeenagersUpLevel",
+                "Title": "未成年人升等通知",
+                "Body": "<span style=\"font-size:14px;\">恭喜您，您的法定代理人已同意您成為二類使用者，您可前往”icash Pay更多服務”—”儲值轉帳”—“銀行帳戶設定”，綁定您的銀行帳戶，即可享受輕鬆轉帳。<\/span>",
+                "Description": "未成年人升等通知"
+            },
+            {
+                "NotifyID": 56,
+                "NotifyKey": "MemberTeenagersDownLevel",
+                "Title": "未成年人降等通知",
+                "Body": "<span style=\"font-size:14px;\">親愛的用戶，很抱歉，您的法定代理人已將您的使用者資格由二類降為一類，您仍可繼續使用icash Pay支付與儲值等功能。<\/span>",
+                "Description": "未成年人降等通知"
+            },
+            {
+                "NotifyID": 57,
+                "NotifyKey": "Member_Teenagers_Overdue",
+                "Title": "法代超過7日未審核",
+                "Body": "親愛的用戶，您的法定代理人未於7日內核准您成為 icashPay 使用者，您的註冊已逾期，請重新申請。",
+                "Description": "法代超過7日未審核"
+            },
+            {
+                "NotifyID": 10020,
+                "NotifyKey": "payment_success",
+                "Title": "手機號碼{{CellPhone}} 付款{{Amount}}元成功",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>    付款方式：{{PaymentTypeName}}<br \/>    訂單時間：{{CreateDate}}<br \/>    訂單金額：{{Amount}}元<br \/>    <\/span>",
+                "Description": "小商家交易付款通知"
+            },
+            {
+                "NotifyID": 10021,
+                "NotifyKey": "payment_fail",
+                "Title": "手機號碼{{CellPhone}} 付款{{Amount}}元失敗",
+                "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>    付款方式：{{PaymentTypeName}}<br \/>    訂單時間：{{CreateDate}}<br \/>    訂單金額：{{Amount}}元<br \/>    <\/span>",
+                "Description": "小商家交易付款失敗通知"
+            },
+            {
+                "NotifyID": 10022,
+                "NotifyKey": "transferinFisc",
+                "Title": "【跨行轉入{{PaymentStatus}}】{{Amount}}元",
+                "Body": "<span style=\"\">轉入金額：{{Amount}}元<br \/>  銀行帳戶：{{BankCode}}{{BankName}}<br \/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br \/>  轉入時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<br \/>  {{ErrorMsg}}<\/span>",
+                "Description": "跨行轉入"
+            },
+            {
+                "NotifyID": 10023,
+                "NotifyKey": "transferoutFisc_success",
+                "Title": "跨行轉出成功通知",
+                "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br \/>  完成時間：{{SuccessDate}}<br \/>  收款帳戶：{{BankName}}<br \/>  轉出帳號：{{BankAccount}}<br \/>  轉出金額：NT$ {{ActualAmount}}<br \/>  編號：{{TradeNo}} <\/span>",
+                "Description": "跨行轉出成功通知"
+            },
+            {
+                "NotifyID": 10024,
+                "NotifyKey": "transferoutFisc_fail",
+                "Title": "跨行轉出失敗通知",
+                "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br \/>  收款帳戶：{{BankName}}<br \/>  收款帳號：{{BankAccount}}<br \/>  轉出金額：NT$ {{ActualAmount}}<br \/>  失敗原因：{{ErrorMsg}}<br \/>  編號：{{TradeNo}} <\/span>",
+                "Description": "跨行轉出失敗通知"
+            },
+            {
+                "NotifyID": 10025,
+                "NotifyKey": "XInvoiceAward",
+                "Title": "恭喜~您的發票中獎囉！",
+                "Body": "恭喜! 您綁定在手機條碼載具內的 icash2.0 卡片(卡號末五碼 {{CARD_NO}})有中獎發票， 您可至財政部電子發票平台查詢中獎明細。",
+                "Description": "發票中獎訊息"
+            },
+            {
+                "NotifyID": 10026,
+                "NotifyKey": "auth_idcard_fail_appHasIdcard",
+                "Title": "身分證審核失敗通知",
+                "Body": "因您申辦時檢附的身分證無法完整辨識，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。",
+                "Description": "推播訊息: 身分證審核失敗(有上傳身分證)"
+            },
+            {
+                "NotifyID": 10027,
+                "NotifyKey": "auth_idcard_fail_appNoIdcard",
+                "Title": "身分證審核失敗通知",
+                "Body": "由於您的姓名驗證未通過，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。",
+                "Description": "推播訊息: 身分證審核失敗(無上傳身分證)"
+            },
+            {
+                "NotifyID": 10028,
+                "NotifyKey": "auth_idcard_fail_SMSHasIdcard",
+                "Title": "身分證審核失敗通知",
+                "Body": "icash 通知，因您申辦時檢附的身分證無法完整辨識，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。icash 客服 0800233888 手機 02-26576388",
+                "Description": "簡訊訊息: 身分證審核失敗(有上傳身分證)"
+            },
+            {
+                "NotifyID": 10029,
+                "NotifyKey": "auth_idcard_fail_SMSNoIdcard",
+                "Title": "身分證審核失敗通知",
+                "Body": "icash 通知，由於您的姓名驗證未通過，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。icash 客服 0800233888 手機 02-26576388",
+                "Description": "簡訊訊息: 身分證審核失敗(有上傳身分證)"
+            },
+            {
+                "NotifyID": 10030,
+                "NotifyKey": "authTeenager_idcard_fail_SMSNeedIDCard",
+                "Title": "未成年使用者審核需補件通知",
+                "Body": "icash通知，您申辦檢附的法代審核證件不足或無法辨識，請通知法代透過【icash Pay APP_個人_身分證件補傳】提供審核文件，以利後續協助，謝謝。icash客服0800233888手機02-26576388",
+                "Description": "簡訊訊息: 未成年法代審核失敗"
+            },
+            {
+                "NotifyID": 10031,
+                "NotifyKey": "authTeenager_idcard_fail_app",
+                "Title": "未成年使用者審核需補件通知",
+                "Body": "未成年人【{{CName}}】擬註冊icash Pay，因申辦檢附的法代審核證件不足或無法辨識，需請您於【{{ExpireDate}}】前透過【icash Pay APP_個人_身分證件補傳】提供審核文件。&nbsp;",
+                "Description": "推播訊息: 未成年法代審核失敗"
+            },
+            {
+                "NotifyID": 10032,
+                "NotifyKey": "authTeenager_idcard_fail_SMSNoIDCard",
+                "Title": "未成年使用者審核需補件通知",
+                "Body": "icash通知，您的icash Pay使用者申請，因法代選擇錯誤或申辦人證件不清，需請您重新註冊，謝謝。icash客服0800233888手機02-26576388",
+                "Description": "簡訊訊息: 未成年法代審核失敗"
+            },
+            {
+                "NotifyID": 10033,
+                "NotifyKey": "auth_InsuranceMemberVerify",
+                "Title": "【{{AuthCode}}】 為icash Pay身分驗證碼，請勿轉發或告知他人此訊息",
+                "Body": "【icash Pay身分驗證】驗證碼為{{AuthCode}}，請於{{ExpireMinute}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+                "Description": "推播訊息: 傳送身分驗證碼(保險介接)"
+            },
+            {
+                "NotifyID": 10034,
+                "NotifyKey": "auth_ICPToolVerify",
+                "Title": "電支工具管理後台登入驗證碼",
+                "Body": "【電支工具管理後台驗證】驗證碼為{{AuthCode}}，請於{{ExpireMinute}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+                "Description": "推播訊息: 傳送電支工具管理後台登入驗證碼"
+            },
+            {
+                "NotifyID": 10035,
+                "NotifyKey": "topup_atm_bu",
+                "Title": "【{{Title}}儲值icash Pay通知】",
+                "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+                "Description": "ATM儲值"
+            },
+            {
+                "NotifyID": 10036,
+                "NotifyKey": "topup_atm_success_bu",
+                "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：虛擬帳號儲值<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": " ATM儲值成功"
+            },
+            {
+                "NotifyID": 10037,
+                "NotifyKey": "topup_bucash",
+                "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>儲值方式：{{PaymentTypeName}}<br \/>入帳時間：{{PaymentDate}}<br \/>訂單編號：{{TradeNo}}<\/span>",
+                "Description": "企業儲值禮金"
+            },
+            {
+                "NotifyID": 10038,
+                "NotifyKey": "topup_icpcash",
+                "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+                "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+                "Description": "ICP回饋金"
+            },
+            {
+                "NotifyID": 10039,
+                "NotifyKey": "authTeenagers_idno_success",
+                "Title": "恭喜您！正式加入icash Pay會員",
+                "Body": "您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "推播訊息: 電支後台本國未成年人聯徵P11\/P33\/P55均通過之APP推播"
+            },
+            {
+                "NotifyID": 10040,
+                "NotifyKey": "auth_p55_success",
+                "Title": "恭喜您！身分驗證已審核通過",
+                "Body": "您的icash Pay身分驗證已審核通過！邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "推播訊息: 電支後台本國成年人P55 驗證人工審核通過"
+            },
+            {
+                "NotifyID": 10041,
+                "NotifyKey": "authForeigners_p55_success",
+                "Title": "恭喜您！正式加入icash Pay會員",
+                "Body": "您的icash Pay身分驗證已審核通過！邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "推播訊息: 電支後台外國人聯徵P11\/P33\/P55均通過之APP推播"
+            },
+            {
+                "NotifyID": 10042,
+                "NotifyKey": "authTeenagers_idno_SMSsuccess",
+                "Title": "恭喜您！正式加入icash Pay會員",
+                "Body": "【icash Pay註冊通知】    您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "簡訊訊息: 電支後台本國未成年人聯徵P11\/P33\/P55均通過"
+            },
+            {
+                "NotifyID": 10043,
+                "NotifyKey": "auth_p55_SMSsuccess",
+                "Title": "恭喜您！身分驗證已審核通過",
+                "Body": "【icash Pay註冊通知】    您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "簡訊訊息: 電支後台本國成年人P55 驗證人工審核通過"
+            },
+            {
+                "NotifyID": 10044,
+                "NotifyKey": "authForeigners_p55_SMSsuccess",
+                "Title": "恭喜您！正式加入icash Pay會員",
+                "Body": "【icash Pay註冊通知】    您的icash Pay身分認證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+                "Description": "簡訊訊息: 電支後台外國人聯徵P11\/P33\/P55均通過"
+            },
+            {
+                "NotifyID": 10045,
+                "NotifyKey": "topup_blcaash",
+                "Title": "【儲值成功】儲值卡餘額轉置",
+                "Body": "儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}",
+                "Description": "儲值卡餘額轉置"
+            },
+            {
+                "NotifyID": 10046,
+                "NotifyKey": "auth_otp",
+                "Title": "【icash Pay{{AuthType}}】",
+                "Body": "【icash Pay{{AuthType}}】簡訊驗證碼為{{AuthCode}}，請於{{ExpireMinutes}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+                "Description": "簡訊OTP訊息"
+            }
+        ]
+
+        var db_icpnotifytype = ["預設版型", "未成年使用者待核准通知", "交易付款通知", "現金儲值", "現金儲值取消", "連結帳戶儲值", "發票儲值", "轉帳轉入", "ATM儲值", "轉帳轉出", "提領成功通知", "提領失敗通知", "第二類使用者升級通知", "連結扣款帳戶綁定成功通知", "銀行升級驗證失敗通知", "退款訊息", "恭喜您已成為icash Pay會員", "ATM儲值成功", "發票中獎訊息", "管理後台未成年審核通過", "管理後台未成年審核不通過", "未成年人升等通知", "未成年人降等通知", "法代超過7日未審核", "小商家交易付款通知", "小商家交易付款失敗通知", "跨行轉入", "跨行轉出成功通知", "跨行轉出失敗通知", "推播訊息: 身分證審核失敗(有上傳身分證)", "推播訊息: 身分證審核失敗(無上傳身分證)", "簡訊訊息: 身分證審核失敗(有上傳身分證)", "簡訊訊息: 未成年法代審核失敗", "推播訊息: 未成年法代審核失敗", "推播訊息: 傳送身分驗證碼(保險介接)", "推播訊息: 傳送電支工具管理後台登入驗證碼", "企業儲值禮金", "ICP回饋金", "推播訊息: 電支後台本國未成年人聯徵P11/P33/P55均通過之APP推播", "推播訊息: 電支後台本國成年人P55 驗證人工審核通過", "推播訊息: 電支後台外國人聯徵P11/P33/P55均通過之APP推播", "簡訊訊息: 電支後台本國未成年人聯徵P11/P33/P55均通過", "簡訊訊息: 電支後台本國成年人P55 驗證人工審核通過", "簡訊訊息: 電支後台外國人聯徵P11/P33/P55均通過", "儲值卡餘額轉置", "簡訊OTP訊息"]
+
+        $.getJSON("Notify.json ", function (data) {
+            db_notify_data = data;
+        });
+
+        function create_data_table() {
+            var table = document.getElementsByTagName("table")[1]
+            var table2 = document.getElementsByTagName("table")[2]
+
+            for (var i = 0; i < db_notify_data.length; i++) {
+                var row = table.insertRow(-1)
+                var cell1 = row.insertCell(0)
+                var cell2 = row.insertCell(1)
+                var cell3 = row.insertCell(2)
+                var cell4 = row.insertCell(3)
+                var cell5 = row.insertCell(4)
+                var cell6 = row.insertCell(5)
+                var cell7 = row.insertCell(6)
+                var cell8 = row.insertCell(7)
+                var cell9 = row.insertCell(8)
+                var cell10 = row.insertCell(9)
+                var cell11 = row.insertCell(10)
+                var cell12 = row.insertCell(11)
+                var cell13 = row.insertCell(12)
+                var cell14 = row.insertCell(13)
+
+
+                cell1.innerText = db_notify_data[i].NotifyID
+                cell2.innerText = db_notify_data[i].Description
+                cell3.innerText = db_notify_data[i].PaymentNotes
+                cell4.innerText = db_notify_data[i].Notes
+                cell5.innerText = db_notify_data[i].Title
+                cell6.innerText = db_notify_data[i].Body
+                cell7.innerText = db_notify_data[i].NotifyKey
+                cell8.innerText = db_notify_data[i].TradeModeID
+                cell9.innerText = db_notify_data[i].TradeModeCName
+                cell10.innerText = db_notify_data[i].PaymentTypeID
+                cell11.innerText = db_notify_data[i].PaymentSubTypeID
+                cell12.innerText = db_notify_data[i].WantPush
+                cell13.innerText = db_notify_data[i].NotifyType
+                cell14.innerText = db_notify_data[i].Status
+
+                cell7.style.display = "none"
+                cell8.style.display = "none"
+                cell9.style.display = "none"
+                cell10.style.display = "none"
+                cell11.style.display = "none"
+                cell12.style.display = "none"
+                cell13.style.display = "none"
+                cell14.style.display = "none"
+            }
+
+            for (var i = 0; i < db_notify_data2.length; i++) {
+                var row = table2.insertRow(-1)
+                var cell1 = row.insertCell(0)
+                var cell2 = row.insertCell(1)
+                var cell3 = row.insertCell(2)
+                var cell4 = row.insertCell(3)
+                var cell5 = row.insertCell(4)
+
+                cell1.innerText = db_notify_data2[i].NotifyID
+                cell2.innerText = db_notify_data2[i].Description
+                cell3.innerText = db_notify_data2[i].Title
+                cell4.innerText = db_notify_data2[i].Body
+                cell5.innerText = db_notify_data2[i].NotifyKey
+
+                cell5.style.display="none"
+            }
+        }
+
+        function clear_check_input() {
+            notifytype.selectedIndex = 0
+            paymenttype.selectedIndex = 0
+
+            icpnotifytype.selectedIndex = 0
+
+            notifytitle.value=""
+            notifycontent.value = ""
+
+            check_data(true)
+        }
+
+        function check_data() {
+            var table = document.getElementsByTagName("table")[table_select_now]
+            var notifytype_check = notifytype.value.toString().trim()
+            var icpnotifytype_check =icpnotifytype.value.toString().trim()
+            var paymenttype_check = paymenttype.value.toString().trim()
+            var notifytitle_check = notifytitle.value.toString().trim()
+            var notifycontent_check = notifycontent.value.toString().trim()
+
+
+            switch (table_select_now) {
+                case 1:
+                    if (notifytype_check == "" && paymenttype_check == "" && notifytitle_check == "" && notifycontent_check == "") {
+                        for (var i = 1; i < table.getElementsByTagName("tr").length; i++) {
+                            table.getElementsByTagName("tr")[i].style.display = ""
+                        }
+                    }
+                    else {
+                        for (var i = 1; i < table.getElementsByTagName("tr").length; i++) {
+                            var condition1 = true
+                            var condition2 = true
+                            var condition3 = true
+                            var condition4 = true
+
+                            if (notifytype_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerText.toString().indexOf(notifytype_check) < 0) {
+                                    condition1 = false
+                                }
+                            }
+                            if (paymenttype_check != "") {
+                                var data = paymenttype_check.split(',')
+                                for (var j = 0; j < data.length; j++) {
+                                    if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[9].innerText.toString().indexOf(data[j]) > -1) {
+                                        condition2 = true
+                                        break;
+                                    }
+                                    else {
+                                        condition2 = false
+                                    }
+                                }
+
+                            }
+                            if (notifytitle_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[4].innerText.toString().indexOf(notifytitle_check) < 0) {
+                                    condition3 = false
+                                }
+                            }
+
+                            if (notifycontent_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[5].innerText.toString().indexOf(notifycontent_check) < 0) {
+                                    condition4 = false
+                                }
+                            }
+
+                            if (!condition1 || !condition2 || !condition3 || !condition4) {
+                                table.getElementsByTagName("tr")[i].style.display = "none"
+                            }
+                            else {
+                                table.getElementsByTagName("tr")[i].style.display = ""
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    if (icpnotifytype_check == "" && notifytitle_check == "" && notifycontent_check == "") {
+                        for (var i = 1; i < table.getElementsByTagName("tr").length; i++) {
+                            table.getElementsByTagName("tr")[i].style.display = ""
+                        }
+                    }
+                    else {
+                        for (var i = 1; i < table.getElementsByTagName("tr").length; i++) {
+                            var condition1 = true
+                            var condition2 = true
+                            var condition3 = true
+
+                            if (icpnotifytype_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[1].innerText.toString().indexOf(icpnotifytype_check) < 0) {
+                                    condition1 = false
+                                }
+                            }
+
+                            if (notifytitle_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[2].innerText.toString().indexOf(notifytitle_check) < 0) {
+                                    condition2 = false
+                                }
+                            }
+
+                            if (notifycontent_check != "") {
+                                if (table.getElementsByTagName("tr")[i].getElementsByTagName("td")[3].innerText.toString().indexOf(notifycontent_check) < 0) {
+                                    condition3 = false
+                                }
+                            }
+
+                            if (!condition1 || !condition2 || !condition3) {
+                                table.getElementsByTagName("tr")[i].style.display = "none"
+                            }
+                            else {
+                                table.getElementsByTagName("tr")[i].style.display = ""
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
+        function change_page(page, e, initial) {
+
+            var selector = e.parentNode
+
+            clear_check_input(initial);
+
+            if (page < 1 || page > 2) {
+                page = 1;
+            }
+            table_select_now = page
+
+            clear_check_input()
+
+            for (var i = 0; i < selector.getElementsByTagName("td").length; i++) {
+                selector.getElementsByTagName("td")[i].className = ""
+            }
+            e.className = "active"
+
+            for (var i = 1; i < document.getElementsByTagName("table").length; i++) {
+                document.getElementsByTagName("table")[i].style.display = "none"
+            }
+
+            document.getElementsByTagName("table")[page].style.display = ""
+
+            switch (page) {
+                case 1:
+                    value_selector1.style.display = ""
+                    value_selector2.style.display = ""
+                    value_selector3.style.display = "none"
+                    break;
+                case 2:
+                    value_selector1.style.display = "none"
+                    value_selector2.style.display = ""
+                    value_selector3.style.display = ""
+                    break;
+            }
+        }
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        .active {
+            color: white;
+            background-color: black;
+        }
+
+        input, select {
+            border: 1px solid transparent;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            input[type=text] {
+                background-color: #f1f1f1;
+                width: 100%;
+            }
+
+            input[type=submit] {
+                background-color: DodgerBlue;
+                color: #fff;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="value_selector1" style="width:100%">
+            <div style="float:left;width:50%">
+                <label style="width:25%;">推播類型:</label>
+                <select style="width:75%;" onchange="check_data()">
+                    <option value="">全部</option>
+                    <option value="交易付款通知">交易付款通知</option>
+                    <option value="現金儲值">現金儲值</option>
+                    <option value="現金儲值取消">現金儲值取消</option>
+                    <option value="連結帳戶儲值">連結帳戶儲值</option>
+                    <option value="發票儲值">發票儲值</option>
+                    <option value="轉帳轉入">轉帳轉入</option>
+                    <option value="ATM儲值">ATM儲值</option>
+                    <option value="轉帳轉出">轉帳轉出</option>
+                    <option value="提領成功通知">提領成功通知</option>
+                    <option value="提領失敗通知">提領失敗通知</option>
+                    <option value="退款訊息">退款訊息</option>
+                    <option value="ATM儲值成功">ATM儲值成功</option>
+                    <option value="跨行轉入">跨行轉入</option>
+                    <option value="跨行轉出成功通知">跨行轉出成功通知</option>
+                    <option value="跨行轉出失敗通知">跨行轉出失敗通知</option>
+                    <option value="企業儲值禮金">企業儲值禮金</option>
+                    <option value="ICP回饋金">ICP回饋金</option>
+                    <option value="儲值卡餘額轉置">儲值卡餘額轉置</option>
+                </select>
+            </div>
+            <div style="float:left;width:50%">
+                <label style="width:25%;">交易類型:</label>
+                <select style="width:75%;" onchange="check_data()">
+                    <option value="">全部</option>
+                    <option value="0">信用卡</option>
+                    <option value="1,6,7">電支賬戶</option>
+                    <option value="2">連結扣款帳戶</option>
+                    <option value="3">ATM</option>
+                    <option value="4">現金</option>
+                    <option value="5">中獎發票</option>
+                    <option value="13">跨行轉帳轉入</option>
+                    <option value="14">企業禮金儲值</option>
+                    <option value="15">回饋金儲值</option>
+                    <option value="16">儲值卡餘額轉置</option>
+                </select>
+            </div>
+        </div>
+        <div id="value_selector3" style="width:100%;display:none;">
+            <div style="float:none;width:50%">
+                <label style="width:25%;">推播類型:</label>
+                <select style="width:75%;" onchange="check_data()">
+                    <option value="">全部</option>
+                </select>
+            </div>
+        </div>
+        <div id="value_selector2" style="width:100%">
+            <div style="float:left;width:50%">
+                <label style="width:25%;">推播標題:</label>
+                <input style="width:75%;" type="text" onkeyup="check_data()" />
+            </div>
+            <div style="float:left;width:50%">
+                <label style="width:25%;">推播内容:</label>
+                <input style="width:75%;" type="text" onkeyup="check_data()" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="button" value="清除查詢條件" onclick="clear_check_input()" />
+    </div>
+    <div style="width:100%;">
+        <table style="width:100%;border:none;">
+            <tr>
+                <td onclick="change_page(1,this)" class="active">交易推播</td>
+                <td onclick="change_page(2,this)">ICP推播分類</td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <th style="width: 60px;">NotifyID</th>
+                <th style="width: 150px;">推播類型</th>
+                <th style="width: 150px;">交易類型</th>
+                <th style="width: 200px;">備注</th>
+                <th>推播標題</th>
+                <th>推播内容</th>
+                <th style="display: none;">NotifyKey</th>
+                <th style="display:none;">TradeModeID</th>
+                <th style="display:none;">TradeModeCName</th>
+                <th style="display:none;">PaymentTypeID</th>
+                <th style="display:none;">PaymentSubTypeID</th>
+                <th style="display:none;">WantPush</th>
+                <th style="display:none;">NotifyType</th>
+                <th style="display:none;">Status</th>
+            </tr>
+        </table>
+        <table style="width:100%;display:none;">
+            <tr>
+                <th style="width: 60px;">NotifyID</th>
+                <th style="width: 200px;">推播類型</th>
+                <th style="width: 200px;">推播標題</th>
+                <th>推播内容</th>
+                <th style="display: none;">NotifyKey</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var notifytype = document.getElementById("value_selector1").getElementsByTagName("select")[0]
+    var paymenttype = document.getElementById("value_selector1").getElementsByTagName("select")[1]
+    var notifytitle = document.getElementById("value_selector2").getElementsByTagName("input")[0]
+    var notifycontent = document.getElementById("value_selector2").getElementsByTagName("input")[1]
+    var icpnotifytype = document.getElementById("value_selector3").getElementsByTagName("select")[0]
+
+    var value_selector1 = document.getElementById("value_selector1")
+    var value_selector2 = document.getElementById("value_selector2")
+    var value_selector3 = document.getElementById("value_selector3")
+
+    for (var i = 0; i < db_icpnotifytype.length; i++) {
+        var option = document.createElement("option")
+
+        option.value = db_icpnotifytype[i].toString().trim()
+        option.innerText = db_icpnotifytype[i].toString().trim()
+
+        icpnotifytype.appendChild(option)
+    }
+
+    create_data_table();
+</script>

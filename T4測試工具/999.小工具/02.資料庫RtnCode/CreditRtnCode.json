@@ -1,0 +1,8594 @@
+[
+  {
+    "BankCode": "012",
+    "BankRtnCode": "000",
+    "BankRtnMsg": "Approved (授權成功) ",
+    "RtnCode": "1",
+    "RtnMsg": "Approved (授權成功) ",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0000",
+    "BankRtnMsg": "請款完成,處理中 ",
+    "RtnCode": "1",
+    "RtnMsg": "請款完成,處理中 ",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0000",
+    "BankRtnMsg": "Success ",
+    "RtnCode": "1",
+    "RtnMsg": "Success ",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0000",
+    "BankRtnMsg": "卡片資訊、客戶資訊、行動電話皆正常",
+    "RtnCode": "1",
+    "RtnMsg": "卡片資訊、客戶資訊、行動電話皆正常",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0001",
+    "BankRtnMsg": "請款完成,處理中，ePayment Serve 提示需變更設定 PermitCode ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0001",
+    "BankRtnMsg": "Success，ePayment Serve 提示需變更設定 PermitCode ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "0001",
+    "BankRtnMsg": "Success，ePayment Serve提示需變更設定",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "002",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "004",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "005",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "007",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "008",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "009",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "010",
+    "BankRtnMsg": "Token_Data_Error ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "011",
+    "BankRtnMsg": "Auth_Resp_Error (授權結果回覆有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "050",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "051",
+    "BankRtnMsg": "Expired_Card (卡片有效期限有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "052",
+    "BankRtnMsg": "PIN_Retry_Error",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "053",
+    "BankRtnMsg": "Bank_Not_Support (發卡行不支援該交易類別) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "054",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "055",
+    "BankRtnMsg": "Invalid_TXN (無效的交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "056",
+    "BankRtnMsg": "CH_No_Support (持卡人卡號有問題) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "057",
+    "BankRtnMsg": "Lost_Card (遺失卡) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "058",
+    "BankRtnMsg": "Invalid_CardNo (無效的信用卡卡號) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "059",
+    "BankRtnMsg": "No_Accounts (無此帳號) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "060",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "061",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "062",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "063",
+    "BankRtnMsg": "Error_Auth_Type",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "064",
+    "BankRtnMsg": "Bad_Track_II (信用卡磁軌 II 無法判讀) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "065",
+    "BankRtnMsg": "TXN_not_Support (不支援此類型交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "066",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "067",
+    "BankRtnMsg": "Invalid_TXN_Date (無效的交易日期) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "068",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "069",
+    "BankRtnMsg": "Format_Error (格式有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "070",
+    "BankRtnMsg": "No_Such_Issuer (無此發卡行) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "072",
+    "BankRtnMsg": "Negative_Card (問題卡片) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "073",
+    "BankRtnMsg": "No_Route_Service ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "074",
+    "BankRtnMsg": "Unable_to_Auth (無法授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "075",
+    "BankRtnMsg": "Card_No_Error (卡號有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "076",
+    "BankRtnMsg": "Low_funds (持卡人專戶餘額過低) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "077",
+    "BankRtnMsg": "Pre-Auth_Full ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "078",
+    "BankRtnMsg": "Duplicate_TXN (交易重覆) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "079",
+    "BankRtnMsg": "Max_Refund_reach (以達退貨上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "080",
+    "BankRtnMsg": "Max_Refund_reach (以達退貨上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "081",
+    "BankRtnMsg": "Max_Refund_reach (以達退貨上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "082",
+    "BankRtnMsg": "Max_TXN_Times (以達交易次數上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "083",
+    "BankRtnMsg": "Max_Refund_reach (以達退貨上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "084",
+    "BankRtnMsg": "Neg-Customer ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "085",
+    "BankRtnMsg": "INQ_not_support ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "086",
+    "BankRtnMsg": "Over_floor_limit",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "087",
+    "BankRtnMsg": "Max_refund_reach (以達退貨上限) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "088",
+    "BankRtnMsg": "Call_Issuer (與發卡行連絡) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "089",
+    "BankRtnMsg": "Card_Lock (卡片已鎖卡) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "090",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "091",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "092",
+    "BankRtnMsg": "Low_funds (持卡人專戶餘額過低) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "093",
+    "BankRtnMsg": "Delinquent ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "094",
+    "BankRtnMsg": "Over_Limit_Table ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "095",
+    "BankRtnMsg": "Over_Max_Amount (超過額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "096",
+    "BankRtnMsg": "PIN_Required ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "097",
+    "BankRtnMsg": "Check_Error ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "098",
+    "BankRtnMsg": "Force_Post ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "099",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "100",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "101",
+    "BankRtnMsg": "Call_Issuer (與發卡行連絡) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "102",
+    "BankRtnMsg": "Call_Issuer (與發卡行連絡) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "103",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "104",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "105",
+    "BankRtnMsg": "Card_not_Support (不支援此卡種) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "106",
+    "BankRtnMsg": "Over_Max_Amount (超過額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "107",
+    "BankRtnMsg": "Over_Daily_Limit (超過日限額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "108",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "109",
+    "BankRtnMsg": "Low_Funds (持卡人專戶餘額過低) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "110",
+    "BankRtnMsg": "Number_times_use ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "111",
+    "BankRtnMsg": "Delinquent ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "112",
+    "BankRtnMsg": "Over_Limit_Table ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "113",
+    "BankRtnMsg": "TimeOut (授權逾時) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "115",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "120",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "121",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "122",
+    "BankRtnMsg": "System_Error (系統錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "150",
+    "BankRtnMsg": "Invalid_Merchant (無效特店) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "200",
+    "BankRtnMsg": "Invalid_Account ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "201",
+    "BankRtnMsg": "Incorrect_PIN ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "202",
+    "BankRtnMsg": "Low_funds(持卡人專戶餘額過低) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "203",
+    "BankRtnMsg": "Adm_Card_Needed ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "204",
+    "BankRtnMsg": "Over_Max_Amount (超過額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "205",
+    "BankRtnMsg": "Invalid_Amount (無效的交易金額) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "207",
+    "BankRtnMsg": "Invalid_TXN_Date (無效的交易日期) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "208",
+    "BankRtnMsg": "Invalid_Exp_Date (無效的卡片有效日期) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "209",
+    "BankRtnMsg": "Invalid_TXN_Code (無效的交易代碼) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "251",
+    "BankRtnMsg": "Over_Daily_Limit (超過日限額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "600",
+    "BankRtnMsg": "PIN_Retry_Error ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "601",
+    "BankRtnMsg": "Expired_Card (卡片有效期限有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "602",
+    "BankRtnMsg": "Negative_Card (問題卡片) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "603",
+    "BankRtnMsg": "Pick-Up_Card (已掛失卡片) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "604",
+    "BankRtnMsg": "Low_funds (持卡人專戶餘額過低) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "605",
+    "BankRtnMsg": "Number_Times_use ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "606",
+    "BankRtnMsg": "Delinquent ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "607",
+    "BankRtnMsg": "Over_Table_Limit ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "608",
+    "BankRtnMsg": "Over_Max_Amount (超過額度) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "609",
+    "BankRtnMsg": "Capture_Card ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "650",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "651",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "652",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "653",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "654",
+    "BankRtnMsg": "Decline (拒絕授權) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "655",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "656",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "657",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "658",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "659",
+    "BankRtnMsg": "TXN_Not_Support (不支援此類型交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "660",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "661",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "662",
+    "BankRtnMsg": "ChargeBack (扣款交易) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "709",
+    "BankRtnMsg": "gErrTCPTimeOut (後端授權主機交易逾時) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "801",
+    "BankRtnMsg": "特店代號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "802",
+    "BankRtnMsg": "端末機代號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "803",
+    "BankRtnMsg": "子特店代號格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "804",
+    "BankRtnMsg": "特店指定單號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "805",
+    "BankRtnMsg": "卡號錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "806",
+    "BankRtnMsg": "無效的交易金額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "807",
+    "BankRtnMsg": "卡片有效期限錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "808",
+    "BankRtnMsg": "無效的交易代碼 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "809",
+    "BankRtnMsg": "身份證字號格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "810",
+    "BankRtnMsg": "API 傳送資料錯誤，請檢查網路 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "811",
+    "BankRtnMsg": "API 接收資料錯誤，請檢查網路 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "812",
+    "BankRtnMsg": "API 處理回應資料有誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "815",
+    "BankRtnMsg": "授權系統錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "816",
+    "BankRtnMsg": "連接 CommServer 錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "817",
+    "BankRtnMsg": "退貨授權錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "818",
+    "BankRtnMsg": "未設定授權主機位址 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "819",
+    "BankRtnMsg": "指定的授權主機無回應 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "820",
+    "BankRtnMsg": "SSL 加解密失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "821",
+    "BankRtnMsg": "交易流程錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "822",
+    "BankRtnMsg": "API 與授權主機通訊錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "823",
+    "BankRtnMsg": "特店回覆 URL 錯誤或無資料 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "824",
+    "BankRtnMsg": "If 交易模式為分期,分期期數必須>1 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "825",
+    "BankRtnMsg": "特店無此權限 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "826",
+    "BankRtnMsg": "端末機無此權限 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "827",
+    "BankRtnMsg": "無此特店資料 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "828",
+    "BankRtnMsg": "無此端末機資料 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "829",
+    "BankRtnMsg": "ServerList.ini 主機 Port 錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "830",
+    "BankRtnMsg": "ServerList.ini 設定檔錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "831",
+    "BankRtnMsg": "授權日期長度或格式或內容錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "832",
+    "BankRtnMsg": "授權時間長度或格式或內容錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "833",
+    "BankRtnMsg": "幣別錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "834",
+    "BankRtnMsg": "使用者定義資料長度過長或為空值 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "835",
+    "BankRtnMsg": "電子信箱資料長度過長或為空值 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "836",
+    "BankRtnMsg": "CVV2 資料長度不對 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "837",
+    "BankRtnMsg": "TransMode value must between 0~2 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "838",
+    "BankRtnMsg": "RRN 不可為空值 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "839",
+    "BankRtnMsg": "NotifyType Error must be API or HPP ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "840",
+    "BankRtnMsg": "MobilePayFlag DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "841",
+    "BankRtnMsg": "MobilePayTx DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "842",
+    "BankRtnMsg": "MobilePayInfoA DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "843",
+    "BankRtnMsg": "MobilePayInfoB DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "844",
+    "BankRtnMsg": "MobilePayWallet DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "845",
+    "BankRtnMsg": "MobilePayECI DATA Error(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "846",
+    "BankRtnMsg": "持卡人行動電話資料輸入有誤(請輸入數字資料 for account verify) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "847",
+    "BankRtnMsg": "持卡人生日資料輸入有誤(西元年月日) (請輸入數字資料 for account verify) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "銀行端交易處理失敗，需人工確認",
+    "RtnCode": "8998",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "901",
+    "BankRtnMsg": "特店指定單號重覆 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "902",
+    "BankRtnMsg": "授權主機轉接錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "903",
+    "BankRtnMsg": "授權主機轉接錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "904",
+    "BankRtnMsg": "授權主機轉接錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "905",
+    "BankRtnMsg": "授權主機轉接錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "906",
+    "BankRtnMsg": "授權主機轉接錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "907",
+    "BankRtnMsg": "無效的交易代碼 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "908",
+    "BankRtnMsg": "無效的特店代號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "909",
+    "BankRtnMsg": "無效的端末機代號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "910",
+    "BankRtnMsg": "無效的身份證字號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "911",
+    "BankRtnMsg": "無效的特店指定單號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "912",
+    "BankRtnMsg": "授權資料格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "913",
+    "BankRtnMsg": "授權系統錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "914",
+    "BankRtnMsg": "通訊錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "915",
+    "BankRtnMsg": "資料庫寫入失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "916",
+    "BankRtnMsg": "找不到指定的發卡行 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "917",
+    "BankRtnMsg": "授權資料格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "918",
+    "BankRtnMsg": "授權資料格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "919",
+    "BankRtnMsg": "銀聯交易記錄寫入錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "920",
+    "BankRtnMsg": "找不到指定授權轉接主機 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "921",
+    "BankRtnMsg": "未設定授權轉接主機 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "922",
+    "BankRtnMsg": "指定的授權轉接主機無回應 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "923",
+    "BankRtnMsg": "連接授權轉接主機失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "924",
+    "BankRtnMsg": "傳送至授權轉接主機失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "925",
+    "BankRtnMsg": "接收授權轉接主機回應失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "926",
+    "BankRtnMsg": "授權轉接主機交易逾時 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "927",
+    "BankRtnMsg": "無效的授權回應碼 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "930",
+    "BankRtnMsg": "黑名單卡號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "940",
+    "BankRtnMsg": "授權資料格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "941",
+    "BankRtnMsg": "Error_APL_InfoA(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "942",
+    "BankRtnMsg": "Error_APL_InfoB(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "943",
+    "BankRtnMsg": "Error_APL_NotSupport(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "944",
+    "BankRtnMsg": "Error_APL_Crypto(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "945",
+    "BankRtnMsg": "Error_APL_ECI(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "946",
+    "BankRtnMsg": "Error_APL_WalletTx(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "947",
+    "BankRtnMsg": "Error_APL_Wallet(for applepay) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "950",
+    "BankRtnMsg": "3D 認證逾時 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "951",
+    "BankRtnMsg": "3D 認證失敗 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "952",
+    "BankRtnMsg": "找不到原始交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "953",
+    "BankRtnMsg": "交易已沖正，不可退貨 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "954",
+    "BankRtnMsg": "退貨授權或購貨取消錯誤(重覆執行) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "960",
+    "BankRtnMsg": "不支援分期交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "961",
+    "BankRtnMsg": "不支援紅利交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "962",
+    "BankRtnMsg": "無效的分期期數 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "963",
+    "BankRtnMsg": "Master_Downgrade ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "964",
+    "BankRtnMsg": "3D 認證失敗(連接發卡行 DS 主機失敗或 3D 驗證資料設定有誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "965",
+    "BankRtnMsg": "退貨金額超過授權金額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "966",
+    "BankRtnMsg": "不允許部份退貨 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "967",
+    "BankRtnMsg": "退貨授權、購貨取消交易錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "968",
+    "BankRtnMsg": "發卡行回覆之授權碼資料格式有誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "970",
+    "BankRtnMsg": "不支援此特店進行購貨交易授權 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "971",
+    "BankRtnMsg": "此特店不支援此卡別 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "972",
+    "BankRtnMsg": "特店狀態錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "973",
+    "BankRtnMsg": "不允許進行跨行授權 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "974",
+    "BankRtnMsg": "特店不支援紅利折抵交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "975",
+    "BankRtnMsg": "特店不支援分期付款交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "976",
+    "BankRtnMsg": "請輸入卡片背面末 3 碼 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "977",
+    "BankRtnMsg": "端末機狀態錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "978",
+    "BankRtnMsg": "端末機不允許進行購貨交易授權",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "979",
+    "BankRtnMsg": "端末機不允許進行紅利折抵交易授權 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "980",
+    "BankRtnMsg": "端末機不允許進行分期付款交易授權 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "981",
+    "BankRtnMsg": "特店不允許國外卡授權交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "982",
+    "BankRtnMsg": "測試卡超過單筆交易限額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "983",
+    "BankRtnMsg": "風險卡拒絕(請聯絡特店) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "984",
+    "BankRtnMsg": "風險卡拒絕(特店拒絕) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "985",
+    "BankRtnMsg": "特店不支援他行 Master 卡授權交易 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "986",
+    "BankRtnMsg": "收單之 Call Bank ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "987",
+    "BankRtnMsg": "收單之警訊 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "988",
+    "BankRtnMsg": "未傳入 Notify URL ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "989",
+    "BankRtnMsg": "未傳如 Notify URL 參數 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "990",
+    "BankRtnMsg": "端末機不允許進行退貨 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "991",
+    "BankRtnMsg": "端末機不允許進行購貨取消 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "992",
+    "BankRtnMsg": "端末機不允許進行退貨取消 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "993",
+    "BankRtnMsg": "授權交易已取消 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "994",
+    "BankRtnMsg": "銀聯卡交易不允許退貨 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "995",
+    "BankRtnMsg": "強制 3D 認證 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "996",
+    "BankRtnMsg": "卡號未支援 3D 認證 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B001",
+    "BankRtnMsg": "特店代號錯誤(不可為空值或大於最大值) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B001",
+    "BankRtnMsg": "特店代號錯誤(不可為空值或大於最大值) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B001",
+    "BankRtnMsg": "特店代號錯誤(不可為空值或大於最大值)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B002",
+    "BankRtnMsg": "端末機代號(不可為空值或大於最大值) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B003",
+    "BankRtnMsg": "特店指定單號長度或格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B003",
+    "BankRtnMsg": "特店指定單號長度或格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B004",
+    "BankRtnMsg": "交易代碼錯誤(需為’00’) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B005",
+    "BankRtnMsg": "授權碼不可為空值或長度錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B006",
+    "BankRtnMsg": "請款金額錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B007",
+    "BankRtnMsg": "日期格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B007",
+    "BankRtnMsg": "日期格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B008",
+    "BankRtnMsg": "時間格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B009",
+    "BankRtnMsg": "輸入資料錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B901",
+    "BankRtnMsg": "傳送資料錯誤，請檢查網路 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B901",
+    "BankRtnMsg": "傳送資料錯誤，請檢查網路 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B901",
+    "BankRtnMsg": "傳送資料錯誤，請檢查網路",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B902",
+    "BankRtnMsg": "回傳資料為空白或接收資料有誤，請檢查網路通訊 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B902",
+    "BankRtnMsg": "回傳資料為空白或接收資料有誤，請檢查網路通訊 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B902",
+    "BankRtnMsg": "回傳資料為空白或接收資料有誤，請檢查網路通訊",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B903",
+    "BankRtnMsg": "找不到服務入口，請檢查設定檔 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B903",
+    "BankRtnMsg": "找不到服務入口，請檢查設定檔 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B903",
+    "BankRtnMsg": "找不到服務入口，請檢查設定檔",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B904",
+    "BankRtnMsg": "通訊逾時未到回應資料，請檢查設定與網路通訊 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B904",
+    "BankRtnMsg": "通訊逾時未到回應資料，請檢查設定與網路通訊 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B904",
+    "BankRtnMsg": "通訊逾時未到回應資料，請檢查設定與網路通訊",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B905",
+    "BankRtnMsg": "接收回傳資料有誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B905",
+    "BankRtnMsg": "接收回傳資料有誤(ProtocolError) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B905",
+    "BankRtnMsg": "接收回傳資料有誤(ProtocolError)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B906",
+    "BankRtnMsg": "接收回傳資料有誤(WebError) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B906",
+    "BankRtnMsg": "接收回傳資料有誤(WebError)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B907",
+    "BankRtnMsg": "接收回傳資料有誤(Error) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "B907",
+    "BankRtnMsg": "接收回傳資料有誤(Error)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "發送 IP 控管 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "發送 IP 控管 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "發送IP控管",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "資料傳輸驗證碼有誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "資料傳輸驗證碼有誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "資料傳輸驗證碼有誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E003",
+    "BankRtnMsg": "交易類別錯誤(TxCode) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E003",
+    "BankRtnMsg": "交易類別錯誤(TxCode) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E003",
+    "BankRtnMsg": "交易類別錯誤(TxCode)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E004",
+    "BankRtnMsg": "找不到原授權資料 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E004",
+    "BankRtnMsg": "查無資料 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E004",
+    "BankRtnMsg": "查無資料",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E005",
+    "BankRtnMsg": "特店代號有誤(無此特店資料) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E005",
+    "BankRtnMsg": "特店代號格式錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E005",
+    "BankRtnMsg": "特店代號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E006",
+    "BankRtnMsg": "特店代號狀態錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E007",
+    "BankRtnMsg": "特店未設定可進行請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E008",
+    "BankRtnMsg": "特店權限不允許 “部份請款” ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E009",
+    "BankRtnMsg": "日期格式不正確或空白 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E009",
+    "BankRtnMsg": "日期格式不正確或空白 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E010",
+    "BankRtnMsg": "時間格式不正確或空白 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E011",
+    "BankRtnMsg": "特店指定單號錯誤(OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E011",
+    "BankRtnMsg": "特店指定單號錯誤(OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E012",
+    "BankRtnMsg": "系統指定單號錯誤(Sys_OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E012",
+    "BankRtnMsg": "系統指定單號錯誤(Sys_OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E013",
+    "BankRtnMsg": "未輸入特店指定單號(OrderID)或系統指定單號(Sys_OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E013",
+    "BankRtnMsg": "未輸入特店指定單號(OrderID)或系統指定單號(Sys_OrderID) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E014",
+    "BankRtnMsg": "端末機狀態錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E015",
+    "BankRtnMsg": "無效的端末機代號 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E016",
+    "BankRtnMsg": "無效的交易代碼(非'00') ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E017",
+    "BankRtnMsg": "授權碼不可為空值或長度錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E018",
+    "BankRtnMsg": "無效的交易金額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E019",
+    "BankRtnMsg": "原授權資料已沖正 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E020",
+    "BankRtnMsg": "欲請款金額不可大於可請款金額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E021",
+    "BankRtnMsg": "端末機權限不允許 “部份請款” ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E022",
+    "BankRtnMsg": "欲請款金額必須大於 0 才可請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E023",
+    "BankRtnMsg": "請款資料已超過可請款期限(授權日+請款期限天數) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E024",
+    "BankRtnMsg": "請款總金額超過授權金額(已請款金額+欲請款總金額不可大於授權金額) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E025",
+    "BankRtnMsg": "請款累積金額不可小於等於 0 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E026",
+    "BankRtnMsg": "退貨總金額超過請款總金額 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E027",
+    "BankRtnMsg": "尚有退貨交易未請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E028",
+    "BankRtnMsg": "退貨請款金額與原退貨授權金額不符 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E029",
+    "BankRtnMsg": "原授權資料已取消 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E030",
+    "BankRtnMsg": "分期交易不允許部份請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E031",
+    "BankRtnMsg": "紅利交易不允許部份請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E032",
+    "BankRtnMsg": "原授權資料已完全請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E033",
+    "BankRtnMsg": "Test Card 無法進行請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E034",
+    "BankRtnMsg": "尚未進行購貨請款前不可執行退貨請款 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E035",
+    "BankRtnMsg": "資料檢查有誤(ESBTxn)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E900",
+    "BankRtnMsg": "接收資料有誤(格式錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E900",
+    "BankRtnMsg": "接收資料有誤(格式錯誤) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E900",
+    "BankRtnMsg": "接收資料有誤(格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E901",
+    "BankRtnMsg": "接收資料有誤(IO Error) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E901",
+    "BankRtnMsg": "接收資料有誤(IO Error) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E901",
+    "BankRtnMsg": "接收資料有誤(IO Error)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E902",
+    "BankRtnMsg": "CHECKSUM ERROR ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E902",
+    "BankRtnMsg": "CHECKSUM ERROR ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E902",
+    "BankRtnMsg": "CHECKSUM ERROR",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E908",
+    "BankRtnMsg": "回傳資料格式錯誤(XML Format Error) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E908",
+    "BankRtnMsg": "回傳資料格式錯誤(XML Format Error) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E908",
+    "BankRtnMsg": "回傳資料格式錯誤(XML Format Error)",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E998",
+    "BankRtnMsg": "特店請款資料處理失敗(新增、更新失敗) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E998",
+    "BankRtnMsg": "ESB通訊錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E999",
+    "BankRtnMsg": "系統錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E999",
+    "BankRtnMsg": "系統錯誤 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "E999",
+    "BankRtnMsg": "系統錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "S001V302",
+    "BankRtnMsg": "卡片檢核正確，客戶基本資料不存在",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "S001V642",
+    "BankRtnMsg": "卡片檢核正確，持卡ＩＤ錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "S001V808",
+    "BankRtnMsg": "卡片檢核正確，生日錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "S002V351",
+    "BankRtnMsg": "卡片檢核正確，客戶資訊正確，行動電話錯誤(行動電話與信用卡留存資料不相符)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V001",
+    "BankRtnMsg": "輸入參數錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V002V548",
+    "BankRtnMsg": "卡片檢核有誤，卡號輸入錯誤!",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V002V634",
+    "BankRtnMsg": "卡片檢核有誤，卡片狀態不正常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V002V802",
+    "BankRtnMsg": "卡片檢核有誤，過期卡BANK-CHECK",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V002V842",
+    "BankRtnMsg": "卡片檢核有誤，CVV2錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "012",
+    "BankRtnCode": "V002V871",
+    "BankRtnMsg": "卡片檢核有誤，信用卡有效期限有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "15"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "000N",
+    "BankRtnMsg": "3D驗證失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "0303",
+    "BankRtnMsg": "授權失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "銀行端交易處理失敗，需人工確認",
+    "RtnCode": "8998",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "銀行端交易處理失敗，需人工確認",
+    "RtnCode": "8998",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "99"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "9901",
+    "BankRtnMsg": "無符合之訂單",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "授權失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E001",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E002",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E005",
+    "BankRtnMsg": "系統忙碌中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "E100",
+    "BankRtnMsg": "系統維護中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "商家交易資料有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L001",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L002",
+    "BankRtnMsg": "檢核商家認證資料失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "訂單編號重複",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "無符合的可取消資料",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "無符合的可請款資料",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "無符合的可取消資料",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "無符合的已請款資料",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L003",
+    "BankRtnMsg": "無符合的已退款未結帳資料(紅利折抵退貨無法取消)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L004",
+    "BankRtnMsg": "商家交易網址錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "卡片資料有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "主機批次執行中",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "請款金額有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "退款金額有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L005",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L006",
+    "BankRtnMsg": "交易型態有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L006",
+    "BankRtnMsg": "取消授權失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L006",
+    "BankRtnMsg": "今日結帳作業已完成",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L006",
+    "BankRtnMsg": "今日結帳作業已完成",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L007",
+    "BankRtnMsg": "需輸入卡片安全碼",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L007",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L007",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L007",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L008",
+    "BankRtnMsg": "紅利折抵與分期交易不可部份請款",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "L100",
+    "BankRtnMsg": "資料格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M010",
+    "BankRtnMsg": "限制國內卡、自行卡",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "02"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "03"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "04"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請發送查詢API確認訂單狀態",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "05"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M011",
+    "BankRtnMsg": "交易逾時，請重新發送",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "06"
+  },
+  {
+    "BankCode": "013",
+    "BankRtnCode": "M100",
+    "BankRtnMsg": "請洽系統管理員",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "00"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "00",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "01",
+    "BankRtnMsg": "請查詢銀行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "03",
+    "BankRtnMsg": "無效特店",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "05",
+    "BankRtnMsg": "請查詢銀行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "卡號錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "54",
+    "BankRtnMsg": "卡片過期",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "62",
+    "BankRtnMsg": "尚未開卡",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "85",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "87",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "89",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "ET",
+    "BankRtnMsg": "銀聯卡自訂回覆碼",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G0",
+    "BankRtnMsg": "系統功能有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G1",
+    "BankRtnMsg": "交易逾時",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G2",
+    "BankRtnMsg": "資料格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G3",
+    "BankRtnMsg": "非使用中特店",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G4",
+    "BankRtnMsg": "特店交易類型不合",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G5",
+    "BankRtnMsg": "連線IP不合",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G6",
+    "BankRtnMsg": "訂單編號重複",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G7",
+    "BankRtnMsg": "使用未定義之紅利點數進行交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G8",
+    "BankRtnMsg": "押碼錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "G9",
+    "BankRtnMsg": "Session檢查有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GA",
+    "BankRtnMsg": "無效的持卡人資料",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GB",
+    "BankRtnMsg": "不允許執行授權取消交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GC",
+    "BankRtnMsg": "退貨期限逾期",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GD",
+    "BankRtnMsg": "查無訂單編號",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GE",
+    "BankRtnMsg": "查無交易明細",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GF",
+    "BankRtnMsg": "交易資料狀態不符",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GG",
+    "BankRtnMsg": "交易失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GH",
+    "BankRtnMsg": "訂單編號重複送出交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GI",
+    "BankRtnMsg": "銀行紅利狀態不符",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GJ",
+    "BankRtnMsg": "出團日期不合法",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GK",
+    "BankRtnMsg": "延後出團天數超過限定天數",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GL",
+    "BankRtnMsg": "非限定特店，不可使用「玉山卡」參數",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GM",
+    "BankRtnMsg": "限定特店，必須傳送「玉山卡」參數",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GN",
+    "BankRtnMsg": "該卡號非玉山卡所屬",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GP",
+    "BankRtnMsg": "銀行紅利與分期只能二選一",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GR",
+    "BankRtnMsg": "使用者取消刷卡頁面",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GS",
+    "BankRtnMsg": "系統暫停服務",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GT",
+    "BankRtnMsg": "交易時間逾時",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GU",
+    "BankRtnMsg": "預先授權重覆交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GV",
+    "BankRtnMsg": "無預先授權成功交易紀錄",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GW",
+    "BankRtnMsg": "無預先授權交易紀錄",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GX",
+    "BankRtnMsg": "3D 交易異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GY",
+    "BankRtnMsg": "3D 交易異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "GZ",
+    "BankRtnMsg": "3D 交易異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L1",
+    "BankRtnMsg": "產品代碼錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L2",
+    "BankRtnMsg": "期數錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L3",
+    "BankRtnMsg": "不支援分期(他行卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L4",
+    "BankRtnMsg": "產品代碼過期",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L5",
+    "BankRtnMsg": "金額無效",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L6",
+    "BankRtnMsg": "不支援分期",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "L7",
+    "BankRtnMsg": "非限定卡別交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "N1",
+    "BankRtnMsg": "紅利點數與金額不符",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "N7",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "NM",
+    "BankRtnMsg": "未設定特店類型或英文名稱",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "NR",
+    "BankRtnMsg": "不允許退貨交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "NT",
+    "BankRtnMsg": "未設定為銀聯卡交易特店",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "NV",
+    "BankRtnMsg": "不允許取消交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "P1",
+    "BankRtnMsg": "請洽發卡行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "QQ",
+    "BankRtnMsg": "不允許Debit Card交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "RA",
+    "BankRtnMsg": "退貨交易金額有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "RD",
+    "BankRtnMsg": "超過退貨交易期限",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "RP",
+    "BankRtnMsg": "退貨交易不符",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "TE",
+    "BankRtnMsg": "Token格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "TI",
+    "BankRtnMsg": "無效Token",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "UE",
+    "BankRtnMsg": "請聯繫收單銀行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "V0",
+    "BankRtnMsg": "3D 驗證失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "V1",
+    "BankRtnMsg": "3D 交易異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "V2",
+    "BankRtnMsg": "發卡行(ACS)系統異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "VA",
+    "BankRtnMsg": "取消交易金額有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "VD",
+    "BankRtnMsg": "取消交易時間不合法(日期)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "VT",
+    "BankRtnMsg": "取消交易時間不合法(時間)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X1",
+    "BankRtnMsg": "不允許使用紅利折抵現金功能",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X2",
+    "BankRtnMsg": "點數未達可折抵點數下限",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X3",
+    "BankRtnMsg": "他行卡不支援紅利折抵",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X4",
+    "BankRtnMsg": "此活動已逾期",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X5",
+    "BankRtnMsg": "金額未超過限額不允許使用",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X6",
+    "BankRtnMsg": "特店不允許紅利交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X7",
+    "BankRtnMsg": "點數不足",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X8",
+    "BankRtnMsg": "非正卡持卡人",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "X9",
+    "BankRtnMsg": "紅利商品編號有誤或空白",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XA",
+    "BankRtnMsg": "紅利自付額有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XB",
+    "BankRtnMsg": "紅利商品數量有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XC",
+    "BankRtnMsg": "紅利商品數量超過可折抵上限",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XD",
+    "BankRtnMsg": "紅利商品折抵點數超過最高折",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XE",
+    "BankRtnMsg": "紅利商品傳入之固定點數有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "XF",
+    "BankRtnMsg": "紅利折抵金額超過消費金額",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "Z0",
+    "BankRtnMsg": "URL錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "Z1",
+    "BankRtnMsg": "不允許銀聯交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "808",
+    "BankRtnCode": "Z2",
+    "BankRtnMsg": "無法進行完全3D交易",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "00",
+    "BankRtnMsg": "交易成功(Approved or completed successfully)",
+    "RtnCode": "8998",
+    "RtnMsg": "交易成功(Approved or completed successfully)",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "01",
+    "BankRtnMsg": "請聯絡銀行(Refer to card issuer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "02",
+    "BankRtnMsg": "請聯絡銀行(Refer to card issuer's special conditions)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "03",
+    "BankRtnMsg": "特店代號錯誤(Invalid merchant)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "04",
+    "BankRtnMsg": "停用卡(Pick-up card )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "05",
+    "BankRtnMsg": "交易拒絕(Do not honor)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "06",
+    "BankRtnMsg": "錯誤交易(Error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "07",
+    "BankRtnMsg": "停用卡(Pick-up card，special condition)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "09",
+    "BankRtnMsg": "交易拒絕(Request in progress)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "1",
+    "BankRtnMsg": "請聯絡銀行(Refer to card issuer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "特店控管(for 台新)(Merchant risk control)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "無效交易(Invalid transaction)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "金額有誤(Invalid amount )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "卡號有誤(Invalid card number (no such number))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "無此發卡行(No such issuer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "分期交易拒絕(Installment reject)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "17",
+    "BankRtnMsg": "無此分期期數(Installment no period)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "18",
+    "BankRtnMsg": "分期交易未開卡(Installment not open card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "19",
+    "BankRtnMsg": "請重新操作(Re-enter transaction)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "2",
+    "BankRtnMsg": "請聯絡銀行(Refer to card issuer's special conditions)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "20",
+    "BankRtnMsg": "分期交易過期(Installment  expire card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "無交易記錄(Not  transaction)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "25",
+    "BankRtnMsg": "交易不存在(Unable to locate record on file)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "28",
+    "BankRtnMsg": "系統無回應，請聯絡銀行(No replay)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "3",
+    "BankRtnMsg": "特店代號錯誤(Invalid merchant)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "資料格式有誤(Format error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-300",
+    "BankRtnMsg": "Order Number already exists.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-301",
+    "BankRtnMsg": "Transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-302",
+    "BankRtnMsg": "Redeem transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-303",
+    "BankRtnMsg": "Installment transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-305",
+    "BankRtnMsg": "Refund/void refund transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-306",
+    "BankRtnMsg": "Redeem refund/void refund transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-307",
+    "BankRtnMsg": "Installment refund/void refund transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-308",
+    "BankRtnMsg": "Settle / Void Settle transaction not permitted to terminal.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-309",
+    "BankRtnMsg": "Void sale/refund/void refund/Settle/ Void Settle transaction not permitted to merchant.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "31",
+    "BankRtnMsg": "發卡行連線中斷(Bank not supported by switch)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-31",
+    "BankRtnMsg": "Input Parameter [OrderNo] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-310",
+    "BankRtnMsg": "Void Sale transaction not permitted to not found original sale transaction or expired to void.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-311",
+    "BankRtnMsg": "Void Refund transaction not permitted to not found original refund transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-312",
+    "BankRtnMsg": "Void settle transaction not permitted to not found original settle transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-313",
+    "BankRtnMsg": "Refund transaction not permitted to over amount of original transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-314",
+    "BankRtnMsg": "Refund transaction not permitted to not found original sale transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-315",
+    "BankRtnMsg": "Settle transaction not permitted to not found original sale/refund transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-316",
+    "BankRtnMsg": "Settle transaction not permitted to over amount of original transaction.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-317",
+    "BankRtnMsg": "Refund transaction duplicate.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-318",
+    "BankRtnMsg": "Void transaction duplicate.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-319",
+    "BankRtnMsg": "Invalid card number.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-32",
+    "BankRtnMsg": "Input Parameter [MerchantID] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-320",
+    "BankRtnMsg": "Format error. (金額、身分證字號、電話號碼、CVV2、到期年月)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-321",
+    "BankRtnMsg": "Expired card.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-322",
+    "BankRtnMsg": "Transaction not permit (not accepted international card). (不接受國際卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-323",
+    "BankRtnMsg": "Transaction not exists.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-324",
+    "BankRtnMsg": "Order Number not exists.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-329",
+    "BankRtnMsg": "Invalid source ip or no registered ip.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "33",
+    "BankRtnMsg": "過期卡片(Expired card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-33",
+    "BankRtnMsg": "Input Parameter [TerminalID] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "34",
+    "BankRtnMsg": "問題卡片(Suspected fraud)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-34",
+    "BankRtnMsg": "Input Parameter [OrderDesc] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "35",
+    "BankRtnMsg": "問題卡片，請聯絡銀行(Card acceptor contact acquirer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-35",
+    "BankRtnMsg": "Input Parameter [Currency] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "36",
+    "BankRtnMsg": "停用/掛失卡片(Restricted card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-36",
+    "BankRtnMsg": "Input Parameter [Amount] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "37",
+    "BankRtnMsg": "問題卡片，請聯絡銀行(Card acceptor call acquirer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-37",
+    "BankRtnMsg": "Input Parameter [PostBackURL] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-38",
+    "BankRtnMsg": "Input Parameter [ResultURL] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "39",
+    "BankRtnMsg": "無此帳號(No credit account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-39",
+    "BankRtnMsg": "Input Parameter [CaptureFlag] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "4",
+    "BankRtnMsg": "停用卡(Pick-up card )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-40",
+    "BankRtnMsg": "Input Parameter [ResultFlag] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "41",
+    "BankRtnMsg": "掛失卡片(Lost card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "43",
+    "BankRtnMsg": "掛失卡片(Stolen card，Pick-up card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-44",
+    "BankRtnMsg": "Input Parameter [TransType] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-45",
+    "BankRtnMsg": "Log Config file Open Error.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-46",
+    "BankRtnMsg": "Input Parameter [ExpDate] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-47",
+    "BankRtnMsg": "Input Parameter [City] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-48",
+    "BankRtnMsg": "Input Parameter [StartDate] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-49",
+    "BankRtnMsg": "Input Parameter [EndDate] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "5",
+    "BankRtnMsg": "交易拒絕(Do not honor)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-50",
+    "BankRtnMsg": "Input Parameter [TransAmt] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-500",
+    "BankRtnMsg": "TSPG Server is closed. Or Local IP is not consistent with Server setting.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-501",
+    "BankRtnMsg": "TSPG Server receives NULL.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "51",
+    "BankRtnMsg": "卡片餘額不足(Not sufficient funds)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-51",
+    "BankRtnMsg": "Parameter exceeds max length.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "52",
+    "BankRtnMsg": "卡片餘額不足(No check account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "53",
+    "BankRtnMsg": "卡片餘額不足(No save account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "54",
+    "BankRtnMsg": "過期卡片(Expired card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "55",
+    "BankRtnMsg": "密碼有誤(Incorrect personal identification number(PIN))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "56",
+    "BankRtnMsg": "卡號有誤；找不到交易(No card record)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "57",
+    "BankRtnMsg": "發卡行拒絕(不接受此交易)(Transaction not permitted to cardholder)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "58",
+    "BankRtnMsg": "無此交易型態(資料格式有誤)(Transaction not permitted to terminal)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "6",
+    "BankRtnMsg": "錯誤交易(Error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "61",
+    "BankRtnMsg": "交易超過限額(Exceeds withdrawal amount limit )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "62",
+    "BankRtnMsg": "停用/限制卡片(Restricted card)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "65",
+    "BankRtnMsg": "交易超過規定次數(Exceeds withdrawal frequency limit)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-66",
+    "BankRtnMsg": "Input Parameter [Card_Number] is null or empty.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-67",
+    "BankRtnMsg": "Expired date format error.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "68",
+    "BankRtnMsg": "連線逾時，請重新操作(Response received too late)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-68",
+    "BankRtnMsg": "CVV2/CVC2 format error.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "7",
+    "BankRtnMsg": "停用卡(Pick-up card，special condition)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "70",
+    "BankRtnMsg": "請聯絡銀行(Contact card issuer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "75",
+    "BankRtnMsg": "密碼錯誤次數超過限制(Allowable number of PIN tries exceeded )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "78",
+    "BankRtnMsg": "無此交易(Trace number not found)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "82",
+    "BankRtnMsg": "卡片末三碼有誤(Incorrect CVV/ICVV(VISA STIP))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "83",
+    "BankRtnMsg": "密碼有誤(Unable to verify PIN)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "84",
+    "BankRtnMsg": "無法授權(Invalid Authorization lift cycle)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "85",
+    "BankRtnMsg": "若為台新卡的身分驗證交易(一般交易不適用)，可視為成功",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "86",
+    "BankRtnMsg": "發卡行拒絕(Decline)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "87",
+    "BankRtnMsg": "發卡行拒絕(Decline)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "88",
+    "BankRtnMsg": "特店代號有誤(Merchant number not found)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "89",
+    "BankRtnMsg": "終端機代號有誤(Terminal ID error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "銀行端交易處理失敗，需人工確認",
+    "RtnCode": "8998",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "9",
+    "BankRtnMsg": "交易拒絕(Request in progress)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "90",
+    "BankRtnMsg": "發卡行拒絕(Decline)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "91",
+    "BankRtnMsg": "發卡行拒絕，請聯絡銀行(Issuer or switch is inoperative)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "92",
+    "BankRtnMsg": "系統異常，請聯絡銀行(Financial institution or intermediate network facility cannot be found for routing)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "93",
+    "BankRtnMsg": "系統異常，請聯絡銀行(Transaction cannot be completed)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "94",
+    "BankRtnMsg": "重覆交易(Duplicate transmission)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "96",
+    "BankRtnMsg": "系統錯誤，請聯絡銀行(System error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-96",
+    "BankRtnMsg": "TSPG error.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "97",
+    "BankRtnMsg": "點數不足(System error)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "99",
+    "BankRtnMsg": "系統未回應(Host time out)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "-999",
+    "BankRtnMsg": "Undefined error.",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "A1",
+    "BankRtnMsg": "他行 ID 認證不在 I716",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "A2",
+    "BankRtnMsg": "他行 ID 認證卡號不滿 6 個月",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "A3",
+    "BankRtnMsg": "他行 ID 認證卡號不在 log",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "A4",
+    "BankRtnMsg": "自行 ID 認證數金商代拒絕",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "A5",
+    "BankRtnMsg": "身分認證 MCC CODE 錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N0",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N1",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N2",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N3",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N4",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N5",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N6",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N7",
+    "BankRtnMsg": "卡片末三碼有誤(Decline for CVV2 failure(VISA))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N8",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "N9",
+    "BankRtnMsg": "交易拒絕(Force STIP)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "P1",
+    "BankRtnMsg": "請聯絡銀行(Over daily limit(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "P4",
+    "BankRtnMsg": "請聯絡銀行(Number times used limit exceeded(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "P6",
+    "BankRtnMsg": "請聯絡銀行(N：Over limit table(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "P9",
+    "BankRtnMsg": "請聯絡銀行(Enter lesser amount(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "PG",
+    "BankRtnMsg": "3D 驗證異常，交易拒絕(Decline)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "Q1",
+    "BankRtnMsg": "交易拒絕(Invalid expiration date(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "Q2",
+    "BankRtnMsg": "交易拒絕(Invalid transaction code(reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "S9",
+    "BankRtnMsg": "請聯絡銀行(Unable to validate PIN security module is down(reserved for BASE24 use) )",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "T4",
+    "BankRtnMsg": "超額，請聯絡銀行(Amount over maximum (reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "T5",
+    "BankRtnMsg": "停用卡(card stasus inactive or closed (reserved for BASE24 use))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "812",
+    "BankRtnCode": "T7",
+    "BankRtnMsg": "交易拒絕(Decline)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行。",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "00",
+    "BankRtnMsg": "(交易資料有誤，無法寫入資料庫)",
+    "RtnCode": "0",
+    "RtnMsg": "(交易資料有誤，無法寫入資料庫)",
+    "TYPE": "1"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0000",
+    "BankRtnMsg": "已綁定",
+    "RtnCode": "8003",
+    "RtnMsg": "訊息代碼：8003，已綁定的信用卡(已完成3D驗證)",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0001",
+    "BankRtnMsg": "訊息代碼：8016，已綁定(待啟用)",
+    "RtnCode": "8016",
+    "RtnMsg": "訊息代碼：8016，已綁定(待啟用)",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0002",
+    "BankRtnMsg": "綁定失敗",
+    "RtnCode": "8000",
+    "RtnMsg": "訊息代碼：8000，非合作銀行信用卡",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0003",
+    "BankRtnMsg": "未綁定",
+    "RtnCode": "8013",
+    "RtnMsg": "訊息代碼：0003，未綁定",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0004",
+    "BankRtnMsg": "未綁定",
+    "RtnCode": "8014",
+    "RtnMsg": "訊息代碼：8014，非icash Pay會員",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "0005",
+    "BankRtnMsg": "訊息代碼：8015，會員生日不符",
+    "RtnCode": "8015",
+    "RtnMsg": "訊息代碼：8015，會員生日不符",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "01",
+    "BankRtnMsg": "(請與您的發卡銀行聯絡有關網路交易授權失敗的",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "02",
+    "BankRtnMsg": "(特殊狀況，請與發卡銀行聯絡有關網路交易授權失敗的原因)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "03",
+    "BankRtnMsg": "(未經授權使用的Merchant ID)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "04",
+    "BankRtnMsg": "(Invalid capture code: capture)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "05",
+    "BankRtnMsg": "(發卡銀行無任何因素地拒絕該卡號的網路交易)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "06",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "07",
+    "BankRtnMsg": "(特殊狀況，失卡，請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "08",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "09",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "1",
+    "BankRtnMsg": "(HyPOSEZ Server 系統設定異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "1",
+    "BankRtnMsg": "(銀行P.G.系統記憶體配置異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "1",
+    "BankRtnMsg": "(銀行P.G.系統拒絕商家進行該型態的交易指令)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "1",
+    "BankRtnMsg": "(銀行CardPool收單系統逾時回應訊息)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "10",
+    "BankRtnMsg": "(其他不明原因的錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "10",
+    "BankRtnMsg": "(銀行P.G.系統啟動過期資料清檔程序異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "10",
+    "BankRtnMsg": "(交易型態不在銀行P.G.系統的SET/SSL類別定義內)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "10",
+    "BankRtnMsg": "(銀行P.G.系統等不到CardPool收單系統系統回應交易結果)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "10",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "100",
+    "BankRtnMsg": "(無客製化授權頁)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "101",
+    "BankRtnMsg": "(無此特店的資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "102",
+    "BankRtnMsg": "(merID不一致)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "105",
+    "BankRtnMsg": "(資料庫連線失敗)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "ServerName等環境參數格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(HyPOSEZ 帳管系統無此訂單編號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(銀行CardPool檢核交易3D驗證碼失敗)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(銀行P.G.系統產生該交易批次報表異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(銀行P.G.系統設定交易資料內EC_INDICATOR異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(銀行P.G.系統重新啟動中)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "11",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "網路連線失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "(HyPOSEZ 系統設定異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "(銀行P.G.系統時間早於1970，需重新設定)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "(分期付款中交易資料內信用卡BRAND不一致)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "(銀行P.G主機作業系統異常)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "12",
+    "BankRtnMsg": "(無效的交易，交易資料異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "資料接收錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "(銀行P.G.系統設定交易資料內分期期數異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "(銀行P.G.無法對其他銀行特店進行收單)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "13",
+    "BankRtnMsg": "(無效的金額，消費金額異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "資料傳送錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "(HyPOSEZ無此交易相關紀錄檔)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "(銀行P.G.系統啟動時產生Log或QID目錄異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "(銀行P.G.拒絕重複的交易代碼XID)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "(銀行P.G系統與CardPool收單系統間網路忙線中，請稍後重新交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "14",
+    "BankRtnMsg": "(無效的卡號資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "資料接收逾時",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "(HyPOSEZ交易紀錄中XID交易序號格式異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "(銀行P.G.系統參數資料長度超過2048位元)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "(該筆SSL交易代XID交易正被處理中)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "15",
+    "BankRtnMsg": "(無效的發卡銀行)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "缺少keystore檔",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "(HyPOSEZ開啟交易紀錄檔異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "(銀行P.G.系統產生reconcile report逾時)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "(銀行Lock保護機制)P.G.系統偵測到交易中的資料未進行",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "16",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "17",
+    "BankRtnMsg": "憑證檢核錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "17",
+    "BankRtnMsg": "(HyPOSEZ帳管系統交易查詢異常中斷)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "17",
+    "BankRtnMsg": "(銀行P.G.系統無法處理原void的交易資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "17",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "18",
+    "BankRtnMsg": "(URL-Link網頁整合格式異常─網路特店編號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "18",
+    "BankRtnMsg": "(授權已被取消)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "18",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "19",
+    "BankRtnMsg": "(URL-Link網頁整合格式異常─商場訂單編號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "19",
+    "BankRtnMsg": "(該授權交易已超過有效期限，銀行P.G.系統無法繼續執行該交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "19",
+    "BankRtnMsg": "(銀行系統拒絕重複的交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "2",
+    "BankRtnMsg": "(HyPOSEZ Server 系統設定檔不存在)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "2",
+    "BankRtnMsg": "(銀行P.G.系統開啟系統資料檔異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "2",
+    "BankRtnMsg": "(違反交易法則，銀行P.G.系統無法作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "2",
+    "BankRtnMsg": "(銀行P.G.系統上傳的交易型態異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "20",
+    "BankRtnMsg": "(URL-Link網頁整合格式異常─訂單交易金額)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "20",
+    "BankRtnMsg": "(銀行P.G.系統讀取DB Server資料設定異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "20",
+    "BankRtnMsg": "(該退款交易已超過有效期限，銀行P.G.系統無法繼續執行該交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "20",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "(URL-Link網頁整合格式異常─交易幣別指數)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "(單日累積授權金額超過銀行P.G.上限)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "P.G.系統讀取HYWEBPGDIR環境變數異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "(交易資料的授權金額比對有問題)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "21",
+    "BankRtnMsg": "(無效的交易，系統無法取消紅利交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "22",
+    "BankRtnMsg": "(信用卡有效期限長度格式異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "22",
+    "BankRtnMsg": "(單日累積授權筆數超過銀行P.G.上限)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "22",
+    "BankRtnMsg": "(銀行P.G.系統Config內容設定異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "22",
+    "BankRtnMsg": "(交易資料的信用卡卡號比對有問題)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "23",
+    "BankRtnMsg": "(信用卡卡號長度格式異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "23",
+    "BankRtnMsg": "(單筆授權金額超過銀行P.G.上限)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "23",
+    "BankRtnMsg": "(交易資料的信用卡有效期限比對有問題)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "24",
+    "BankRtnMsg": "(URL-Link網頁整合格式異常─訂單交易幣別)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "24",
+    "BankRtnMsg": "(銀行P.G.暫時停止特店交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "24",
+    "BankRtnMsg": "(交易資料的授權碼比對有問題)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "25",
+    "BankRtnMsg": "(HyPOSEZ Internal Error：系統設定檔異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "25",
+    "BankRtnMsg": "(信用卡號不在P.G.系統或特店設定可接受的卡號範圍內)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "25",
+    "BankRtnMsg": "(銀行P.G.系統無法判別前次的交易資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "26",
+    "BankRtnMsg": "(HyPOSEZ Internal Error：XID交易序號異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "26",
+    "BankRtnMsg": "(銀行P.G.或特店目前不接受該卡號交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "26",
+    "BankRtnMsg": "(Reserved：分期付款的金額有誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435457",
+    "BankRtnMsg": "訂單編號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435458",
+    "BankRtnMsg": "卡號或背面末三碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435459",
+    "BankRtnMsg": "信用卡有效期限格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435460",
+    "BankRtnMsg": "金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435461",
+    "BankRtnMsg": "幣別格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435462",
+    "BankRtnMsg": "CAVV格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435463",
+    "BankRtnMsg": "POS伺服器回覆的資料有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435464",
+    "BankRtnMsg": "交易識別碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435465",
+    "BankRtnMsg": "授權交易代碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435466",
+    "BankRtnMsg": "訂單描述說明格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435467",
+    "BankRtnMsg": "分期期數格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435468",
+    "BankRtnMsg": "birthday欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435469",
+    "BankRtnMsg": "pid欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435470",
+    "BankRtnMsg": "productCode欄位格式錯誤(紅利專用)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435471",
+    "BankRtnMsg": "交易金額超過上限",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435472",
+    "BankRtnMsg": "授權碼欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435473",
+    "BankRtnMsg": "取消金額欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435474",
+    "BankRtnMsg": "termseq欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435475",
+    "BankRtnMsg": "幣別欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435476",
+    "BankRtnMsg": "批次編號欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435477",
+    "BankRtnMsg": "批次序號欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435478",
+    "BankRtnMsg": "merid欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435479",
+    "BankRtnMsg": "eci欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435480",
+    "BankRtnMsg": "recur_freq或recur_end格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435481",
+    "BankRtnMsg": "訂單查詢-的交易型態有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435486",
+    "BankRtnMsg": "訂單查詢-訂單狀態擷取有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435487",
+    "BankRtnMsg": "訂單查詢-訂單錯誤碼擷取有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435488",
+    "BankRtnMsg": "訂單查詢-訂單授權碼格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435489",
+    "BankRtnMsg": "訂單查詢-訂單交易金額擷取有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435490",
+    "BankRtnMsg": "訂單查詢-訂單資料結果識別有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435497",
+    "BankRtnMsg": "遞延撥款日格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435498",
+    "BankRtnMsg": "下游商店代號格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435499",
+    "BankRtnMsg": "下游商店佣金格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435505",
+    "BankRtnMsg": "欄位輸入PaymentTokenData欄位，則不可再輸入PAN、CAVV、ExpDate、ECI、Currency、PurchAmt",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435516",
+    "BankRtnMsg": "次特店商店編號格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435517",
+    "BankRtnMsg": "品項格式有誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435518",
+    "BankRtnMsg": "INAPPFLAG欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435519",
+    "BankRtnMsg": "CARDFACILITY欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435520",
+    "BankRtnMsg": "PromoCode欄位格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435522",
+    "BankRtnMsg": "API發生異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435523",
+    "BankRtnMsg": "Server發生異常",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "268435544",
+    "BankRtnMsg": "交易金額超過訂單金額或為0",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "27",
+    "BankRtnMsg": "(HyPOSEZ Internal Error：AUTHRRPID交易序號異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "27",
+    "BankRtnMsg": "(銀行P.G.尚未收到特店的收單申請)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "27",
+    "BankRtnMsg": "(批次結帳作業無回應狀態值)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "28",
+    "BankRtnMsg": "(HyPOSEZ Internal Error：CREDRRPID交易序號異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "28",
+    "BankRtnMsg": "(銀行P.G.尚未收到特店申請該項服務)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "28",
+    "BankRtnMsg": "(批次結帳作業無回應狀態值)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212673",
+    "BankRtnMsg": "特店代號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212674",
+    "BankRtnMsg": "終端機代號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212675",
+    "BankRtnMsg": "訂單編號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212676",
+    "BankRtnMsg": "交易總金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212677",
+    "BankRtnMsg": "交易方式格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212678",
+    "BankRtnMsg": "CAVV格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212679",
+    "BankRtnMsg": "產品代碼或分期期數格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212680",
+    "BankRtnMsg": "交易執行狀態格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212681",
+    "BankRtnMsg": "交易錯誤代碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212682",
+    "BankRtnMsg": "交易回應碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212683",
+    "BankRtnMsg": "交易(授權、轉帳)金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212684",
+    "BankRtnMsg": "折抵金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212685",
+    "BankRtnMsg": "原始消費金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212686",
+    "BankRtnMsg": "本次兌換點數格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212687",
+    "BankRtnMsg": "卡號末四碼純數字格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212688",
+    "BankRtnMsg": "AcquirerBIN格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212689",
+    "BankRtnMsg": "轉入帳號格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212690",
+    "BankRtnMsg": "信用卡有效年格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212691",
+    "BankRtnMsg": "信用卡有效月格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212692",
+    "BankRtnMsg": "交易金額格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212693",
+    "BankRtnMsg": "交易代碼格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212694",
+    "BankRtnMsg": "原先所傳入信用卡有效期西元?及月份格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212695",
+    "BankRtnMsg": "Eci格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212696",
+    "BankRtnMsg": "ErrorCode格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212697",
+    "BankRtnMsg": "Key格式錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212698",
+    "BankRtnMsg": "壓碼錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212699",
+    "BankRtnMsg": "KEY轉換失敗",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212700",
+    "BankRtnMsg": "MAC輸出錯誤",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "285212701",
+    "BankRtnMsg": "加密的密文內容或長度不符 ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "01"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "29",
+    "BankRtnMsg": "(HyPOSEZ Internal Error：交易批次編號異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "29",
+    "BankRtnMsg": "(銀行PG未開放此類交易功能)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "29",
+    "BankRtnMsg": "(批次結帳結果的狀態值不在定義範圍內)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "3",
+    "BankRtnMsg": "(HyPOSEZ Server 系統記憶體配置異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "3",
+    "BankRtnMsg": "(銀行P.G.系統存取系統資料檔異常)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "3",
+    "BankRtnMsg": "(違反交易法則，銀行P.G.系統無法void原已取消的交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "3",
+    "BankRtnMsg": "(銀行P.G.系統上傳的交易資料格式異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(HyPOSEZS開啟交易紀錄檔異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(違反商店的3D身分驗證規則)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(銀行P.G.系統正在進行關機程序，無法處理新進的交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(批次結帳結果的狀態值不在定義範圍內)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "30",
+    "BankRtnMsg": "(系統無法判別交易的資料格式)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "31",
+    "BankRtnMsg": "(HyPOSEZ與SSL HyPOS Server連線交易異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "31",
+    "BankRtnMsg": "(該商家目前有交易正在進行，銀行P.G.系統無法鎖定該特店)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "31",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "31",
+    "BankRtnMsg": "(Reserved,bank not supported by switch)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "32",
+    "BankRtnMsg": "(交易網頁資料已超過有效時間，請重新執行)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "32",
+    "BankRtnMsg": "(商店只接受該店設定的卡號範圍)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "32",
+    "BankRtnMsg": "(銀行P.G.系統無法判別商家目前的MerchantID及TerminalID)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "32",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "32",
+    "BankRtnMsg": "(Reserved,completed partially)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "33",
+    "BankRtnMsg": "(商店只接受國內卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "33",
+    "BankRtnMsg": "(銀行P.G.系統無法判別商家目前欲進行的交易批次)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "33",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "33",
+    "BankRtnMsg": "(發卡銀行：您的信用卡有效期限輸入錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "34",
+    "BankRtnMsg": "(商店只接受自行卡(中信卡))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "34",
+    "BankRtnMsg": "(該批次編號需先進行BatchOpen的動作才能使用)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "34",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "34",
+    "BankRtnMsg": "(Reserved,suspected fraud 故意欺騙)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "35",
+    "BankRtnMsg": "(商家的同批次內的交易筆數已達銀行P.G.系統的上限，需進行批次結帳的作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "35",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "35",
+    "BankRtnMsg": "(Reserved,card acceptor call acquirer security)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "36",
+    "BankRtnMsg": "(商家的交易批次編號已達銀行P.G.系統的上限，需進行批次清除的作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "36",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "36",
+    "BankRtnMsg": "(Reserved,restricted card 受限卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "37",
+    "BankRtnMsg": "(銀行P.G.系統無法對已啟用的批次編號再進行開啟作業) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "37",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "37",
+    "BankRtnMsg": "(Reserved,card acceptor call acquirer security)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "38",
+    "BankRtnMsg": "(銀行P.G.系統無法對已關閉的批次編號再進行結帳作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "38",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "38",
+    "BankRtnMsg": "(Reserved,allowable PIN tries exceeded 錯誤三次)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "39",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "39",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "39",
+    "BankRtnMsg": "(系統無法獲得持卡者的信用資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "4",
+    "BankRtnMsg": "(HyPOSEZ 無法連結到SSL HyPOS Server)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "4",
+    "BankRtnMsg": "(銀行P.G.系統連結資料庫系統異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "4",
+    "BankRtnMsg": "(交易指令不在銀行P.G.系統的CAT/EDC定義範圍內)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "4",
+    "BankRtnMsg": "(銀行P.G.系統與CardPool收單系統系統連線失敗)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "40",
+    "BankRtnMsg": "(3D驗證失敗)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "40",
+    "BankRtnMsg": "(銀行P.G.同時進行處理的交易數量已達上限，請稍後再試)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "40",
+    "BankRtnMsg": "(銀行P.G.系統拒絕在目前的批次狀態執行該交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "40",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "40",
+    "BankRtnMsg": "(Reserved,requested function not supported)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "41",
+    "BankRtnMsg": "(持卡人輸入3D密碼驗證錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "41",
+    "BankRtnMsg": "(該商家的交易批次編號已使用中)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "41",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "41",
+    "BankRtnMsg": "(信用卡已掛失)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "42",
+    "BankRtnMsg": "(持卡人未申請3D驗證服務)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "42",
+    "BankRtnMsg": "(銀行P.G.系統無法判別商家目前使用中的交易批次編號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "42",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "42",
+    "BankRtnMsg": "(Reserved,no universal account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "43",
+    "BankRtnMsg": "(無法判讀卡號所屬的3D發卡行資訊)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "43",
+    "BankRtnMsg": "(商家尚無啟用中的批次資料可供結帳作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "43",
+    "BankRtnMsg": "(CardPool收單系統所回應的該資料欄位異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "43",
+    "BankRtnMsg": "(拾獲失竊卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "44",
+    "BankRtnMsg": "(無法收到3D發卡行的認證回應)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "44",
+    "BankRtnMsg": "(交易資料無CVV2驗證碼)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "44",
+    "BankRtnMsg": "(Reserved,no investment account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "45",
+    "BankRtnMsg": "(無法判讀3D發卡行回應的認證資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "45",
+    "BankRtnMsg": "(授權金額超過單筆交易金額限制)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "45",
+    "BankRtnMsg": "(無法取得銀聯Expressay回傳資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "45",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "46",
+    "BankRtnMsg": "(單卡累計授權金額超過特店機台設定的額度)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "46",
+    "BankRtnMsg": "(批次請款總金額超過批次金額限制)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "46",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "47",
+    "BankRtnMsg": "(特店機台的單月累計授權金額超過上限)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "12"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "47",
+    "BankRtnMsg": "(批次退款總金額超過批次金額限制)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "47",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "48",
+    "BankRtnMsg": "(銀行P.G.系統進行批次結帳交易時，此批次仍有交易正在處理中，P.G.等待這些交易超過Timeout時限)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "48",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "49",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "5",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "5",
+    "BankRtnMsg": "(銀行P.G.無法回傳交易結果，發動Cancel交易)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "5",
+    "BankRtnMsg": "(違反交易法則，銀行P.G.系統無法判讀交易完成狀態) ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "5",
+    "BankRtnMsg": "(銀行CardPool收單系統回應訊息異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "50",
+    "BankRtnMsg": "(系統不接受此幣別)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "50",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "51",
+    "BankRtnMsg": "(分期付款交易，請款或退款金額必須等於授權金額)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "51",
+    "BankRtnMsg": "(發卡銀行：消費額度不足)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "52",
+    "BankRtnMsg": "(重複請款)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "52",
+    "BankRtnMsg": "(No chequing account)~53(Nosaving account)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "53",
+    "BankRtnMsg": "(重複退款)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "54",
+    "BankRtnMsg": "(重複取消授權)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "54",
+    "BankRtnMsg": "(信用卡有效期限過期)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "55",
+    "BankRtnMsg": "(重複取消請款)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "55",
+    "BankRtnMsg": "(Reserved,incorrect personal identification number)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "56",
+    "BankRtnMsg": "(重複取消退款)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "56",
+    "BankRtnMsg": "(系統無法獲得持卡者的信用卡紀錄)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "57",
+    "BankRtnMsg": "(拒絕持卡者進行該網路交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "58",
+    "BankRtnMsg": "(拒絕商家進行該網路交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "59",
+    "BankRtnMsg": "(嫌疑卡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "6",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "6",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "6",
+    "BankRtnMsg": "(銀行P.G.系統無法儲存未approved的成功交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "6",
+    "BankRtnMsg": "(銀行P.G.系統交易處理滿載中)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "60",
+    "BankRtnMsg": "(Reserved,card acceptor call acquirer)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "61",
+    "BankRtnMsg": "(productCode欄位格式錯誤(紅利專用))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "61",
+    "BankRtnMsg": "(Reserved,amount too high)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "62",
+    "BankRtnMsg": "(特店’交易方式’屬性與先前交易不符(紅利專用))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "62",
+    "BankRtnMsg": "(Reserved,card have to check)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "63",
+    "BankRtnMsg": "(設定卡資訊取得方式的格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "63",
+    "BankRtnMsg": "(信用卡安全識別碼錯誤,security violation)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "64",
+    "BankRtnMsg": "(相關交易的金額前後不符)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "65",
+    "BankRtnMsg": "(Reserved,exceeds withdrawal frequency limit)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "66",
+    "BankRtnMsg": "(Reserved,card acceptor call acquirer's security department)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "67",
+    "BankRtnMsg": "(Reserved,requires that card be picked up at ATM)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "68",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "69",
+    "BankRtnMsg": "(帶入卡片資料為空白)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "69",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7",
+    "BankRtnMsg": "(該筆交易正在HyPOSEZ Server 進行中)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7",
+    "BankRtnMsg": "(銀行P.G.系統等待授權結果逾時)*",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7",
+    "BankRtnMsg": "(交易金額違反法則，銀行P.G.系統無法處理)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "7",
+    "BankRtnMsg": "(信用卡效期過期,或卡號長度不對(目前只允許16碼))",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "70",
+    "BankRtnMsg": "(卡片資訊必須為數字)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "70",
+    "BankRtnMsg": "(前次退貨交易,尚未確認跟銀行請款成功)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "70",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "71",
+    "BankRtnMsg": "(卡片資訊不得為空白)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "71",
+    "BankRtnMsg": "(此交易將使批次退款總金額大於請款總金額)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "71",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "72",
+    "BankRtnMsg": "(連至3D Server逾時)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "72",
+    "BankRtnMsg": "(對應的Cap交易,尚未確認跟銀行請款成功)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "72",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "73",
+    "BankRtnMsg": "(旅遊訂單-缺少下游商店代號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "73",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "74",
+    "BankRtnMsg": "(旅遊訂單-缺少撥款遞延日)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "74",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "75",
+    "BankRtnMsg": "(旅遊訂單-缺少下游商店佣金)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "75",
+    "BankRtnMsg": "(Reserved,pin try too many times)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "76",
+    "BankRtnMsg": "(旅遊訂單-不可更改下游商店代號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "76",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "77",
+    "BankRtnMsg": "(卡號次數超過交易次數限制)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "77",
+    "BankRtnMsg": "(旅遊訂單-不可更改撥款遞延日)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "77",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "78",
+    "BankRtnMsg": "(旅遊訂單-佣金不可超過交易金額)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "78",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "79",
+    "BankRtnMsg": "(旅遊訂單-佣金不可增加)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "79",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8",
+    "BankRtnMsg": "(銀行P.G.系統初始化交易資料格式異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8",
+    "BankRtnMsg": "(MerchantID資料長度超過有效範圍)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8",
+    "BankRtnMsg": "(Reserved：交易批次資料上傳CardPool收單系統異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "80",
+    "BankRtnMsg": "(URL特店帶入參數格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "80",
+    "BankRtnMsg": "(旅遊訂單-撥款遞延日須晚於交易日期)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "80",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8004",
+    "BankRtnMsg": "訊息代碼：8004，愛金卡電支信用卡系統發生錯誤，請重新再試一次",
+    "RtnCode": "8004",
+    "RtnMsg": "訊息代碼：8004，愛金卡電支信用卡系統發生錯誤，請重新再試一次",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8009",
+    "BankRtnMsg": "訊息代碼：8009，電支帳號異常",
+    "RtnCode": "8009",
+    "RtnMsg": "訊息代碼：8009，電支帳號異常",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8010",
+    "BankRtnMsg": "未綁定(黑名單)",
+    "RtnCode": "0",
+    "RtnMsg": "未綁定(黑名單)",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8011",
+    "BankRtnMsg": "訊息代碼：8011，RSA解密失敗",
+    "RtnCode": "8011",
+    "RtnMsg": "訊息代碼：8011，RSA解密失敗",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8012",
+    "BankRtnMsg": "訊息代碼：8012，AES解密失敗",
+    "RtnCode": "8012",
+    "RtnMsg": "訊息代碼：8012，AES解密失敗",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "81",
+    "BankRtnMsg": "(旅遊訂單-下游商店代號不在關聯檔)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "81",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "82",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "83",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "84",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "85",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "86",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "87",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "88",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "89",
+    "BankRtnMsg": "(Reserved,invalid route service)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "銀行端交易處理失敗，需人工確認",
+    "RtnCode": "8998",
+    "RtnMsg": "銀行端交易處理失敗，需人工確認",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "8998",
+    "BankRtnMsg": "請聯絡您的發卡銀行",
+    "RtnCode": "8998",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "CB"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9",
+    "BankRtnMsg": "(銀行P.G.系統存取批次交易資料異常)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "2"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9",
+    "BankRtnMsg": "(TerminalID資料長度超過有效範圍)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "9",
+    "BankRtnMsg": "(銀行P.G.系統不允許該交易進行Cancel作業)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "4"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "90",
+    "BankRtnMsg": "(Reserved,cutoff is in process, transaction can be sent again in a few miniutes)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "91",
+    "BankRtnMsg": "(Reserved,issuer or switch center is inoperative)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "92",
+    "BankRtnMsg": "(Reserved,financial institution or intermediate net.facility cannot be found for routing)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "93",
+    "BankRtnMsg": "(Reserved,transaction cannot be completed)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "94",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "95",
+    "BankRtnMsg": "(帶入的txType參數與特店交易方式不符合)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "95",
+    "BankRtnMsg": "(Reserved,batch upload started)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "96",
+    "BankRtnMsg": "(特店身份壓碼比對不符)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "96",
+    "BankRtnMsg": "(請與發卡銀行聯絡)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "97",
+    "BankRtnMsg": "(無法獲得特店身份壓碼Key值)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "98",
+    "BankRtnMsg": "(特店身份壓碼產生過程錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "99",
+    "BankRtnMsg": "(持卡人在POS URL刷卡頁所輸入的圖形驗證碼不正確)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "bc",
+    "BankRtnMsg": "(收到BatchClose交易，但該機台的批次狀態是'未開啟') ",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "bo",
+    "BankRtnMsg": "(進行BatchOpen交易，但該機台的批次狀態是'已開啟')",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E0",
+    "BankRtnMsg": "(刷卡時間過期)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E1",
+    "BankRtnMsg": "(該筆訂單編號已經做過交易，不接受重複交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "E2",
+    "BankRtnMsg": "(該筆訂單編號正在進行交易)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "10"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ed",
+    "BankRtnMsg": "(信用卡有效期限過期)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "N0",
+    "BankRtnMsg": "(Decline Code:unable to authorize)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nc",
+    "BankRtnMsg": "(伺服器忙碌中)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nd",
+    "BankRtnMsg": "(交易資料在商家HyPOS系統的資料不一致)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ne",
+    "BankRtnMsg": "(該筆為已請款交易，無法再進行請款)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ng",
+    "BankRtnMsg": "(缺少所必須的欄位)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ni",
+    "BankRtnMsg": "(伺服器系統錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nm",
+    "BankRtnMsg": "(PromoCode格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "3"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nm",
+    "BankRtnMsg": "(從API或PG接收到的資料或格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "no",
+    "BankRtnMsg": "(接收資料逾時)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "np",
+    "BankRtnMsg": "(網路通訊異常：無法獲得銀行P.G.系統的交易結果)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nq",
+    "BankRtnMsg": "(網路通訊異常：無法傳送交易到銀行P.G.系統)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nr",
+    "BankRtnMsg": "(POS伺服器接收到的PG RESP資料有誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ns",
+    "BankRtnMsg": "(在伺服器中找不到該特店相關資料)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nt",
+    "BankRtnMsg": "(POS伺服器接收到的資料有誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nv",
+    "BankRtnMsg": "(Reserved)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nw",
+    "BankRtnMsg": "(非旅遊業特店，收到非必要的欄位)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nx",
+    "BankRtnMsg": "(不支援此種功能) 例如：(9:nx)Promotion Not Supported。(9:nx)InAPP Not Supported。",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "nz",
+    "BankRtnMsg": "(交易連線來自未經授權的用戶端)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "O6",
+    "BankRtnMsg": "(Decline Code:mod 10 check)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "P1",
+    "BankRtnMsg": "(Referral Code:over daily limit)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "p3",
+    "BankRtnMsg": "(Ip 不合法)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "sp",
+    "BankRtnMsg": "(SECP 發生錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "T8",
+    "BankRtnMsg": "(Decline Code:Account problem)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "8"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "ta",
+    "BankRtnMsg": "(旅遊訂單-缺少下游商店代號)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "tb",
+    "BankRtnMsg": "(旅遊訂單-下游商店代號欄位格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "tc",
+    "BankRtnMsg": "(旅遊訂單-缺少遞延撥款日)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "td",
+    "BankRtnMsg": "(旅遊訂單-遞延撥款日欄位格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "te",
+    "BankRtnMsg": "(旅遊訂單-缺少下游商店佣金)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  },
+  {
+    "BankCode": "822",
+    "BankRtnCode": "tf",
+    "BankRtnMsg": "(旅遊訂單-下游商店佣金欄位格式錯誤)",
+    "RtnCode": "0",
+    "RtnMsg": "請聯絡您的發卡銀行",
+    "TYPE": "9"
+  }
+]

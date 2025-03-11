@@ -1,0 +1,359 @@
+[
+  {
+    "NotifyID": 1,
+    "NotifyKey": "common",
+    "Title": "預設版型",
+    "Body": "<style type=\"text\/css\">* {   font-size: 14px  }    @media only screen       and (min-width : 370px)       and (-webkit-device-pixel-ratio : 3) {    * {     font-size: 16px    }    }  <\/style>  <meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0;\"\/>{{content}}",
+    "Description": "預設版型"
+  },
+  {
+    "NotifyID": 2,
+    "NotifyKey": "auth_teenagers_confirm",
+    "Title": "未成年使用者待核准通知",
+    "Body": "未成年人{{CName}}擬註冊icash Pay尚須您(法定代理人)的核准，請點擊前往<a href=\"https:\/\/www.icashpay.com.tw\/users\/login\">https:\/\/www.icashpay.com.tw\/users\/login<\/a>，並於{{ExpireDate}}前完成核准作業。",
+    "Description": "未成年使用者待核准通知"
+  },
+  {
+    "NotifyID": 3,
+    "NotifyKey": "transaction",
+    "Title": "【{{MerchantName}}】付款{{PaymentStatus}}{{Amount}}元",
+    "Body": "<span style=\"\">訂單編號：{{TradeNo}}<br \/>  付款方式：{{PaymentTypeName}}<br \/>  訂單時間：{{CreateDate}}<br \/>  訂單金額：{{Amount}}元<br \/>  {{BonusAmt}}<\/span>",
+    "Description": "交易付款通知"
+  },
+  {
+    "NotifyID": 4,
+    "NotifyKey": "topup_merchant",
+    "Title": "【儲值成功】現金儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": "現金儲值"
+  },
+  {
+    "NotifyID": 5,
+    "NotifyKey": "topup_merchant_cancel",
+    "Title": "【取消儲值成功】現金儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  取消儲值時間：{{RefundDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": "現金儲值取消"
+  },
+  {
+    "NotifyID": 6,
+    "NotifyKey": "topup_accountlink",
+    "Title": "【儲值{{PaymentStatus}}】連結帳戶儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  銀行帳戶：{{BankCode}}{{BankName}}<br \/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<br \/>  {{ErrorMsg}}<\/span>",
+    "Description": "連結帳戶儲值"
+  },
+  {
+    "NotifyID": 7,
+    "NotifyKey": "topup_voice",
+    "Title": "【儲值成功】中獎發票儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值通路：{{MerchantName}}-{{StoreName}}<br \/>  儲值金額：{{Amount}}元<br \/>  儲值時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": "發票儲值"
+  },
+  {
+    "NotifyID": 12,
+    "NotifyKey": "transfer_receive",
+    "Title": "收款{{TransferStatus}}通知",
+    "Body": "<span style=\"\">收款金額：NT$ {{Amount}}<br \/>  轉帳者資訊：{{PayCName}}{{PayICPMID}}<br \/>  轉出時間：{{PaymentDate}}<br \/>  {{Remark}}{{ErrorMsg}}<\/span>",
+    "Description": "轉帳轉入"
+  },
+  {
+    "NotifyID": 19,
+    "NotifyKey": "topup_atm",
+    "Title": "【儲值通知】儲值金額{{Amount}}元",
+    "Body": "<table cellpadding=\"5\" rules=\"all\" style=\"border:1px #000000 solid;padding:5px;\">   <tbody>    <tr>     <td>編號</td>     <td>{{TradeNo}}</td>    </tr>    <tr>     <td>建立時間</td>     <td>{{CreateDate}}</td>    </tr>    <tr>     <td>交易狀態</td>     <td>{{TradeStatusName}}</td>    </tr>    <tr>     <td>儲值方式</td>     <td>{{PaymentTypeName}}</td>    </tr>    <tr>     <td>儲值金額</td>     <td>NT$ {{Amount}}</td>    </tr>    <tr>     <td>轉入銀行</td>     <td>{{BankCode}} {{BankName}}</td>    </tr>    <tr>     <td>轉入帳號</td>     <td>{{BankAccount}}</td>    </tr>    <tr>     <td>轉帳截止日期</td>     <td>{{ExpireDate}}</td>    </tr>   </tbody>  </table>",
+    "Description": "ATM儲值"
+  },
+  {
+    "NotifyID": 29,
+    "NotifyKey": "transfer_pay",
+    "Title": "轉帳{{TransferStatus}}通知",
+    "Body": "<span style=\"\">轉帳金額：NT$ {{Amount}}<br \/>  收款者資訊：{{ReceiveCName}}{{ReceiveICPMID}}<br \/>  轉出時間：{{PaymentDate}}<br \/>  {{Remark}}{{ErrorMsg}}<\/span>",
+    "Description": "轉帳轉出"
+  },
+  {
+    "NotifyID": 40,
+    "NotifyKey": "withdraw_success",
+    "Title": "提領成功通知",
+    "Body": "<span style=\"\">建立時間：{{CreateDate}}<br \/>  完成時間：{{SuccessDate}}<br \/>  轉入帳戶：{{BankName}}<br \/>  提領帳號：{{BankAccount}}<br \/>  提領金額：NT$ {{ActualAmount}}<br \/>  編號：{{TradeNo}} <\/span>",
+    "Description": "提領成功通知"
+  },
+  {
+    "NotifyID": 45,
+    "NotifyKey": "withdraw_fail",
+    "Title": "提領失敗通知",
+    "Body": "<span style=\"\">建立時間：{{CreateDate}}<br \/>  轉入帳戶：{{BankName}}<br \/>  提領帳號：{{BankAccount}}<br \/>  提領金額：NT$ {{ActualAmount}}<br \/>  失敗原因：{{ErrorMsg}}<br \/>  編號：{{TradeNo}} <\/span>",
+    "Description": "提領失敗通知"
+  },
+  {
+    "NotifyID": 46,
+    "NotifyKey": "bankaccount_auth_success",
+    "Title": "第二類使用者升級通知",
+    "Body": "<span style=\"\">您已升級為第二類使用者，可進行轉帳交易，付款與儲值額度亦已提升。<\/span>",
+    "Description": "第二類使用者升級通知"
+  },
+  {
+    "NotifyID": 47,
+    "NotifyKey": "bankaccount_auth_success_acl",
+    "Title": "連結扣款帳戶綁定成功通知",
+    "Body": "<span style=\"\">您已成功綁定{{BankName}}存款帳戶，可做為付款\/儲值\/提領使用。<\/span>",
+    "Description": "連結扣款帳戶綁定成功通知"
+  },
+  {
+    "NotifyID": 48,
+    "NotifyKey": "bankaccount_auth_fail",
+    "Title": "銀行升級驗證失敗通知",
+    "Body": "<span style=\"\">銀行升級驗證失敗，若要再次驗證請至銀行帳號設定新增連結扣款帳戶<\/span>",
+    "Description": "銀行升級驗證失敗通知"
+  },
+  {
+    "NotifyID": 49,
+    "NotifyKey": "transaction_refund",
+    "Title": "【{{MerchantName}}】受理退款{{RefundAmount}}元",
+    "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>  付款方式：{{PaymentTypeName}}<br \/>  訂單時間：{{CreateDate}}<br \/>  訂單金額：{{Amount}}元<br \/>  受理時間：{{RefundDate}}<br \/>  退款金額(不含點數折抵)：{{RefundAmount}}元<br \/>  備註說明：如您使用信用卡或簽帳金融卡交易，退款作業處理約需5~14個工作天，實際仍依商家及銀行作業時間為準。<\/span>",
+    "Description": "退款訊息"
+  },
+  {
+    "NotifyID": 50,
+    "NotifyKey": "auth_idno_success",
+    "Title": "恭喜您已成為icash Pay會員",
+    "Body": "<span style=\"font-size:14px;\">您已通過完成第三類使用者申請，可以使用icashpay儲值與支付。<br \/>  建議您繼續驗證您的金融工具升級成為第二類使<\/span><a href=\"https:\/\/admin.icashpay.com.tw\/Admin\/MailLibraryManage\/EditNotify\/50#\" title=\"儲存\">儲存<\/a><span style=\"font-size:14px;\">用者，以開通轉帳功能及提升額度。<\/span>",
+    "Description": "恭喜您已成為icash Pay會員"
+  },
+  {
+    "NotifyID": 51,
+    "NotifyKey": "topup_atm_success",
+    "Title": "【儲值成功】虛擬帳號儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：虛擬帳號儲值<br \/>  轉入銀行： {{BankCode}} {{BankName}}<br \/>  轉入帳號： {{BankAccount}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": " ATM儲值成功"
+  },
+  {
+    "NotifyID": 52,
+    "NotifyKey": "InvoiceAward",
+    "Title": "恭喜~您的發票中獎囉！",
+    "Body": "<span style=\"font-size:12pt\"><span> <span></span>恭喜</span>~<span>您的發票中獎囉！</span></span></span> <table class=\"Table\" height=\"131\" style=\"border-collapse: collapse; border: 1pt solid windowtext;\" width=\"246\"> <tbody> <tr style=\"height:87.1pt\"> <td style=\"border:solid windowtext 1.0pt; width:168.1pt; padding:0cm 5.4pt 0cm 5.4pt; height:87.1pt\" valign=\"top\" width=\"224\"><br /> <span style=\"font-size:12pt\"><span><span>發票日期：</span></span></span>{{Invoice_Time}}<br /> <br /> <span style=\"font-size:12pt\"><span><span>發票號碼：</span></span></span>{{Invoice_Number}}<br /> <br /> <span style=\"font-size:12pt\"><span><span>隨機碼：</span></span></span>{{Random_Number}}</td> </tr> </tbody> </table> <ol> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>請至全台</span>7-ELEVEN <span>門市</span>ibon<span>機台列印出該中獎發票進行兌換，列印操作流程：生活服務&rarr;</span> <span>電子發票</span>(<span>中獎查詢</span>)<span>&rarr;</span> <span>統一資訊&rarr;</span> <span>同意，繼續下一步&rarr;</span> <span>輸入發票日期&rarr;</span> <span>輸入四碼隨機碼&rarr;</span> <span>確認列印。</span></span></span></li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>若您在開獎月</span>25<span>日</span>00:00<span>前完成</span>icash Pay<span>載具歸戶，並且在開獎月</span>25<span>日</span>00:00<span>前於財政部電子發票整合服務平台完成領獎設定，中獎獎金將於開獎月次月</span>10<span>日前匯入您指定帳戶，您無需另行兌獎，若超過指定時間完成規定或領獎設定者，仍需請您至全台</span>7-ELEVEN<span>門市</span>ibon<span>機台進行兌換。</span></span></span> </li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>如中獎發票為提領手續費發票且需紙本兌獎之民眾，可進線愛金卡客服，將由愛金卡協助列印並寄送，約</span>15<span>個工作日，並酌收郵寄費</span>32<span>元。</span></span></span> </li> <li style=\"margin-top:16px\"><span style=\"font-size:12pt\"><span><span>如有其他中獎發票問題請洽</span>icash Pay<span>客服中心手機請撥：</span>02-2657-6388 / <span>市話請撥：</span>0800-233-888<span>，或透過電子郵件信箱來信：</span><a href=\"mailto:icashpay_service@mail.icash.com.tw\"><span style=\"text-decoration:none\"><span style=\"text-underline:none\">icashpay_service@mail.icash.com.tw</span></span></a></span></span> </li> </ol>",
+    "Description": "發票中獎訊息"
+  },
+  {
+    "NotifyID": 53,
+    "NotifyKey": "auth_Teenagers_success",
+    "Title": "恭喜您!註冊申請已核准通過",
+    "Body": "您的icash Pay註冊申請已核准通過，請以註冊時填寫的帳號密碼進行登入，一鍵開啟各項便利服務。",
+    "Description": "管理後台未成年審核通過"
+  },
+  {
+    "NotifyID": 54,
+    "NotifyKey": "auth_Teenagers_Fail",
+    "Title": "很抱歉，您的註冊審核未能通過",
+    "Body": "親愛的用戶，您的法定代理人資料有誤或不齊全，註冊審核未能通過，請再次申請註冊，並確認您的法定代理人資訊與證明文件皆完整無誤，謝謝您的配合。",
+    "Description": "管理後台未成年審核不通過"
+  },
+  {
+    "NotifyID": 55,
+    "NotifyKey": "MemberTeenagersUpLevel",
+    "Title": "未成年人升等通知",
+    "Body": "<span style=\"font-size:14px;\">恭喜您，您的法定代理人已同意您成為二類使用者，您可前往”icash Pay更多服務”—”儲值轉帳”—“銀行帳戶設定”，綁定您的銀行帳戶，即可享受輕鬆轉帳。<\/span>",
+    "Description": "未成年人升等通知"
+  },
+  {
+    "NotifyID": 56,
+    "NotifyKey": "MemberTeenagersDownLevel",
+    "Title": "未成年人降等通知",
+    "Body": "<span style=\"font-size:14px;\">親愛的用戶，很抱歉，您的法定代理人已將您的使用者資格由二類降為一類，您仍可繼續使用icash Pay支付與儲值等功能。<\/span>",
+    "Description": "未成年人降等通知"
+  },
+  {
+    "NotifyID": 57,
+    "NotifyKey": "Member_Teenagers_Overdue",
+    "Title": "法代超過7日未審核",
+    "Body": "親愛的用戶，您的法定代理人未於7日內核准您成為 icashPay 使用者，您的註冊已逾期，請重新申請。",
+    "Description": "法代超過7日未審核"
+  },
+  {
+    "NotifyID": 10020,
+    "NotifyKey": "payment_success",
+    "Title": "手機號碼{{CellPhone}} 付款{{Amount}}元成功",
+    "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>    付款方式：{{PaymentTypeName}}<br \/>    訂單時間：{{CreateDate}}<br \/>    訂單金額：{{Amount}}元<br \/>    <\/span>",
+    "Description": "小商家交易付款通知"
+  },
+  {
+    "NotifyID": 10021,
+    "NotifyKey": "payment_fail",
+    "Title": "手機號碼{{CellPhone}} 付款{{Amount}}元失敗",
+    "Body": "<span style=\"font-size:14px;\">訂單編號：{{TradeNo}}<br \/>    付款方式：{{PaymentTypeName}}<br \/>    訂單時間：{{CreateDate}}<br \/>    訂單金額：{{Amount}}元<br \/>    <\/span>",
+    "Description": "小商家交易付款失敗通知"
+  },
+  {
+    "NotifyID": 10022,
+    "NotifyKey": "transferinFisc",
+    "Title": "【跨行轉入{{PaymentStatus}}】{{Amount}}元",
+    "Body": "<span style=\"\">轉入金額：{{Amount}}元<br \/>  銀行帳戶：{{BankCode}}{{BankName}}<br \/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{BankAccount}}<br \/>  轉入時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<br \/>  {{ErrorMsg}}<\/span>",
+    "Description": "跨行轉入"
+  },
+  {
+    "NotifyID": 10023,
+    "NotifyKey": "transferoutFisc_success",
+    "Title": "跨行轉出成功通知",
+    "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br \/>  完成時間：{{SuccessDate}}<br \/>  收款帳戶：{{BankName}}<br \/>  轉出帳號：{{BankAccount}}<br \/>  轉出金額：NT$ {{ActualAmount}}<br \/>  編號：{{TradeNo}} <\/span>",
+    "Description": "跨行轉出成功通知"
+  },
+  {
+    "NotifyID": 10024,
+    "NotifyKey": "transferoutFisc_fail",
+    "Title": "跨行轉出失敗通知",
+    "Body": "<span style=\"font-size:14px;\">建立時間：{{CreateDate}}<br \/>  收款帳戶：{{BankName}}<br \/>  收款帳號：{{BankAccount}}<br \/>  轉出金額：NT$ {{ActualAmount}}<br \/>  失敗原因：{{ErrorMsg}}<br \/>  編號：{{TradeNo}} <\/span>",
+    "Description": "跨行轉出失敗通知"
+  },
+  {
+    "NotifyID": 10025,
+    "NotifyKey": "XInvoiceAward",
+    "Title": "恭喜~您的發票中獎囉！",
+    "Body": "恭喜! 您綁定在手機條碼載具內的 icash2.0 卡片(卡號末五碼 {{CARD_NO}})有中獎發票， 您可至財政部電子發票平台查詢中獎明細。",
+    "Description": "發票中獎訊息"
+  },
+  {
+    "NotifyID": 10026,
+    "NotifyKey": "auth_idcard_fail_appHasIdcard",
+    "Title": "身分證審核失敗通知",
+    "Body": "因您申辦時檢附的身分證無法完整辨識，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。",
+    "Description": "推播訊息: 身分證審核失敗(有上傳身分證)"
+  },
+  {
+    "NotifyID": 10027,
+    "NotifyKey": "auth_idcard_fail_appNoIdcard",
+    "Title": "身分證審核失敗通知",
+    "Body": "由於您的姓名驗證未通過，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。",
+    "Description": "推播訊息: 身分證審核失敗(無上傳身分證)"
+  },
+  {
+    "NotifyID": 10028,
+    "NotifyKey": "auth_idcard_fail_SMSHasIdcard",
+    "Title": "身分證審核失敗通知",
+    "Body": "icash 通知，因您申辦時檢附的身分證無法完整辨識，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。icash 客服 0800233888 手機 02-26576388",
+    "Description": "簡訊訊息: 身分證審核失敗(有上傳身分證)"
+  },
+  {
+    "NotifyID": 10029,
+    "NotifyKey": "auth_idcard_fail_SMSNoIdcard",
+    "Title": "身分證審核失敗通知",
+    "Body": "icash 通知，由於您的姓名驗證未通過，請您透過 icash Pay APP 提供身分證正\/反面照片，以利後續作業，謝謝。icash 客服 0800233888 手機 02-26576388",
+    "Description": "簡訊訊息: 身分證審核失敗(有上傳身分證)"
+  },
+  {
+    "NotifyID": 10030,
+    "NotifyKey": "authTeenager_idcard_fail_SMSNeedIDCard",
+    "Title": "未成年使用者審核需補件通知",
+    "Body": "icash通知，您申辦檢附的法代審核證件不足或無法辨識，請通知法代透過【icash Pay APP_個人_身分證件補傳】提供審核文件，以利後續協助，謝謝。icash客服0800233888手機02-26576388",
+    "Description": "簡訊訊息: 未成年法代審核失敗"
+  },
+  {
+    "NotifyID": 10031,
+    "NotifyKey": "authTeenager_idcard_fail_app",
+    "Title": "未成年使用者審核需補件通知",
+    "Body": "未成年人【{{CName}}】擬註冊icash Pay，因申辦檢附的法代審核證件不足或無法辨識，需請您於【{{ExpireDate}}】前透過【icash Pay APP_個人_身分證件補傳】提供審核文件。&nbsp;",
+    "Description": "推播訊息: 未成年法代審核失敗"
+  },
+  {
+    "NotifyID": 10032,
+    "NotifyKey": "authTeenager_idcard_fail_SMSNoIDCard",
+    "Title": "未成年使用者審核需補件通知",
+    "Body": "icash通知，您的icash Pay使用者申請，因法代選擇錯誤或申辦人證件不清，需請您重新註冊，謝謝。icash客服0800233888手機02-26576388",
+    "Description": "簡訊訊息: 未成年法代審核失敗"
+  },
+  {
+    "NotifyID": 10033,
+    "NotifyKey": "auth_InsuranceMemberVerify",
+    "Title": "【{{AuthCode}}】 為icash Pay身分驗證碼，請勿轉發或告知他人此訊息",
+    "Body": "【icash Pay身分驗證】驗證碼為{{AuthCode}}，請於{{ExpireMinute}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+    "Description": "推播訊息: 傳送身分驗證碼(保險介接)"
+  },
+  {
+    "NotifyID": 10034,
+    "NotifyKey": "auth_ICPToolVerify",
+    "Title": "電支工具管理後台登入驗證碼",
+    "Body": "【電支工具管理後台驗證】驗證碼為{{AuthCode}}，請於{{ExpireMinute}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+    "Description": "推播訊息: 傳送電支工具管理後台登入驗證碼"
+  },
+  {
+    "NotifyID": 10035,
+    "NotifyKey": "topup_atm_bu",
+    "Title": "【{{Title}}儲值icash Pay通知】",
+    "Body": "您有1筆{{Title}}將於{{ExpireDate}}儲值至您的icash Pay帳戶。請先行確認您的icash Pay帳戶尚可儲值額度(點選個人→交易限額→儲值進行查詢)，以完成本次儲值作業。",
+    "Description": "ATM儲值"
+  },
+  {
+    "NotifyID": 10036,
+    "NotifyKey": "topup_atm_success_bu",
+    "Title": "【儲值成功】{{Title}}儲值{{Amount}}元",
+    "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：虛擬帳號儲值<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": " ATM儲值成功"
+  },
+  {
+    "NotifyID": 10037,
+    "NotifyKey": "topup_bucash",
+    "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+    "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>儲值方式：{{PaymentTypeName}}<br \/>入帳時間：{{PaymentDate}}<br \/>訂單編號：{{TradeNo}}<\/span>",
+    "Description": "企業儲值禮金"
+  },
+  {
+    "NotifyID": 10038,
+    "NotifyKey": "topup_icpcash",
+    "Title": "【儲值成功】{{Title}}儲值 {{Amount}} 元",
+    "Body": "<span style=\"\">儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}<\/span>",
+    "Description": "ICP回饋金"
+  },
+  {
+    "NotifyID": 10039,
+    "NotifyKey": "authTeenagers_idno_success",
+    "Title": "恭喜您！正式加入icash Pay會員",
+    "Body": "您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "推播訊息: 電支後台本國未成年人聯徵P11\/P33\/P55均通過之APP推播"
+  },
+  {
+    "NotifyID": 10040,
+    "NotifyKey": "auth_p55_success",
+    "Title": "恭喜您！身分驗證已審核通過",
+    "Body": "您的icash Pay身分驗證已審核通過！邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "推播訊息: 電支後台本國成年人P55 驗證人工審核通過"
+  },
+  {
+    "NotifyID": 10041,
+    "NotifyKey": "authForeigners_p55_success",
+    "Title": "恭喜您！正式加入icash Pay會員",
+    "Body": "您的icash Pay身分驗證已審核通過！邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "推播訊息: 電支後台外國人聯徵P11\/P33\/P55均通過之APP推播"
+  },
+  {
+    "NotifyID": 10042,
+    "NotifyKey": "authTeenagers_idno_SMSsuccess",
+    "Title": "恭喜您！正式加入icash Pay會員",
+    "Body": "【icash Pay註冊通知】    您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "簡訊訊息: 電支後台本國未成年人聯徵P11\/P33\/P55均通過"
+  },
+  {
+    "NotifyID": 10043,
+    "NotifyKey": "auth_p55_SMSsuccess",
+    "Title": "恭喜您！身分驗證已審核通過",
+    "Body": "【icash Pay註冊通知】    您的icash Pay身分驗證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "簡訊訊息: 電支後台本國成年人P55 驗證人工審核通過"
+  },
+  {
+    "NotifyID": 10044,
+    "NotifyKey": "authForeigners_p55_SMSsuccess",
+    "Title": "恭喜您！正式加入icash Pay會員",
+    "Body": "【icash Pay註冊通知】    您的icash Pay身分認證已審核通過！ 邀請您即刻體驗icash Pay多元便利的服務。",
+    "Description": "簡訊訊息: 電支後台外國人聯徵P11\/P33\/P55均通過"
+  },
+  {
+    "NotifyID": 10045,
+    "NotifyKey": "topup_blcaash",
+    "Title": "【儲值成功】儲值卡餘額轉置",
+    "Body": "儲值金額：{{Amount}}元<br \/>  儲值方式：{{PaymentTypeName}}<br \/>  入帳時間：{{PaymentDate}}<br \/>  訂單編號：{{TradeNo}}",
+    "Description": "儲值卡餘額轉置"
+  },
+  {
+    "NotifyID": 10046,
+    "NotifyKey": "auth_otp",
+    "Title": "【icash Pay{{AuthType}}】",
+    "Body": "【icash Pay{{AuthType}}】簡訊驗證碼為{{AuthCode}}，請於{{ExpireMinutes}}分鐘內完成驗證。請勿轉發或告知他人此訊息，以維護您的帳戶使用安全。",
+    "Description": "簡訊OTP訊息"
+  }
+]

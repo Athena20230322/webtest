@@ -66,8 +66,8 @@ rl.question('請輸入付款條碼 (BuyerID): ', (inputBarCode) => {
       MerchantID: "10000266",
       Ccy:"TWD",
       TxAmt: "36", // 使用者輸入付款金額
-      NonRedeemAmt:"36",
-      NonPointAmt:"36",
+      NonRedeemAmt:"",
+      NonPointAmt:"",
       StoreId:"217477",
       StoreName: "見晴",
       PosNo:"01",

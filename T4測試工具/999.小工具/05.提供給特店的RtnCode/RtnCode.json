@@ -1,0 +1,3038 @@
+[
+  {
+    "RtnCode": "0",
+    "RtnMsg": "系統發生錯誤，請重新再試。",
+    "Remark": "預設失敗回傳訊息"
+  },
+  {
+    "RtnCode": "1",
+    "RtnMsg": "成功",
+    "Remark": "預設成功回傳訊息"
+  },
+  {
+    "RtnCode": "14",
+    "RtnMsg": "訊息代碼：14，請聯絡您的發卡銀行",
+    "Remark": "ICP.Modules.Api.CreditLink(卡號錯誤)"
+  },
+  {
+    "RtnCode": "998",
+    "RtnMsg": "由於偵測到您在非安全的環境下使用，即將登出",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "1000",
+    "RtnMsg": "預設資料格式錯誤",
+    "Remark": "預設資料格式錯誤"
+  },
+  {
+    "RtnCode": "1007",
+    "RtnMsg": "取得 RSA 金鑰失敗，請重新再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.GetClientRsaCert"
+  },
+  {
+    "RtnCode": "1008",
+    "RtnMsg": "RSA 金鑰已失效，請重新再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.GetClientRsaCert"
+  },
+  {
+    "RtnCode": "1009",
+    "RtnMsg": "取得 AES 金鑰失敗，請重新再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.GetClientAesCert"
+  },
+  {
+    "RtnCode": "1010",
+    "RtnMsg": "AES 金鑰已失效，請重新再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.GetClientAesCert"
+  },
+  {
+    "RtnCode": "1011",
+    "RtnMsg": "驗證簽章失敗，請確認金鑰是否正確。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.ValidRsaSignature"
+  },
+  {
+    "RtnCode": "1012",
+    "RtnMsg": "Timestamp 有誤，請確認後再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.ValidTimestamp"
+  },
+  {
+    "RtnCode": "1013",
+    "RtnMsg": "Timestamp 誤差過大，請確認後再試。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.ValidTimestamp"
+  },
+  {
+    "RtnCode": "1014",
+    "RtnMsg": "簽章失敗，請確認金鑰或資料是否正確。",
+    "Remark": "ICP.Library.Services.MemberApi.CertificateMemberApiService.SignData"
+  },
+  {
+    "RtnCode": "1016",
+    "RtnMsg": "X-iCP-EncKeyID 有誤，請確認後再試。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.IdentifyService.ValidHeaders"
+  },
+  {
+    "RtnCode": "1017",
+    "RtnMsg": "X-iCP-Signature 有誤，請確認後再試。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.IdentifyService.ValidHeaders"
+  },
+  {
+    "RtnCode": "1018",
+    "RtnMsg": "解密失敗，請確認 AES 金鑰或資料是否正確。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.IdentifyService.DecryptClientAesData"
+  },
+  {
+    "RtnCode": "1019",
+    "RtnMsg": "傳入資料反序列化失敗，請確認資料是否正確 {0}",
+    "Remark": "ICP.Modules.Api.Authorization.Services.IdentifyService.ParseRequestModel"
+  },
+  {
+    "RtnCode": "1020",
+    "RtnMsg": "加密失敗，請確認 AES 金鑰或資料是否正確。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.IdentifyService.EncryptClientAesData"
+  },
+  {
+    "RtnCode": "1021",
+    "RtnMsg": "取得金鑰失敗，請重新再試。",
+    "Remark": "ICP.Modules.Api.Member.Services.CertificateService.GetRsaCert"
+  },
+  {
+    "RtnCode": "1022",
+    "RtnMsg": "金鑰已失效，請重新再試。",
+    "Remark": "ICP.Modules.Api.Member.Services.CertificateService.GetRsaCert"
+  },
+  {
+    "RtnCode": "1023",
+    "RtnMsg": "解密失敗，請確認 RSA 金鑰或資料是否正確。",
+    "Remark": "ICP.Modules.Api.Member.Services.CertificateService.DecryptRsaData"
+  },
+  {
+    "RtnCode": "1025",
+    "RtnMsg": "加密失敗，請確認 RSA 金鑰或資料是否正確。",
+    "Remark": "ICP.Modules.Api.Member.Services.CertificateMemberApiService.EncryptClientRsaData"
+  },
+  {
+    "RtnCode": "1026",
+    "RtnMsg": "金鑰已重覆綁定",
+    "Remark": "ausp_Member_Certificate_UpdateClientCertFromMember_U"
+  },
+  {
+    "RtnCode": "2001",
+    "RtnMsg": "傳入資料廠商編號為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2002",
+    "RtnMsg": "傳入資料交易編號為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2003",
+    "RtnMsg": "傳入資料交易編號格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2004",
+    "RtnMsg": "傳入資料交易日期為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2005",
+    "RtnMsg": "傳入資料交易金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2006",
+    "RtnMsg": "傳入資料一般交易金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2007",
+    "RtnMsg": "傳入資料代收交易金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2008",
+    "RtnMsg": "傳入資料代售交易金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2009",
+    "RtnMsg": "傳入資料排他一交易金額(菸品)格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2010",
+    "RtnMsg": "傳入資料排他二交易金額(預留)格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2011",
+    "RtnMsg": "傳入資料點抵金開關格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2012",
+    "RtnMsg": "傳入資料紅利折抵金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2013",
+    "RtnMsg": "傳入資料紅利折抵點數格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2014",
+    "RtnMsg": "傳入資料不可折抵金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2015",
+    "RtnMsg": "傳入資料不可贈點金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2016",
+    "RtnMsg": "傳入資料交易識別碼(條碼)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2017",
+    "RtnMsg": "傳入資料幣別為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2018",
+    "RtnMsg": "傳入資料儲值金額格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2019",
+    "RtnMsg": "交易訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2020",
+    "RtnMsg": "傳入資料交易類型(TradeType)格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2021",
+    "RtnMsg": "傳入資料交易模式(TradeMode)格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2022",
+    "RtnMsg": "儲值訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2023",
+    "RtnMsg": "轉帳訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2024",
+    "RtnMsg": "提領訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2025",
+    "RtnMsg": "訂單不存在",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2026",
+    "RtnMsg": "更新訂單付款狀態失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2027",
+    "RtnMsg": "傳入資料廠商訂單編號重複",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2028",
+    "RtnMsg": "新增訂單暫存資料失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2029",
+    "RtnMsg": "傳入資料愛金卡交易序號為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2030",
+    "RtnMsg": "傳入參數退貨金額為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2031",
+    "RtnMsg": "退貨訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2032",
+    "RtnMsg": "訊息代碼：2032，訂單已退款",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2033",
+    "RtnMsg": "超過可退款金額",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2034",
+    "RtnMsg": "訂單建立失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2035",
+    "RtnMsg": "傳入資料時間戳記為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2036",
+    "RtnMsg": "取得會員付款方式失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2037",
+    "RtnMsg": "傳入參數付款方式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2038",
+    "RtnMsg": "訂單已付款",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2039",
+    "RtnMsg": "傳入參數退款日期為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2040",
+    "RtnMsg": "傳入資料交易日期格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2041",
+    "RtnMsg": "廠商編號不存在",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2042",
+    "RtnMsg": "會員不存在",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2043",
+    "RtnMsg": "傳入參數會員選擇的付款方式ID為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2044",
+    "RtnMsg": "訊息代碼：2044，交易時間已超過3個月",
+    "Remark": "交易時間已超過3個月"
+  },
+  {
+    "RtnCode": "2045",
+    "RtnMsg": "此訂單不可執行退款",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2046",
+    "RtnMsg": "此筆訂單交易未成功無法執行退款",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2047",
+    "RtnMsg": "傳入參數會員選擇的付款方式格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2048",
+    "RtnMsg": "本月交易付款金額超過額度上限",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2049",
+    "RtnMsg": "本月儲值金額超過額度上限",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2050",
+    "RtnMsg": "轉帳額度單日上限為99,999元",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2051",
+    "RtnMsg": "轉帳額度單月上限為199,999元",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2052",
+    "RtnMsg": "對方收款額度已滿",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2053",
+    "RtnMsg": "訂單已經有虛擬帳號",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2054",
+    "RtnMsg": "虛擬帳號取號失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2056",
+    "RtnMsg": "ATM訂單付款失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2057",
+    "RtnMsg": "交易金額有誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2058",
+    "RtnMsg": "付款方式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2059",
+    "RtnMsg": "傳入參數銀行帳戶編號(AccountID)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2060",
+    "RtnMsg": "平台商編號不存在",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2061",
+    "RtnMsg": "廠商編號錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2062",
+    "RtnMsg": "產生條碼發生錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2063",
+    "RtnMsg": "寫入條碼失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2064",
+    "RtnMsg": "儲值金額有誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2065",
+    "RtnMsg": "條碼已被使用過",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2066",
+    "RtnMsg": "條碼不屬於此買家",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2067",
+    "RtnMsg": "訂單已取消",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2068",
+    "RtnMsg": "此筆訂單交易未成功無法取消",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2069",
+    "RtnMsg": "取得條碼資訊失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2070",
+    "RtnMsg": "傳入錯誤的條碼",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2071",
+    "RtnMsg": "取得條碼資訊發生錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2072",
+    "RtnMsg": "條碼已逾期",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2073",
+    "RtnMsg": "發票儲值金額超過單筆上限",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2074",
+    "RtnMsg": "條碼儲值金額與POS機金額不符",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2075",
+    "RtnMsg": "平臺商編號錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2076",
+    "RtnMsg": "退貨/取消失敗，距離儲值時間超過30分鐘",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2077",
+    "RtnMsg": "退貨/取消失敗，必須在儲值的同一家分店辦理退貨/取消",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2078",
+    "RtnMsg": "退貨/取消失敗，儲值後若轉帳、提領、交易過則無法辦理退貨/取消",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2079",
+    "RtnMsg": "退貨失敗，發票儲值無法進行退貨",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2080",
+    "RtnMsg": "儲值金額高於帳戶剩餘可儲值額度",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2081",
+    "RtnMsg": "自動儲值設定不齊全，不可開啟自動儲值",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2082",
+    "RtnMsg": "自動儲值設定更新失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2083",
+    "RtnMsg": "新增自動儲值設定記錄失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2084",
+    "RtnMsg": "更新自動儲值設定失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2085",
+    "RtnMsg": "連結扣款帳戶綁定狀態有誤，不可設定為自動儲值",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2086",
+    "RtnMsg": "此筆儲值滿額記錄已寫入",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2087",
+    "RtnMsg": "新增儲值滿額紀錄失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2088",
+    "RtnMsg": "儲值訂單入帳後更新訂單狀態失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2089",
+    "RtnMsg": "請先設定要用於自動儲值的連結扣款帳戶",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2090",
+    "RtnMsg": "取得連結扣款帳戶綁定資訊失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2091",
+    "RtnMsg": "用戶授權扣款銀行帳號或信用卡已解除綁定",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2092",
+    "RtnMsg": "查無此訂單資訊",
+    "Remark": "ICP.Modules.Mvc.Payment"
+  },
+  {
+    "RtnCode": "2093",
+    "RtnMsg": "傳入參數轉入者姓名(ReceivedName)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2094",
+    "RtnMsg": "傳入參數轉入者icash Pay電支帳號(ReceivedIcpMID)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2095",
+    "RtnMsg": "傳入參數轉入者聊天會員帳號(ReceivedChatMID)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2096",
+    "RtnMsg": "傳入參數轉帳金額(TransferAccount)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2097",
+    "RtnMsg": "傳入參數轉帳備註(Remark)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2098",
+    "RtnMsg": "傳入參數轉帳的交易Token(TradeToken)為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2099",
+    "RtnMsg": "傳入參數轉帳方式(PaymentType)格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2100",
+    "RtnMsg": "儲值功能維護中",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2101",
+    "RtnMsg": "訊息代碼:2101，本服務進行系統維護中，暫時停止服務，如有儲值需求之用戶可使用連結銀行帳戶儲值﹑現金儲值或一般轉帳服務，謝謝。",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2102",
+    "RtnMsg": "自動儲值功能維護中",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2103",
+    "RtnMsg": "儲值代收設定尚未開通",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2104",
+    "RtnMsg": "介接規格設定尚未開通",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2105",
+    "RtnMsg": "本服務尚未支援此付款方式支付，請選擇其他付款方式(2105)",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2106",
+    "RtnMsg": "傳入資料會員代碼為空",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2107",
+    "RtnMsg": "傳入資料廠商編號格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2108",
+    "RtnMsg": "傳入參數退款日期格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2109",
+    "RtnMsg": "傳入錯誤的錢包種類代碼格式",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2110",
+    "RtnMsg": "傳入資料交易金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2111",
+    "RtnMsg": "請先綁定連結扣款帳戶",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2112",
+    "RtnMsg": "傳入資料一般交易金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2113",
+    "RtnMsg": "自動儲值金額基數不得大於每次儲值限額",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2114",
+    "RtnMsg": "每次儲值限額不得大於每日儲值限額",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2115",
+    "RtnMsg": "每日儲值限額最高為NT$50,000",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2116",
+    "RtnMsg": "儲值設定金額不能等於0",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2117",
+    "RtnMsg": "傳入資料代收交易金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2118",
+    "RtnMsg": "傳入資料代售交易金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2119",
+    "RtnMsg": "傳入資料排他一交易金額(菸品)為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2120",
+    "RtnMsg": "傳入資料排他二交易金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2121",
+    "RtnMsg": "傳入資料紅利折抵金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2122",
+    "RtnMsg": "傳入資料紅利折抵點數為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2123",
+    "RtnMsg": "傳入資料不可折抵金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2124",
+    "RtnMsg": "傳入資料不可贈點金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2125",
+    "RtnMsg": "傳入資料商店編號格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2126",
+    "RtnMsg": "傳入資料商店名稱格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2127",
+    "RtnMsg": "傳入資料POS交易序號格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2128",
+    "RtnMsg": "傳入資料POS編號格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2129",
+    "RtnMsg": "傳入資料載具類型為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2130",
+    "RtnMsg": "傳入資料載具類型格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2131",
+    "RtnMsg": "傳入資料點抵金開關為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2132",
+    "RtnMsg": "傳入資料ItemList格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2133",
+    "RtnMsg": "傳入資料儲值金額為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2134",
+    "RtnMsg": "傳入資料幣別格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2135",
+    "RtnMsg": "傳入資料愛金卡交易序號格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2136",
+    "RtnMsg": "傳入資料POS交易序號為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2137",
+    "RtnMsg": "付款訂單不存在",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2138",
+    "RtnMsg": "儲值訂單不存在",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2139",
+    "RtnMsg": "付款功能維護中",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2140",
+    "RtnMsg": "平台商編號與線上交易訂單查詢之平台商編號不同",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2141",
+    "RtnMsg": "廠商編號與線上交易訂單查詢之廠商編號不同",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2142",
+    "RtnMsg": "0元交易時，紅利折抵金額不得為0",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2143",
+    "RtnMsg": "付款方式不屬於該會員",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2144",
+    "RtnMsg": "付款人會員編號與線上交易訂單查詢之會員編號不同",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2145",
+    "RtnMsg": "會員轉帳功能設定為關閉",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2146",
+    "RtnMsg": "目前您的轉帳服務因風險機制暫時停用",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2147",
+    "RtnMsg": "轉出方為一類會員無法轉帳",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2148",
+    "RtnMsg": "對方級別不足",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2149",
+    "RtnMsg": "轉入方會員資訊不存在",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2150",
+    "RtnMsg": "轉出方會員資訊不存在",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2151",
+    "RtnMsg": "傳入參數轉入者icash Pay電支帳號(ReceivedIcpMID)格式有誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2152",
+    "RtnMsg": "傳入參數轉入者聊天會員帳號(ReceivedChatMID)格式有誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2153",
+    "RtnMsg": "轉帳訂單不存在",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2154",
+    "RtnMsg": "更新轉帳訂單失敗",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2155",
+    "RtnMsg": "傳入資料原交易編號為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2156",
+    "RtnMsg": "傳入資料原交易編號格式錯誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2157",
+    "RtnMsg": "傳入參數轉出者聊天會員帳號(PayChatMID)格式有誤",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2158",
+    "RtnMsg": "傳入參數轉出者ChatMemberID不符",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2159",
+    "RtnMsg": "傳入參數轉入者戶名為空",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2160",
+    "RtnMsg": "傳入參數轉入者戶名不符",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2161",
+    "RtnMsg": "轉帳Toke已失效",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2162",
+    "RtnMsg": "重複執行轉帳",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2163",
+    "RtnMsg": "非建立成功之訂單無法退款",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2164",
+    "RtnMsg": "此通路與訂單原通路不同",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2165",
+    "RtnMsg": "轉帳對象已封鎖",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2166",
+    "RtnMsg": "轉帳資料有誤，請與對方確認後，重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2167",
+    "RtnMsg": "無法轉帳給自己",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2168",
+    "RtnMsg": "訊息代碼：2168，銷帳時間 欄位不可為空，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2169",
+    "RtnMsg": "訊息代碼：2169，交易工具(1: 手機, 2: 網站) 編號有誤，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.CheckOutValidation"
+  },
+  {
+    "RtnCode": "2170",
+    "RtnMsg": "訊息代碼：2170，交易工具(1: 手機, 2: 網站) 編號有誤，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.CheckOutValidation"
+  },
+  {
+    "RtnCode": "2171",
+    "RtnMsg": "訊息代碼：2171，交易工具(1: 手機, 2: 網站) 編號長度有誤，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2172",
+    "RtnMsg": "訊息代碼：2172，線上交易類型 欄位不可為空，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2173",
+    "RtnMsg": "訊息代碼：2173，線上交易類型 欄位長度錯誤，請重新填入",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2174",
+    "RtnMsg": "訊息代碼：2174，銷貨失敗，帳單不存在",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2175",
+    "RtnMsg": "訊息代碼：2175，銷貨失敗",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.WriteOffValidationICPO"
+  },
+  {
+    "RtnCode": "2176",
+    "RtnMsg": "訊息代碼：2176，更新繳費平台帳單數量異常",
+    "Remark": "ICP.Modules.Api.Payment.Services.BasePaymentType.UpdateTrade"
+  },
+  {
+    "RtnCode": "2177",
+    "RtnMsg": "訊息代碼：2177，更新繳費平台帳單狀態異常",
+    "Remark": "ICP.Modules.Api.Payment.Services.BasePaymentType.UpdateTrade"
+  },
+  {
+    "RtnCode": "2178",
+    "RtnMsg": "訊息代碼：2178，訂單已付款",
+    "Remark": "檢查訂單狀態是否已付款"
+  },
+  {
+    "RtnCode": "2179",
+    "RtnMsg": "訊息代碼：2179，繳費平台交易編號未填入",
+    "Remark": "檢查繳費平台交易編號是否有值(remark欄位)"
+  },
+  {
+    "RtnCode": "2180",
+    "RtnMsg": "訊息代碼：2180，此訂單已無法執行取消",
+    "Remark": "訂單已退過款 or 已撥款"
+  },
+  {
+    "RtnCode": "2181",
+    "RtnMsg": "訊息代碼：2181，退款金額加總不正確",
+    "Remark": "RefundTotalAmt != RefundItemAmt + RefundUtilityAmt + RefundCommAmt"
+  },
+  {
+    "RtnCode": "2182",
+    "RtnMsg": "原交易尚未付款，請重新再試一次",
+    "Remark": "V2 QueryTradeICPO"
+  },
+  {
+    "RtnCode": "2183",
+    "RtnMsg": "本交易必須由指定之付款人進行支付，請確認付款人身份符合規定。",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CashierCommand.CreateOnlineTempTrade"
+  },
+  {
+    "RtnCode": "2184",
+    "RtnMsg": "此服務目前暫時無法提供服務，請稍後再試",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2185",
+    "RtnMsg": "訊息代碼：2185，「平台編號」欄位格式錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2186",
+    "RtnMsg": "訊息代碼：2186，「特店編號」欄位格式錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2187",
+    "RtnMsg": "訊息代碼：2187，「商品序號」欄位格式錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2188",
+    "RtnMsg": "訊息代碼：2188，「商品數量」欄位格式錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2189",
+    "RtnMsg": "訊息代碼：2189，「商品名稱」欄位格式錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2190",
+    "RtnMsg": "訊息代碼：2190，「付款完成通知回傳網址」欄位格式錯誤，請確認後重新執行",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2191",
+    "RtnMsg": "查不到時間戳記",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2192",
+    "RtnMsg": "儲值交易失敗，交易超過8秒逾時",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2193",
+    "RtnMsg": "訊息代碼：2193，「交易通知回傳網址」欄位格式錯誤，請確認後重新執行",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2194",
+    "RtnMsg": "訊息代碼：2194，商家不支援此版本交易",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2195",
+    "RtnMsg": "無法辨別此條碼格式，請確認您的APP是否為最新版本或至愛金卡官網查詢可支付的服務(2195)",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2196",
+    "RtnMsg": "訊息代碼：2196，訂單已部退，取消交易失敗",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2201",
+    "RtnMsg": "訊息代碼：2201，傳入資料發票號碼格式錯誤",
+    "Remark": "ICP.Modules.Api.Payment.Commands.CheckOutValidation"
+  },
+  {
+    "RtnCode": "2202",
+    "RtnMsg": "訊息代碼：2202，交易授權結果查詢TradeType異常",
+    "Remark": "ICP.Modules.Api.Payment.Commands.GetTradeInfo"
+  },
+  {
+    "RtnCode": "2203",
+    "RtnMsg": "訊息代碼：2203，交易授權結果查詢status異常無情境",
+    "Remark": "ICP.Modules.Api.Payment.Commands.GetTradeInfo"
+  },
+  {
+    "RtnCode": "2204",
+    "RtnMsg": "訊息代碼：2204，交易授權結果查詢TradeStatus異常",
+    "Remark": "ICP.Modules.Api.Payment.Commands.GetTradeInfo"
+  },
+  {
+    "RtnCode": "2205",
+    "RtnMsg": "預約訂單已逾時，請重下訂單",
+    "Remark": "ICP.Modules.Api.Payment.Services.ChargeOnlineService"
+  },
+  {
+    "RtnCode": "2206",
+    "RtnMsg": "訂單已失效，請重新操作",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2207",
+    "RtnMsg": "24小時重複轉帳相同金額",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2210",
+    "RtnMsg": "訊息代碼：2210，交易失敗，此特店不支援點數折抵，請關閉點數折抵後再次交易",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2211",
+    "RtnMsg": "訊息代碼：2211，交易已完成，請點擊QrCode查看付款結果",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2315",
+    "RtnMsg": "訊息代碼：2315，退貨交易執行中，請稍後再試。",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2501",
+    "RtnMsg": "得消費差異資料表時存在多筆資料",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2502",
+    "RtnMsg": "會員需調帳但沒有消費者資訊",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2503",
+    "RtnMsg": "廠商需調帳但沒有廠商資訊",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2504",
+    "RtnMsg": "取得加值差異資料表時存在多筆資料",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2505",
+    "RtnMsg": "消費差異資料表無對應資料",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2506",
+    "RtnMsg": "加值差異資料表無對應資料",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2507",
+    "RtnMsg": "加值差異資料表超商與消費者加值金額無差異",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2508",
+    "RtnMsg": "消費差異資料表超商與消費者交易金額無差異",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "2509",
+    "RtnMsg": "提醒您，本銀行帳號有綁定授權扣款商店，若要刪除綁定的銀行帳號，請至「個人/授權扣款管理」功能解除綁定或洽詢您授權的商店",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2510",
+    "RtnMsg": "提醒您，本張信用卡有綁定授權扣款商店，若要刪除綁定的信用卡，請至「個人/授權扣款管理」功能解除綁定或洽詢您授權的商店",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "2511",
+    "RtnMsg": "系統維護中，請您於次日上午 10 點後再次進行綁定，謝謝您。",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "4801",
+    "RtnMsg": "繳款類別有誤，請重新確認(4801)。",
+    "Remark": "繳款類別有誤；未經註冊之繳費交易"
+  },
+  {
+    "RtnCode": "4802",
+    "RtnMsg": "銷帳編號有誤，請重新確認(4802)。  ",
+    "Remark": "銷帳編號檢查碼有誤; 銷帳編號有誤。"
+  },
+  {
+    "RtnCode": "4803",
+    "RtnMsg": "繳款金額有誤，請重新確認(4803)。",
+    "Remark": "繳款金額有誤 "
+  },
+  {
+    "RtnCode": "4804",
+    "RtnMsg": "繳費期限有誤，請確認帳單是否逾期或尚未到繳費期間(4804)。  ",
+    "Remark": "繳款期限有誤; 逾期/未到"
+  },
+  {
+    "RtnCode": "4808",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(4808)。  ",
+    "Remark": "無此帳戶(依據委託單位、繳費類別及費用代號)。 "
+  },
+  {
+    "RtnCode": "4809",
+    "RtnMsg": "帳單已被繳納，請稍後再試(4809)。",
+    "Remark": "帳單重複繳納。"
+  },
+  {
+    "RtnCode": "7000",
+    "RtnMsg": "傳入交易資料反序列化失敗，請確認資料是否正確。",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7001",
+    "RtnMsg": "檢核碼錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7002",
+    "RtnMsg": "交易模式錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7003",
+    "RtnMsg": "查無交易訂單",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7004",
+    "RtnMsg": "會員ID錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7005",
+    "RtnMsg": "會員AccountLink帳戶錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7006",
+    "RtnMsg": "作業逾時",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7019",
+    "RtnMsg": "參數錯誤:{0}",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7020",
+    "RtnMsg": "會員編號錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7021",
+    "RtnMsg": "廠商編號錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7022",
+    "RtnMsg": "無此付款方式",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7023",
+    "RtnMsg": "訂單流水號錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7024",
+    "RtnMsg": "訂單編號錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7025",
+    "RtnMsg": "廠商交易編號錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7026",
+    "RtnMsg": "交易金額錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7027",
+    "RtnMsg": "儲值金額錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7028",
+    "RtnMsg": "ATM 銀行別錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7029",
+    "RtnMsg": "付款收單行別錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7030",
+    "RtnMsg": "AccountLink交易結果轉換失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7031",
+    "RtnMsg": "AccountLink扣款結果轉換失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7032",
+    "RtnMsg": "AccountID錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7040",
+    "RtnMsg": "退款金額錯誤",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7041",
+    "RtnMsg": "退款查無訂單",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7042",
+    "RtnMsg": "退款金額大於訂單金額",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7043",
+    "RtnMsg": "已全額退款",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7044",
+    "RtnMsg": "交易已取消",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7045",
+    "RtnMsg": "退款金額不符",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7046",
+    "RtnMsg": "非0元訂單，不可進行0元退款",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7047",
+    "RtnMsg": "連結帳戶，無退款功能",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7048",
+    "RtnMsg": "連結帳戶，無取消功能",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7049",
+    "RtnMsg": "訊息代碼：7049，扣款失敗，帳戶餘額不足"
+  },
+  {
+    "RtnCode": "7050",
+    "RtnMsg": "逾時返還交易待處理紀錄已存在",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7051",
+    "RtnMsg": "逾時返還，反查失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7052",
+    "RtnMsg": "逾時退款，反查失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7053",
+    "RtnMsg": "逾時返還交易查詢失敗，無AccountID",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7054",
+    "RtnMsg": "逾時返還，退款失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7055",
+    "RtnMsg": "逾時退款，退款失敗",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7056",
+    "RtnMsg": "交易逾時已向銀行端發送退款並已成功",
+    "Remark": "ICP.Modules.Api.PaymentCenter"
+  },
+  {
+    "RtnCode": "7057",
+    "RtnMsg": "訊息代碼：7057，此訂單付款已逾時，請重新嘗試於原購物網站下單",
+    "Remark": "ChargeOnlineICPO"
+  },
+  {
+    "RtnCode": "7300",
+    "RtnMsg": "金額錯誤",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7301",
+    "RtnMsg": "會員資料有誤",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7302",
+    "RtnMsg": "無此帳務方式",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7303",
+    "RtnMsg": "新增進出明細失敗",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7304",
+    "RtnMsg": "新增金額失敗",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7305",
+    "RtnMsg": "扣款失敗",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7306",
+    "RtnMsg": "扣款金額不足",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7307",
+    "RtnMsg": "儲值金額超過上限",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7308",
+    "RtnMsg": "對方收款額度已滿",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7309",
+    "RtnMsg": "本月交易額度已達上限",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7310",
+    "RtnMsg": "本日轉出額度已達上限",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7311",
+    "RtnMsg": "本月轉出額度已達上限",
+    "Remark": "Coins"
+  },
+  {
+    "RtnCode": "7400",
+    "RtnMsg": "資料轉換失敗",
+    "Remark": "ACLinkService.ParseToModel"
+  },
+  {
+    "RtnCode": "7401",
+    "RtnMsg": "連線逾時，請重新操作。",
+    "Remark": "ACLinkService.CheckTimeout"
+  },
+  {
+    "RtnCode": "7402",
+    "RtnMsg": "連線失敗",
+    "Remark": "ACLinkService.PostToBank"
+  },
+  {
+    "RtnCode": "7403",
+    "RtnMsg": "{0}欄位驗證失敗",
+    "Remark": "ACLinkService.ValidateField"
+  },
+  {
+    "RtnCode": "7404",
+    "RtnMsg": "查無綁定帳戶",
+    "Remark": "ACLinkService.GetACLinkInfo"
+  },
+  {
+    "RtnCode": "7405",
+    "RtnMsg": "資料驗證失敗",
+    "Remark": "ACLinkService.ValidateHash"
+  },
+  {
+    "RtnCode": "7406",
+    "RtnMsg": "取號失敗",
+    "Remark": "ACLinkService.GetMsgNo"
+  },
+  {
+    "RtnCode": "7407",
+    "RtnMsg": "加密失敗",
+    "Remark": "ACLinkService.TripleDESEncrypt"
+  },
+  {
+    "RtnCode": "7408",
+    "RtnMsg": "解密失敗",
+    "Remark": "ACLinkService.TripleDESDecrypt"
+  },
+  {
+    "RtnCode": "7409",
+    "RtnMsg": "簽章失敗",
+    "Remark": "ACLinkService.Sign"
+  },
+  {
+    "RtnCode": "7410",
+    "RtnMsg": "簽章驗證失敗",
+    "Remark": "ACLinkService.ValidateSign"
+  },
+  {
+    "RtnCode": "7411",
+    "RtnMsg": "無驗證資料",
+    "Remark": "ACLinkValidateService.BaseValidateProcess"
+  },
+  {
+    "RtnCode": "7412",
+    "RtnMsg": "驗證失敗",
+    "Remark": "ACLinkValidateService.EncryptClientAesData/DecryptClientAesData"
+  },
+  {
+    "RtnCode": "7413",
+    "RtnMsg": "虛擬帳號取號失敗",
+    "Remark": "VirtualAccount"
+  },
+  {
+    "RtnCode": "7414",
+    "RtnMsg": "未帶銀行代碼",
+    "Remark": "AccountLinkController.ACLinkBindResult"
+  },
+  {
+    "RtnCode": "7415",
+    "RtnMsg": "查無綁定記錄"
+  },
+  {
+    "RtnCode": "7416",
+    "RtnMsg": "取得訂單流水號失敗",
+    "Remark": "VirtualAccount"
+  },
+  {
+    "RtnCode": "7417",
+    "RtnMsg": "VirtualAccount已更新過",
+    "Remark": "VirtualAccount"
+  },
+  {
+    "RtnCode": "7418",
+    "RtnMsg": "更新VirtualAccount失敗",
+    "Remark": "VirtualAccount"
+  },
+  {
+    "RtnCode": "7419",
+    "RtnMsg": "扣款失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7420",
+    "RtnMsg": "連結帳戶不存在",
+    "Remark": "ACLinkCancel"
+  },
+  {
+    "RtnCode": "7421",
+    "RtnMsg": "取消綁定連結帳戶失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7422",
+    "RtnMsg": "更新連結帳戶資料失敗",
+    "Remark": "ACLinkCancel"
+  },
+  {
+    "RtnCode": "7423",
+    "RtnMsg": "申請連結帳戶失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7424",
+    "RtnMsg": "組成送出資料失敗"
+  },
+  {
+    "RtnCode": "7425",
+    "RtnMsg": "AES加密失敗",
+    "Remark": "AES Encrypt"
+  },
+  {
+    "RtnCode": "7426",
+    "RtnMsg": "AES解密失敗",
+    "Remark": "AES Decrypt"
+  },
+  {
+    "RtnCode": "7427",
+    "RtnMsg": "RSA加密失敗",
+    "Remark": "RSA Encrypt"
+  },
+  {
+    "RtnCode": "7428",
+    "RtnMsg": "RSA解密失敗",
+    "Remark": "RSA Decrypt"
+  },
+  {
+    "RtnCode": "7429",
+    "RtnMsg": "取得接收資料失敗"
+  },
+  {
+    "RtnCode": "7430",
+    "RtnMsg": "連結帳戶失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7431",
+    "RtnMsg": "提領至連結帳戶失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7432",
+    "RtnMsg": "退款至連結帳戶失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7433",
+    "RtnMsg": "查詢綁定狀態失敗",
+    "Remark": "請參考[ICP_Share].[dbo].[BankResultDictionary]"
+  },
+  {
+    "RtnCode": "7434",
+    "RtnMsg": "查詢交易結果失敗",
+    "Remark": "ACLinkPayQuery"
+  },
+  {
+    "RtnCode": "7440",
+    "RtnMsg": "{0}失敗",
+    "Remark": "Bank result other status"
+  },
+  {
+    "RtnCode": "7441",
+    "RtnMsg": "此組銀行帳號已綁定。",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7442",
+    "RtnMsg": "查無此綁定記錄",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7443",
+    "RtnMsg": "此銀行僅可綁定一組銀行帳號",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7444",
+    "RtnMsg": "此帳號已被綁定",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7445",
+    "RtnMsg": "輸入驗證碼錯誤",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7446",
+    "RtnMsg": "訊息代碼：7446，線上開戶失敗，請重新再試一次",
+    "Remark": "OpenAccount"
+  },
+  {
+    "RtnCode": "7447",
+    "RtnMsg": "訊息代碼：7447，線上開戶失敗",
+    "Remark": "OpenAccountResult"
+  },
+  {
+    "RtnCode": "7450",
+    "RtnMsg": "連線失敗",
+    "Remark": "ACL Batch"
+  },
+  {
+    "RtnCode": "7451",
+    "RtnMsg": "無可下載之檔案",
+    "Remark": "ACL Batch"
+  },
+  {
+    "RtnCode": "7452",
+    "RtnMsg": "查無檔案",
+    "Remark": "ACL Batch"
+  },
+  {
+    "RtnCode": "7453",
+    "RtnMsg": "取檔失敗",
+    "Remark": "ACL Batch"
+  },
+  {
+    "RtnCode": "7454",
+    "RtnMsg": "銀行端交易處理中",
+    "Remark": "銀行端交易處理中，待查詢後確認"
+  },
+  {
+    "RtnCode": "7455",
+    "RtnMsg": "銀行端交易處理失敗",
+    "Remark": "銀行端交易處理失敗，需人工確認"
+  },
+  {
+    "RtnCode": "7497",
+    "RtnMsg": "銀行系統維護中",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7498",
+    "RtnMsg": "銀行端非預期錯誤",
+    "Remark": "Bank result status"
+  },
+  {
+    "RtnCode": "7499",
+    "RtnMsg": "系統非預期錯誤",
+    "Remark": "AccountLink Exception"
+  },
+  {
+    "RtnCode": "7500",
+    "RtnMsg": "ATM-無付款銀行設定",
+    "Remark": "ATM：建立虛擬帳號錯誤"
+  },
+  {
+    "RtnCode": "7501",
+    "RtnMsg": "ATM-無法判別識別碼",
+    "Remark": "ATM：建立虛擬帳號錯誤"
+  },
+  {
+    "RtnCode": "7502",
+    "RtnMsg": "ATM-虛擬帳號寫入失敗",
+    "Remark": "ATM：建立虛擬帳號錯誤"
+  },
+  {
+    "RtnCode": "7503",
+    "RtnMsg": "參數驗證錯誤：{0}",
+    "Remark": "ATM：建立虛擬帳號錯誤"
+  },
+  {
+    "RtnCode": "7520",
+    "RtnMsg": "取消轉帳儲值輸入的參數不正確",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7521",
+    "RtnMsg": "查無相對應的銀行代碼",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7522",
+    "RtnMsg": "查無ATM轉帳儲值資料",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7523",
+    "RtnMsg": "查無ATM轉帳交易資料",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7524",
+    "RtnMsg": "ATM銀行代碼錯誤",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7525",
+    "RtnMsg": "更新 PaymentCenter 銀行通知狀態失敗",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7526",
+    "RtnMsg": "更新 Payment 銀行通知狀態失敗",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7527",
+    "RtnMsg": "取得 NotifyBankModel 時發生錯誤",
+    "Remark": "ATM：取消轉帳儲值錯誤"
+  },
+  {
+    "RtnCode": "7528",
+    "RtnMsg": "訊息代碼：7528，此筆ATM轉帳儲值先前已取消儲值",
+    "Remark": "ATM"
+  },
+  {
+    "RtnCode": "7531",
+    "RtnMsg": "很抱歉!系統功能有誤，請稍後再試或電洽一銀客服專線(02)2181-1111為您服務，謝謝。",
+    "Remark": "ATM：第一銀行 Ap2Ap"
+  },
+  {
+    "RtnCode": "7532",
+    "RtnMsg": "新增/修改ATM儲值電文紀錄失敗",
+    "Remark": "ATM：第一銀行 Ap2Ap"
+  },
+  {
+    "RtnCode": "7533",
+    "RtnMsg": "Ap2Ap 過程中發生未預期錯誤",
+    "Remark": "ATM：第一銀行 Ap2Ap"
+  },
+  {
+    "RtnCode": "7534",
+    "RtnMsg": "很抱歉!系統功能有誤，沒有收到回傳值，請稍後再試，謝謝。",
+    "Remark": "ATM：新增XML收到空值 2022/09/08新增"
+  },
+  {
+    "RtnCode": "7540",
+    "RtnMsg": "銷帳金額與訂單金額不符",
+    "Remark": "ATM：第一銀行銷帳錯誤"
+  },
+  {
+    "RtnCode": "7541",
+    "RtnMsg": "交易已過期",
+    "Remark": "ATM：第一銀行銷帳錯誤"
+  },
+  {
+    "RtnCode": "7542",
+    "RtnMsg": "新增銷帳錯誤log記錄失敗",
+    "Remark": "ATM：第一銀行銷帳錯誤"
+  },
+  {
+    "RtnCode": "7543",
+    "RtnMsg": "取得 TradeInfoAtm 時發生錯誤",
+    "Remark": "ATM：第一銀行銷帳錯誤"
+  },
+  {
+    "RtnCode": "7544",
+    "RtnMsg": "取得ATM交易資料的參數錯誤",
+    "Remark": "ATM：第一銀行銷帳錯誤"
+  },
+  {
+    "RtnCode": "7562",
+    "RtnMsg": "修改銀行通知狀態失敗",
+    "Remark": "ATM"
+  },
+  {
+    "RtnCode": "7563",
+    "RtnMsg": "修改ATM訂單狀態失敗",
+    "Remark": "ATM"
+  },
+  {
+    "RtnCode": "7564",
+    "RtnMsg": "訊息代碼：7564，新增ATM負向交易資料失敗",
+    "Remark": "ATM"
+  },
+  {
+    "RtnCode": "8000",
+    "RtnMsg": "訊息代碼：8000，非合作銀行信用卡，尚未開放綁定",
+    "Remark": "ICP.Modules.Api.CreditLink"
+  },
+  {
+    "RtnCode": "8001",
+    "RtnMsg": "本通路僅開放使用 icash Pay 餘額帳戶、連結銀行存款帳戶進行支付，請重新操作，謝謝。",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8002",
+    "RtnMsg": "訊息代碼：8002，請洽愛金卡客服人員：02-2657-6388",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8003",
+    "RtnMsg": "訊息代碼：8003，卡片已綁定",
+    "Remark": "ICP.Modules.Api.CreditLink"
+  },
+  {
+    "RtnCode": "8004",
+    "RtnMsg": "訊息代碼：8004，系統連線異常，請稍後重試",
+    "Remark": "ICP.Modules.Api.CreditLink"
+  },
+  {
+    "RtnCode": "8005",
+    "RtnMsg": "訊息代碼：8005，請聯絡您的發卡銀行",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8006",
+    "RtnMsg": "訊息代碼：8006，提醒您！此銀行信用卡不支援支付代收項目，您可以使用電支帳戶或連結銀行帳戶進行支付",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8007",
+    "RtnMsg": "訊息代碼：8007，提醒您！此銀行信用卡不支援支付代售項目，您可以使用電支帳戶或連結銀行帳戶進行支付",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8008",
+    "RtnMsg": "錯誤代碼：8008，請洽愛金卡客服人員：02-2657-6388",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8009",
+    "RtnMsg": "訊息代碼：8009，電支帳號異常",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8010",
+    "RtnMsg": "訊息代碼：8010，信用卡黑名單",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8011",
+    "RtnMsg": "訊息代碼：8011，RSA解密失敗",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8012",
+    "RtnMsg": "訊息代碼：8012，AES解密失敗",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8013",
+    "RtnMsg": "訊息代碼：8013，查無資料",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8014",
+    "RtnMsg": "訊息代碼：8014，非icash Pay會員",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8015",
+    "RtnMsg": "訊息代碼：8015，會員生日不符",
+    "Remark": "ICP.Modules.Api.CreditLink.Services.ChinaTrustService"
+  },
+  {
+    "RtnCode": "8016",
+    "RtnMsg": "訊息代碼：8016，此特店不可支付代收項目",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8017",
+    "RtnMsg": "訊息代碼：8017，此特店不可支付代售項目",
+    "Remark": "ICP.Modules.Api.Payment"
+  },
+  {
+    "RtnCode": "8998",
+    "RtnMsg": "訊息代碼：8998，請聯絡您的發卡銀行",
+    "Remark": "ICP.Modules.Api.CreditLink"
+  },
+  {
+    "RtnCode": "9006",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(9006)。  ",
+    "Remark": "繳費單位本項跨行業務停止或暫停營業。 "
+  },
+  {
+    "RtnCode": "9007",
+    "RtnMsg": "此繳費項目暫停服務，請稍後再試(9007)。",
+    "Remark": "繳費單位本項跨行業務未停止或未暫停營  業。"
+  },
+  {
+    "RtnCode": "9101",
+    "RtnMsg": "帳單資料有誤，請重新確認(9101)。  ",
+    "Remark": "繳費(稅)資料錯誤。"
+  },
+  {
+    "RtnCode": "9102",
+    "RtnMsg": "查無此帳單，請重新確認(9102)。",
+    "Remark": "無帳單資料。"
+  },
+  {
+    "RtnCode": "9999",
+    "RtnMsg": "系統發生未預期錯誤，請重新再試。",
+    "Remark": "預設未預期錯誤回傳訊息"
+  },
+  {
+    "RtnCode": "10000",
+    "RtnMsg": "金鑰尚未綁訂，請重新再試。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.ValidClientCertMID"
+  },
+  {
+    "RtnCode": "10001",
+    "RtnMsg": "金鑰綁訂有誤，請重新再試。",
+    "Remark": "ICP.Modules.Api.Authorization.Services.ValidClientCertMID"
+  },
+  {
+    "RtnCode": "10002",
+    "RtnMsg": "傳入資料 {0} 為空",
+    "Remark": "ICP.Host.Middleware.DbProxy.DbProxyHandler"
+  },
+  {
+    "RtnCode": "10003",
+    "RtnMsg": "傳入資料 {0} 解密失敗",
+    "Remark": "ICP.Host.Middleware.DbProxy.DbProxyHandler"
+  },
+  {
+    "RtnCode": "10004",
+    "RtnMsg": "傳入資料 {0} 反序列化失敗",
+    "Remark": "ICP.Host.Middleware.DbProxy.DbProxyHandler"
+  },
+  {
+    "RtnCode": "10005",
+    "RtnMsg": "{0} 反射取得物件失敗",
+    "Remark": "ICP.Host.Middleware.DbProxy.DbProxyHandler"
+  },
+  {
+    "RtnCode": "10006",
+    "RtnMsg": "{0} 反射取得方法失敗",
+    "Remark": "ICP.Host.Middleware.DbProxy.DbProxyHandler"
+  },
+  {
+    "RtnCode": "10027",
+    "RtnMsg": "傳入資料反序列化失敗，請確認資料是否正確。",
+    "Remark": "ICP.Modules.Api.Member.Services.CertificateService.ParseAppRedirectDeCryptoDTO"
+  },
+  {
+    "RtnCode": "10029",
+    "RtnMsg": "取得 Cookie 失敗，請確認資料是否正確。",
+    "Remark": "ICP.Modules.Mvc.Authorization.Services.IdentifyService.GetTokenByCookie"
+  },
+  {
+    "RtnCode": "168001",
+    "RtnMsg": "不能重複繳納",
+    "Remark": "無待繳帳單"
+  },
+  {
+    "RtnCode": "168002",
+    "RtnMsg": "此帳單號碼已被加入常用, 請重新確認。",
+    "Remark": "此帳單號碼已被加入常用, 請重新確認。"
+  },
+  {
+    "RtnCode": "168003",
+    "RtnMsg": "查無未繳帳單",
+    "Remark": "系統檢核票交資料，過濾已繳帳單"
+  },
+  {
+    "RtnCode": "168004",
+    "RtnMsg": "系統異常，請稍後再試(9999)。",
+    "Remark": "前端傳遞參數異常"
+  },
+  {
+    "RtnCode": "168101",
+    "RtnMsg": "A136(查無此筆交易資料)",
+    "Remark": "B017已繳費帳單取消通知"
+  },
+  {
+    "RtnCode": "168102",
+    "RtnMsg": "A137(交易資料不一致)",
+    "Remark": "B017已繳費帳單取消通知"
+  },
+  {
+    "RtnCode": "168103",
+    "RtnMsg": "A138(交易狀態錯誤)",
+    "Remark": "B017已繳費帳單取消通知"
+  },
+  {
+    "RtnCode": "168104",
+    "RtnMsg": "A139(入帳失敗)",
+    "Remark": "B017已繳費帳單取消通知"
+  },
+  {
+    "RtnCode": "168105",
+    "RtnMsg": "此繳費項目暫停服務尚未開放繳納(1001)",
+    "Remark": "新光代碼1001(該帳單業者未提供繳費服務(未開放)，無法繳費)"
+  },
+  {
+    "RtnCode": "168106",
+    "RtnMsg": "系統異常，請稍後再試(9906)。",
+    "Remark": "目前交易功能暫停服務"
+  },
+  {
+    "RtnCode": "168107",
+    "RtnMsg": "系統異常，請稍後再試(9909)。",
+    "Remark": "目前交易功能暫停服務"
+  },
+  {
+    "RtnCode": "168108",
+    "RtnMsg": "系統異常，請稍後再試(9999)。",
+    "Remark": "目前交易功能暫停服務"
+  },
+  {
+    "RtnCode": "168109",
+    "RtnMsg": "交易處理中，請至交易明細確認交易結果，如有問題請洽客服人員(02-2657-6388)協助處理(3023)",
+    "Remark": "新光代碼3023(持續發送B105查詢電文至回傳ReturnCode非為3023之其他代碼，未確認交易狀況前，不可任意退款給客戶。)"
+  },
+  {
+    "RtnCode": "168110",
+    "RtnMsg": "交易逾時，請返回並重新操作(9901)。",
+    "Remark": "票交代碼9901(交易逾時)"
+  },
+  {
+    "RtnCode": "168111",
+    "RtnMsg": "交易逾時，請返回並重新操作(9902)。",
+    "Remark": "票交代碼9902(交易逾時)"
+  },
+  {
+    "RtnCode": "168112",
+    "RtnMsg": "無法交易，請檢查您的手機裝置設定時間是否正確(A006)。",
+    "Remark": "票交代碼A006(用戶設定之裝置時間與系統時間不一致)"
+  },
+  {
+    "RtnCode": "168113",
+    "RtnMsg": "目前尚未開放此項目繳納(A012)。",
+    "Remark": "票交代碼A012(用戶掃瞄之帳單為ICP項目尚未開放之項目)"
+  },
+  {
+    "RtnCode": "168114",
+    "RtnMsg": "此繳費項目暫停服務，如有問題請洽客服人員(02-2657-6388)協助處理(A014)。",
+    "Remark": "票交代碼A014(收費機關系統暫停服務)"
+  },
+  {
+    "RtnCode": "168115",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A100)。",
+    "Remark": "票交代碼A100(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168116",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A101)。",
+    "Remark": "票交代碼A101(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168117",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A102)。",
+    "Remark": "票交代碼A102(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168118",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A103)。",
+    "Remark": "票交代碼A103(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168119",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A104)。",
+    "Remark": "票交代碼A104(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168120",
+    "RtnMsg": "輸入資料有誤，請確認後重新操作(A105)。",
+    "Remark": "票交代碼A105(資料輸入錯誤(如水號/ID/手機號碼))"
+  },
+  {
+    "RtnCode": "168121",
+    "RtnMsg": "第一段條碼有誤，請重新操作(A121)。                                                                                                                                                                  ",
+    "Remark": "票交代碼A121(第一段條碼檢核有誤)"
+  },
+  {
+    "RtnCode": "168122",
+    "RtnMsg": "第二段條碼有誤，請重新操作(A122)。                                                                                                                                                                           ",
+    "Remark": "票交代碼A122(第二段條碼檢核有誤)"
+  },
+  {
+    "RtnCode": "168123",
+    "RtnMsg": "第三段條碼有誤，請重新操作(A123)。                                                                                                                                                                     ",
+    "Remark": "票交代碼A123(第三段條碼檢核有誤)"
+  },
+  {
+    "RtnCode": "168124",
+    "RtnMsg": "條碼錯誤，請重新掃瞄帳單條碼(A124)。",
+    "Remark": "票交代碼A124(非本票交所接受之三段式條碼)"
+  },
+  {
+    "RtnCode": "168125",
+    "RtnMsg": "此帳單已過繳費期限，如有問題請洽繳費機關客服確認(A127)。",
+    "Remark": "票交代碼A127(帳單已過期)"
+  },
+  {
+    "RtnCode": "168126",
+    "RtnMsg": "此帳單已完成繳費，如有問題請洽繳費機關客服確認(A128)。",
+    "Remark": "票交代碼A128(帳單重複繳納)"
+  },
+  {
+    "RtnCode": "168127",
+    "RtnMsg": "此帳單查無繳費資料，如有問題請洽繳費機關客服確認(A136)。",
+    "Remark": "票交代碼A136(查無該筆交易資料)"
+  },
+  {
+    "RtnCode": "168128",
+    "RtnMsg": "此帳單查無繳費資料，如有問題請洽繳費機關客服確認(E200)。",
+    "Remark": "票交代碼E200(查無該筆交易資料)"
+  },
+  {
+    "RtnCode": "168129",
+    "RtnMsg": "此帳單已過繳費期限，如有問題請洽繳費機關客服確認(E226)。",
+    "Remark": "票交代碼E226(已過繳費期限)"
+  },
+  {
+    "RtnCode": "168130",
+    "RtnMsg": "此繳費項目無法合併帳單繳費(每次限繳一張)，如有問題請洽客服人員(02-2657-6388)協助處理(E227)。",
+    "Remark": "票交代碼E227(不可合併繳費一次只能勾選一張帳單，需單筆繳費)"
+  },
+  {
+    "RtnCode": "168131",
+    "RtnMsg": "第一段條碼有誤，請重新操作(R001)。                                                                                                                                                                  ",
+    "Remark": "票交代碼R001(第1段條碼長度錯誤)"
+  },
+  {
+    "RtnCode": "168132",
+    "RtnMsg": "條碼錯誤，請重新掃瞄帳單條碼(R002)。",
+    "Remark": "票交代碼R002(非本平台接受之條碼)"
+  },
+  {
+    "RtnCode": "168133",
+    "RtnMsg": "第二段條碼有誤，請重新操作(R003)。                                                                                                                                                                           ",
+    "Remark": "票交代碼R003(第2段條碼長度錯誤)"
+  },
+  {
+    "RtnCode": "168134",
+    "RtnMsg": "目前尚未開放此項目繳納(R004)。",
+    "Remark": "票交代碼R004(非平台之帳單業者)"
+  },
+  {
+    "RtnCode": "168135",
+    "RtnMsg": "條碼錯誤，請重新掃瞄帳單條碼(R005)。",
+    "Remark": "票交代碼R005(非預期值條嗎格式)"
+  },
+  {
+    "RtnCode": "168136",
+    "RtnMsg": "第三段條碼有誤，請重新操作(R007)。                                                                                                                                                                     ",
+    "Remark": "票交代碼R007(第3段條碼長度錯誤)"
+  },
+  {
+    "RtnCode": "168137",
+    "RtnMsg": "目前尚未開放此項目繳納(S994)。",
+    "Remark": "票交代碼S994(非API業務參加單位)"
+  },
+  {
+    "RtnCode": "168138",
+    "RtnMsg": "目前尚未開放此項目繳納(S997)。",
+    "Remark": "票交代碼S997(未申請該項繳費業務)"
+  },
+  {
+    "RtnCode": "168139",
+    "RtnMsg": "查無此繳費帳單資料，如有問題請洽繳費機關客服確認(6001)。",
+    "Remark": "票交代碼6001(查無帳單資料)"
+  },
+  {
+    "RtnCode": "168140",
+    "RtnMsg": "系統維護中，請稍後再試(6098)。",
+    "Remark": "票交代碼6098(系統維護中)"
+  },
+  {
+    "RtnCode": "168141",
+    "RtnMsg": "系統維護中，請稍後再試(6099)。",
+    "Remark": "票交代碼6099(系統維護中)"
+  },
+  {
+    "RtnCode": "168142",
+    "RtnMsg": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理(其他代碼)。",
+    "Remark": "未知代碼FFFF(不明原因導致系統錯誤)"
+  },
+  {
+    "RtnCode": "168143",
+    "RtnMsg": "此帳單查無繳費資料，如有問題請洽繳費機關客服確認(6002)。",
+    "Remark": "此帳單查無繳費資料，如有問題請洽繳費機關客服確認(6002)。"
+  },
+  {
+    "RtnCode": "168144",
+    "RtnMsg": "此帳單含不可繳費之帳單資料，如有問題請洽繳費機關客服確認(E229)。",
+    "Remark": "此帳單含不可繳費之帳單資料，如有問題請洽繳費機關客服確認(E229)。"
+  },
+  {
+    "RtnCode": "168145",
+    "RtnMsg": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理)(A119)。",
+    "Remark": "無法交易，請重新操作或洽客服(02-2657-6388)協助處理)(A119)。"
+  },
+  {
+    "RtnCode": "168146",
+    "RtnMsg": "此帳單尚未開放繳納。",
+    "Remark": "電支餘額繳費的項目只能提供F類"
+  },
+  {
+    "RtnCode": "168147",
+    "RtnMsg": "已逾期，請重新確認(0054)。",
+    "Remark": "購物或繳費交易的「QR Code效期」已逾期"
+  },
+  {
+    "RtnCode": "168148",
+    "RtnMsg": "尚未支援此交易服務，請重新確認(1018)。",
+    "Remark": "(此為內部錯誤訊息)"
+  },
+  {
+    "RtnCode": "168149",
+    "RtnMsg": "QRcode有誤，請重新確認(0052)。",
+    "Remark": "[跨QR Code解析驗證交易]財金標準QR Code規格欄位檢核異常。"
+  },
+  {
+    "RtnCode": "168150",
+    "RtnMsg": "驗證失敗，請重新確認(0089)。",
+    "Remark": "驗證失敗"
+  },
+  {
+    "RtnCode": "168151",
+    "RtnMsg": "尚未支援此交易服務，請重新確認(0087)。",
+    "Remark": "不支援此交易類別"
+  },
+  {
+    "RtnCode": "168152",
+    "RtnMsg": "目前僅支援全部繳納或繳納最低金額。",
+    "Remark": "只接受全額或最低金額(即全額的10%)"
+  },
+  {
+    "RtnCode": "168153",
+    "RtnMsg": "選取訂單無效，須重新選取訂單",
+    "Remark": "選取訂單無效，須重新選取訂單"
+  },
+  {
+    "RtnCode": "200001",
+    "RtnMsg": "請輸入正確的原登入密碼",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200002",
+    "RtnMsg": "請輸入6-20個半形英數混合之密碼",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200003",
+    "RtnMsg": "訊息代碼：200003，您輸入的新{0}與原{0}相同",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200004",
+    "RtnMsg": "兩次{0}輸入不同，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200005",
+    "RtnMsg": "請輸入6位數字安全密碼",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200006",
+    "RtnMsg": "安全密碼不可使用相同或連續數字，請重新輸入6碼數字之密碼",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200007",
+    "RtnMsg": "{0}錯誤累積{1}次，請您重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200008",
+    "RtnMsg": "{0}錯誤累計5次，為了您的帳戶安全請進行重新設定",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200009",
+    "RtnMsg": "您輸入{0}已被使用，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200010",
+    "RtnMsg": "此身分證字號已被註冊，請重新輸入",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200011",
+    "RtnMsg": "此居留證字號已被註冊，請重新輸入",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200012",
+    "RtnMsg": "此E-mail已被註冊使用，請重新輸入",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200013",
+    "RtnMsg": "您未通過聯徵中心身分資料驗證，系統已將您的帳號暫時停權，如有任何疑問請與客服人員聯繫0800-233-888",
+    "Remark": "ICP.Host.Middleware.JCIC.Api.ExecP33Auth"
+  },
+  {
+    "RtnCode": "200014",
+    "RtnMsg": "請重新確認您輸入的資料，身分證資訊驗證每日僅限2次，如達錯誤次數上限，需隔日再行驗證",
+    "Remark": "ICP.Host.Middleware.JCIC.Api.ExecP11Auth"
+  },
+  {
+    "RtnCode": "200015",
+    "RtnMsg": "請注意!身分證資訊驗證已錯誤2次，請明日再行驗證",
+    "Remark": "ICP.Host.Middleware.JCIC.Api.ExecP11Auth"
+  },
+  {
+    "RtnCode": "200016",
+    "RtnMsg": "身分證資訊驗證已錯誤3次，請與客服人員聯繫0800-233-888",
+    "Remark": "ICP.Host.Middleware.JCIC.Api.ExecP11Auth"
+  },
+  {
+    "RtnCode": "200017",
+    "RtnMsg": "為保障您帳號安全，請進行手機簡訊驗證",
+    "Remark": "ICP_Logging.dbo.ausp_Member_MemberSecurity_CheckChangeDevice_S"
+  },
+  {
+    "RtnCode": "200018",
+    "RtnMsg": "此銀行帳號已綁定",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200019",
+    "RtnMsg": "您的帳號已被暫時停權，請與客服人員聯繫0800-233-888",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200020",
+    "RtnMsg": "提領金額大於帳戶可提領金額",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200021",
+    "RtnMsg": "登入密碼輸入錯誤累計達5次，請重新設定您的登入密碼",
+    "Remark": "ICP_Member.dbo.ausp_Member_MemberSecurity_UserCodeLogin_IU"
+  },
+  {
+    "RtnCode": "200022",
+    "RtnMsg": "圖形鎖輸入錯誤累計達5次，請重新設定您的圖形鎖",
+    "Remark": "ICP_Member.dbo.ausp_Member_MemberSecurity_UserCodeLogin_IU"
+  },
+  {
+    "RtnCode": "200023",
+    "RtnMsg": "密碼不可與帳號相同",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200024",
+    "RtnMsg": "安全密碼不可使用相同或連續數字，請重新輸入6碼數字之密碼",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200025",
+    "RtnMsg": "Open Point 主機連線失敗",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200026",
+    "RtnMsg": "您已從其他裝置登入或帳號發生問題請洽客服",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200027",
+    "RtnMsg": "很抱歉!此身分證字號驗證錯誤次數過多，已無法再驗證",
+    "Remark": "ICP.Host.Middleware.JCIC.Api.ExecP11Auth"
+  },
+  {
+    "RtnCode": "200028",
+    "RtnMsg": "您尚有帳戶餘額未提領，請先將您的帳戶餘額提領後再進行帳戶結清",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.CloseMemberAccount"
+  },
+  {
+    "RtnCode": "200029",
+    "RtnMsg": "您的帳戶餘額正在提領中，須待提領作業完成後再進行帳戶結清",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.CloseMemberAccount"
+  },
+  {
+    "RtnCode": "200030",
+    "RtnMsg": "您的帳戶款項正在撥款中，請於待撥款項匯入您的帳戶後先完成餘額提領再進行帳戶結清",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.CloseMemberAccount"
+  },
+  {
+    "RtnCode": "200031",
+    "RtnMsg": "查無此會員",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200032",
+    "RtnMsg": "驗證次數已滿，請隔日再使用",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200033",
+    "RtnMsg": "驗證碼輸入錯誤，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200034",
+    "RtnMsg": "驗證碼已失效，請點擊重送驗證碼使用新的驗證碼進行驗證",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200035",
+    "RtnMsg": "您輸入的格式不符",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200036",
+    "RtnMsg": "格式不符，請再次確認您輸入的E-mail",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200037",
+    "RtnMsg": "手機條碼或手機條碼驗證碼錯誤，請確認後重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200038",
+    "RtnMsg": "銀行快付解除綁定失敗",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200039",
+    "RtnMsg": "您輸入的登入帳號已註冊，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200040",
+    "RtnMsg": "請確認您輸入的icash pay帳號是否正確",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200041",
+    "RtnMsg": "請確認您輸入姓名是否正確",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200042",
+    "RtnMsg": "請輸入正確的銀行帳號",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.BankAccountAuth"
+  },
+  {
+    "RtnCode": "200043",
+    "RtnMsg": "此法定代理人帳號被停權",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200044",
+    "RtnMsg": "不可指派自己為法定代理人",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200045",
+    "RtnMsg": "法定代理人電支帳號未填",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200046",
+    "RtnMsg": "由於偵測到您在非安全的環境下使用，即將登出，請直接使用行動支付APP登入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200047",
+    "RtnMsg": "手機號碼不可為空值",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200048",
+    "RtnMsg": "登入帳號不可為空值",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200049",
+    "RtnMsg": "登入帳號不得與手機號碼一致或者身分證字號規則相同",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200050",
+    "RtnMsg": "此手機號碼已被使用，同手機號碼僅可使用於一組icash Pay帳號，若有任何疑問請洽客服",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200051",
+    "RtnMsg": "該手機號碼正在驗證中，請於10分鐘後再試",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200052",
+    "RtnMsg": "驗證次數已滿，請隔日再使用",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200053",
+    "RtnMsg": "未成年待審核資料重複新增",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200054",
+    "RtnMsg": "推薦碼錯誤  ",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200055",
+    "RtnMsg": "會員帳號或密碼輸入錯誤(需為半形英數混合)，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200056",
+    "RtnMsg": "該帳號為商戶帳號，請使用一般電支帳號進行登入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200057",
+    "RtnMsg": "提領失敗",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200058",
+    "RtnMsg": "請確認您輸入的icash pay帳號是否正確",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200059",
+    "RtnMsg": "請確認您輸入姓名是否正確",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200060",
+    "RtnMsg": "此法定代理人帳號被停權",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200061",
+    "RtnMsg": "不可指派自己為法定代理人",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200062",
+    "RtnMsg": "法定代理人電支帳號未填",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200063",
+    "RtnMsg": "您輸入的暱稱已被使用",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.UpdateNickName"
+  },
+  {
+    "RtnCode": "200064",
+    "RtnMsg": "您輸入E-mail已被使用，請重新輸入",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.UpdateEmailAddress"
+  },
+  {
+    "RtnCode": "200065",
+    "RtnMsg": "訊息代碼：200065，系統連線異常，請稍後再試",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfo.AuthIDNO"
+  },
+  {
+    "RtnCode": "200066",
+    "RtnMsg": "驗證碼已失效，由於您今日的簡訊驗證次數已達上限，請於明日再行驗證",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200067",
+    "RtnMsg": "您的手機號碼目前無法進行簡訊驗證，請與客服人員聯繫0800-233-888",
+    "Remark": "ICP_Admin.dbo.ausp_Admin_CheckOTP_BlackList_S"
+  },
+  {
+    "RtnCode": "200068",
+    "RtnMsg": "簡訊驗證碼或身分證字號/居留證號碼輸入錯誤{0}次，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200069",
+    "RtnMsg": "簡訊驗證碼或身分證字號/居留證號碼輸入錯誤達5次，請隔日再使用",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200070",
+    "RtnMsg": "因您的法定代理人未同意您成為icash Pay第二類使用者，請以現金為您的icash Pay帳戶儲值，即可享受便利消費。(200070)",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200071",
+    "RtnMsg": "訊息代碼：200071，綁定帳戶類別 格式錯誤",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200072",
+    "RtnMsg": "訊息代碼：200072，發證日期 格式錯誤",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200073",
+    "RtnMsg": "訊息代碼：200073，生日 格式錯誤",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200074",
+    "RtnMsg": "訊息代碼：200074，檔案數量有誤",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200075",
+    "RtnMsg": "訊息代碼：200075，未滿18歲無法註冊",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200076",
+    "RtnMsg": "訊息代碼：200076，未滿14歲無法註冊",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200077",
+    "RtnMsg": "訊息代碼：200077，未成年需法定代理人同意",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200078",
+    "RtnMsg": "訊息代碼：200078，帳號不存在，請重新輸入",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200079",
+    "RtnMsg": "訊息代碼：200079，查無銀行帳號",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberBankCommand"
+  },
+  {
+    "RtnCode": "200080",
+    "RtnMsg": "訊息代碼：200080，查無資料",
+    "Remark": "ICP.Modules.Api.Member.Commands.ChatMemberCommand"
+  },
+  {
+    "RtnCode": "200081",
+    "RtnMsg": "訊息代碼：200081，資料有誤",
+    "Remark": "ICP.Modules.Api.Member.Service.ChatMemberService"
+  },
+  {
+    "RtnCode": "200082",
+    "RtnMsg": "訊息代碼：200082，請輸入文字訊息",
+    "Remark": "ICP.Modules.Api.Member.Service.ChatMemberService"
+  },
+  {
+    "RtnCode": "200083",
+    "RtnMsg": "訊息代碼：200083，文字訊息超過500字",
+    "Remark": "ICP.Modules.Api.Member.Service.ChatMemberService"
+  },
+  {
+    "RtnCode": "200084",
+    "RtnMsg": "訊息代碼：200084，請輸入電支帳號",
+    "Remark": "ICP.Modules.Api.Member.Service.ChatMemberService"
+  },
+  {
+    "RtnCode": "200085",
+    "RtnMsg": "訊息代碼：200085，電支帳號格式錯誤",
+    "Remark": "ICP.Modules.Api.Member.Service.ChatMemberService"
+  },
+  {
+    "RtnCode": "200086",
+    "RtnMsg": "訊息代碼：200086，手機號碼已被註冊",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200087",
+    "RtnMsg": "訊息代碼：200087，請重新註冊",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200088",
+    "RtnMsg": "訊息代碼：200088，帳號已綁定，無法註冊",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200089",
+    "RtnMsg": "訊息代碼：200089，手機號碼不存在",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200090",
+    "RtnMsg": "訊息代碼：200090，非綁定帳號的手機號碼",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200091",
+    "RtnMsg": "訊息代碼：200091，請先進行登入",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200092",
+    "RtnMsg": "訊息代碼：200092，ERROR",
+    "Remark": "ICP.Modules.Api.Member.Service.AppManagementService"
+  },
+  {
+    "RtnCode": "200093",
+    "RtnMsg": "訊息代碼：200093，System Error",
+    "Remark": "ICP.Modules.Api.Member.Service.AppManagementService"
+  },
+  {
+    "RtnCode": "200094",
+    "RtnMsg": "訊息代碼：200094，MID ERROR",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200095",
+    "RtnMsg": "訊息代碼：200095，無效的AppTokenID",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200096",
+    "RtnMsg": "訊息代碼：200096，取得AppToken失敗",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200097",
+    "RtnMsg": "訊息代碼：200097，銀行帳號長度不得超過14字",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200098",
+    "RtnMsg": "訊息代碼：200098，無效的授權碼",
+    "Remark": "ICP.Modules.Api.Member.Service.MemberInfoService"
+  },
+  {
+    "RtnCode": "200099",
+    "RtnMsg": "訊息代碼：200099，法代不得為同一人",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200100",
+    "RtnMsg": "訊息代碼：200100，法代姓名與身分證不符",
+    "Remark": "ICP.Modules.Api.Member.Commands.MemberInfoCommand"
+  },
+  {
+    "RtnCode": "200101",
+    "RtnMsg": "訊息代碼：200101，會員帳戶尚有ATM虛擬儲值額度無法結清",
+    "Remark": "ICP.Modules.Api.Member.Commands.AdminCommand"
+  },
+  {
+    "RtnCode": "200102",
+    "RtnMsg": "訊息代碼：200102，Email驗證碼輸入錯誤{0}次，請重新輸入",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200103",
+    "RtnMsg": "訊息代碼：200103，Email驗證碼輸入錯誤達 5 次，請隔日再使用",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200104",
+    "RtnMsg": "訊息代碼：200104，登入密碼輸入錯誤累計達 5 次，系統將登出帳號!",
+    "Remark": "商戶app"
+  },
+  {
+    "RtnCode": "200105",
+    "RtnMsg": "訊息代碼：200105，居留證核發日期格式錯誤",
+    "Remark": "外國人註冊"
+  },
+  {
+    "RtnCode": "200106",
+    "RtnMsg": "訊息代碼：200106，居留期限格式錯誤",
+    "Remark": "外國人註冊"
+  },
+  {
+    "RtnCode": "200107",
+    "RtnMsg": "訊息代碼：200107，外國人註冊目前僅開放已年滿18歲持居留證之用戶",
+    "Remark": "外國人註冊"
+  },
+  {
+    "RtnCode": "200108",
+    "RtnMsg": "注意 : 如於{0}前尚未完成真實姓名驗證，本公司將暫停您的icash Pay服務，待您完成真實姓名驗證後即可正常使用，謝謝您的配合。\\\\n如果您的姓名正確但是驗證不通過，可能為特殊字元，請撥愛金卡24小時客服專線：0800-233-888 (手機請撥：02-2657-6388)，謝謝您。",
+    "Remark": "P55驗證"
+  },
+  {
+    "RtnCode": "200109",
+    "RtnMsg": "法定代理人必需要是icash pay會員",
+    "Remark": "NULL"
+  },
+  {
+    "RtnCode": "200110",
+    "RtnMsg": "新增卡片失敗，已有其他用戶綁定此卡",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "200111",
+    "RtnMsg": "新增卡片失敗，非本人卡片需驗證身分證字號",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "200112",
+    "RtnMsg": "已設定自動加值卡片已達上限(最多10張)",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "200113",
+    "RtnMsg": "登入異常，請洽愛金卡 24 小時客服專線     0800-233-888、手機請撥     02-2657-6388。(200113)",
+    "Remark": "APPToken 無法取得"
+  },
+  {
+    "RtnCode": "200201",
+    "RtnMsg": "訊息代碼：200201，密碼強度不足，應避免容易猜測或過於簡單的密碼，請重新輸入",
+    "Remark": "弱密碼檢測未通過"
+  },
+  {
+    "RtnCode": "200202",
+    "RtnMsg": "訊息代碼：200202，查無身分存取權杖，請重新進行OTP驗證",
+    "Remark": "前端未帶Token"
+  },
+  {
+    "RtnCode": "200203",
+    "RtnMsg": "訊息代碼：200203，身分存取權杖更新失敗",
+    "Remark": "更新Token狀態失敗"
+  },
+  {
+    "RtnCode": "200204",
+    "RtnMsg": "訊息代碼：200204，參數缺少APP版本號，請稍後重新執行",
+    "Remark": "前端未帶Vers"
+  },
+  {
+    "RtnCode": "200205",
+    "RtnMsg": "訊息代碼：200205，該版本不支援此功能，請將APP更新為最新版本",
+    "Remark": "Vers跟API要求的Vers不吻合"
+  },
+  {
+    "RtnCode": "200206",
+    "RtnMsg": "訊息代碼：200206，身分存取權杖無效或已失效，請重新進行OTP驗證",
+    "Remark": "查無對應Token或該Token已過期"
+  },
+  {
+    "RtnCode": "200207",
+    "RtnMsg": "訊息代碼：200207，無造訪此API的權限，拒絕此次呼叫",
+    "Remark": "Token狀態不符合API要求"
+  },
+  {
+    "RtnCode": "200208",
+    "RtnMsg": "訊息代碼：200208，會員驗證權限不足，請先進行登入驗證",
+    "Remark": "登入驗證失敗，可能未完成登入流程"
+  },
+  {
+    "RtnCode": "200209",
+    "RtnMsg": "訊息代碼：200209，該裝置已被鎖定，目前無法登入，請與客服人員聯繫0800-233-888",
+    "Remark": "裝置已被列入黑名單，因此無法使用"
+  },
+  {
+    "RtnCode": "200210",
+    "RtnMsg": "訊息代碼：200210，缺少裝置序號，請稍後重新執行",
+    "Remark": "未填入裝置序號"
+  },
+  {
+    "RtnCode": "200211",
+    "RtnMsg": "訊息代碼：200211，法定代理人身分證字號與輸入資料不符合，請重新輸入",
+    "Remark": "法代身分證字號輸入錯誤"
+  },
+  {
+    "RtnCode": "200212",
+    "RtnMsg": "訊息代碼：200212，法定代理人身份證字號不可為空，請重新輸入",
+    "Remark": "法代身分證未輸入"
+  },
+  {
+    "RtnCode": "200213",
+    "RtnMsg": "訊息代碼：200213，尚未綁定OpenPoint，請先綁定OpenPoint",
+    "Remark": "未綁定OP會員"
+  },
+  {
+    "RtnCode": "200214",
+    "RtnMsg": "訊息代碼：200214，已更換登入方式，請將APP更新為最新版本",
+    "Remark": "會員已更新，不可呼叫舊版API"
+  },
+  {
+    "RtnCode": "201000",
+    "RtnMsg": "-",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService(成功綁定)"
+  },
+  {
+    "RtnCode": "201001",
+    "RtnMsg": "此卡片已失效，請使用其他卡片。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201002",
+    "RtnMsg": "此卡片已被記名，無法重複記名。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201003",
+    "RtnMsg": "此記名與您的icash Pay帳戶資訊不符，請重新確認。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201004",
+    "RtnMsg": "聯名卡已是記名卡，無法重複記名。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201005",
+    "RtnMsg": "此卡號不存在，請重新輸入。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201006",
+    "RtnMsg": "您輸入的卡片認證碼有誤，請重新輸入。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201007",
+    "RtnMsg": "您的帳號需專人為您服務，請您與愛金卡客服聯絡，將由專人協助您確認。  24小時客服專線：0800-233-888(手機請撥 : 02-2657-6388)。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201008",
+    "RtnMsg": "您已新增過該卡，請至icash2.0首頁查看該卡資訊。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201009",
+    "RtnMsg": "新增卡片失敗，已有其他用戶新增此卡。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201010",
+    "RtnMsg": "此卡片已被記名，無法重複記名。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201011",
+    "RtnMsg": "此卡片已失效，請使用其他卡片。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201012",
+    "RtnMsg": "此記名與您的icash Pay帳戶資訊不符，請重新確認。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201013",
+    "RtnMsg": "聯名卡已是記名卡，無法重複記名。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201014",
+    "RtnMsg": "此卡號不存在，請重新輸入。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201015",
+    "RtnMsg": "您輸入的卡片認證碼有誤，請重新輸入。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201016",
+    "RtnMsg": "您的帳號需專人為您服務，請您與愛金卡客服聯絡，將由專人協助您確認。  24小時客服專線：0800-233-888(手機請撥 : 02-2657-6388)。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  },
+  {
+    "RtnCode": "201017",
+    "RtnMsg": "您的帳號需專人為您服務，請您與愛金卡客服聯絡，將由專人協助您確認。  24小時客服專線：0800-233-888(手機請撥 : 02-2657-6388)。",
+    "Remark": "ICP.Modules.Api.Member.Service.ICash2BindService"
+  }
+]

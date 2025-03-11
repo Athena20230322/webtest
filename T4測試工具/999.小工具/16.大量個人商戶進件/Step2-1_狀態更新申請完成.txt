@@ -1,0 +1,3 @@
+UPDATE ICP_Admin.dbo.Admin_Merchant_CustomerData_Apply
+SET RegisterStatus=100 ,ApplyStatus = 1
+WHERE CustomerApplyID IN （11266,11265,11267,11268,11269）

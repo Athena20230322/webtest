@@ -1,0 +1,36 @@
+﻿<html>
+	<head>
+		<title>Yoxi大量個人商戶進件</title>
+		<meta charset="utf-8"/>
+		<script src="JS/jquery-1.12.4.js"></script>
+		<script src="JS/xls.js"></script>
+		<script src="JS/bank.js"</script>
+		<script src="JS/zip.js"></script>
+		<script src="JS/main.js"></script>
+		<style>
+			table
+			{
+				border-collapse:collapse;
+			}
+			td
+			{
+				border:1px black solid;
+                text-align:center;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<input type="file" id="file_input" />
+			<button id="p55_auth_download" value="下載">P55_驗證檔案下載</button>
+			<button onclick="file_download(0)">Step1檔案全部下載</button>
+			<button onclick="file_download(1)">Step2檔案全部下載</button>
+			<button onclick="file_download(2)">照片資料下載</button>
+			<button onclick="file_download(3)">照片下載</button>
+			<div id='file_output'></div>
+			<div id='table1'>
+			<div>
+		</div>
+	</body>
+</html>

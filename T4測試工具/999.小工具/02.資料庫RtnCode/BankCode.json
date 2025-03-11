@@ -1,0 +1,1354 @@
+[
+  {
+    "BankCode": "000",
+    "BankName": " 中央銀行國庫局"
+  },
+  {
+    "BankCode": "004",
+    "BankName": " 臺灣銀行"
+  },
+  {
+    "BankCode": "005",
+    "BankName": " 臺灣土地銀行"
+  },
+  {
+    "BankCode": "006",
+    "BankName": " 合作金庫商業銀行"
+  },
+  {
+    "BankCode": "007",
+    "BankName": " 第一商業銀行"
+  },
+  {
+    "BankCode": "008",
+    "BankName": " 華南商業銀行"
+  },
+  {
+    "BankCode": "009",
+    "BankName": " 彰化商業銀行"
+  },
+  {
+    "BankCode": "011",
+    "BankName": " 上海商業儲蓄銀行"
+  },
+  {
+    "BankCode": "012",
+    "BankName": " 台北富邦商業銀行"
+  },
+  {
+    "BankCode": "013",
+    "BankName": " 國泰世華商業銀行"
+  },
+  {
+    "BankCode": "015 ",
+    "BankName": " 中國輸出入銀行"
+  },
+  {
+    "BankCode": "016",
+    "BankName": " 高雄銀行"
+  },
+  {
+    "BankCode": "017",
+    "BankName": " 兆豐國際商業銀行"
+  },
+  {
+    "BankCode": "018",
+    "BankName": " 全國農業金庫"
+  },
+  {
+    "BankCode": "020 ",
+    "BankName": " 日商瑞穗銀行台北分行"
+  },
+  {
+    "BankCode": "021",
+    "BankName": "星展銀行"
+  },
+  {
+    "BankCode": "022 ",
+    "BankName": " 美國銀行台北分行"
+  },
+  {
+    "BankCode": "023 ",
+    "BankName": " 泰國盤谷銀行台北分行"
+  },
+  {
+    "BankCode": "025",
+    "BankName": " 菲律賓首都銀行台北分行"
+  },
+  {
+    "BankCode": "028 ",
+    "BankName": " 美商美國紐約梅隆銀行"
+  },
+  {
+    "BankCode": "029 ",
+    "BankName": " 新加坡商大華銀行台北分行"
+  },
+  {
+    "BankCode": "030 ",
+    "BankName": " 美商道富銀行台北分行"
+  },
+  {
+    "BankCode": "037 ",
+    "BankName": " 法商法國興業銀行台北分行"
+  },
+  {
+    "BankCode": "039",
+    "BankName": " 澳商澳盛銀行台北分行"
+  },
+  {
+    "BankCode": "040",
+    "BankName": " 中華開發工業銀行"
+  },
+  {
+    "BankCode": "048 ",
+    "BankName": " 王道商業銀行"
+  },
+  {
+    "BankCode": "050",
+    "BankName": "臺灣中小企業銀行"
+  },
+  {
+    "BankCode": "052",
+    "BankName": " 渣打國際商業銀行"
+  },
+  {
+    "BankCode": "053",
+    "BankName": " 台中商業銀行"
+  },
+  {
+    "BankCode": "054",
+    "BankName": " 京城商業銀行"
+  },
+  {
+    "BankCode": "060",
+    "BankName": " 兆豐票券金融股份有限公司"
+  },
+  {
+    "BankCode": "061",
+    "BankName": " 中華票券金融股份有限公司"
+  },
+  {
+    "BankCode": "062",
+    "BankName": " 國際票券金融股份有限公司"
+  },
+  {
+    "BankCode": "066",
+    "BankName": " 萬通票券金融股份有限公司"
+  },
+  {
+    "BankCode": "072",
+    "BankName": " 德商德意志銀行台北分行"
+  },
+  {
+    "BankCode": "075",
+    "BankName": " 香港商東亞銀行台北分行"
+  },
+  {
+    "BankCode": "076 ",
+    "BankName": " 美商摩根大通銀行台北分行"
+  },
+  {
+    "BankCode": "078 ",
+    "BankName": " 新加坡商星展銀行"
+  },
+  {
+    "BankCode": "081",
+    "BankName": " 匯豐（台灣）商業銀行"
+  },
+  {
+    "BankCode": "082 ",
+    "BankName": " 法國巴黎銀行台北分行"
+  },
+  {
+    "BankCode": "083 ",
+    "BankName": " 英商渣打銀行"
+  },
+  {
+    "BankCode": "085 ",
+    "BankName": " 新加坡商新加坡華僑銀行台北分行"
+  },
+  {
+    "BankCode": "086 ",
+    "BankName": " 法商東方匯理銀行台北分行"
+  },
+  {
+    "BankCode": "087 ",
+    "BankName": " 斐商標準銀行"
+  },
+  {
+    "BankCode": "090 ",
+    "BankName": " 加拿大商豐業銀行"
+  },
+  {
+    "BankCode": "092 ",
+    "BankName": " 瑞士商瑞士銀行台北分行"
+  },
+  {
+    "BankCode": "093 ",
+    "BankName": " 荷商安智銀行台北分行"
+  },
+  {
+    "BankCode": "097 ",
+    "BankName": " 美商富國銀行"
+  },
+  {
+    "BankCode": "098 ",
+    "BankName": " 日商三菱日聯銀行台北分行"
+  },
+  {
+    "BankCode": "101",
+    "BankName": " 瑞興商業銀行"
+  },
+  {
+    "BankCode": "102",
+    "BankName": " 華泰商業銀行"
+  },
+  {
+    "BankCode": "103",
+    "BankName": " 臺灣新光商業銀行"
+  },
+  {
+    "BankCode": "104",
+    "BankName": " 台北市第五信用合作社"
+  },
+  {
+    "BankCode": "106",
+    "BankName": " 台北市第九信用合作社"
+  },
+  {
+    "BankCode": "108",
+    "BankName": " 陽信商業銀行"
+  },
+  {
+    "BankCode": "114",
+    "BankName": " 基隆第一信用合作社"
+  },
+  {
+    "BankCode": "115",
+    "BankName": " 基隆市第二信用合作社"
+  },
+  {
+    "BankCode": "118",
+    "BankName": " 板信商業銀行"
+  },
+  {
+    "BankCode": "119",
+    "BankName": " 淡水第一信用合作社"
+  },
+  {
+    "BankCode": "120",
+    "BankName": " 新北市淡水信用合作社"
+  },
+  {
+    "BankCode": "124",
+    "BankName": " 宜蘭信用合作社"
+  },
+  {
+    "BankCode": "127",
+    "BankName": " 桃園信用合作社"
+  },
+  {
+    "BankCode": "130",
+    "BankName": " 新竹第一信用合作社"
+  },
+  {
+    "BankCode": "132",
+    "BankName": " 新竹第三信用合作社"
+  },
+  {
+    "BankCode": "146",
+    "BankName": " 台中市第二信用合作社"
+  },
+  {
+    "BankCode": "147",
+    "BankName": " 三信商業銀行"
+  },
+  {
+    "BankCode": "158",
+    "BankName": " 彰化第一信用合作社"
+  },
+  {
+    "BankCode": "161",
+    "BankName": " 彰化第五信用合作社"
+  },
+  {
+    "BankCode": "162",
+    "BankName": " 彰化第六信用合作社"
+  },
+  {
+    "BankCode": "163",
+    "BankName": " 彰化第十信用合作社"
+  },
+  {
+    "BankCode": "165",
+    "BankName": " 彰化縣鹿港信用合作社"
+  },
+  {
+    "BankCode": "178",
+    "BankName": " 嘉義市第三信用合作社"
+  },
+  {
+    "BankCode": "179",
+    "BankName": " 嘉義市第四信用合作社"
+  },
+  {
+    "BankCode": "188",
+    "BankName": " 台南第三信用合作社"
+  },
+  {
+    "BankCode": "204",
+    "BankName": " 高雄市第三信用合作社"
+  },
+  {
+    "BankCode": "215",
+    "BankName": " 花蓮第一信用合作社"
+  },
+  {
+    "BankCode": "216",
+    "BankName": " 花蓮第二信用合作社"
+  },
+  {
+    "BankCode": "222",
+    "BankName": " 澎湖縣第一信用合作社"
+  },
+  {
+    "BankCode": "223",
+    "BankName": " 澎湖第二信用合作社"
+  },
+  {
+    "BankCode": "224",
+    "BankName": " 金門縣信用合作社"
+  },
+  {
+    "BankCode": "321 ",
+    "BankName": " 日商三井住友銀行台北分行"
+  },
+  {
+    "BankCode": "322 ",
+    "BankName": " 英商巴克萊銀行"
+  },
+  {
+    "BankCode": "323 ",
+    "BankName": " 瑞士商瑞士信貸銀行"
+  },
+  {
+    "BankCode": "324 ",
+    "BankName": " 美商花旗銀行"
+  },
+  {
+    "BankCode": "325 ",
+    "BankName": " 香港上海匯豐銀行"
+  },
+  {
+    "BankCode": "326 ",
+    "BankName": " 西班牙商西班牙對外銀行臺北分行"
+  },
+  {
+    "BankCode": "329",
+    "BankName": " 印尼商印尼人民銀行台北分行"
+  },
+  {
+    "BankCode": "330",
+    "BankName": " 韓商韓亞銀行台北分行"
+  },
+  {
+    "BankCode": "372",
+    "BankName": " 大慶票券金融股份有限公司"
+  },
+  {
+    "BankCode": "380",
+    "BankName": " 大陸商中國銀行臺北分行"
+  },
+  {
+    "BankCode": "381",
+    "BankName": " 大陸商交通銀行臺北分行"
+  },
+  {
+    "BankCode": "382",
+    "BankName": " 大陸商中國建設銀行臺北分行"
+  },
+  {
+    "BankCode": "388",
+    "BankName": "全盈支付"
+  },
+  {
+    "BankCode": "389",
+    "BankName": "全支付"
+  },
+  {
+    "BankCode": "390",
+    "BankName": "悠遊付"
+  },
+  {
+    "BankCode": "391",
+    "BankName": "Line Pay"
+  },
+  {
+    "BankCode": "392",
+    "BankName": "icash Pay"
+  },
+  {
+    "BankCode": "393",
+    "BankName": "有錢卡"
+  },
+  {
+    "BankCode": "394",
+    "BankName": "國際連"
+  },
+  {
+    "BankCode": "395",
+    "BankName": "橘子支"
+  },
+  {
+    "BankCode": "396",
+    "BankName": "街口支付"
+  },
+  {
+    "BankCode": "397",
+    "BankName": "歐付寶"
+  },
+  {
+    "BankCode": "398",
+    "BankName": "簡單行動支付"
+  },
+  {
+    "BankCode": "501",
+    "BankName": " 宜蘭縣蘇澳區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "502",
+    "BankName": " 宜蘭縣頭城區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "503",
+    "BankName": " 基隆區漁會"
+  },
+  {
+    "BankCode": "504",
+    "BankName": " 新北區漁會"
+  },
+  {
+    "BankCode": "505",
+    "BankName": " 宜蘭區漁會"
+  },
+  {
+    "BankCode": "506",
+    "BankName": " 桃園區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "507",
+    "BankName": " 新竹區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "508",
+    "BankName": " 通苑區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "510",
+    "BankName": " 南龍區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "511",
+    "BankName": " 彰化區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "512",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "513",
+    "BankName": " 新北市瑞芳區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "514",
+    "BankName": " 萬里區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "515",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "516",
+    "BankName": " 基隆區漁會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "517",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "518",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "519",
+    "BankName": " 新化區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "520",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "521",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "523",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "524",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "525",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "526",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "538",
+    "BankName": " 宜蘭市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "541",
+    "BankName": " 白河區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "542",
+    "BankName": " 麻豆區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "547",
+    "BankName": " 後壁區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "549",
+    "BankName": " 下營區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "551",
+    "BankName": " 官田區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "552",
+    "BankName": " 大內區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "556",
+    "BankName": " 學甲區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "557",
+    "BankName": " 新市區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "558",
+    "BankName": " 安定區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "559",
+    "BankName": " 山上區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "561",
+    "BankName": " 左鎮區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "562",
+    "BankName": " 仁德區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "564",
+    "BankName": " 關廟區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "565",
+    "BankName": " 龍崎區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "567",
+    "BankName": " 南化區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "568",
+    "BankName": " 七股區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "570",
+    "BankName": " 南投市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "573",
+    "BankName": " 埔里鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "574",
+    "BankName": " 竹山鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "575",
+    "BankName": " 中寮鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "577",
+    "BankName": " 魚池鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "578",
+    "BankName": " 水里鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "579",
+    "BankName": " 國姓鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "580",
+    "BankName": " 鹿谷鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "581",
+    "BankName": " 信義鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "582",
+    "BankName": " 仁愛鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "583",
+    "BankName": " 東山區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "585",
+    "BankName": " 頭城鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "586",
+    "BankName": " 羅東鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "587",
+    "BankName": " 礁溪鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "588",
+    "BankName": " 壯圍鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "589",
+    "BankName": " 員山鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "596",
+    "BankName": " 五結鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "598",
+    "BankName": " 蘇澳地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "599",
+    "BankName": " 三星地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "600",
+    "BankName": " 農金資訊股份有限公司"
+  },
+  {
+    "BankCode": "602",
+    "BankName": " 中華民國農會中壢辦事處信用部（農金資訊所"
+  },
+  {
+    "BankCode": "603",
+    "BankName": " 基隆區農會"
+  },
+  {
+    "BankCode": "605",
+    "BankName": " 高雄市高雄地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "606",
+    "BankName": " 新北區農會"
+  },
+  {
+    "BankCode": "607",
+    "BankName": " 宜蘭區農會"
+  },
+  {
+    "BankCode": "608",
+    "BankName": " 桃園區農會"
+  },
+  {
+    "BankCode": "609",
+    "BankName": " 中華民國農會"
+  },
+  {
+    "BankCode": "610",
+    "BankName": " 新竹區農會"
+  },
+  {
+    "BankCode": "611",
+    "BankName": " 後龍鎮農會"
+  },
+  {
+    "BankCode": "612",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "613",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "614",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "615",
+    "BankName": " 基隆市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "616",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "617",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "618",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "619",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "620",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "621",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "622",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "623",
+    "BankName": " 台北區農會"
+  },
+  {
+    "BankCode": "624",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "625",
+    "BankName": " 臺中市臺中地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "627",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "628",
+    "BankName": " 鹿港鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "629",
+    "BankName": " 和美鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "631",
+    "BankName": " 溪湖鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "632",
+    "BankName": " 田中鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "633",
+    "BankName": " 北斗鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "635",
+    "BankName": " 線西鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "636",
+    "BankName": " 伸港鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "638",
+    "BankName": " 花壇鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "639",
+    "BankName": " 大村鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "642",
+    "BankName": " 社頭鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "643",
+    "BankName": " 二水鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "646",
+    "BankName": " 大城鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "647",
+    "BankName": " 溪州鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "649",
+    "BankName": " 埔鹽鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "650",
+    "BankName": " 福興鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "651",
+    "BankName": " 彰化市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "683",
+    "BankName": " 北港鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "685",
+    "BankName": " 土庫鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "693",
+    "BankName": " 東勢鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "696",
+    "BankName": " 水林鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "697",
+    "BankName": " 元長鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "698",
+    "BankName": " 麥寮鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "699",
+    "BankName": " 林內鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "700",
+    "BankName": " 中華郵政股份有限公司"
+  },
+  {
+    "BankCode": "749",
+    "BankName": " 內埔地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "762",
+    "BankName": " 大溪區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "763",
+    "BankName": " 桃園區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "764",
+    "BankName": " 平鎮區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "765",
+    "BankName": " 楊梅區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "766",
+    "BankName": " 大園區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "767",
+    "BankName": " 蘆竹區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "768",
+    "BankName": " 龜山區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "769",
+    "BankName": " 八德區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "770",
+    "BankName": " 新屋區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "771",
+    "BankName": " 龍潭區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "772",
+    "BankName": " 復興區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "773",
+    "BankName": " 觀音區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "775",
+    "BankName": " 土城區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "776",
+    "BankName": " 三重區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "777",
+    "BankName": " 中和地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "778",
+    "BankName": " 淡水區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "779",
+    "BankName": " 樹林區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "780",
+    "BankName": " 鶯歌區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "781",
+    "BankName": " 三峽區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "785",
+    "BankName": " 蘆洲區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "786",
+    "BankName": " 五股區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "787",
+    "BankName": " 林口區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "788",
+    "BankName": " 泰山區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "789",
+    "BankName": " 坪林區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "790",
+    "BankName": " 八里區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "791",
+    "BankName": " 金山地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "792",
+    "BankName": " 瑞芳地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "793",
+    "BankName": " 新店地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "795",
+    "BankName": " 深坑區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "796",
+    "BankName": " 石碇區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "797",
+    "BankName": " 平溪區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "798",
+    "BankName": " 石門區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "799",
+    "BankName": " 三芝區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "803",
+    "BankName": " 聯邦商業銀行"
+  },
+  {
+    "BankCode": "805",
+    "BankName": " 遠東國際商業銀行"
+  },
+  {
+    "BankCode": "806",
+    "BankName": " 元大商業銀行"
+  },
+  {
+    "BankCode": "807",
+    "BankName": " 永豐商業銀行"
+  },
+  {
+    "BankCode": "808",
+    "BankName": " 玉山商業銀行"
+  },
+  {
+    "BankCode": "809",
+    "BankName": " 凱基商業銀行"
+  },
+  {
+    "BankCode": "810",
+    "BankName": " 星展（台灣）商業銀行"
+  },
+  {
+    "BankCode": "812",
+    "BankName": " 台新國際商業銀行"
+  },
+  {
+    "BankCode": "814",
+    "BankName": " 元大商業銀行(原大眾)"
+  },
+  {
+    "BankCode": "815",
+    "BankName": " 日盛國際商業銀行"
+  },
+  {
+    "BankCode": "816",
+    "BankName": " 安泰商業銀行"
+  },
+  {
+    "BankCode": "822",
+    "BankName": " 中國信託商業銀行"
+  },
+  {
+    "BankCode": "823",
+    "BankName": " 將來商業銀行"
+  },
+  {
+    "BankCode": "824",
+    "BankName": " 連線商業銀行"
+  },
+  {
+    "BankCode": "826",
+    "BankName": " 樂天國際商業銀行"
+  },
+  {
+    "BankCode": "860",
+    "BankName": " 中埔鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "866",
+    "BankName": " 阿里山鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "868",
+    "BankName": " 東勢區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "869",
+    "BankName": " 清水區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "870",
+    "BankName": " 梧棲區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "871",
+    "BankName": " 大甲區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "872",
+    "BankName": " 沙鹿區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "874",
+    "BankName": " 霧峰區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "875",
+    "BankName": " 太平區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "876",
+    "BankName": " 烏日區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "877",
+    "BankName": " 后里區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "878",
+    "BankName": " 大雅區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "879",
+    "BankName": " 潭子區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "880",
+    "BankName": " 石岡區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "881",
+    "BankName": " 新社區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "882",
+    "BankName": " 大肚區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "883",
+    "BankName": " 外埔區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "884",
+    "BankName": " 大安區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "885",
+    "BankName": " 龍井區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "886",
+    "BankName": " 和平區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "891",
+    "BankName": " 花蓮市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "895",
+    "BankName": " 瑞穗鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "896",
+    "BankName": " 玉溪地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "897",
+    "BankName": " 鳳榮地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "898",
+    "BankName": " 光豐地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "901",
+    "BankName": " 大里區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "902",
+    "BankName": " 苗栗市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "903",
+    "BankName": " 汐止區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "904",
+    "BankName": " 新莊區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "906",
+    "BankName": " 頭份市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "907",
+    "BankName": " 竹南鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "908",
+    "BankName": " 通霄鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "909",
+    "BankName": " 苑裡鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "910",
+    "BankName": " 桃農中心"
+  },
+  {
+    "BankCode": "912",
+    "BankName": " 冬山鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "913",
+    "BankName": " 後龍鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "914",
+    "BankName": " 卓蘭鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "915",
+    "BankName": " 西湖鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "916",
+    "BankName": " 草屯鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "917",
+    "BankName": " 公館鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "918",
+    "BankName": " 銅鑼鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "919",
+    "BankName": " 三義鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "920",
+    "BankName": " 造橋鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "921",
+    "BankName": " 南庄鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "922",
+    "BankName": " 臺南市臺南地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "923",
+    "BankName": " 獅潭鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "924",
+    "BankName": " 頭屋鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "925",
+    "BankName": " 三灣鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "926",
+    "BankName": " 苗栗縣大湖地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "928",
+    "BankName": " 板橋區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "929",
+    "BankName": " 關西鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "930",
+    "BankName": " 新埔鎮農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "931",
+    "BankName": " 竹北市農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "932",
+    "BankName": " 湖口鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "933",
+    "BankName": " 芎林鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "934",
+    "BankName": " 寶山鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "935",
+    "BankName": " 峨眉鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "936",
+    "BankName": " 北埔鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "937",
+    "BankName": " 竹東地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "938",
+    "BankName": " 橫山地區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "939",
+    "BankName": " 新豐鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "940",
+    "BankName": " 新竹市農會信用部（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "951",
+    "BankName": " 台北縣農會北區共用中心"
+  },
+  {
+    "BankCode": "952",
+    "BankName": " 南農中心所屬會員"
+  },
+  {
+    "BankCode": "953",
+    "BankName": " 田尾鄉農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "954",
+    "BankName": " 農漁會中區資訊中心"
+  },
+  {
+    "BankCode": "960",
+    "BankName": " 台灣樂天"
+  },
+  {
+    "BankCode": "984",
+    "BankName": " 北投區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "985",
+    "BankName": " 士林區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "986",
+    "BankName": " 內湖區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "987",
+    "BankName": " 南港區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "988",
+    "BankName": " 木柵區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "989",
+    "BankName": " 景美區農會（農金資訊所屬會員）"
+  },
+  {
+    "BankCode": "995",
+    "BankName": " 關貿網路股份有限公司"
+  },
+  {
+    "BankCode": "996",
+    "BankName": " 財政部國庫署"
+  },
+  {
+    "BankCode": "997",
+    "BankName": " 中華民國信用合作社聯合社南區聯合資訊處理"
+  },
+  {
+    "BankCode": "999",
+    "BankName": " 台新銀行全行"
+  }
+]

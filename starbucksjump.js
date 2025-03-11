@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require('fs'); // 引入 fs 模組以進行檔案操作
 
 // 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 // 取得當前時間
 function getCurrentTime() {
@@ -41,7 +41,7 @@ const data = {
     Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
     TradeMode: "2",
     CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke",
-    RedirectURL: "https://www.google.com",
+    RedirectURL: "https://www.starbucks.com.tw/home/",
 };
 
 // AES 密鑰與 IV
@@ -134,7 +134,7 @@ const req = https.request(options, (res) => {
                     console.log('ICP Payment URL:', icpPaymentUrl);
 
                     // 傳送到 Slack
-                    await sendToSlack(`🚀 **ICP Payment URL**\n${icpPaymentUrl}`);
+                    await sendToSlack(`🚀 **ICP Payment 星巴克儲值icashpay支付**\n${icpPaymentUrl}`);
 
                     // 在系統上開啟 URL
                     const command = process.platform === 'win32' ? 'start' :
