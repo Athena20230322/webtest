@@ -6,7 +6,11 @@ const fs = require('fs');
 const axios = require('axios');
 
 // Slack Webhook URL
+<<<<<<< HEAD
 const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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';
+=======
+const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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';
+>>>>>>> aea1b9233cc8d8005ec53ce141d82b0b04c6b845
 
 // Imgur Client ID (你需要註冊Imgur並獲取自己的Client ID)
 const IMGUR_CLIENT_ID = 'fc927902fd8d9a1';
@@ -119,7 +123,11 @@ async function sendImageToSlack(imagePath) {
         const payload = {
             channel: 'C08CAL4L80M',
             username: 'QR Code Bot',
+<<<<<<< HEAD
             text: '綁定大都會車隊generated QR Code:',
+=======
+            text: 'Here is the generated QR Code:',
+>>>>>>> aea1b9233cc8d8005ec53ce141d82b0b04c6b845
             attachments: [
                 {
                     fallback: 'QR Code',
