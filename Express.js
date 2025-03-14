@@ -13,6 +13,10 @@ const webScriptPath = 'C:\\webtest\\cosmedweb.js';
 const marketPaymentScriptPath = 'C:\\webtest\\marketpayment.js';
 const marketTopUpScriptPath = 'C:\\webtest\\markettopup.js';
 const marketTopRefundScriptPath = 'C:\\webtest\\markettoprefund.js';
+const bindingDayScriptPath = 'C:\\webtes20250123\\bindingday.js';
+const bindingMonthScriptPath = 'C:\\webtes20250123\\bindingmonth.js';
+const bindingSeasonScriptPath = 'C:\\webtes20250123\\bindingseason.js';
+const bindingYearScriptPath = 'C:\\webtes20250123\\bindingyear.js';
 const paymentUrl = 'https://icp-payment-stage.icashpay.com.tw/Payment/ONLMerchant/SendTradeInfo?EncData=iikipS2y%2BkWFlOKhPs4Q%2BauZT1SMxc%2BSVS3CGqvnpxtY43xl%2B4bVN3syvs3b5meE9LbzihaEASk3xPp82ZOHQLJpluBjc1ocXlYyrojcNZTciLUYh0MJOLBQg1Y2UmD9UYHWQf0Y9CGcMwYVRXavJy4rFXGYYOY%2FuKrl12wE2A6VGZwjyqVR%2BYqM3i9i4AbvzpAerTcgSiN4Fi3N2sHjHxEmvuiEKSqwwT7vyOQvzQQ9UCG6tINqH1JMCb2X7A%2FaJGgRYuML1XRzYVbN4TskdP%2F8Ym7o3Ae6net60tE%2By%2BQThobDVKiGr0zxmJOHJdQA';
 
 app.get('/', (req, res) => {
@@ -92,6 +96,62 @@ app.get('/', (req, res) => {
                         document.getElementById('output').innerText = '發生錯誤: ' + error;
                     });
                 }
+                
+                function executeBindingDay() {
+                    fetch('/execute-binding-day', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        document.getElementById('output').innerText = result;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').innerText = '發生錯誤: ' + error;
+                    });
+                }
+
+                function executeBindingMonth() {
+                    fetch('/execute-binding-month', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        document.getElementById('output').innerText = result;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').innerText = '發生錯誤: ' + error;
+                    });
+                }
+
+                function executeBindingSeason() {
+                    fetch('/execute-binding-season', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        document.getElementById('output').innerText = result;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').innerText = '發生錯誤: ' + error;
+                    });
+                }
+
+                function executeBindingYear() {
+                    fetch('/execute-binding-year', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        document.getElementById('output').innerText = result;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').innerText = '發生錯誤: ' + error;
+                    });
+                }
             </script>
         </head>
         <body>
@@ -109,6 +169,11 @@ app.get('/', (req, res) => {
             <h2>超商執行退款:</h2>
             <input type="text" id="refundBuyerID" placeholder="輸入退款條碼">
             <button onclick="executeMarketRefund()">執行超商退款</button>
+            <h2>綁定扣款設定_QRcode傳送至Slack github_webtest:</h2>
+            <button onclick="executeBindingDay()">綁定扣款天扣定額不可改</button>
+            <button onclick="executeBindingMonth()">綁定扣款月扣不定額可改</button>
+            <button onclick="executeBindingSeason()">綁定扣款季扣不定額不可改</button>
+            <button onclick="executeBindingYear()">綁定扣款年扣定額可改</button>
             <h3>執行結果:</h3>
             <pre id="output">等待執行...</pre>
         </body>
@@ -178,6 +243,42 @@ app.post('/execute-market-refund', (req, res) => {
     const process = spawn('node', [marketTopRefundScriptPath]);
     process.stdin.write(refundBuyerID + "\n");
     process.stdin.end();
+    
+    let output = '';
+    process.stdout.on('data', (data) => { output += data.toString(); });
+    process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
+    process.on('close', () => { res.send(`執行結果:\n${output}`); });
+});
+
+app.post('/execute-binding-day', (req, res) => {
+    const process = spawn('node', [bindingDayScriptPath]);
+    
+    let output = '';
+    process.stdout.on('data', (data) => { output += data.toString(); });
+    process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
+    process.on('close', () => { res.send(`執行結果:\n${output}`); });
+});
+
+app.post('/execute-binding-month', (req, res) => {
+    const process = spawn('node', [bindingMonthScriptPath]);
+    
+    let output = '';
+    process.stdout.on('data', (data) => { output += data.toString(); });
+    process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
+    process.on('close', () => { res.send(`執行結果:\n${output}`); });
+});
+
+app.post('/execute-binding-season', (req, res) => {
+    const process = spawn('node', [bindingSeasonScriptPath]);
+    
+    let output = '';
+    process.stdout.on('data', (data) => { output += data.toString(); });
+    process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
+    process.on('close', () => { res.send(`執行結果:\n${output}`); });
+});
+
+app.post('/execute-binding-year', (req, res) => {
+    const process = spawn('node', [bindingYearScriptPath]);
     
     let output = '';
     process.stdout.on('data', (data) => { output += data.toString(); });
