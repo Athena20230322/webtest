@@ -1,4 +1,4 @@
 @echo off
 cd /d C:\webtes20250123\
-node yuantabingingtoslack.js
+node bindingmonthL.js
 pause
