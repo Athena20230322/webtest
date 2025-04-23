@@ -106,6 +106,8 @@ cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
 hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)
 
+fisckor.js        -->韓國跨境支付，此透過財經測試環境，若關閉即無法正常使用
+
 kfcjump.js -->模擬富利餐飲產出跳付款URL跨平台購物產生URL(IPCO0002)_2025/02/13
 
 kfcjumpquerytrade.js -->富利餐飲付款URL已付款完成進行查詢交易結果-->ICPO005_2025/02/23
