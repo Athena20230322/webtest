@@ -104,7 +104,7 @@ booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
-iyugo.js-->統一超商i預購II -->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)(使用OPSDK付款測試)
+iyugo.js-->統一超商隨時取 -->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)(使用OPSDK付款測試)
 
 hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)
 
