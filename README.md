@@ -126,6 +126,8 @@ statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000 (無法修
 
 starbucksjump.js-->星巴克(儲值)產出跳轉付款URL-->(IPCO0002)_2025/02/24
 
+tarokouat.js -->UAT大魯閣宏誌-->ICPO001_2025/05/06
+
 yoxibindingUAT.js--->YOXI授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
 
 yoxibinding.js --->Yoxi授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
