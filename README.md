@@ -147,6 +147,9 @@ binding711paid.js -->UAT統一超商付費會員
 年扣定額可改-->MerchantID:10537684 /  BindingTradeID:13656
 =============================================================================================================
 /api/V2/Payment/Traffic/DoPayment
+
 模擬乘車碼->漢程汽車客運
+
 dopayment.js -->讀取Qrcode 解析 ICP帳號登入，本機登入後，截取乘車碼Qrcode 放置c:\webtest\qrcode.png(圖片檔名固定qrcode.png)
+
 dopayment2.js-->承上dopayment.js 取得載入orgQrcode的值，執行dopayment2.js 即可模擬乘車碼 扣款
