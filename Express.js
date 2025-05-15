@@ -22,6 +22,7 @@ const binding711memformalScriptPath = 'C:\\webtes20250123\\binding711memformal.j
 const booksWebScriptPath = 'C:\\webtest\\booksweb.js'; // 新增博客來腳本路徑
 const kfcjumpScriptPath = 'C:\\webtes20250123\\kfcjump.js'; // 新增跳轉URL腳本路徑
 const fiscKorScriptPath = 'C:\\webtest\\fisckor.js'; // 新增韓國跨境扣款腳本路徑
+const rideScriptPath = 'C:\\webtest\\ridecode.js'; // 新增乘車碼腳本路徑
 
 
 const paymentUrl = 'https://icp-payment-stage.icashpay.com.tw/Payment/ONLMerchant/SendTradeInfo?EncData=iikipS2y%2BkWFlOKhPs4Q%2BauZT1SMxc%2BSVS3CGqvnpxtY43xl%2B4bVN3syvs3b5meE9LbzihaEASk3xPp82ZOHQLJpluBjc1ocXlYyrojcNZTciLUYh0MJOLBQg1Y2UmD9UYHWQf0Y9CGcMwYVRXavJy4rFXGYYOY%2FuKrl12wE2A6VGZwjyqVR%2BYqM3i9i4AbvzpAerTcgSiN4Fi3N2sHjHxEmvuiEKSqwwT7vyOQvzQQ9UCG6tINqH1JMCb2X7A%2FaJGgRYuML1XRzYVbN4TskdP%2F8Ym7o3Ae6net60tE%2By%2BQThobDVKiGr0zxmJOHJdQA';
@@ -49,6 +50,20 @@ app.get('/', (req, res) => {
                 
                 function executeWebScript() {
                     fetch('/execute-web-script', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        document.getElementById('output').innerText = result;
+                    })
+                    .catch(error => {
+                        document.getElementById('output').innerText = '發生錯誤: ' + error;
+                    });
+                }
+
+                function executerideScriptPath() {
+                    fetch('/execute-ride-script', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                     })
@@ -267,6 +282,7 @@ app.get('/', (req, res) => {
             <button onclick="executeBinding711memformal()">勿任意使用此為正式綁定統一超商付費會員</button>
             <h2>付款頁跳轉URL_傳送至Slack github_webtest:</h2>
             <button onclick="executekfcjumpScript()">執行富利餐飲KFC跳轉URL</button>
+            <button onclick="executerideScriptPath()">執行乘車碼扣款需使用固定帳號登入tester184</button>
            
            
             <h3>執行結果:</h3>
@@ -306,6 +322,15 @@ app.post('/execute-fisc-kor', (req, res) => {
     process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
     process.on('close', () => { res.send(`執行結果:\n${output}`); });
 });
+//新增乘車碼
+app.post('/execute-ride-script', (req, res) => {
+    const process = spawn('node', [rideScriptPath]);
+    
+    let output = '';
+    process.stdout.on('data', (data) => { output += data.toString(); });
+    process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
+    process.on('close', () => { res.send(`執行結果:\n${output}`); });
+});
 
 app.post('/execute-web-script', (req, res) => {
     const process = spawn('node', [webScriptPath]);
@@ -315,6 +340,7 @@ app.post('/execute-web-script', (req, res) => {
     process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
     process.on('close', () => { res.send(`執行結果:\n${output}`); });
 });
+
 
 app.post('/execute-market-payment', (req, res) => {
     const buyerID = req.body.buyerID;
