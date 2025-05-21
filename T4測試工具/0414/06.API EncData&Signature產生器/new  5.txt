@@ -1,0 +1,36 @@
+﻿var testing_data={"PlatformID":"10525872","MerchantID":"10525872","BindingTradeNo":"MTN003","StoreName":"富蘭克林華美投信","BindingMode":2,"CallbackURL":"https://prod-21.japaneast.logic.azure.com:443/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FICPOB002%2Frun&sv=1.0&sig=81SiqqBYwWTplvxc3OSCCU6sk9oNT6nI4w5t9Z8v6j4","RedirectURL":"www.google.com.tw","MerchantUserID":"A187715054","DisplayInformation":"富蘭克林華美扣款帳號綁定","RedeemFlag":0,"ExpiredType":1,"TotalAmtLimit":"300000","NonPointAmt":"0","MaxMonthAmt":"0","ItemAmt":"0","UtilityAmt":"0","ItemNonRedeemAmt":"0","UtilityNonRedeemAmt":"0","ExpiredDate":"0","Installment":0,"SingleAmtLimit":"3000000","SingleNonPointAmt":"0","SingleItemAmt":"0","SingleUtilityAmt":"0","SingleItemNonRedeemAmt":"0","SingleUtilityNonRedeemAmt":"0"}
+var testing_key=CryptoJS.enc.Utf8.parse(AES_Key)
+var testing_iv = CryptoJS.enc.Utf8.parse(AES_IV)
+var testing_encdata = encryptAES_CBC_256(JSON.stringify(testing_data), testing_key, testing_iv)
+var testing_X_iCP_Signature;
+var testing_sign = new JSEncrypt()
+testing_sign.setPrivateKey(Client_Private_Key);
+testing_X_iCP_Signature = testing_sign.sign(testing_encdata, CryptoJS.SHA256, "sha256")
+
+var testing_data={"MerchantID":"10523643","PlatformID":"10523643","Amount":"187","StoreID":"153216","StoreName":"傑西店家","MerchantTradeNo":"MTN0005","MerchantTradeDate":"2024/07/11 11:09:00","ItemAmt":"187","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"https://staging.foodomo.com/icashpay/icpDone?order_id=1462642"}
+var testing_key=CryptoJS.enc.Utf8.parse(AES_Key)
+var testing_iv = CryptoJS.enc.Utf8.parse(AES_IV)
+var testing_encdata = encryptAES_CBC_256(JSON.stringify(testing_data), testing_key, testing_iv)
+var testing_X_iCP_Signature;
+var testing_sign = new JSEncrypt()
+testing_sign.setPrivateKey(Client_Private_Key);
+testing_X_iCP_Signature = testing_sign.sign(testing_encdata, CryptoJS.SHA256, "sha256")
+
+
+-----SIT Test-----
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0001","MerchantTradeDate":"2024/07/11 11:55:00","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0002","MerchantTradeDate":"2024/07/11 11:55:00","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0003","MerchantTradeDate":"2024/07/11 15:13:00","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0004","MerchantTradeDate":"2024/07/11 15:13:00","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0005","MerchantTradeDate":"2024/07/11 16:34:00","TradeExpiredTime":"30","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_data={"MerchantID":"10536912","PlatformID":"10536912","Amount":"100","StoreID":"TS001","StoreName":"SN001","MerchantTradeNo":"MTN0006","MerchantTradeDate":"2024/07/11 16:51:00","TradeExpiredTime":"30","ItemAmt":"100","UtilityAmt":"0","CommAmt":"0","ExceptAmt1":"0","ExceptAmt2":"0","RedeemFlag":"0","BonusAmt":"0","DebitPoint":"0","NonRedeemAmt":"0","NonPointAmt":"0","ItemModel":null,"TradeTool":"1","ReturnURL":"www.google.com.tw"}
+var testing_key=CryptoJS.enc.Utf8.parse(AES_Key)
+var testing_iv = CryptoJS.enc.Utf8.parse(AES_IV)
+var testing_encdata = encryptAES_CBC_256(JSON.stringify(testing_data), testing_key, testing_iv)
+var testing_X_iCP_Signature;
+var testing_sign = new JSEncrypt()
+testing_sign.setPrivateKey(Client_Private_Key);
+testing_X_iCP_Signature = testing_sign.sign(testing_encdata, CryptoJS.SHA256, "sha256")
+
+----- -----
+20240266

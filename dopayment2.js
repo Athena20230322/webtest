@@ -23,7 +23,7 @@ function buildTransactionRecord() {
   
   return {
     version: "01.00",
-    orgQrcode: "00000000000000372453", // 應替换為實際QR46交易序号
+    orgQrcode: "00000000000000374122", // 應替换為實際QR46交易序号
     terminalPosParam: {
       recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
       merchantId: config.merchantId,
@@ -72,7 +72,7 @@ function encryptAES(data, key, iv) {
   }
 }
 
-// 生成支付MAC签名 (规格书第5页ICP_Gen_PaymentMAC函数)
+// 生成支付MAC签名 (规格书第5页ICP_Gen_PaymentMAC函数);
 function generatePaymentMAC(qr43, transDate, amount, qr80, qr8A, privateKeyPem) {
   try {
     // 1. 准备签名数据 (规格书第5页)
@@ -107,9 +107,9 @@ async function processPayment() {
     );
     console.log('加密数据:', encryptedData);
 
-    // 3. 生成支付MAC签名 (规格书第5页)
-    // 注意：这里需要根据实际QR43、QR80、QR8A的值进行替换
-    const qr43 = "1234567890123456"; // 16字节虚拟卡号 (规格书第5页)
+    // 3. 生成支付MAC签名 (規格書第5页)
+    // 注意：這裡需要根據實際QR43、QR80、QR8A的值進行替换
+    const qr43 = "1234567890123456"; // 16字节虚拟卡号 (規格書第5页)
     const transDate = transactionRecord.terminalPosParam.transactionDatetime;
     const amount = transactionRecord.terminalPosParam.transactionAmount;
     const qr80 = "010203040506070809"; // 19字节BIN数据 (示例)

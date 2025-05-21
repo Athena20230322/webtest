@@ -6,6 +6,7 @@ const { Buffer } = require('buffer');
 
 // 檔案路徑
 const QR_CODE_PATH = path.join('C:', 'webtest', 'qrcode.png');
+const OUTPUT_FILE = path.join('C:', 'webtest', 'orgQrcode.txt');
 
 async function readQRCode(filePath) {
     console.log("\n1. 讀取QR code...");
@@ -87,6 +88,32 @@ function parseTLV(data, start = 0, maxLength = null) {
     return result;
 }
 
+function extractAndSaveTag54Value(tlvData) {
+    // 尋找 Tag 54 的項目
+    const tag54Item = tlvData.find(item => item.tag === '54');
+    if (!tag54Item) {
+        console.log("未找到 Tag 54 的數據");
+        return;
+    }
+
+    // 從 Tag 54 的值中提取 F 和 H+ 之間的部分
+    const tag54Value = tag54Item.value_str;
+    const startIndex = tag54Value.indexOf('F');
+    const endIndex = tag54Value.indexOf('H+');
+    
+    if (startIndex === -1 || endIndex === -1 || startIndex >= endIndex) {
+        console.log("無法找到 F 和 H+ 之間的數值");
+        return;
+    }
+    
+    const extractedValue = tag54Value.substring(startIndex + 1, endIndex);
+    console.log("\n從 Tag 54 提取的數值:", extractedValue);
+
+    // 將提取的數值寫入檔案
+    fs.writeFileSync(OUTPUT_FILE, extractedValue);
+    console.log(`已將提取的數值保存到: ${OUTPUT_FILE}`);
+}
+
 function parseDataContent(content) {
     console.log("\n3. 解析數據內容...");
     try {
@@ -103,6 +130,9 @@ function parseDataContent(content) {
                 `Tag: ${item.tag}, Length: ${item.length}, Value: ${item.value_str} (Hex: ${item.value_hex})`);
         }
 
+        // 提取並保存 Tag 54 的特定數值
+        extractAndSaveTag54Value(tlvData);
+
         // 提取已知字段
         const result = {
             data_type: "TLV",
@@ -111,18 +141,18 @@ function parseDataContent(content) {
             tlv_fields: tlvData
         };
 
-        // 檢查特定字段
-        if (content.includes(Buffer.from("20250514110039"))) {
-            result.timestamp = "2025-05-14 11:00:39";
-        }
-        if (content.includes(Buffer.from("168211100009624"))) {
-            result.account = "168211100009624";
-        }
-        if (content.includes(Buffer.from("000545"))) {
-            result.amount = "NT$545";
-        }
+        // // 檢查特定字段
+        // if (content.includes(Buffer.from("20250514110039"))) {
+            // result.timestamp = "2025-05-14 11:00:39";
+        // }
+        // if (content.includes(Buffer.from("168211100009624"))) {
+            // result.account = "168211100009624";
+        // }
+        // if (content.includes(Buffer.from("000545"))) {
+            // result.amount = "NT$545";
+        // }
 
-        return result;
+        // return result;
     } catch (e) {
         console.log(`解析錯誤: ${e.message}`);
         return null;

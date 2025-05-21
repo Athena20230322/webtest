@@ -116,9 +116,19 @@ const req = https.request(options, (res) => {
             const parsedData = JSON.parse(decryptedData);
             const approveBindingToken = parsedData.ApproveBindingToken;
             const bindingTradeID = parsedData.BindingTradeID;
+            const bindingTradeNo = parsedData.BindingTradeNo; // 提取 BindingTradeNo
 
             if (approveBindingToken) {
                 console.log('ApproveBindingToken:', approveBindingToken);
+
+                // 將 ApproveBindingToken 寫入檔案
+                fs.writeFile('ApproveBindingToken.txt', approveBindingToken.toString(), (err) => {
+                    if (err) {
+                        console.error('Error writing ApproveBindingToken to file:', err);
+                    } else {
+                        console.log('ApproveBindingToken saved to ApproveBindingToken.txt');
+                    }
+                });
 
                 // 確保生成 QR Code
                 try {
@@ -152,6 +162,21 @@ const req = https.request(options, (res) => {
                 });
             } else {
                 console.error('BindingTradeID not found in response data.');
+            }
+
+            if (bindingTradeNo) {
+                console.log('BindingTradeNo:', bindingTradeNo);
+
+                // 將 BindingTradeNo 寫入檔案
+                fs.writeFile('BindingTradeNo.txt', bindingTradeNo.toString(), (err) => {
+                    if (err) {
+                        console.error('Error writing BindingTradeNo to file:', err);
+                    } else {
+                        console.log('BindingTradeNo saved to BindingTradeNo.txt');
+                    }
+                });
+            } else {
+                console.error('BindingTradeNo not found in response data.');
             }
         }
     });

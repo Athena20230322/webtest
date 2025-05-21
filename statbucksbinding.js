@@ -23,8 +23,8 @@ const { tradeNo, tradeDate } = getCurrentTime();
 
 // 模擬店家數據
 const data = {
-    PlatformID: "10510042",
-    MerchantID: "10510042",
+    PlatformID: "10524652",
+    MerchantID: "10524652",
     BindingTradeNo: tradeNo, // 動態 MerchantTradeNo
     StoreName: "測試商戶1",
     BindingMode: "1",
@@ -41,12 +41,12 @@ const data = {
 };
 
 // AES 密鑰與 IV
-const AES_Key = "hqmWNJydBqsQNOR6zMtqjC87ZzX00yVe";
-const AES_IV = "rTrAYCdq3QcSDAR7";
+const AES_Key = "obix0KiPMQqlDrDKEwtCGHaXPuoytAJZ";
+const AES_IV = "yJQHlnghifLjKLqJ";
 
 // 客戶端私鑰
 const Client_Private_Key = `-----BEGIN PRIVATE KEY-----
-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
+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
 -----END PRIVATE KEY-----`;
 
 // AES 加密
@@ -91,7 +91,7 @@ const options = {
     path: '/api/V2/Payment/Binding/CreateICPBinding',
     method: 'POST',
     headers: {
-        'X-iCP-EncKeyID': '21084',
+        'X-iCP-EncKeyID': '218069',
         'X-iCP-Signature': X_iCP_Signature,
         'Content-Type': 'application/x-www-form-urlencoded',
     },
