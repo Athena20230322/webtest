@@ -132,6 +132,8 @@ yoxibinding.js --->Yoxi授權綁定-->ICPOB0000 (不固定可設定每月扣款�
 
 Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
 
+bookhouse.js -->財團法人孩子的書屋文教基金會-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
+
 Mertotaxicancelbinding.js -->大都會車隊授權取消綁定-->ICPO0003(需先執行ICPOB000綁定成功後，再執行ICPOB000) 
 
 Mertotaxibindingtoslack.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)，傳送至github_webtest to slack
