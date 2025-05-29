@@ -155,3 +155,5 @@ binding711paid.js -->UAT統一超商付費會員
 dopayment.js -->讀取Qrcode 解析 ICP帳號登入，本機登入後，截取乘車碼Qrcode 放置c:\webtest\qrcode.png(圖片檔名固定qrcode.png)
 
 dopayment2.js-->承上dopayment.js 取得載入orgQrcode的值，執行dopayment2.js 即可模擬乘車碼 扣款
+==================================================================================================================
+timesort.py -->統計express.js log 各功能執行的日期與次數 轉換成excel
