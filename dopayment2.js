@@ -23,7 +23,7 @@ function buildTransactionRecord() {
   
   return {
     version: "01.00",
-    orgQrcode: "00000000000000374122", // 應替换為實際QR46交易序号
+    orgQrcode: "00000000000000392808", // 應替换為實際QR46交易序号
     terminalPosParam: {
       recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
       merchantId: config.merchantId,
