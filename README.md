@@ -102,7 +102,13 @@ booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
+taichunggo.js-->台中go乘車碼 -->ICPO0008
+
 iyugo.js-->統一超商隨時取 -->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)(使用OPSDK付款測試)
+
+iyugoquerytrade.js -->統一超商隨時取已付款完成進行查詢交易結果-->ICPO0005
+
+iyugorefund.js --> 需先完成查易交易結果後，再執行退款-->ICPO0004
 
 hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)
 
@@ -155,5 +161,7 @@ binding711paid.js -->UAT統一超商付費會員
 dopayment.js -->讀取Qrcode 解析 ICP帳號登入，本機登入後，截取乘車碼Qrcode 放置c:\webtest\qrcode.png(圖片檔名固定qrcode.png)
 
 dopayment2.js-->承上dopayment.js 取得載入orgQrcode的值，執行dopayment2.js 即可模擬乘車碼 扣款
+
+dopaymentmrt.js-->北捷乘車碼
 ==================================================================================================================
 timesort.py -->統計express.js log 各功能執行的日期與次數 轉換成excel
