@@ -94,6 +94,8 @@ marketpaymentrefund.js->超商反掃退款交易-->ICPOS002
 
 markettopup.js-->超商儲值交易_ICPOS004
 
+markettopupuatjs -->UAT超商儲值交易_ICPOS004
+
 markettoprefund.js-->超商儲值退款_ICPOS005 (目前執行顯示退貨/取消失敗，必須在儲值的同一家分店辦理退貨/取消)_2025/02/06
 
 marketpaidUAT.js -->超商付費會員授權綁定-->ICPOB0000(訂閱制固定金額711元，目前尚未確認規格)_2025/03/07
