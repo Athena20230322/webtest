@@ -29,9 +29,12 @@ const booksWebScriptPath = 'C:\\webtest\\booksweb.js';
 const kfcjumpScriptPath = 'C:\\webtes20250123\\kfcjump.js';
 const fiscKorScriptPath = 'C:\\webtest\\fisckor.js';
 const rideScriptPath = 'C:\\webtest\\ridecode.js';
+// i預購腳本的路徑
+const iyugoSlackScriptPath = 'C:\\webtest\\iyugoslack.js';
 
-// 支付 URL (原始程式碼中存在，但在此伺服器邏輯中未使用)
-const paymentUrl = 'https://icp-payment-stage.icashpay.com.tw/Payment/ONLMerchant/SendTradeInfo?EncData=iikipS2y%2BkWFlOKhPs4Q%2BauZT1SMxc%2BSVS3CGqvnpxtY43xl%2B4bVN3syvs3b5meE9LbzihaEASk3xPp82ZOHQLJpluBjc1ocXlYyrojcNZTciLUYh0MJOLBQg1Y2UmD9UYHWQf0Y9CGcMwYVRXavJy4rFXGYYOY%2FuKrl12wE2A6VGZwjyqVR%2BYqM3i9i4AbvzpAerTcgSiN4Fi3N2sHjHxEmvuiEKSqwwT7vyOQvzQQ9UCG6tINqH1JMCb2X7A%2FaJGgRYuML1XRzYVbN4TskdP%2F8Ym7o3Ae6net60tE%2By%2BQThobDVKiGr0zxmJOHJdQA';
+// **新增** UAT 環境超商現金儲值交易腳本的路徑
+const marketTopUpUatScriptPath = 'C:\\webtest\\markettopupuat.js';
+
 
 // 點擊日誌檔案的路徑
 const clickLogPath = path.join('C:\\webtest', 'click_log.txt');
@@ -50,9 +53,7 @@ app.get('/', (req, res) => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>條碼掃描與付款執行</title>
-            <!-- Tailwind CSS CDN 用於現代響應式設計 -->
             <script src="https://cdn.tailwindcss.com"></script>
-            <!-- QuaggaJS CDN 用於條碼掃描功能 -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
             <style>
@@ -138,8 +139,6 @@ app.get('/', (req, res) => {
                     color: #334155;
                     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
                 }
-
-                /* 掃描器疊層 (Overlay) 的樣式 */
                 #scanner-overlay {
                     position: fixed;
                     top: 0;
@@ -199,7 +198,6 @@ app.get('/', (req, res) => {
                 <h2 class="section-title">輸入付款條碼並執行:</h2>
                 <div class="input-group">
                     <input type="text" id="barcode" placeholder="輸入條碼" class="text-gray-700">
-                    <button onclick="startScanFor('barcode')" class="scan-button">掃描條碼</button>
                     <button onclick="executeScript()">執行康事美扣款</button>
                     <button onclick="executeWebScript()">執行康事美掃描Web付款</button>
                     <button onclick="executeBooksWebScript()">執行博客來掃描Web付款</button>
@@ -208,14 +206,12 @@ app.get('/', (req, res) => {
                 <h2 class="section-title">韓國跨境扣款:財經測試時間平日九點至下午五點</h2>
                 <div class="input-group">
                     <input type="text" id="fiscKorBuyerID" placeholder="輸入BuyerID" class="text-gray-700">
-                    <button onclick="startScanFor('fiscKorBuyerID')" class="scan-button">掃描BuyerID</button>
                     <button onclick="executeFiscKor()">執行韓國跨境扣款財經測試環境</button>
                 </div>
 
                 <h2 class="section-title">輸入超商反掃付款:</h2>
                 <div class="input-group">
                     <input type="text" id="buyerID" placeholder="輸入付款條碼" class="text-gray-700">
-                    <button onclick="startScanFor('buyerID')" class="scan-button">掃描付款條碼</button>
                     <button onclick="executeMarketPayment()">執行超商反掃付款</button>
                 </div>
 
@@ -223,14 +219,13 @@ app.get('/', (req, res) => {
                 <div class="input-group">
                     <input type="text" id="topUpAmt" placeholder="輸入儲值金額" class="text-gray-700">
                     <input type="text" id="topUpBuyerID" placeholder="輸入現金儲值條碼" class="text-gray-700">
-                    <button onclick="startScanFor('topUpBuyerID')" class="scan-button">掃描儲值條碼</button>
                     <button onclick="executeMarketTopUp()">執行超商現金儲值交易</button>
+                    <button onclick="executeMarketTopUpUat()">執行UAT超商現金儲值交易</button>
                 </div>
 
                 <h2 class="section-title">超商執行取消現金儲值退款:</h2>
                 <div class="input-group">
                     <input type="text" id="refundBuyerID" placeholder="輸入退款儲值條碼" class="text-gray-700">
-                    <button onclick="startScanFor('refundBuyerID')" class="scan-button">掃描退款條碼</button>
                     <button onclick="executeMarketRefund()">執行超商取消現金儲值退款</button>
                 </div>
 
@@ -244,6 +239,11 @@ app.get('/', (req, res) => {
                     <button onclick="executeBinding711memformal()">勿任意使用此為正式綁定統一超商付費會員</button>
                 </div>
 
+                <h2 class="section-title">i預購服務_QRcode傳送至Slack:</h2>
+                <div class="input-group">
+                    <button onclick="executeIyugoSlack()">i預購隨時取</button>
+                </div>
+
                 <h2 class="section-title">付款頁跳轉URL_傳送至Slack github_webtest:</h2>
                 <div class="input-group">
                     <button onclick="executekfcjumpScript()">執行富利餐飲KFC跳轉URL</button>
@@ -254,7 +254,6 @@ app.get('/', (req, res) => {
                 <pre id="output" class="mb-4">等待執行...</pre>
             </div>
 
-            <!-- 掃描器疊層 (Overlay) 區塊 -->
             <div id="scanner-overlay" style="display: none;">
                 <h2 class="text-2xl font-bold mb-4">條碼掃描器</h2>
                 <div id="interactive" class="viewport">
@@ -266,14 +265,11 @@ app.get('/', (req, res) => {
             </div>
 
             <script>
-                let activeInputFieldId = null; // 用於儲存要填充哪個輸入欄位的 ID
-                let QuaggaInitialized = false; // 追蹤 QuaggaJS 是否已初始化
+                // 由於掃描按鈕已移除，相關的 JavaScript 函式雖然保留，但不會被觸發。
+                // 這樣可以確保未來若要加回掃描功能，不需重寫邏輯。
+                let activeInputFieldId = null;
+                let QuaggaInitialized = false;
 
-                /**
-                 * @function logClick
-                 * @description 記錄按鈕點擊事件到後端伺服器。
-                 * @param {string} buttonName - 被點擊按鈕的名稱。
-                 */
                 function logClick(buttonName) {
                     fetch('/log-click', {
                         method: 'POST',
@@ -281,116 +277,18 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ buttonName })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        console.log(result);
-                    })
-                    .catch(error => {
-                        console.error('點擊記錄錯誤: ' + error);
-                    });
+                    .then(result => { console.log(result); })
+                    .catch(error => { console.error('點擊記錄錯誤: ' + error); });
                 }
 
-                // --- 條碼掃描器功能 (前端 JavaScript) ---
-
-                /**
-                 * @function startScanFor
-                 * @description 啟動條碼掃描器並設定目標輸入欄位。
-                 * @param {string} targetInputId - 掃描結果將填充到的輸入欄位 ID。
-                 */
                 function startScanFor(targetInputId) {
-                    logClick('開啟掃描器 (' + targetInputId + ')');
-                    activeInputFieldId = targetInputId; // 設定目前作用中的輸入欄位
-                    document.getElementById('scanner-overlay').style.display = 'flex'; // 顯示掃描器疊層
-
-                    // 如果 QuaggaJS 已經初始化，直接重新啟動掃描
-                    if (QuaggaInitialized) {
-                        Quagga.start();
-                    } else {
-                        // 初始化 QuaggaJS
-                        Quagga.init({
-                            inputStream: {
-                                name: "Live",
-                                type: "LiveStream",
-                                target: document.querySelector('#interactive video'), // 指定視訊元素
-                                constraints: {
-                                    facingMode: "environment", // 優先使用後置攝影機
-                                    width: { min: 640, ideal: 1280 }, // 設定視訊解析度
-                                    height: { min: 480, ideal: 720 }
-                                }
-                            },
-                            decoder: {
-                                // 設定要辨識的條碼類型
-                                readers: ["ean_reader", "code_128_reader", "upc_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "interleaved_2_of_5_reader", "2_of_5_reader", "databar_reader", "databar_expanded_reader", "code_93_reader"]
-                            }
-                        }, function(err) {
-                            if (err) {
-                                console.error(err);
-                                document.getElementById('output').innerText = '啟動掃描器失敗: ' + err.message + '. 請確認相機權限。';
-                                document.getElementById('scanner-overlay').style.display = 'none'; // 發生錯誤時隱藏疊層
-                                return;
-                            }
-                            console.log("Initialization finished. Ready to start");
-                            Quagga.start(); // 啟動掃描
-                            QuaggaInitialized = true;
-                        });
-
-                        // 監聽條碼辨識事件
-                        Quagga.onDetected(function(result) {
-                            // 只有在有作用中輸入欄位時才處理結果
-                            if (activeInputFieldId) {
-                                const code = result.codeResult.code;
-                                document.getElementById(activeInputFieldId).value = code; // 將掃描結果填入目標輸入欄位
-                                document.getElementById('output').innerText = \`已掃描到條碼: \${code} 並填入 \${activeInputFieldId}\`;
-                                stopScanner(); // 掃描成功後停止掃描器
-                            }
-                        });
-
-                        // 監聽影像處理事件，用於繪製辨識框 (可選)
-                        Quagga.onProcessed(function(result) {
-                            const drawingCtx = Quagga.canvas.ctx.overlay;
-                            const drawingCanvas = Quagga.canvas.dom.overlay;
-
-                            if (result) {
-                                if (result.boxes) {
-                                    drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.width), parseInt(drawingCanvas.height));
-                                    result.boxes.filter(function (box) {
-                                        return box !== result.box;
-                                    }).forEach(function (box) {
-                                        Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
-                                    });
-                                }
-
-                                if (result.box) {
-                                    Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
-                                }
-
-                                if (result.codeResult && result.codeResult.code) {
-                                    Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: "red", lineWidth: 3});
-                                }
-                            }
-                        });
-                    }
+                    // 此函式現在不會被呼叫
                 }
 
-                /**
-                 * @function stopScanner
-                 * @description 停止條碼掃描器並隱藏疊層。
-                 */
                 function stopScanner() {
-                    if (QuaggaInitialized) {
-                        Quagga.stop();
-                        console.log("Scanner stopped.");
-                    }
-                    document.getElementById('scanner-overlay').style.display = 'none'; // 隱藏疊層
-                    activeInputFieldId = null; // 清除作用中欄位
+                    // 此函式現在不會被呼叫
                 }
 
-                // --- 執行後端腳本的功能 (前端 JavaScript，已修改為使用輸入欄位的值) ---
-
-                /**
-                 * @function executeScript
-                 * @description 執行康事美扣款腳本。
-                 * 取得 'barcode' 輸入欄位的值並發送給後端。
-                 */
                 function executeScript() {
                     logClick('康事美扣款');
                     const barcode = document.getElementById('barcode').value;
@@ -400,57 +298,26 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ barcode })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
-                
-                /**
-                 * @function executeWebScript
-                 * @description 執行康事美掃描Web付款腳本。
-                 */
+
                 function executeWebScript() {
                     logClick('康事美掃描Web付款');
-                    fetch('/execute-web-script', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-web-script', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executerideScriptPath
-                 * @description 執行乘車碼扣款腳本。
-                 */
                 function executerideScriptPath() {
                     logClick('乘車碼扣款');
-                    fetch('/execute-ride-script', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-ride-script', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeFiscKor
-                 * @description 執行韓國跨境扣款腳本。
-                 * 取得 'fiscKorBuyerID' 輸入欄位的值並發送給後端。
-                 */
                 function executeFiscKor() {
                     const buyerID = document.getElementById('fiscKorBuyerID').value;
                     if (!buyerID) {
@@ -464,19 +331,10 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ buyerID })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
-                
-                /**
-                 * @function executeMarketPayment
-                 * @description 執行超商反掃付款腳本。
-                 * 取得 'buyerID' 輸入欄位的值並發送給後端。
-                 */
+
                 function executeMarketPayment() {
                     logClick('超商反掃付款');
                     const buyerID = document.getElementById('buyerID').value;
@@ -486,16 +344,9 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ buyerID })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; });
                 }
-                
-                /**
-                 * @function executeMarketTopUp
-                 * @description 執行超商現金儲值交易腳本。
-                 * 取得 'topUpAmt' 和 'topUpBuyerID' 輸入欄位的值並發送給後端。
-                 */
+
                 function executeMarketTopUp() {
                     logClick('超商現金儲值交易');
                     const topUpAmt = document.getElementById('topUpAmt').value;
@@ -506,16 +357,23 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ topUpAmt, buyerID })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; });
                 }
-                
-                /**
-                 * @function executeMarketRefund
-                 * @description 執行超商取消現金儲值退款腳本。
-                 * 取得 'refundBuyerID' 輸入欄位的值並發送給後端。
-                 */
+
+                // **新增** 用於 UAT 環境的 JavaScript 函式
+                function executeMarketTopUpUat() {
+                    logClick('UAT超商現金儲值交易');
+                    const topUpAmt = document.getElementById('topUpAmt').value;
+                    const buyerID = document.getElementById('topUpBuyerID').value;
+                    fetch('/execute-market-topup-uat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ topUpAmt, buyerID })
+                    })
+                    .then(response => response.text())
+                    .then(result => { document.getElementById('output').innerText = result; });
+                }
+
                 function executeMarketRefund() {
                     logClick('超商取消現金儲值退款');
                     const refundBuyerID = document.getElementById('refundBuyerID').value;
@@ -525,164 +383,83 @@ app.get('/', (req, res) => {
                         body: JSON.stringify({ refundBuyerID })
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
-                
-                /**
-                 * @function executeBindingDay
-                 * @description 執行綁定扣款天扣定額不可改腳本。
-                 */
+
                 function executeBindingDay() {
                     logClick('綁定扣款天扣定額不可改');
-                    fetch('/execute-binding-day', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-day', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBindingMonth
-                 * @description 執行綁定扣款月扣不定額可改腳本。
-                 */
                 function executeBindingMonth() {
                     logClick('綁定扣款月扣不定額可改');
-                    fetch('/execute-binding-month', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-month', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBindingSeason
-                 * @description 執行綁定扣款季扣不定額不可改腳本。
-                 */
                 function executeBindingSeason() {
                     logClick('綁定扣款季扣不定額不可改');
-                    fetch('/execute-binding-season', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-season', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBindingYear
-                 * @description 執行綁定扣款年扣定額可改腳本。
-                 */
                 function executeBindingYear() {
                     logClick('綁定扣款年扣定額可改');
-                    fetch('/execute-binding-year', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-year', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBinding711
-                 * @description 執行 UAT 綁定統一超商付費會員腳本。
-                 */
                 function executeBinding711() {
                     logClick('UAT綁定統一超商付費會員');
-                    fetch('/execute-binding-711', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-711', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBinding711memformal
-                 * @description 執行正式綁定統一超商付費會員腳本。
-                 */
                 function executeBinding711memformal() {
                     logClick('正式綁定統一超商付費會員');
-                    fetch('/execute-binding-711memformal', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-binding-711memformal', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executeBooksWebScript
-                 * @description 執行博客來掃描Web付款腳本。
-                 */
                 function executeBooksWebScript() {
                     logClick('博客來掃描Web付款');
-                    fetch('/execute-books-web-script', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
+                    fetch('/execute-books-web-script', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                /**
-                 * @function executekfcjumpScript
-                 * @description 執行富利餐飲KFC跳轉URL腳本。
-                 */
                 function executekfcjumpScript() {
                     logClick('富利餐飲KFC跳轉URL');
-                    fetch('/execute-kfc-jump-script', {
+                    fetch('/execute-kfc-jump-script', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+                    .then(response => response.text())
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
+                }
+
+                function executeIyugoSlack() {
+                    logClick('i預購隨時取');
+                    fetch('/execute-iyugo-slack', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json' }
                     })
                     .then(response => response.text())
-                    .then(result => {
-                        document.getElementById('output').innerText = result;
-                    })
-                    .catch(error => {
-                        document.getElementById('output').innerText = '發生錯誤: ' + error;
-                    });
+                    .then(result => { document.getElementById('output').innerText = result; })
+                    .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
             </script>
         </body>
@@ -708,11 +485,11 @@ const executeNodeScript = (scriptFullPath, reqBody, res) => {
         inputData = reqBody.buyerID + "\n";
     } else if (scriptFullPath === marketTopUpScriptPath && reqBody.topUpAmt && reqBody.buyerID) {
         inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
+    } else if (scriptFullPath === marketTopUpUatScriptPath && reqBody.topUpAmt && reqBody.buyerID) { // **新增** 對 UAT 腳本的處理
+        inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
     } else if (scriptFullPath === marketTopRefundScriptPath && reqBody.refundBuyerID) {
         inputData = reqBody.refundBuyerID + "\n";
     }
-    // 對於其他腳本 (webScriptPath, rideScriptPath, binding*, booksWebScriptPath, kfcjumpScriptPath)
-    // 根據原始客戶端調用，預期沒有特定的 stdin 輸入。
 
     // 使用 spawn 啟動一個 Node.js 子進程來執行指定的腳本
     const process = spawn('node', [scriptFullPath]);
@@ -722,15 +499,15 @@ const executeNodeScript = (scriptFullPath, reqBody, res) => {
         process.stdin.write(inputData);
         process.stdin.end(); // 結束 stdin 寫入
     }
-    
+
     let output = ''; // 用於收集腳本的標準輸出
     // 監聽子進程的標準輸出
     process.stdout.on('data', (data) => { output += data.toString(); });
     // 監聽子進程的標準錯誤輸出
     process.stderr.on('data', (data) => { output += '錯誤輸出: ' + data.toString(); });
-    
+
     // 監聽子進程關閉事件
-    process.on('close', (code) => { 
+    process.on('close', (code) => {
         if (code !== 0) {
             // 如果腳本以非零退出碼結束，表示執行失敗
             res.send(`執行 ${path.basename(scriptFullPath)} 失敗，退出碼: ${code}\n${output}`);
@@ -747,99 +524,85 @@ const executeNodeScript = (scriptFullPath, reqBody, res) => {
 
 // --- 處理執行腳本的後端路由 ---
 
-// 處理 '/execute' POST 請求，用於執行康事美扣款腳本
 app.post('/execute', (req, res) => {
     const barcode = req.body.barcode;
-    if (!barcode) {
-        return res.send('請輸入付款條碼');
-    }
+    if (!barcode) { return res.send('請輸入付款條碼'); }
     executeNodeScript(scriptPath, req.body, res);
 });
 
-// 處理 '/execute-fisc-kor' POST 請求，用於執行韓國跨境扣款腳本
 app.post('/execute-fisc-kor', (req, res) => {
     const buyerID = req.body.buyerID;
-    if (!buyerID) {
-        return res.send('請輸入BuyerID');
-    }
+    if (!buyerID) { return res.send('請輸入BuyerID'); }
     executeNodeScript(fiscKorScriptPath, req.body, res);
 });
 
-// 處理 '/execute-ride-script' POST 請求，用於執行乘車碼扣款腳本
 app.post('/execute-ride-script', (req, res) => {
     executeNodeScript(rideScriptPath, req.body, res);
 });
 
-// 處理 '/execute-web-script' POST 請求，用於執行康事美掃描Web付款腳本
 app.post('/execute-web-script', (req, res) => {
     executeNodeScript(webScriptPath, req.body, res);
 });
 
-// 處理 '/execute-market-payment' POST 請求，用於執行超商反掃付款腳本
 app.post('/execute-market-payment', (req, res) => {
     const buyerID = req.body.buyerID;
-    if (!buyerID) {
-        return res.send('請輸入付款條碼');
-    }
+    if (!buyerID) { return res.send('請輸入付款條碼'); }
     executeNodeScript(marketPaymentScriptPath, req.body, res);
 });
 
-// 處理 '/execute-market-topup' POST 請求，用於執行超商現金儲值交易腳本
 app.post('/execute-market-topup', (req, res) => {
     const { topUpAmt, buyerID } = req.body;
-    if (!topUpAmt || !buyerID) {
-        return res.send('請輸入儲值金額和現金儲值條碼');
-    }
+    if (!topUpAmt || !buyerID) { return res.send('請輸入儲值金額和現金儲值條碼'); }
     executeNodeScript(marketTopUpScriptPath, req.body, res);
 });
 
-// 處理 '/execute-market-refund' POST 請求，用於執行超商取消現金儲值退款腳本
+// **新增** 用於 UAT 環境的後端路由
+app.post('/execute-market-topup-uat', (req, res) => {
+    const { topUpAmt, buyerID } = req.body;
+    if (!topUpAmt || !buyerID) { return res.send('請輸入儲值金額和現金儲值條碼'); }
+    executeNodeScript(marketTopUpUatScriptPath, req.body, res);
+});
+
 app.post('/execute-market-refund', (req, res) => {
     const refundBuyerID = req.body.refundBuyerID;
-    if (!refundBuyerID) {
-        return res.send('請輸入退款條碼');
-    }
+    if (!refundBuyerID) { return res.send('請輸入退款條碼'); }
     executeNodeScript(marketTopRefundScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-day' POST 請求
 app.post('/execute-binding-day', (req, res) => {
     executeNodeScript(bindingDayScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-month' POST 請求
 app.post('/execute-binding-month', (req, res) => {
     executeNodeScript(bindingMonthScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-season' POST 請求
 app.post('/execute-binding-season', (req, res) => {
     executeNodeScript(bindingSeasonScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-year' POST 請求
 app.post('/execute-binding-year', (req, res) => {
     executeNodeScript(bindingYearScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-711' POST 請求
 app.post('/execute-binding-711', (req, res) => {
     executeNodeScript(binding711ScriptPath, req.body, res);
 });
 
-// 處理 '/execute-binding-711memformal' POST 請求
 app.post('/execute-binding-711memformal', (req, res) => {
     executeNodeScript(binding711memformalScriptPath, req.body, res);
 });
 
-// 處理 '/execute-books-web-script' POST 請求
 app.post('/execute-books-web-script', (req, res) => {
     executeNodeScript(booksWebScriptPath, req.body, res);
 });
 
-// 處理 '/execute-kfc-jump-script' POST 請求
 app.post('/execute-kfc-jump-script', (req, res) => {
     executeNodeScript(kfcjumpScriptPath, req.body, res);
+});
+
+app.post('/execute-iyugo-slack', (req, res) => {
+    executeNodeScript(iyugoSlackScriptPath, req.body, res);
 });
 
 
@@ -855,30 +618,64 @@ app.post('/log-click', async (req, res) => {
     if (!buttonName) {
         return res.send('錯誤: 未提供按鈕名稱');
     }
-    // 獲取客戶端 IP 地址
     const clientIp = req.ip || req.connection.remoteAddress;
-    // 獲取當前時間，設定為台北時區
     const timestamp = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
     const logEntry = `Button: ${buttonName} | IP: ${clientIp} | Time: ${timestamp}\n`;
-    
+
     try {
-        // 將日誌條目附加到檔案末尾
         await fs.appendFile(clickLogPath, logEntry);
         res.send(`已記錄點擊: ${buttonName} from IP ${clientIp}`);
     } catch (error) {
-        // 如果寫入檔案失敗，返回錯誤訊息
         res.send(`錯誤: 無法寫入點擊記錄 - ${error.message}`);
     }
 });
 
 // Serve static files from the C:\webtest directory.
-// 這假設您的其他客戶端靜態資產（如圖片、額外的 CSS 或 JS 檔案）會存放在此目錄。
 app.use(express.static('C:\\webtest'));
 
 /**
+ * @function startPythonMonitor
+ * @description 啟動背景 Python APK 監控腳本。
+ * 這個函式會生成一個子進程來執行 download_files.py，
+ * 並將其輸出導向到 Node.js 的主控台，方便統一查看日誌。
+ */
+function startPythonMonitor() {
+    // Python 腳本的絕對路徑
+    const pythonScriptPath = 'C:\\icppython\\download_files.py';
+
+    console.log(`\n[系統] 準備啟動 Python APK 監控腳本: ${pythonScriptPath}\n`);
+
+    // 使用 spawn 啟動 Python 子進程
+    const pythonProcess = spawn('python', [pythonScriptPath], {
+        // **主要修改**：設定 stdio 選項為 'inherit'
+        // 這會讓子進程的 stdin, stdout, stderr 直接繼承父進程 (Node.js)
+        stdio: 'inherit'
+    });
+
+    // 監聽子進程關閉事件
+    pythonProcess.on('close', (code) => {
+        // 根據退出碼顯示不同訊息
+        if (code === 0) {
+            console.log(`\n[系統] Python 監控腳本已正常結束。`);
+        } else {
+            console.log(`\n[系統] Python 監控腳本已結束，退出碼: ${code}。`);
+        }
+    });
+
+    // 監聽子進程錯誤事件 (例如，'python' 命令不存在或路徑錯誤)
+    pythonProcess.on('error', (err) => {
+        console.error(`\n[系統] 無法啟動 Python 監控腳本: ${err.message}\n`);
+    });
+}
+
+
+/**
  * 啟動 Express 伺服器
- * 伺服器將監聽在指定的連接埠上。
+ * 伺服器將監聽在指定的連接埠上，並在啟動後同步執行 Python 監控腳本。
  */
 app.listen(port, () => {
-    console.log(`伺服器運行在 http://localhost:${port}`);
+    console.log(`[Node.js] 網頁伺服器運行在 http://localhost:${port}`);
+
+    // 在伺服器成功啟動後，呼叫函式來啟動 Python 監控腳本
+    startPythonMonitor();
 });

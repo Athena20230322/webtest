@@ -25,7 +25,7 @@ function buildTransactionRecord() {
 
   return {
     version: "01.00",
-    orgQrcode: "00000000000000406027", // 00000000000000406020(樂天)
+    orgQrcode: "00000000000000453125", // 00000000000000406020(樂天)
     terminalPosParam: {
       recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
       merchantId: config.merchantId,

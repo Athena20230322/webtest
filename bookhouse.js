@@ -36,9 +36,9 @@ const data = {
     BindingSubject:"財團法人孩子的書屋文教基金會",
     RedeemFlag:"0",
     ExpiredType:"1",
-    TotalAmtLimit:"10000",
+    TotalAmtLimit:"100",
     NonPointAmt: "0", 
-    MaxMonthAmt: "30000000",
+    MaxMonthAmt: "5000000",
 };
 
 // AES 密鑰與 IV

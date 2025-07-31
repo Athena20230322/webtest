@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera Barcode Scanner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #preview {
+      max-width: 100%;
+      margin-top: 20px;
+      display: none;
+    }
+    #status {
+      margin-top: 20px;
+      color: #333;
+    }
+    .loading {
+      color: #007bff;
+      font-weight: bold;
+    }
+    .error {
+      color: #dc3545;
+    }
+    .success {
+      color: #28a745;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan Barcode with Camera</h1>
+  <input type="file" id="cameraInput" accept="image/*" capture="camera" style="display: none;">
+  <button onclick="openCamera()">Open Camera</button>
+  <img id="preview" alt="Image Preview">
+  <p id="status"></p>
+
+  <script>
+    function openCamera() {
+      document.getElementById('cameraInput').click();
+    }
+
+    document.getElementById('cameraInput').addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      const status = document.getElementById('status');
+      const preview = document.getElementById('preview');
+
+      if (!file) {
+        status.textContent = 'No file selected';
+        status.className = 'error';
+        preview.style.display = 'none';
+        return;
+      }
+
+      // Display image preview
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+
+      // Upload image
+      const formData = new FormData();
+      formData.append('image', file);
+
+      try {
+        status.textContent = 'Uploading...';
+        status.className = 'loading';
+        const response = await fetch('http://10.27.86.103:3001/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+
+        if (response.ok) {
+          const filename = result.file ? result.file.filename + '.txt' : 'unknown';
+          status.textContent = result.barcode.startsWith('IC') 
+            ? `${result.message}: ${result.barcode} (Saved as ${filename})`
+            : `${result.message}: ${result.barcode}`;
+          status.className = result.barcode.startsWith('IC') ? 'success' : 'error';
+        } else {
+          status.textContent = result.message || 'Upload failed';
+          status.className = 'error';
+        }
+      } catch (error) {
+        status.textContent = 'Upload failed: ' + error.message;
+        status.className = 'error';
+        preview.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

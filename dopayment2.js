@@ -23,7 +23,7 @@ function buildTransactionRecord() {
   
   return {
     version: "01.00",
-    orgQrcode: "00000000000000374122", // 應替换為實際QR46交易序号 , 00000000000000372534(國泰世華)/00000000000000392808(樂天)/00000000000000374122(華南hncb003)
+    orgQrcode: "00000000000000392808", // 應替换為實際QR46交易序号 , 00000000000000372534(國泰世華)/00000000000000392808(樂天)/00000000000000374122(華南hncb003)
     terminalPosParam: {
       recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
       merchantId: config.merchantId,
@@ -31,9 +31,9 @@ function buildTransactionRecord() {
       transactionType: "1", // 1:段次扣款 (規格書第16页)
       terminalId: config.terminalId,
       merchantType: "3", // 3:市區公車 (規格書第8页)
-      originalAmount: 30,//原始金額=交易金額+總優惠金額+補助款使用點數
-      discountAmount: 20,
-      transactionAmount: 10, // 實際扣款金额
+      originalAmount: 50,//原始金額=交易金額+總優惠金額+補助款使用點數 
+      discountAmount: 30,
+      transactionAmount: 20, // 實際扣款金额
       discountInfo: [
         { typeId: "23", amount: 20 } // 23:轉乘優惠 (規格書第18页)
       ],

@@ -145,7 +145,7 @@ C:\webtest> node Express.js
 | `yuantabinding.js`         | 元大投信 - 授權綁定                      | `ICPOB0000`   | 可自訂每月扣款上限                                     |
 | `yuantabingingtoslack.js`  | 元大投信 - 授權綁定 (含 Slack 通知)      | `ICPOB0000`   |                                                        |
 | `binding711paid.js`        | UAT 統一超商付費會員                     | `(N/A)`       | 年扣定額可改                                           |
-| `Mertotaxicancelbinding.js`| 大都會車隊 - 取消授權綁定                | `ICPO0003`    | 需先成功綁定                                           |
+n| `Mertotaxicancelbinding.js`| 大都會車隊 - 取消授權綁定                | `ICPO0003`    | 需先成功綁定                                           |
 
 > **⚠️ 重要提示: 授權綁定**
 >

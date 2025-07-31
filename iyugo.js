@@ -4,6 +4,7 @@ const forge = require('node-forge');
 //const { exec } = require('child_process');
 const qrcodeTerminal = require('qrcode-terminal');
 const qrcode = require('qrcode');
+const fs = require('fs'); // 引入 fs 模組以進行檔案操作
 
 // 動態生成當前時間的函式
 function getCurrentTime() {
@@ -149,3 +150,9 @@ req.on('error', (e) => {
 const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
 req.write(encodedEncData);
 req.end();
+
+// 取得 MerchantTradeNo 並儲存到 .txt 檔案
+const merchantTradeNo = tradeNo; // 從 getCurrentTime 函式中取得
+const fileName = 'iyugoMerchantTradeNo.txt';
+fs.writeFileSync(fileName, `MerchantTradeNo: ${merchantTradeNo}`);
+console.log(`MerchantTradeNo 已儲存到 ${fileName}`);
