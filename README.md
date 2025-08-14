@@ -171,6 +171,7 @@ n| `Mertotaxicancelbinding.js`| 大都會車隊 - 取消授權綁定            
   - `testcosmedm.js`: 康是美 - 連續多筆反掃扣款 (需搭配 APK 產生的多筆條碼)。
   - `testmarketpayment.js`: 統一超商 - 連續多筆反掃扣款 (需搭配 APK 產生的多筆條碼)。
   - `fisckor.js`: 韓國跨境支付 (依賴財金公司測試環境)。
+  - `logreport_generator.py`: 網頁小工具使用率統計。
 
 -----
 
