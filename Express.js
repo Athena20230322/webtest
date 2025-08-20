@@ -28,7 +28,12 @@ const binding711memformalScriptPath = 'C:\\webtes20250123\\binding711memformal.j
 const booksWebScriptPath = 'C:\\webtest\\booksweb.js';
 const kfcjumpScriptPath = 'C:\\webtes20250123\\kfcjump.js';
 const fiscKorScriptPath = 'C:\\webtest\\fisckor.js';
-const rideScriptPath = 'C:\\webtest\\ridecode.js';
+// **已移除** rideScriptPath
+// const rideScriptPath = 'C:\\webtest\\ridecode.js';
+
+// **已新增** 新的乘車碼扣款腳本路徑
+const processRidePaymentScriptPath = 'C:\\webtest\\processRidePayment.js';
+
 // i預購腳本的路徑
 const iyugoSlackScriptPath = 'C:\\webtest\\iyugoslack.js';
 
@@ -244,11 +249,16 @@ app.get('/', (req, res) => {
                     <button onclick="executeIyugoSlack()">i預購隨時取</button>
                 </div>
 
+                <h2 class="section-title">乘車碼扣款:</h2>
+                <div class="input-group">
+                    <input type="text" id="rideCodeArgument" placeholder="貼上乘車碼參數" class="text-gray-700">
+                    <button onclick="executeProcessRidePayment()">執行乘車碼扣款</button>
+                </div>
+
                 <h2 class="section-title">付款頁跳轉URL_傳送至Slack github_webtest:</h2>
                 <div class="input-group">
                     <button onclick="executekfcjumpScript()">執行富利餐飲KFC跳轉URL</button>
-                    <button onclick="executerideScriptPath()">執行乘車碼扣款需使用固定帳號登入tester184</button>
-                </div>
+                    </div>
 
                 <h3 class="section-title">執行結果:</h3>
                 <pre id="output" class="mb-4">等待執行...</pre>
@@ -310,9 +320,21 @@ app.get('/', (req, res) => {
                     .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
                 }
 
-                function executerideScriptPath() {
+                // **已移除** executerideScriptPath 函數
+
+                // **已新增** executeProcessRidePayment 函數，用於處理新的乘車碼扣款
+                function executeProcessRidePayment() {
                     logClick('乘車碼扣款');
-                    fetch('/execute-ride-script', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+                    const rideArgument = document.getElementById('rideCodeArgument').value;
+                    if (!rideArgument) {
+                        document.getElementById('output').innerText = '請貼上乘車碼參數';
+                        return;
+                    }
+                    fetch('/execute-process-ride-payment', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ rideArgument: rideArgument })
+                    })
                     .then(response => response.text())
                     .then(result => { document.getElementById('output').innerText = result; })
                     .catch(error => { document.getElementById('output').innerText = '發生錯誤: ' + error; });
@@ -536,9 +558,40 @@ app.post('/execute-fisc-kor', (req, res) => {
     executeNodeScript(fiscKorScriptPath, req.body, res);
 });
 
-app.post('/execute-ride-script', (req, res) => {
-    executeNodeScript(rideScriptPath, req.body, res);
+// **已移除** 舊的 /execute-ride-script 路由
+
+// **已新增** 用於處理新乘車碼腳本的後端路由
+app.post('/execute-process-ride-payment', (req, res) => {
+    const { rideArgument } = req.body;
+    if (!rideArgument) {
+        return res.send('錯誤: 未提供乘車碼參數');
+    }
+
+    // **重要**：將參數作為命令列參數傳遞，而不是 stdin
+    const process = spawn('node', [processRidePaymentScriptPath, rideArgument]);
+
+    let output = '';
+    process.stdout.on('data', (data) => {
+        output += data.toString();
+    });
+
+    process.stderr.on('data', (data) => {
+        output += '錯誤輸出: ' + data.toString();
+    });
+
+    process.on('close', (code) => {
+        if (code !== 0) {
+            res.send(`執行 ${path.basename(processRidePaymentScriptPath)} 失敗，退出碼: ${code}\n${output}`);
+        } else {
+            res.send(`執行 ${path.basename(processRidePaymentScriptPath)} 結果:\n${output}`);
+        }
+    });
+
+    process.on('error', (err) => {
+        res.send(`啟動 ${path.basename(processRidePaymentScriptPath)} 錯誤: ${err.message}`);
+    });
 });
+
 
 app.post('/execute-web-script', (req, res) => {
     executeNodeScript(webScriptPath, req.body, res);
