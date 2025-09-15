@@ -25,7 +25,7 @@ function buildTransactionRecord() {
 
   return {
     version: "01.00",
-    orgQrcode: "00000000000000453125", // 00000000000000406020(樂天)
+    orgQrcode: "00000000000000559601", // 00000000000000406020(樂天)
     terminalPosParam: {
       recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
       merchantId: config.merchantId,
@@ -64,55 +64,11 @@ function buildTransactionRecord() {
     qr8A: ""  // Optional, include if required by Taipei MRT
   };
 }
-
-
- 
- 
- 
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
 // AES-256-CBC encryption (consistent with original, no specific change in spec)
 function encryptAES(data, key, iv) {
   try {
-    const cipher = crypto.createCipheriv('aes-256-cbc', 
-      Buffer.from(key, 'utf8'), 
+    const cipher = crypto.createCipheriv('aes-256-cbc',
+      Buffer.from(key, 'utf8'),
       Buffer.from(iv, 'utf8'));
     let encrypted = cipher.update(data, 'utf8', 'base64');
     encrypted += cipher.final('base64');
@@ -159,7 +115,7 @@ async function processPayment() {
     const amount = transactionRecord.terminalPosParam.transactionAmount;
     const qr80 = transactionRecord.qr80 || "010203040506070809"; // 19-byte BIN
     const qr8A = transactionRecord.qr8A || "0102030405060708"; // 16-byte BIN
-    
+
     const paymentMAC = generatePaymentMAC(
       qr43,
       transDate,
@@ -179,7 +135,7 @@ async function processPayment() {
     // 5. Send request
     const response = await new Promise((resolve, reject) => {
       const postData = JSON.stringify(requestData);
-      
+
       const options = {
         hostname: config.apiHost,
         path: config.apiPath,
