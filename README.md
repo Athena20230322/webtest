@@ -162,6 +162,9 @@ C:\webtest> node Express.js
     1.  `dopayment.js`: 讀取 `c:\webtest\qrcode.png` 圖片檔，解析出 `orgQrcode` 的值。
     2.  `dopayment2.js`: 載入上一步驟取得的 `orgQrcode` 值，即可模擬乘車碼扣款。
     3.  `processRidePayment.js`: 整合dopayment and dopayment2 即可模擬乘車碼扣款。
+    4.  `processRidePaymentmrts.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
+    5.  `processRidePaymentmrtadult.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
+    
    
   - **其他相關腳本:**
       - `dopaymentmrt.js`: 直接模擬北捷乘車碼扣款。
