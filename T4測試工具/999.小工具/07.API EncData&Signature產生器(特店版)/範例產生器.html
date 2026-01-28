@@ -1,0 +1,238 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>範例產生器</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="qrcode.js"></script>
+    <script src="jsencrypt.js"></script>
+    <script src="crypto-js.js"></script>
+    <script src="js-cookie.js"></script>
+    <script src="variable.js"></script>
+	<script src="main.js"></script>
+    <style>
+        #view_container {
+            margin-top: 30px;
+            width: 1080px;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+            /*overflow-y: scroll;*/
+        }
+
+        div {
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        .active {
+            color: white;
+            background-color: black;
+        }
+
+        input, select, textarea {
+            border: 1px solid transparent;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            input[type=text] {
+                background-color: #f1f1f1;
+                width: 100%;
+            }
+
+            input[type=submit] {
+                background-color: DodgerBlue;
+                color: #fff;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+	<div id="key_selector_container">
+		<div>
+			<select id="key_selector" onchange="select_merchant(this)">
+				<option value=''>請選擇特約機構</option>
+			</select>
+		</div>
+		<div>
+			<div style="float: left;width: 50%;">
+				<h5>SIT APP</h5>
+				<div id="sit_app"></div>
+			</div>
+			<div style="float: left;width: 50%;">
+				<h5>UAT APP</h5>
+				<div id="uat_app"></div>
+			</div>
+		</div>
+		<div>
+			<p></p>
+		</div>
+	</div>
+    <div id="input_container" style='display:none;'>
+        <input id="file_input" type="file" />
+    </div>
+	
+	<div id="qrcode_container">
+		<div style="float: left;width: 33%;">
+			<h5>Trade Token</h5>
+			<div id="qrcode1"></div>
+		</div>
+		<div style="float: left;width: 33%;">
+			<h5>icashpay://www.icashpay.con.tw</h5>
+			<div id="qrcode2"></div>
+		</div>
+		<div style="float: left;width: 33%;">
+			<h5>https://icpbridge.icashsys.com.tw</h5>
+			<div id="qrcode3"></div>
+		</div>
+	</div>
+	<div id="qrcode"></div>
+	<div id="qrcode1"></div>
+    <div id="sample_code" style="margin-top:20px;display:none;">
+		<table>
+			<tr>
+				<th class="active" onclick="change_api_new(0,this)">ICPO001</th>
+				<th onclick="change_api_new(1,this)">ICPOF001</th>
+                <th onclick="change_api_new(2,this)">ICPO004</th>
+                <th onclick="change_api_new(3,this)">ICPO007</th>
+                <th onclick="change_api_new(4,this)">ICPO008</th>
+                <th onclick="change_api_new(5,this)">ICPO009</th>
+				<th onclick="change_api_new(6,this)">ICPOB000</th>
+				<th onclick="change_api_new(7,this)">ICPO005</th>
+				<th onclick="change_api_new(8,this)" style="display:none">ICPOB004</th>
+			</tr>
+			<tr>
+				<th>MerchantID</th>
+				<td colspan="8">
+					<textarea id="MerchantID" rows="1" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>交易金額</th>
+				<td colspan="8">
+					<textarea id="TestAmt" rows="1" type="text" placeholder="系統自動候補兩位小數00" style="overflow-y:none"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>BarCode</th>
+				<td colspan="8">
+					<textarea id="BarCode" rows="1" type="text" placeholder="請輸入IC後的字串" style="overflow-y:none"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>168帳號</th>
+				<td colspan="8">
+					<textarea id="168ID" rows="1" type="text" style="overflow-y:none"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>特約機構會員卡ID</th>
+				<td colspan="8">
+					<textarea id="SUID" rows="1" type="text"style="overflow-y:none"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>原愛金卡交易序號</th>
+				<td colspan="8">
+					<textarea id="TransactionID" rows="1" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>原特店交易序號</th>
+				<td colspan="8">
+					<textarea id="MerchantOriginalTradeNo" rows="1" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>請求退款金額</th>
+				<td colspan="8">
+					<textarea id="RefundTotalAmount" rows="1" type="text" placeholder="系統自動候補兩位小數00"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>綁定Token</th>
+				<td colspan="8">
+					<textarea id="BindingToken"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>綁定/支付結果通知URL</th>
+				<td colspan="8">
+					<textarea id="CallbackURL"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>綁定/支付流程結束之導頁指定路徑</th>
+				<td colspan="8">
+					<textarea id="RedirectURL"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th onclick="create_postman_data()" colspan="9">
+					產生EncData\Signature
+				</th>
+			</tr>
+			<tr>
+				<th>X-iCP-EncKeyID</th>
+				<td colspan="8">
+					<textarea id="EncKeyID" rows="1" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>X-iCP-Signature</th>
+				<td colspan="8">
+					<textarea id="Signature" rows="10" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>EncData</th>
+				<td colspan="8">
+					<textarea id="EncData" rows="10" type="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>EncData(JSON)</th>
+				<td colspan="8">
+					<textarea id="EncDataJSON" rows="10" type="text"></textarea>
+				</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<th>Response(EncData->JSON)<th>
+			</tr>
+			<tr>
+				<th>ResponseEncData</th>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="ResponseEncData" rows="10" type="text" onchange="decrypte_data(this)"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>ResponseEncDataJson</th>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="ResponseEncDataJson" rows="10" type="text"></textarea>
+				</td>
+			</tr>
+		</table>
+    </div>
+</body>
+</html>

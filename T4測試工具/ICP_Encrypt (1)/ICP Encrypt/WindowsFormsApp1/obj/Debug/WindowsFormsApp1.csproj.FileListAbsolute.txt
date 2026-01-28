@@ -34,3 +34,15 @@ G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\Window
 G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 G:\系統開發與維護二TEAM\02_TempShareFolder\Tim\電文\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\webtest\T4測試工具\ICP_Encrypt (1)\ICP Encrypt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

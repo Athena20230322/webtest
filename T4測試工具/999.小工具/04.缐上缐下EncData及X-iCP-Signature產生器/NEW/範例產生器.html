@@ -1,0 +1,3017 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ICP規格書</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="qrcode.js"></script>
+    <script src="jsencrypt.js"></script>
+    <script src="crypto-js.js"></script>
+    <script src="js-cookie.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <!--navbar-->
+    <div class="container navbar_container">
+        <div>
+            <img />
+        </div>
+        <div>
+            <ul>
+                <li onclick="change_page(1,0)"><span>API 説明</span></li>
+                <li onclick="change_page(2,0)"><span>API 列表</span></li>
+                <li style="height:auto;">
+                    <span onclick="show_list(this)">API 資訊</span>
+                    <ul id="API_list" style="display:none;">
+                        <li onclick="change_page(3,1)">CHK001-ICPMemberAuth</li>
+                        <li onclick="change_page(4,1)">CHK002-ICPMemberConfirm</li>
+                        <li onclick="change_page(5,1)">CHK003-ICPMemberNotify</li>
+                        <li onclick="change_page(6,1)">ICPOB000-CreateICPBinding</li>
+                        <li onclick="change_page(7,1)">ICPOB001-BindingICP</li>
+                        <li onclick="change_page(8,1)">ICPOB002-ICPBindingNotify</li>
+                        <li onclick="change_page(9,1)">ICPOB003-CancelICPBinding</li>
+                        <li onclick="change_page(10,1)">ICPOB004-ICPBindingDeduct</li>
+                        <li onclick="change_page(11,1)">ICPO007-BindingMMember</li>
+                        <li onclick="change_page(12,1)">ICPO009-CancelBindingMMember</li>
+                        <li onclick="change_page(13,1)">ICPO001-CreateTradeICPO</li>
+                        <li onclick="change_page(14,1)">ICPO002-CheckoutICPO</li>
+                        <li onclick="change_page(15,1)">ICPO003-依特店業者訂定</li>
+                        <li onclick="change_page(16,1)">ICPO004-RefundICPO</li>
+                        <li onclick="change_page(17,1)">ICPO005-QueryTradeICPO</li>
+                        <li onclick="change_page(18,1)">ICPO008-GetPaymentURL</li>
+                        <li onclick="change_page(19,1)">ICPOF001-DeductICPOF</li>
+                    </ul>
+                </li>
+                <li onclick="change_page(20,1)"><span>API 範例</span></li>
+                <li onclick="change_page(21,1)"><span>錯誤代碼</span></li>
+            </ul>
+        </div>
+    </div>
+    <!--all page-->
+    <div class="container show_container">
+        <!--API 説明-->
+        <div id="page1" class="function_container">
+            <h1>API 説明</h1>
+            <h2>API 通用規則 </h2>
+            <ul>
+                <li>
+                    交易傳輸規格<br />
+                    平台與特店業者間的所有交易一律採用 HTTP 1.1 規範進行電文交換。
+                </li>
+                <li>
+                    文字編碼（編碼方式）<br />
+                    平台與特店業者間的所有交易電文一律採用 UTF-8 編碼
+                </li>
+                <li>
+                    ICP會員驗證逾時 Timeout 時間
+                    業者發動自行決定超時間，但不應少 於 20 秒。
+                </li>
+                <li>
+                    交易逾時 Timeout 時間<br />
+                    特店業者發動自行決定超時時間，但不應少 10 秒。
+                </li>
+                <li>
+                    特店業者ICP會員驗證金鑰<br />
+                    Request 需帶上由存取權杖中心所配發的 Ocp-Apim-Subscription-Key，用以判別請求來源端<br />
+                    是否合法
+                </li>
+                <li>
+                    特店業者金鑰<br />
+                    一共會有 3 把金鑰，特店業者的 RSA2048 private key，ICP 的 RSA2048 public key，與雙方共同使用對電文加解密的 AES 256 key(MODE:CBC)。<br />
+                    當特店業者要申請金鑰交換或要更換金鑰時，先向 ICP 取得加密公鑰，特店業者自己產生公私鑰後再與 ICP 交換公鑰，雙方有公私鑰後，即可向 ICP 取得加密 AES 金鑰。<br />
+                    特店業者傳利用 API 電文時會使用。
+                </li>
+                <li>
+                    API 電文：<br />
+                    有 Header 與 EncData 二部份，Header包括使用的傳送者代號，簽章與加解密的keyID， EncData 必須使用 JSON 格式，再進行加密，加密後的資料再用 base64 編碼。
+                    接收者收到資料後需先對資料先進行 base64 解碼，再進行 AES 解密，以特店業者 RSA 私鑰進行 SHA256 驗簽章是否正確等資料驗證工作，再對電文內容進行處理。
+                </li>
+            </ul>
+            <ul class="notice">
+                <li>
+                    注意：<br />
+                    1. Header Content-Type 採用 application/x-www-form-urlencoded<br />
+                    2. Request 電文之加簽用 UTF8 轉 Byte 陣列，資料內容為 EncData<br />
+                    3. Response 電文之驗簽用 UTF8 轉 Byte 陣列，資料內容為 Body
+                </li>
+            </ul>
+        </div>
+        <!--API 列表-->
+        <div id="page2" class="function_container" style="display:none;">
+            <h1>API 列表</h1>
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>API名稱</th>
+                    <th>API中文名稱</th>
+                    <th>發起方</th>
+                    <th>接受方</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <th colspan="6">ICP會員驗證</th>
+                </tr>
+                <tr onclick="change_page(3,1)">
+                    <td>01</td>
+                    <td>
+                        ICPMemberAuth<br />
+                        (CHK001)
+                    </td>
+                    <td>身份驗證請求</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>發動ICP身份驗證請求</td>
+                </tr>
+                <tr onclick="change_page(4,1)">
+                    <td>02</td>
+                    <td>
+                        ICPMemberConfirm<br />
+                        (CHK002)
+                    </td>
+                    <td>身份驗證確認</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>確認ICP驗證身份請求結果</td>
+                </tr>
+                <tr onclick="change_page(5,1)">
+                    <td>03</td>
+                    <td>
+                        ICPMemberNotify<br />
+                        (CHK003)
+                    </td>
+                    <td>身份驗證結果通知</td>
+                    <td>ICP中心端</td>
+                    <td>特點業者</td>
+                    <td>通知特店端ICP身份驗證結果</td>
+                </tr>
+                <tr>
+                    <th colspan="6">缐上綁定</th>
+                </tr>
+                <tr onclick="change_page(6,1)">
+                    <td>04</td>
+                    <td>
+                        CreateICPBinding<br />
+                        (ICPOB000)
+                    </td>
+                    <td>建立授權扣款綁定要求</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>進行綁定前將訂單資訊給ICP並取得綁定授權碼。</td>
+                </tr>
+                <tr onclick="change_page(7,1)">
+                    <td>05</td>
+                    <td>
+                        BindingICP<br />
+                        (ICPOB001)
+                    </td>
+                    <td>喚起綁定頁面</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        在取得綁定授權碼後PC Web2App將綁定授權碼QR Code顯示於特店畫面，<br />
+                        或手機Web2App與App2APP透過scheme方式喚起ICP進行綁定。
+                    </td>
+                </tr>
+                <tr onclick="change_page(8,1)">
+                    <td>06</td>
+                    <td>
+                        ICPBindingNotify<br />
+                        (ICPOB002)
+                    </td>
+                    <td>綁定/綁定結果通知</td>
+                    <td>ICP中心端</td>
+                    <td>特點業者</td>
+                    <td>ICP 中心端綁定/解綁結果通知給特店中心端。</td>
+                </tr>
+                <tr onclick="change_page(9,1)">
+                    <td>07</td>
+                    <td>
+                        CancelICPBinding<br />
+                        (ICPOB003)
+                    </td>
+                    <td>取消綁定</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者中心端接獲使用者通知要求取消綁定後，<br />
+                        透過此API進行取消綁定，ICP中心端再將取消綁定的結果回傳。
+                    </td>
+                </tr>
+                <tr onclick="change_page(10,1)">
+                    <td>08</td>
+                    <td>
+                        ICPBindingDeduct<br />
+                        (ICPOB004)
+                    </td>
+                    <td>綁定扣款</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者透过此API进行绑定扣款。
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="6">会员卡绑定</th>
+                </tr>
+                <tr onclick="change_page(11,1)">
+                    <td>09</td>
+                    <td>
+                        BindingMMember<br />
+                        (ICPO007)
+                    </td>
+                    <td>特約機構會員綁定ICP會員</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者通知ICP進行特約機構會員綁定。
+                    </td>
+                </tr>
+                <tr onclick="change_page(12,1)">
+                    <td>10</td>
+                    <td>
+                        CancelBindingMMember<br />
+                        (ICPO009)
+                    </td>
+                    <td>特約機構會員取消綁定ICP會員</td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者通知ICP進行取消特約機構會員綁定。
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="6">缐上支付</th>
+                </tr>
+                <tr onclick="change_page(13,1)">
+                    <td>11</td>
+                    <td>
+                        CreateTradeICPO<br />
+                        (ICPO001)
+                    </td>
+                    <td>
+                        建立交易訂單取得授權碼
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        進行支付前將訂單資訊給ICP建立訂單並取得交易授權碼。
+                    </td>
+                </tr>
+                <tr onclick="change_page(14,1)">
+                    <td>12</td>
+                    <td>
+                        CheckoutICPO<br />
+                        (ICPO002)
+                    </td>
+                    <td>
+                        喚起APP交易頁面
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        webview in APP or APP2APP 在訂單確定後以APP<br />
+                        scheme方式喚起ICP進行結帳
+                    </td>
+                </tr>
+                <tr onclick="change_page(15,1)">
+                    <td>13</td>
+                    <td>
+                        依特店業者訂定<br />
+                        (ICPO003)
+                    </td>
+                    <td>
+                        回傳付款結果
+                    </td>
+                    <td>ICP中心端</td>
+                    <td>特點業者</td>
+                    <td>
+                        交易完成後，依建立訂單給的url，將付款結果(成功或失敗)通知特店業者確認
+                    </td>
+                </tr>
+                <tr onclick="change_page(16,1)">
+                    <td>14</td>
+                    <td>
+                        RefundICPO<br />
+                        (ICPO004)
+                    </td>
+                    <td>
+                        退款
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        使用者向特店業者提出退款要求，業者同意退款，透過API購物金額退回使用者
+                    </td>
+                </tr>
+                <tr onclick="change_page(17,1)">
+                    <td>15</td>
+                    <td>
+                        QueryTradeICPO<br />
+                        (ICPO005)
+                    </td>
+                    <td>
+                        查詢交易結果
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者對交易狀況狀態進行查詢
+                    </td>
+                </tr>
+                <tr onclick="change_page(18,1)">
+                    <td>16</td>
+                    <td>
+                        GetPaymentURL<br />
+                        (ICPO008)
+                    </td>
+                    <td>
+                        取得支付頁面
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者呼叫ICP取得支付URL，消費者交易完成後會跳轉回支付業者頁面
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="6">缐上下支付</th>
+                </tr>
+                <tr onclick="change_page(19,1)">
+                    <td>17</td>
+                    <td>
+                        DeductICPOF<br />
+                        (ICPOF001)
+                    </td>
+                    <td>
+                        DeductICPOF
+                    </td>
+                    <td>特點業者</td>
+                    <td>ICP中心端</td>
+                    <td>
+                        特店業者掃ICP支付條碼後，將扣款資料電文送到ICP中心端進行扣款
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--CHK001-->
+        <div id="page3" class="function_container" style="display:none">
+            <h1>CHK001-身份驗證請求</h1>
+            <p>特店有ICP會員身份驗證請求時，將呼叫此API進行ICP會員身份驗證 。</p>
+            <ul>
+                <li>
+                    介接路徑：<br />
+                    UAT 環境： https://icash-apim.icashsys.com.tw/member-uat/v1/ICPMemberAuth <br />
+                    正式環境： https://icash-apim.icashsys.com.tw/member/v1/ICPMemberAuth
+                </li>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Ocp-Apim-Subscription-Key</td>
+                            <td>存取權杖</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                由存取權杖中心配發，用以識別來源端是否合法
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"Ocp-Apim-Subscription-Key"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"5f8b04501aa24e07b5adf96ed4b58203"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>AuthType</td>
+                            <td>驗證方式</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                1:App推撥驗證<br />
+                                2:掃碼驗證<br />
+                                3:簡訊 OTP 驗證
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>ID</td>
+                            <td>身份証字號</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                被驗證者的身份証字號<br />
+                                (國內:身份証字號/國外:居留證號)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Birthday</td>
+                            <td>出生年月日</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                被驗證者的出生年月日(EX:19821108)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>ExpireMinute</td>
+                            <td>驗證請求有效分鐘</td>
+                            <td>Int</td>
+                            <td>否</td>
+                            <td>
+                                選擇性項目，本次身份驗證請求的驗證有效時間，<br />
+                                以分為單位，預設為 10 分鐘，最小限制需 3 分鐘
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>NotifyURL</td>
+                            <td>驗證結果通知 URL</td>
+                            <td>String(100)</td>
+                            <td>否</td>
+                            <td>
+                                當AuthType=2 時，此欄位為必填
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"AuthType"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"A00000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Birthday"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"19821108"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpireMinute"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"NotifyURL"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                回傳代碼<br />
+                                錯誤代碼請參考狀態碼表
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                EX:訊息代碼：0001，成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>IsICPMember</td>
+                            <td>ICP會員</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                是否為ICP會員<br />
+                                1:是/0：否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                格式：2019/01/01 00:00:00 UTC+8
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">當 IsICPMember=1 時 ，回傳以下欄位</th>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Token</td>
+                            <td>識別驗證碼</td>
+                            <td>String(32)</td>
+                            <td>是</td>
+                            <td>
+                                本次身份驗證請求的識別驗證碼<br />
+                                若請求的AuthType= 2時，請將Token轉為QR Code顯示於畫面，<br />
+                                供ICPApp掃碼使用
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>ExpireDate</td>
+                            <td>驗證請求有效時間</td>
+                            <td>Datetime</td>
+                            <td>是</td>
+                            <td>
+                                本次身份驗證請求的驗證有效時間<br />
+                                (預設為 10 分鐘)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"RtnCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RtnMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0001,成功"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"IsICPMember"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Token"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"Token000000000000000000000000001 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpireDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:10:00 "</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--CHK002-->
+        <div id="page4" class="function_container" style="display:none">
+            <h1>CHK002-身份驗證確認</h1>
+            <p>特店於發送出身份驗證請求後：</p>
+            <p>
+                1.若為APP推播驗證，則於使用者輸入驗證碼後呼叫此API進行ICP會員身份驗證確認<br />
+                2.若為掃碼驗證，則僅需顯示QR Code於頁面上，無需呼叫此API
+            </p>
+            <ul>
+                <li>
+                    介接路徑：<br />
+                    UAT 環境： https://icash-apim.icashsys.com.tw/member-uat/v1/ICPMemberConfirm <br />
+                    正式環境： https://icash-apim.icashsys.com.tw/member/v1/ICPMemberConfirn
+                </li>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Ocp-Apim-Subscription-Key</td>
+                            <td>存取權杖</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                由存取權杖中心配發，用以識別來源端是否合法
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"Ocp-Apim-Subscription-Key"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"5f8b04501aa24e07b5adf96ed4b58203"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Token</td>
+                            <td>識別驗證碼</td>
+                            <td>String(32)</td>
+                            <td>是</td>
+                            <td>
+                                請求驗證確認的識別驗證碼
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>AuthCode</td>
+                            <td>使用者驗證碼</td>
+                            <td>String(10)</td>
+                            <td>是</td>
+                            <td>
+                                使用者接收到的驗證碼(APP或簡訊)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"Token"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"Token000000000000000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"AuthCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"AC00000001"</span>
+                                                <span class="normal_text"></span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                回傳代碼<br />
+                                錯誤代碼請參考交易狀態代碼表<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                EX：訊息代碼：0001，成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>MemberAccount</td>
+                            <td>會員電支帳號</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                ICP電支帳號，168開頭
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>MemberLevel</td>
+                            <td>會員類型</td>
+                            <td>Int</td>
+                            <td>否</td>
+                            <td>
+                                電支會員類型：<br />
+                                Ex：1.一類會員/2.二類會員/3：三類會員
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>IsAclBinding</td>
+                            <td>是否綁定銀行直扣</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                電支會員當前是否有綁定銀行直扣<br />
+                                1：是/0：否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>IsCreditCardBinding</td>
+                            <td>是否綁定信用卡扣款</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                電支會員當前是否有綁定信用卡扣款<br />
+                                1：是/0：否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                格式：2019/01/01 00:00:00 UTC+8
+                            </td>
+                        </tr>
+                        tr>
+                        <td colspan="6">
+                            <table class="example">
+                                <tr>
+                                    <th>Response Body Example </th>
+                                    <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p><span class="normal_text">{</span></p>
+                                        <p>
+                                            <span class="var lvl1">"RtnCode"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"0001"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"RtnMsg"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"0001，成功"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"MemberAccount"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"16800000000000000001"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"MemberLevel"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"2"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"IsAclBinding"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"1"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"IsCreditCardBinding"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"1"</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p>
+                                            <span class="var lvl1">"Timestamp"</span>
+                                            <span class="normal_text">:</span>
+                                            <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                            <span class="normal_text">,</span>
+                                        </p>
+                                        <p><span class="normal_text">}</span></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--CHK003-->
+        <div id="page5" class="function_container" style="display:none">
+            <h1>CHK003-身份驗證結果通知</h1>
+            <p>特店於發送出身份驗證請求後：</p>
+            <p>
+                1.若為APP推播驗證，則使用者輸入驗證碼後呼叫CHK002進行ICP會員身份驗證確認。<br />
+                2.若為掃碼驗證，則當使用者持ICP APP掃碼顯示於畫面上之QR Code進行身份驗證完成是，特店端於CHK001帶入的NotifyURL會收到ICP Server的Post通知驗證結果。
+            </p>
+            <ul>
+                <li>
+                    介接路徑：<br />
+                    {"特店提供"}
+                </li>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Token</td>
+                            <td>識別驗證碼</td>
+                            <td>String(32)</td>
+                            <td>是</td>
+                            <td>
+                                請求驗證確認的識別驗證碼
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MemberAccount</td>
+                            <td>會員電支帳號</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                ICP電支帳號，168開頭
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>MemberLevel</td>
+                            <td>會員類型</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                電支會員類型。<br />
+                                EX：1：一類會員/2：二類會員/3：三類會員
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>IsACLBinding</td>
+                            <td>是否綁定銀行直扣</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                電支會員當前是否有綁定銀行直扣<br />
+                                1：是/0：否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>IsCreditCardBinding</td>
+                            <td>是否綁定信用卡扣款</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                電支會員當前是否有綁定信用卡扣款<br />
+                                1：是/0：否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"Token"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"Token000000000000000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MemberAccount"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"16800000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MemberLevel"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"IsACLBinding"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"IsCreditCardBinding"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                回傳代碼，1代表接收成功<br />
+                                錯誤代碼請由特店端自行定義
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                EX：訊息代碼：0001，成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                格式：2019/01/01 00:00:00 UTC+8
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"RtnCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RtnMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0001，成功"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--ICPOB000-->
+        <div id="page6" class="function_container" style="display:none">
+            <h1>ICPOB000-建立授權扣款綁定要求</h1>
+            <p>呼叫此API建立授權綁定要求。依據使用者載具不同，提供以下兩種綁定方式：</p>
+            <p>
+                1.APP2APP或手機WEB2APP的授權綁定方式，特店發出建立授權扣款綁定要求，ICP中心段提供綁定授權碼，特店依據授權碼呼叫ICPOB002將ICP喚起進行授權綁定<br />
+                2.PCWEB2APP的授權綁定方式，特店發出建立授權扣款綁定要求，ICP中心端提供綁定授權碼，特點於畫面顯示授權碼QR Code，由使用者手持ICP APP掃碼後進行授權綁定
+            </p>
+            <ul>
+                <li>
+                <li>
+                    介接路徑：<br />
+                    WEB版：<br />
+                    正式環境： https://payment.icashpay.com.tw/api/V2/Payment/Binding/CreateICPBinding <br />
+                    UAT 環境： https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Binding/CreateICPBinding
+
+                </li>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>X-iCP-EncKeyID</td>
+                            <td>AES加密金要ID</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>X-iCP-Signature</td>
+                            <td>用戶端簽章</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                ClientPrivateKey,SHA256withRSA<br />
+                                對整個Body進行簽章
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">" X-iCP-EncKeyID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{EncKeyID}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"X-iCP-Signature"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{Request body 簽章後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body(JSON内容)</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>EncData</td>
+                            <td>AES加密資料</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES），JSON格式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"EncData"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{對EncData内容加密後的字串}"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">以下為EncData内容：</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>PlatformID</td>
+                            <td>平台編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                平台編號（由愛金卡提供）<br />
+                                平台商身份才需要帶入特定平台編號，如爲一般特店業者則帶入MerchantID（特店業者編號）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MerchantID</td>
+                            <td>特店業者編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>BindingTradeNo</td>
+                            <td>特店業者綁定序號</td>
+                            <td>String(50)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者綁定交易序號<br />
+                                同個商家編號的特店業者綁定交易序號不可重複，可使用英數字
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>StoreName</td>
+                            <td>商店名稱</td>
+                            <td>String(30)</td>
+                            <td>是</td>
+                            <td>
+                                綁定扣款之商店名稱
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>BindingMode</td>
+                            <td>綁定模式</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                交易模式<br />
+                                1：Token<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;手機：APP2APP、EmbedAPP、手機WEB2APP<br />
+                                2：QR Code<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;PC掃碼綁定：PCWEB2APP
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>CallbackURL</td>
+                            <td>綁定通知回傳網址</td>
+                            <td>String(250)</td>
+                            <td>是</td>
+                            <td>
+                                當消費者綁定完成後，會員綁定結果以Server端Post方式，回傳至此網址<br />
+                                此網址單純作爲通知使用，不會進行導頁，導頁是由RedirectURL所對應。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>RedirectURL</td>
+                            <td>綁定流程結束之導頁指定路勁</td>
+                            <td>String(250)</td>
+                            <td>否</td>
+                            <td>
+                                選擇性項目，當APP綁定完成需要跳轉時代入此項。（若爲一般網頁路徑會以另開方式進行網頁開啓，一般網頁路徑限定爲Https，若為URL Scheme，則會直接跳轉）<br />
+                                當ICP APP綁定流程結束後，無論同意授權與否，使用者點選返回，會導至此RedirectURL的指定路徑，並將綁定結果透過前述指定路徑，用一下2種方式傳送。（内容為ICPOB003内容，並做URLEncode）<br /><br />
+                                <span class="strong">一般網頁路勁（限定Https）：</span>QueryString<br />
+                                <span class="strong">URL Scheme：</span>URLVariables<br /><br />
+                                EX： RedirectURL設定https://www.mypay.com/BindResult?orderid=xxx將會收到https://www.mypay.com/BindResult?orderid=xxx&TradeResultCode=0001...
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>MerchantUserID</td>
+                            <td>特店使用者ID</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                特店的會員識別ID，此值會於ICPOB002回傳，供特店識別對應使用。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>DisplayInformation</td>
+                            <td>顯示資訊</td>
+                            <td>String(250)</td>
+                            <td>是</td>
+                            <td>
+                                綁定時顯示的資訊文案説明。<br />
+                                商品標的/扣款頻率/扣款金額/扣款金額上限。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>RedeemFlag</td>
+                            <td>點抵金開關</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                0：關閉 1：開啓<br />
+                                用來設定此綁定訂單是否可以使用點數折抵。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>ExpiredType</td>
+                            <td>綁定效期類型</td>
+                            <td>Int</td>
+                            <td>否</td>
+                            <td>
+                                選擇性項目預設為1。<br />
+                                1：長效期綁定/2：短效期綁定
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>TotalAmtLimit</td>
+                            <td>綁定扣款金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                長效期：綁定訂單單次可請求之扣款金額之上限。<br />
+                                短效期：綁定訂單之扣款金額上限。<br /><br />
+                                EX：10000（NT$100）<br />
+                                （金額包含2位小數）等於15、16的加總
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>NonPointAmt</td>
+                            <td>不可贈點金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                不可計算纍積贈點金額上限（金額包含2為小數）。若無則帶0<br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>MaxMonthAmt</td>
+                            <td>當月繳款上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                當月使用者於ICP APP的交款上限，不可高於300,000（金額包含2位小數）。若無則帶0<br /><br />
+                                EX：1000000（NT$10000）
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">RedeemFlag為1時下列值為必填</th>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>ItemAmt</td>
+                            <td>一般交易金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                一般交易金額上限（包含2為小數）(因應手續費計算可有不同所區分)。若無則帶0<br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>UtilityAmt</td>
+                            <td>代收交易金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                代收交易金額上限（包含2為小數）(因應手續費計算可有不同所區分)。若無則帶0<br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>ItemNonRedeemAmt</td>
+                            <td>一般交易不可折抵金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                一般交易的不可折抵商品金額上限（包含2為小數）(因應手續費計算可有不同所區分)。若無則帶0<br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>UtilityNonRedeemAmt</td>
+                            <td>代收交易不可折抵金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                代收交易的不可折抵商品金額上限（包含2為小數）(因應手續費計算可有不同所區分)。若無則帶0<br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">ExpiredType為2時下列值為必填：</th>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>ExpiredDate</td>
+                            <td>綁定扣款有效期間</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                選擇性項目，當綁定銀行為短效期時必填。<br />
+                                綁定訂單之有效期限<br />
+                                <span class="strong">當有效期限過後Token自動消失。</span><br />
+                                格式：yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Installment</td>
+                            <td>分期期數</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                選擇性項目，當綁定銀行為短效期時必填。<br />
+                                綁定訂單之扣款期數，至多12期<br />
+                                <span class="strong">當扣款期數滿期後Token自動失效。</span><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>SingelAmtLimit</td>
+                            <td>單期款金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                綁定訂單單期可請求之扣款金額上限。<br />
+                                <span class="strong">此金額不可大於TotalAmtLimit</span><br />
+                                <span class="string">等於23、24的加總。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>SingleNonPointAmt</td>
+                            <td>單期不可贈點金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                不可計算累積贈點的金額上限（包含2位小數）。若無則帶0<br />
+                                <span class="strong">此金額不可大於NonPointAmt</span><br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>SingleItemAmt</td>
+                            <td>單期一般交易金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                一般交易金額上限（包含2位小數）。若無則代0<br />
+                                <span class="strong">此金額不可大於ItemAmt</span><br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>SingleUtilityAmt</td>
+                            <td>單期代收交易金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                代收交易金額上限（包含2為小數）。若無則代0<br /><br />
+                                <span class="strong">此金額不可大於UtilityAmt</span><br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>SingleItemNonRedeemAmt</td>
+                            <td>單期一般交易不可折抵金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                一般交易的不可折抵商品金額上限（包含2為小數）。若無則代0<br /><br />
+                                <span class="strong">此金額不可大於ItemNonRedeemAmt</span><br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>SingleUtilityNonRedeemAmt</td>
+                            <td>單期代收交易不可折抵金額上限</td>
+                            <td>String(12)</td>
+                            <td>是</td>
+                            <td>
+                                代收交易的不可折抵商品金額上限（包含2為小數）。若無則代0<br /><br />
+                                <span class="strong">此金額不可大於ItemNonRedeemAmt</span><br /><br />
+                                EX：10000（NT$100）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>EncData 内容 Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"PlatformID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingTradeNo"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MBTN0000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"StoreName"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"SN001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingMode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"CallbackURL"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"https://www.mypay.com.tw/BindingResultSend"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RedirectURL"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"https://www.mypay.com.tw/BindResult?orderid=xxx"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantUserID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MUI00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"DisplayInformation"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1.條款1，2.條款2，3.條款3"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RedeemFlag"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpiredType"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"TotalAmtLimit"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"100000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"NonPointAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MaxMonthAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ItemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"100000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"UtilityAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ItemNonRedeemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"UtilityNonRedeemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpiredDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Installment"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleAmtLimit"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleNonPointLimit"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleItemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleUtilityAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleItemNonRedeemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"SingleUtilityNonRedeemAmt"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>X-iCP-Signature</td>
+                            <td>伺服端簽章</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                ServerPrivateKey，SHA256withRSA<br />
+                                對整個Body進行簽章
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"X-iCP-Signature"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{Response body 簽章後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body(JSON内容)</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                錯誤代碼請產靠交易狀態代碼表
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                EX：訊息代碼：0001，成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>EncData</td>
+                            <td>AES加密</td>
+                            <td></td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES），JSON格式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"RtnCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RtnMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0001，成功"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"EncData"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{對EncData内容加密後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">以下為EncData内容</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>PlatformID</td>
+                            <td>平台編號</td>
+                            <td>String(16)</td>
+                            <td>是</td>
+                            <td>
+                                平台編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MerchantID</td>
+                            <td>特店業者編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>BindingTradeNo</td>
+                            <td>特店業者綁定序號</td>
+                            <td>String(50)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者綁定序號
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>TimeStamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>ApproveBindingToken</td>
+                            <td>綁定授權碼</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES）=Base64Encode(Enc(AesKey,TradeToken))JSON<br />
+                                若BindingMode為1時，回傳綁定授權Token<br />
+                                若BindingMode為2時，回傳綁定授權QR Code資訊，特點業者端請直接收到QR Code資訊轉成圖檔並顯示。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>ApproveExpiredTime</td>
+                            <td>同意授權有效時間</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                使用者綁定操作的有效時間（預設30分鐘）<br />
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>EncData 内容 Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"PlatformID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingTradeNo"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MBTN0000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ApproveBindingToken"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"ABT00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ApproveExpiredTime"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:30:00"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--ICPOB001-->
+        <div id="page7" class="function_container" style="display:none">
+            <h1>ICPOB001-喚起綁定頁面</h1>
+            <p>當特店端取得綁定授權碼時，依消費者載具不同，若消費者手持手機瀏覽載具（手機WEB或APP），可透過URL Scheme方式喚起ICP APP原生綁定授權頁面，供使用者進行綁定授權。</p>
+            <ul>
+                <li>
+                    ICP綁定URL Scheme：
+                    <table>
+                        <tr>
+                            <th class="explanation1">ICP綁定URL Scheme</th>
+                        </tr>
+                        <tr>
+                            <td>icashpay://www.icashpay.com.tw/ICP?Action=Mainaction&Event=ICPOB001&Value=${Value}&Valuetype=1</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Scheme參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Web呼叫</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Ocp-Apim-Subscription-Key</td>
+                            <td>存取權杖</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                由存取權杖中心配發，用以識別來源端是否合法
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>URL Scheme Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p>
+                                                <span class="var_value">icashpay://www.icashpay.com.tw/ICP?Action=Mainaction&Event=ICPOB001&Value=ABT00000000000000001&Valuetype=1</span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--ICPOB002-->
+        <div id="page8" class="function_container" style="display:none">
+            <h1>ICPOB002-綁定（解綁）結果通知</h1>
+            <p>當消費者進行授權綁定完成後或於ICPAPP上進行解綁完成後，特店業者接受愛金卡的綁定結果訊息，并回應接收訊息；ICP：以Server POST方式傳送綁定結果至特店於ICPOB000帶入的【CallbackURL】欄位</p>
+            <p>
+                特店業者系統：收到愛金卡的綁定結果訊息，依據下述規格回覆結果。
+            </p>
+            <p class="strong"> 此API純為綁定結果通知，若特店端有導頁需求，需使用ICPO000中的RedirectURL進行導頁。</p>
+            <ul>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>X-iCP-Signature</td>
+                            <td>用戶端簽章</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                ServerPrivateKey,SHA256withRSA<br />
+                                對整個Body進行簽章
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"X-iCP-Signature"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{Request body 簽章後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body(JSON内容)</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>BindingResultCode</td>
+                            <td>回傳綁定結果代碼</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                回傳交易結果代碼：<br />
+                                0：綁定逾時<br />
+                                1：綁定成功<br />
+                                2：綁定失敗<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>BindingResultMsg</td>
+                            <td>回傳綁定結果訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳交易結果訊息：<br /><br />
+                                EX：訊息代碼：1，交易成功
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>EncData</td>
+                            <td>AES加密資料</td>
+                            <td></td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES），JSON格式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"BindingResultCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">，</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingResultMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"訊息代碼：1，交易成功"</span>
+                                                <span class="normal_text">，</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"EncData"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{對EncData内容加密後的字串}"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">以下為EncData内容：</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>PlatformID</td>
+                            <td>平台編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                平台編號（由愛金卡提供）<br />
+                                平台商身份才需要帶入特定平台編號，如爲一般特店業者則帶入MerchantID（特店業者編號）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MerchantID</td>
+                            <td>特店業者編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>BindingTradeNo</td>
+                            <td>特店業者綁定序號</td>
+                            <td>String(50)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者綁定交易序號<br />
+                                同個商家編號的特店業者綁定交易序號不可重複，可使用英數字
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>NoticeType</td>
+                            <td>通知類別</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                通知類別：<br />
+                                Bind：綁定<br />
+                                UnBind：解綁
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>TransactionID</td>
+                            <td>愛金卡交易序號</td>
+                            <td>String(20)</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--綁定成功後愛金卡產生的交易編號<br />
+                                （為ICP APP 上的消費者所看到的訂單編號）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>ICPAccount</td>
+                            <td>愛金卡帳戶</td>
+                            <td>String(16)</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--綁定成功的愛金卡帳戶
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>MerchantUserID</td>
+                            <td>特店使用者ID</td>
+                            <td>String(50)</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--特店的會員識別ID
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>Token</td>
+                            <td>綁定Token</td>
+                            <td>String(32)</td>
+                            <td>是</td>
+                            <td>
+                                請保存愛金卡綁定Token與特點AppUserID的關連。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>BindingDate</td>
+                            <td>綁定時間</td>
+                            <td>String(20)</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--同意授權綁定時間yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>UnbindgingDate</td>
+                            <td>同意授權綁定時間</td>
+                            <td>String(20)</td>
+                            <td>否</td>
+                            <td>
+                                解綁（UnBind）必填--解綁時間yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>PaymentType</td>
+                            <td>綁定扣款金流類型</td>
+                            <td>Int</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填：<br />
+                                0：信用卡綁定<br />
+                                1：愛金卡帳戶<br />
+                                2：銀行帳戶直扣
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>ExpiredType</td>
+                            <td>綁定效期類型</td>
+                            <td>Int</td>
+                            <td>否</td>
+                            <td>
+                                綁定效期類型，預設為1：<br />
+                                1：長效期綁定<br />
+                                2：短效期綁定
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">ExpiredType為2時，以下欄位才會有值：</th>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>ExpiredDate</td>
+                            <td>綁定扣款有效期間</td>
+                            <td>String(12)</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--選擇性項目，當綁定類型為短效期時必填。<br />
+                                綁定訂單之有效期限。<br />
+                                <span class="strong">當有效期限過後Token自動失效</span><br /><br />
+                                格式：yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Installment</td>
+                            <td>分期期數</td>
+                            <td>int</td>
+                            <td>否</td>
+                            <td>
+                                綁定（Bind）必填--選擇性項目，當綁定類型為短效期時必填。<br />
+                                綁定訂單之有效期數，<span class="strong">至多12期</span>。<br />
+                                <span class="strong">當有效期限過後Token自動失效</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>EncData 内容 Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"PlatformID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingTradeNo"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MBTN0000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"NoticeType"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"Bind"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"TransactionID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"TID00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ICPAccount"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1680000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantUserID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MUI00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Token"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"Token000000000000000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"UnbindgingDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"PaymentType"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpiredType"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ExpiredDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Installment"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">""</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body（JSON内容，無加密）</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                回傳代碼：<br />
+                                0：失敗<br />
+                                1：成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息：<br /><br />
+                                EX：<br />
+                                訊息代碼：0，特嗲業者端實際的錯誤訊息。<br />
+                                訊息代碼：1，成功
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"RtnCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RtnMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"訊息代碼：1，成功"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00 "</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <!--ICPOB003-->
+        <div id="page9" class="function_container" style="display:none">
+            <h1>ICPOB003-取消綁定</h1>
+            <p>使用者向特店業者提出取消綁定要求，特店透過此API將通知ICP中心端取消綁定訂單</p>
+            <ul>
+                <li>
+                    介接路徑：<br />
+                    正式環境： https://payment.icashpay.com.tw/api/V2/Payment/Binding/CancelICPBinding <br />
+                    UAT環境： https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Binding/CancelICPBinding
+                </li>
+                <li>
+                    Request參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>X-iCP-EncKeyID</td>
+                            <td>AES加密金要ID</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>X-iCP-Signature</td>
+                            <td>用戶端簽章</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                ClientPrivateKey,SHA256withRSA<br />
+                                對整個Body進行簽章
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">" X-iCP-EncKeyID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{EncKeyID}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"X-iCP-Signature"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{Request body 簽章後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body(JSON内容)</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>EncData</td>
+                            <td>AES加密資料</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES），JSON格式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"EncData"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{對EncData内容加密後的字串}"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">以下為EncData内容：</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>PlatformID</td>
+                            <td>平台編號</td>
+                            <td>String(16)</td>
+                            <td>否</td>
+                            <td>
+                                平台編號（由愛金卡提供）<br />
+                                平台商身份才需要帶入此欄位
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MerchantID</td>
+                            <td>特店業者編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>BindingTradeNo</td>
+                            <td>特店業者解綁定交易序號</td>
+                            <td>String(50)</td>
+                            <td>否</td>
+                            <td>
+                                特店業者解綁交易序號同個商家編號的特店業者綁定交易序號不可重複，<br />
+                                可使用英數字當UnBindingBy=1時，不可為空值
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Token</td>
+                            <td>缐上綁定扣款碼</td>
+                            <td>String(32)</td>
+                            <td>是</td>
+                            <td>
+                                缐上綁定扣款碼
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>UnBindingDate</td>
+                            <td>取消綁定時間</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                取消綁定時間<br />
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>UnbindingBy</td>
+                            <td>發起方</td>
+                            <td>Int</td>
+                            <td>是</td>
+                            <td>
+                                發起放:<br />
+                                1：特店<br />
+                                2：ICP APP
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Request Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"PlatformID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingTradeNo"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MBTN0000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Token"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"ABT00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"UnBindingDate"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:10:00 "</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"UnBindingBy"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Response參數說明：
+                    <table>
+                        <tr>
+                            <th colspan="6" class="explanation1">Header</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>X-iCP-Signature</td>
+                            <td>伺服端簽章</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                ServerPrivateKey，SHA256withRSA<br />
+                                對EncData進行簽章(ASCII)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Header Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"X-iCP-Signature"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{Response EncData 簽章後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">Body(JSON内容)</th>
+                        </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>KEY</th>
+                            <th>KEY中文</th>
+                            <th>型別</th>
+                            <th>必填</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>RtnCode</td>
+                            <td>回傳代碼</td>
+                            <td>String</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                錯誤代碼請產靠交易狀態代碼表
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>RtnMsg</td>
+                            <td>回傳訊息</td>
+                            <td>String(100)</td>
+                            <td>是</td>
+                            <td>
+                                回傳訊息<br />
+                                EX：訊息代碼：0001，成功<br />
+                                其餘為失敗
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>EncData</td>
+                            <td>AES加密</td>
+                            <td></td>
+                            <td>是</td>
+                            <td>
+                                加密資料（AES），JSON格式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>Response Body Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"RtnCode"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"1"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"RtnMsg"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"0001，成功"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"EncData"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"{對EncData内容加密後的字串}"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="explanation1">以下為EncData内容</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>PlatformID</td>
+                            <td>平台編號</td>
+                            <td>String(16)</td>
+                            <td>否</td>
+                            <td>
+                                平台編號（由愛金卡提供）<br />
+                                平台商身份才需要帶入此欄位
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>MerchantID</td>
+                            <td>特店業者編號</td>
+                            <td>String(8)</td>
+                            <td>是</td>
+                            <td>
+                                特店業者編號（由愛金卡提供）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>OBindingTradeNo</td>
+                            <td>原特店綁定訂單序號</td>
+                            <td>String(50)</td>
+                            <td>否</td>
+                            <td>
+                                特店業者綁定序號
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>BindingTradeNo</td>
+                            <td>特店業者綁定序號</td>
+                            <td>String(50)</td>
+                            <td>否</td>
+                            <td>
+                                缐上綁定扣款碼
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Timestamp</td>
+                            <td>時間戳記</td>
+                            <td>Strin(20)</td>
+                            <td>是</td>
+                            <td>
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>ApproveExpiredTime</td>
+                            <td>同意授權有效時間</td>
+                            <td>String(20)</td>
+                            <td>是</td>
+                            <td>
+                                使用者綁定操作的有效時間（預設30分鐘）<br />
+                                yyyy/MM/dd HH:mm:ss
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table class="example">
+                                    <tr>
+                                        <th>EncData 内容 Example </th>
+                                        <th class="copy_button" onclick="copy_function(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></th>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p><span class="normal_text">{</span></p>
+                                            <p>
+                                                <span class="var lvl1">"PlatformID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"MerchantID"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"10000000"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"BindingTradeNo"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"MBTN0000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"Timestamp"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:00:00"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ApproveBindingToken"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"ABT00000000000000001"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p>
+                                                <span class="var lvl1">"ApproveExpiredTime"</span>
+                                                <span class="normal_text">:</span>
+                                                <span class="var_value">"2019/01/01 00:30:00"</span>
+                                                <span class="normal_text">,</span>
+                                            </p>
+                                            <p><span class="normal_text">}</span></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

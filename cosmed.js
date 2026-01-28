@@ -63,7 +63,7 @@ rl.question('請輸入付款條碼 (BarCode): ', (inputBarCode) => {
         MerchantID: "10536635",
         MerchantTradeNo: tradeNo, // 動態 MerchantTradeNo
         StoreID: "TM01",
-        StoreName: "COSMEDabcdefghijklmno我是第二行",
+        StoreName: "COSMEDabcdefghijklmno我是第二行abcd",
         MerchantTradeDate: tradeDate, // 動態 MerchantTradeDate
         TotalAmount: "10000",
         ItemAmt: "10000",

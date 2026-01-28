@@ -1,10 +1,10 @@
-#WEBTEST_2025_02071034更新
+#WEBTEST_2025_0314更新
 
-測試操作方式如下
+測試操作方式如下:
 
 執行前需確認已安裝Node.js
 
-已安裝完成，需可以顯示版本號
+已安裝完成，需可以顯示以下版本號
 
 C:\webtest> node -v
 
@@ -13,7 +13,13 @@ v18.12.1
 C:\webtest> npm -v
 
 8.19.2
-以下的指令方式，皆可以改用點擊.bat的方式，去執行
+
+******************************
+C:\webtest> node Express.js
+******************************
+Express.js ---> 開啟web server localhost:3000 網頁上可執行 現金儲值、付款、授權綁定
+==============================================================================================================================================================
+以下指令方式，改用點擊.bat的方式，去執行
 
 檔案路徑放置如下
 
@@ -35,29 +41,34 @@ C:\webtest\BAT
 
 統一超商儲值交易.bat
 
-統一超商儲值退款_目前無法正常執行.bat
+統一超商儲值退款.bat
 
 博客來掃瞄web付款Qrcode.bat
 
 康事美掃瞄web付款Qrcode.bat
-<<<<<<< HEAD
 
-=======
 和泰聯網付款Qrcode.bat
->>>>>>> 750cfc5 (update02081518)
+
+富利餐飲(KFC)產出跳轉付款URL.bat
+
 金箍棒JGBWeb掃瞄web付款Qrcode_UAT.bat
 
 星巴克(悠遊生活)授權綁定_目前無法使用要V1切至V2.bat
+
+星巴克(儲值)產出跳轉付款URL.bat
 
 大都會車隊授權綁定.bat
 
 元大證券投資信託授權綁定.bat
 
-<<<<<<< HEAD
 YOXI 授權綁定UAT.bat
 
-=======
->>>>>>> 750cfc5 (update02081518)
+Step1富利餐飲(KFC)產出跳轉付款URL.bat 
+
+Step2富利餐飲(KFC)付款完成查詢交易結果.bat
+
+Step3富利餐飲(KFC)退款交易.bat
+
 ==============================================================================================================
 指令輸入方式範例如下:
 
@@ -83,20 +94,40 @@ markettopup.js-->超商儲值交易_ICPOS004
 
 markettoprefund.js-->超商儲值退款_ICPOS005 (目前執行顯示退貨/取消失敗，必須在儲值的同一家分店辦理退貨/取消)_2025/02/06
 
+marketpaidUAT.js -->超商付費會員授權綁定-->ICPOB0000(訂閱制固定金額711元，目前尚未確認規格)_2025/03/07
+
 booksweb.js-->博客來掃瞄web付款 -->ICPO0008
 
 cosmedweb.js-->康事美掃瞄web付款 -->ICPO0008
 
 hotaiconnected.js -->和泰聯網股份有限公司掃瞄Qrocde付款-->ICPO0001+回傳TradeToken產生Qrcode(ICPO0002)
 
+kfcjump.js -->模擬富利餐飲產出跳付款URL跨平台購物產生URL(IPCO0002)_2025/02/13
+
+kfcjumpquerytrade.js -->富利餐飲付款URL已付款完成進行查詢交易結果-->ICPO005_2025/02/23
+
+kfcjumprefund.js -->需先完成查易交易結果後，再執行退款-->ICPO0004_2025/02/23
+
 JGBwebUAT.js -->金箍棒JGBWeb付款-房東001-->ICPO008
 
 testcosmedm.js-->此為康事美反掃連續多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
 
+testmarketpayment.js 此為超商多筆反掃扣款，現行需搭配包出apk，進行產出多筆條碼資料，再進行執行扣款
+
 statbucksbinding.js-->星巴克(悠遊生活)授權綁定-->ICPOB0000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
+
+starbucksjump.js-->星巴克(儲值)產出跳轉付款URL-->(IPCO0002)_2025/02/24
 
 yoxibindingUAT.js--->YOXI授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
 
+yoxibinding.js --->Yoxi授權綁定-->ICPOB0000 (不固定可設定每月扣款金額上限)
+
 Mertotaxibinding.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)
 
+Mertotaxibindingtoslack.js-->大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限)，傳送至github_webtest to slack
+
+Mertotaxibindingtoslack.js 大都會車隊授權綁定-->ICPOB000 (無法修改，固定每筆扣款金額、每月扣款金額上限) 傳送至slack
+
 yuantabinding.js -->元大證券投資信託授權綁定-->ICPOB000 (不固定可設定每月扣款金額上限)
+
+yuantabingingtoslack.js-->元大證券投資信託授權綁定-->ICPOB000 (不固定可設定每月扣款金額上限)，傳送至github_webtest to slack

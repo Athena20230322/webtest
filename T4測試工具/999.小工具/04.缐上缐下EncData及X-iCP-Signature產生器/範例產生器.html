@@ -1,0 +1,890 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>範例產生器</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="qrcode.js"></script>
+    <script src="jsencrypt.js"></script>
+    <script src="crypto-js.js"></script>
+    <script src="js-cookie.js"></script>
+
+    <style>
+        #view_container {
+            margin-top: 30px;
+            width: 1080px;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+            /*overflow-y: scroll;*/
+        }
+
+        div {
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        .active {
+            color: white;
+            background-color: black;
+        }
+
+        input, select, textarea {
+            border: 1px solid transparent;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            input[type=text] {
+                background-color: #f1f1f1;
+                width: 100%;
+            }
+
+            input[type=submit] {
+                background-color: DodgerBlue;
+                color: #fff;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div id="input_container">
+        <input id="file_input" type="file" />
+    </div>
+    <div id="view_container">
+        <div>
+            <label>MID : </label>
+            <textarea rows="1" type="text" id="MID_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>Client Public Key : </label>
+            <textarea rows="4" id="Client_Public_Key_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>Client Private Key : </label>
+            <textarea rows="5" id="Client_Private_Key_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>Server Public Key : </label>
+            <textarea rows="4" id="Server_Public_Key_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>AES Key ID : </label>
+            <textarea rows="1" id="AES_Key_ID_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>AES Key : </label>
+            <textarea rows="1" id="AES_Key_container" disabled="true"></textarea>
+        </div>
+        <div>
+            <label>AES IV : </label>
+            <textarea rows="1" id="AES_IV_container"></textarea>
+        </div>
+    </div>
+
+    <div id="sample_code" style="margin-top:20px;display:none;">
+        <table>
+            <tr>
+                <th class="active" onclick="change_type(0,this)">缐上</th>
+                <th onclick="change_type(1,this)">缐下</th>
+            </tr>
+        </table>
+
+        <table id="online_api_table">
+            <tr>
+                <th class="active" onclick="change_api(0,this)">ICPO001</th>
+                <th onclick="change_api(1,this)">ICPO002</th>
+                <th onclick="change_api(2,this)">ICPO003</th>
+                <th onclick="change_api(3,this)">ICPO004</th>
+                <th onclick="change_api(4,this)">ICPO005</th>
+                <th onclick="change_api(5,this)">ICPO007</th>
+                <th onclick="change_api(6,this)">ICPO008</th>
+                <th onclick="change_api(7,this)">ICPO009</th>
+            </tr>
+            <tr>
+                <td colspan="8">X-iCP-EncKeyID:</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <textarea rows="1" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">X-iCP-Signature(對EncData做RSA簽章,key為ClientPrivateKey。RSA簽章需用SHA256演算法):</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p style="margin-bottom:0">
+                        function create_X_iCP_Signature(){
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var X_iCP_Signature;
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var sign = new JSEncrypt()
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign.setPrivateKey(Client_Private_Key);
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+                    <p style="margin:0">
+                        }
+                    </p>
+                </td>
+                <td colspan="4">
+                    <textarea rows="4" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">EncData(對JSON data做AES加密):</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width:50%;">
+                    <p style="margin-bottom:0">
+                        function encryptAES_CBC_256(text, key, iv) {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const encrypted = CryptoJS.AES.encrypt(text, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return encrypted.toString();
+                    </p>
+                    <p style="margin:0">
+                        }
+                    </p>
+                    <p style="margin-bottom:0">
+                        function create_enc_data(){
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var data_string = JSON.stringify(data);
+                    </p>
+                    <p style="margin-top:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.getElementsByTagName("textarea")[3].value = data_string;
+                    </p>
+                    <p style="margin-top: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var key = CryptoJS.enc.Utf8.parse(AES Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    </p>
+                    <p style="margin: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var iv = CryptoJS.enc.Utf8.parse(AES IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+                    </p>
+                    <p style="margin: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EncData = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    </p>
+                    <p style="margin:0">
+                        }
+                    </p>
+                </td>
+                <td colspan="4">
+                    <textarea rows="13" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">JSON data:</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <textarea rows="5" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">Post 範例</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <p style="margin-bottom:0">
+                        function post_data() {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.ajax({
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: '{api}',
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type:'POST',
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data: JSON.stringify(
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;header: {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'X-iCP-EncKeyID': '{X-iCP-EncKeyID}',
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'X-iCP-Signature':'{X-iCP-Signature}'
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Body: {EndData:'{EncData}'}
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType: 'application/x-www-form-urlencoded;charset=utf-8;',
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success: function (data) {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrypt_data()
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error: function (ex) {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ex)
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
+                    </p>
+                    <p style="margin:0">
+                        }
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <table id="offline_api_table" style="display:none">
+            <tr>
+                <th class="active" onclick="change_api(8,this)">ICPOF001</th>
+                <th onclick="change_api(3,this)">ICPO004</th>
+                <th onclick="change_api(4,this)">ICPO005</th>
+                <th onclick="change_api(5,this)">ICPO007</th>
+                <th onclick="change_api(7,this)">ICPO009</th>
+            </tr>
+            <tr>
+                <td colspan="8">X-iCP-EncKeyID:</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <textarea rows="1" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">X-iCP-Signature(對EncData做RSA簽章,key為ClientPrivateKey。RSA簽章需用SHA256演算法):</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p style="margin-bottom:0">
+                        function create_X_iCP_Signature(){
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var X_iCP_Signature;
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var sign = new JSEncrypt()
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign.setPrivateKey(Client_Private_Key);
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+                    <p style="margin:0">
+                        }
+                    </p>
+                </td>
+                <td colspan="4">
+                    <textarea rows="4" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">EncData(對JSON data做AES加密):</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="width:50%;">
+                    <p style="margin-bottom:0">
+                        function encryptAES_CBC_256(text, key, iv) {
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const encrypted = CryptoJS.AES.encrypt(text, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return encrypted.toString();
+                    </p>
+                    <p style="margin:0">
+                        }
+                    </p>
+                    <p style="margin-bottom:0">
+                        function create_enc_data(){
+                    </p>
+                    <p style="margin:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var data_string = JSON.stringify(data);
+                    </p>
+                    <p style="margin-top:0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.getElementsByTagName("textarea")[3].value = data_string;
+                    </p>
+                    <p style="margin-top: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var key = CryptoJS.enc.Utf8.parse(AES Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    </p>
+                    <p style="margin: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var iv = CryptoJS.enc.Utf8.parse(AES IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+                    </p>
+                    <p style="margin: 0">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EncData = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    </p>
+                    <p style="margin:0">
+                        }
+                    </p>
+                </td>
+                <td colspan="4">
+                    <textarea rows="13" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">JSON data:</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <textarea rows="5" type="text" disabled="true"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script type="text/javascript">
+        var oFileIn;
+        var key_file;
+        var MID;
+        var Client_Public_Key;
+        var Client_Private_Key
+        var Server_Public_Key;
+        var AES_Key_ID;
+        var AES_Key;
+        var AES_IV;
+
+        $(function () {
+            oFileIn = document.getElementById('file_input');
+            if (oFileIn.addEventListener) {
+                oFileIn.addEventListener('change', read_file, false);
+            }
+        });
+
+        function read_file(oEvent) {
+            MID = "";
+            Client_Public_Key = "";
+            Client_Private_Key = "";
+            Server_Public_Key = "";
+            AES_Key_ID = "";
+            AES_Key = "";
+            AES_IV = "";
+
+            // Get The File From The Input
+            var oFile = oEvent.target.files[0];
+            var sFilename = oFile.name;
+            // Create A File Reader HTML5
+            var reader = new FileReader();
+
+            // Ready The Event For When A File Gets Selected
+            reader.onload = function (e) {
+                var data = e.target.result;
+                key_file = data.trim().replace(/(\r\n|\n|\r)/gm, "").substring(data.trim().replace(/(\r\n|\n|\r)/gm, "").indexOf("["), data.trim().replace(/(\r\n|\n|\r)/gm, "").length);
+                split_key()
+            };
+
+            // Tell JS To Start Reading The File.. You could delay this if desired
+            reader.readAsBinaryString(oFile);
+        }
+
+        function split_key() {
+            var temp_key_file = key_file;
+            var bpk = "-----BEGIN PUBLIC KEY-----"
+            var epk = "-----END PUBLIC KEY-----"
+            var brps = "-----BEGIN RSA PRIVATE KEY-----"
+            var erps = "-----END RSA PRIVATE KEY-----"
+
+            //截取MID
+            MID = temp_key_file.substring(temp_key_file.indexOf("=") + 1, temp_key_file.indexOf("[Client Public Key]")).trim()
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf(MID) + MID.length, temp_key_file.length)
+            document.getElementById("MID_container").value = MID;
+            //console.log(MID)
+
+            //截取Client Public Key
+            Client_Public_Key = temp_key_file.substring(temp_key_file.indexOf(bpk) + bpk.length, temp_key_file.indexOf(epk))
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf(epk) + epk.length, temp_key_file.length)
+            document.getElementById("Client_Public_Key_container").value = Client_Public_Key;
+            //console.log(Client_Public_Key)
+
+            //截取Client Private Key
+            Client_Private_Key = temp_key_file.substring(temp_key_file.indexOf(brps) + brps.length, temp_key_file.indexOf(erps))
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf(erps) + erps.length, temp_key_file.length)
+            document.getElementById("Client_Private_Key_container").value = Client_Private_Key;
+            //console.log(Client_Private_Key)
+
+            //截取Server Public Key
+            Server_Public_Key = temp_key_file.substring(temp_key_file.indexOf(bpk) + bpk.length, temp_key_file.indexOf(epk))
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf(epk) + epk.length, temp_key_file.length)
+            document.getElementById("Server_Public_Key_container").value = Server_Public_Key;
+            //console.log(Server_Public_Key)
+
+            //截取AES Key ID
+            AES_Key_ID = temp_key_file.substring(temp_key_file.indexOf("=") + 1, temp_key_file.indexOf("//")).trim()
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf("[AES Key]"), temp_key_file.length)
+            document.getElementById("AES_Key_ID_container").value = AES_Key_ID;
+            //console.log(AES_Key_ID)
+
+            //截取AES Key
+            AES_Key = temp_key_file.substring(temp_key_file.indexOf("=") + 1, temp_key_file.indexOf("[AES IV]")).trim()
+            temp_key_file = temp_key_file.substring(temp_key_file.indexOf("[AES IV]"), temp_key_file.length)
+            document.getElementById("AES_Key_container").value = AES_Key;
+            //console.log(AES_Key)
+
+            //截取AES IV
+            AES_IV = temp_key_file.substring(temp_key_file.indexOf("=") + 1, temp_key_file.length).trim()
+            document.getElementById("AES_IV_container").value = AES_IV;
+            //console.log(AES_IV)
+
+            change_type(0, document.getElementsByTagName("table")[0].getElementsByTagName("th")[0])
+
+            document.getElementById("sample_code").style.display = ""
+        }
+
+
+        function change_type(type, e) {
+
+            table = e.parentNode.parentNode
+
+            for (var i = 0; i < table.getElementsByTagName("th").length; i++) {
+                table.getElementsByTagName("th")[i].className = ""
+            }
+
+            e.className = "active"
+            switch (type) {
+                case 0:
+                    document.getElementById("online_api_table").style.display = ""
+                    document.getElementById("offline_api_table").style.display = "none"
+
+                    document.getElementById("online_api_table").getElementsByTagName("th")[0].click()
+                    break;
+                case 1:
+                    document.getElementById("online_api_table").style.display = "none"
+                    document.getElementById("offline_api_table").style.display = ""
+
+                    document.getElementById("offline_api_table").getElementsByTagName("th")[0].click()
+                    break;
+            }
+        }
+
+        function change_api(id, e) {
+            var table = e.parentNode.parentNode
+            var date = new Date();
+            var year = (date.getFullYear()).toString();
+            var month = (date.getMonth() + 1).toString();
+            var day = (date.getDate()).toString();
+
+            var hours = date.getHours();
+            var mins = date.getMinutes();
+            var secs = date.getSeconds();
+
+            var today;
+            var data;
+
+            var test_AMT = "10000"
+            var test_MTN = "MTN00000000000000001"
+            var test_MTN2 = "MTN00000000000000001"
+            var test_ITN = "ICP00000000000000001"
+            var test_IA = "1680000000000001"
+            var test_MMID = "ID0000000000000001"
+            var test_MI = "/0000001"
+            var test_TT = "TT00000001"
+            var test_SI = "TM01"
+            var test_SN = "測試商戶1"
+            var test_INO = "001"
+            var test_IN = "測試商戶1"
+            var test_BC = "IC0000000000000001"
+
+            var title_json = "JSON data:"
+            var title_icp_url_scheme = "ICP支付URL Scheme:"
+            var api_string = ["https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Cashier/CreateTradeICPO",
+                "",
+                "",
+                "https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Cashier/RefundICPO",
+                "https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/Cashier/QueryTradeICPO",
+                "https://icp-member-preprod.icashpay.com.tw/api/Member/MemberInfo/BindingMMember",
+                "https://icp-member-preprod.icashpay.com.tw/api/Member/MemberInfo/GetPaymentURL",
+                "https://icp-member-preprod.icashpay.com.tw/api/Member/MemberInfo/CancelBindingMMember",
+                "https://icp-payment-preprod.icashpay.com.tw/api/V2/Payment/POS/DeductICPOF",
+            ]
+
+            for (var i = 0; i < e.parentNode.getElementsByTagName("th").length; i++) {
+                e.parentNode.getElementsByTagName("th")[i].className = "";
+            }
+
+            e.className = "active"
+
+            for (var i = 0; i < 2; i++) {
+                if (month.length < 2) {
+                    month = "0" + month
+                }
+
+                if (day.length < 2) {
+                    day = "0" + day
+                }
+
+                if (hours.length < 2) {
+                    hours = "0" + hours
+                }
+
+                if (mins.length < 2) {
+                    mins = "0" + mins
+                }
+
+                if (secs.length < 2) {
+                    secs = "0" + secs
+                }
+            }
+
+            today = year + "/" + month + "/" + day + " " + hours + ":" + mins + ":" + secs
+
+            table.getElementsByTagName("tr")[7].getElementsByTagName("td")[0].innerText = title_json
+
+            for (var i = 0; i < table.getElementsByTagName("tr").length; i++) {
+                table.getElementsByTagName("tr")[i].style.display = "";
+            }
+
+            switch (id) {
+                case 0: //ICPO001
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        MerchantTradeNo: test_MTN,
+                        StoreID: test_SI,
+                        StoreName: test_SN,
+                        MerchantTradeDate: today,
+                        TotalAmount: test_AMT,
+                        ItemAmt: test_AMT,
+                        UtilityAmt: "0",
+                        ItemNonRedeemAmt: "0",
+                        UtilityNonRedeemAmt: "0",
+                        NonPointAmt: "0",
+                        Item: [{
+                            ItemNo: test_INO,
+                            ItemName: test_IN,
+                            Quantity: "1",
+                        }],
+                        TradeMode: 1,
+                        CallbackURL: "https://www.icashpay.com.tw/getICPpaymentdata",
+                        RedirectURL: "https://www.icashpay.com.tw/checkourResult?orderid=" + test_MTN,
+                        AuthICPAccount: ''
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID;
+
+                    break;
+                case 1: //ICPO002
+                    var redirect_scheme = "icashpay://www.icashpay.com.tw/ICP/?Action=Mainaction&Event=ICPO002&Value=" + test_TT + "&Valuetype=1"
+                    table.getElementsByTagName("tr")[7].getElementsByTagName("td")[0].innerText = title_icp_url_scheme
+
+                    table.getElementsByTagName("textarea")[2].value = "";
+                    table.getElementsByTagName("textarea")[1].value = "";
+                    table.getElementsByTagName("textarea")[0].value = "";
+
+                    table.getElementsByTagName("textarea")[3].value = redirect_scheme
+
+                    for (var i = 1; i < table.getElementsByTagName("tr").length - 4; i++) {
+                        table.getElementsByTagName("tr")[i].style.display = "none";
+                    }
+
+                    table.getElementsByTagName("tr")[table.getElementsByTagName("tr").length - 2].style.display = "none";
+                    table.getElementsByTagName("tr")[table.getElementsByTagName("tr").length - 1].style.display = "none";
+                    break;
+                case 2://ICPO003
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        MerchantTradeNo: test_MTN,
+                        TransactionID: test_ITN,
+                        ICPAccount: test_IA,
+                        TotalAmount: test_AMT,
+                        ICPAmount: test_AMT,
+                        BonusAmt: "0",
+                        PaymentDate: today,
+                        TradeDate: today,
+                        PaymentType: "1",
+                        MMemberID: test_MMID,
+                        MobileInvoice: test_MI,
+                        MaskedPan: ""
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+
+                    var request_data = {
+                        TradeResultCode: "1",
+                        TradeResultMsg: "訊息代碼：1，交易成功。",
+                        EncData: encdata
+                    }
+                    table.getElementsByTagName("textarea")[2].value = JSON.stringify(request_data);
+                    table.getElementsByTagName("textarea")[1].value = "";
+                    table.getElementsByTagName("textarea")[0].value = ""
+
+                    for (var i = 1; i < table.getElementsByTagName("tr").length - 4; i++) {
+                        table.getElementsByTagName("tr")[i].style.display = "none";
+                    }
+                    table.getElementsByTagName("tr")[table.getElementsByTagName("tr").length - 2].style.display = "none";
+                    table.getElementsByTagName("tr")[table.getElementsByTagName("tr").length - 1].style.display = "none"
+                    break;
+                case 3://ICPO004
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        OMerchantTradeNo: test_MTN,
+                        TransactionID: test_ITN,
+                        StoreID: test_SI,
+                        StoreName: test_SN,
+                        MerchantTradeNo: test_MTN2,
+                        RefundTotalAmount: test_AMT,
+                        RefundItemAmt: test_AMT,
+                        RefundUtilityAmt: "0",
+                        MerchantTradeDate: today
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID
+                    break;
+                case 4://ICPO005
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        MerchantTradeNo: test_MTN
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID
+                    break;
+                case 5://ICPO007
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        ICPMID: test_IA,
+                        MMemberID: test_MMID
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID;
+                    break;
+                case 6://ICPO008
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        MerchantTradeNo: test_MTN,
+                        StoreID: test_SI,
+                        StoreName: test_SN,
+                        MerchantTradeDate: today,
+                        TotalAmount: test_AMT,
+                        ItemAmt: test_AMT,
+                        UtilityAmt: "0",
+                        ItemNonRedeemAmt: "0",
+                        UtilityNonRedeemAmt: "0",
+                        NonPointAmt: "0",
+                        Item: [{
+                            ItemNo: test_INO,
+                            ItemName: test_IN,
+                            Quantity: "1",
+                        }],
+                        TradeMode: 1,
+                        CallbackURL: "https://www.icashpay.com.tw/getICPpaymentdata",
+                        RedirectURL: "https://www.icashpay.com.tw/checkourResult?orderid" + test_MTN,
+                        AuthICPAccount: ''
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID
+                    break;
+                case 7://ICPO009
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        ICPMID: test_IA,
+                        MMemberID: test_MMID
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID;
+                    break;
+                case 8://ICPOF001
+                    data = {
+                        PlatformID: MID,
+                        MerchantID: MID,
+                        MerchantTradeNo: test_MTN,
+                        StoreID: test_SI,
+                        StoreName: test_SN,
+                        MerchantTradeDate: today,
+                        TotalAmount: test_AMT,
+                        ItemAmt: test_AMT,
+                        UtilityAmt: "0",
+                        CommAmt: "0",
+                        ItemNonRedeemAmt: "0",
+                        UtilityNonRedeemAmt: "0",
+                        CommNonRedeemAmt: "0",
+                        NonPointAmt: "0",
+                        Item: [{
+                            ItemNo: test_INO,
+                            ItemName: test_IN,
+                            Quantity: "1",
+                        }],
+                        BarCode: test_BC
+                    }
+
+                    table.getElementsByTagName("textarea")[3].value = JSON.stringify(data);
+
+                    key = CryptoJS.enc.Utf8.parse(AES_Key);// CryptoJS.enc.Hex.parse('aPMjthjyjOXdFQd6nWIPiNJjR7ScBGBh'); // 256位金鑰
+                    iv = CryptoJS.enc.Utf8.parse(AES_IV);//CryptoJS.enc.Hex.parse('xzszjW72bg3IkgYL'); // 128位IV
+
+                    var encdata = encryptAES_CBC_256(JSON.stringify(data), key, iv)
+                    var X_iCP_Signature;
+                    var sign = new JSEncrypt()
+                    sign.setPrivateKey(Client_Private_Key);
+                    X_iCP_Signature = sign.sign(encdata, CryptoJS.SHA256, "sha256")
+
+                    table.getElementsByTagName("textarea")[2].value = encdata;
+                    table.getElementsByTagName("textarea")[1].value = X_iCP_Signature;
+                    table.getElementsByTagName("textarea")[0].value = AES_Key_ID
+                    break;
+            }
+        }
+
+        function encryptAES_CBC_256(text, key, iv) {
+            const encrypted = CryptoJS.AES.encrypt(text, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+            return encrypted.toString();
+        }
+
+        // 解密
+        function decryptAES_CBC_256(encryptedText, key, iv) {
+            const decrypted = CryptoJS.AES.decrypt(encryptedText, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
+
+        function post_data() {
+            $.ajax({
+                url: '{api}',
+                type: 'POST',
+                data: JSON.stringify(
+                    {
+                        header: {
+                            'X-iCP-EncKeyID': '{X-iCP-EncKeyID}',
+                            'X-iCP-Signature': '{X-iCP-Signature}'
+                        },
+                        Body: { EndData: '{EncData}' }
+                    }
+                ),
+                contentType: 'application/x-www-form-urlencoded;charset=utf-8;',
+                success: function (data) {
+                    decrypt_data()
+                },
+                error: function (ex) {
+                    console.log(ex)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
