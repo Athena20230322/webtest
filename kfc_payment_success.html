@@ -1,0 +1,114 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肯德基 - 交易成功</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .kfc-red {
+            background-color: #C8102E;
+        }
+        .kfc-white {
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="kfc-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-6 text-center">
+        <!-- KFC Logo -->
+        <img src="https://www.kfcclub.com.tw/Content/images/logo.png" alt="KFC Logo" class="mx-auto h-16 mb-4">
+
+        <!-- Success Message -->
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">交易成功！</h1>
+        <p class="text-gray-600 mb-6">感謝您使用肯德基線上訂餐服務，您的訂單已成功付款！</p>
+
+        <!-- Order Details -->
+        <div class="bg-gray-100 rounded-lg p-4 mb-6">
+            <p class="text-gray-800"><strong>訂單編號：</strong> KFC20250516-123456</p>
+            <p class="text-gray-800"><strong>支付方式：</strong> icash Pay</p>
+            <p class="text-gray-800"><strong>取餐方式：</strong> 預訂快取</p>
+            <p class="text-gray-800"><strong>預計取餐時間：</strong> 2025-05-16 12:30</p>
+            <p class="text-gray-800"><strong>取餐門市：</strong> 台北市中山北路店</p>
+        </div>
+
+        <!-- Instructions -->
+        <p class="text-gray-600 mb-4">請於指定時間前往門市「預訂快取」專屬通道，憑手機號碼取餐。訂單詳情已寄至您的電子郵件。</p>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://www.kfcclub.com.tw" class="kfc-red text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition">返回首頁</a>
+            <button onclick="viewOrderDetails()" class="bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition">查看訂單詳情</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-gray-500 text-sm">
+        <p>富利餐飲股份有限公司 | 客服專線：0800-068-007（10:00-22:00）</p>
+        <p>地址：台北市建國北路一段96號9樓</p>
+    </footer>
+
+    <script>
+        // Simulate viewing order details (replace with actual API call in production)
+        function viewOrderDetails() {
+            alert('正在導向訂單詳情頁面...\n實際應用請串接肯德基訂單API以顯示詳細資訊。');
+            // Example: window.location.href = '/order-details/KFC20250516-123456';
+        }
+
+        // Simulate dynamic data loading (replace with actual backend data)
+        document.addEventListener('DOMContentLoaded', () => {
+            // In production, fetch order details from backend API
+            const orderData = {
+                orderId: 'KFC20250516-123456',
+                paymentMethod: 'icash Pay',
+                pickupMethod: '預訂快取',
+                pickupTime: '2025-05-16 12:30',
+                store: '台北市中山北路店'
+            };
+            // Update DOM with orderData if needed
+        });
+    </script>
+</body>
+</html>

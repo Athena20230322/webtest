@@ -41,7 +41,7 @@ const data = {
     Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
     TradeMode: "2",
     CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke",
-    RedirectURL: "https://www.google.com",
+    RedirectURL: "https://script.google.com/macros/s/AKfycbweCmH_oClGBqUaz0QrhT764SAnXgDLxsNwC9clq9dS5gVJkcNJSXT27fyjbrB3wlXDzQ/exec",
 };
 
 // AES 密鑰與 IV

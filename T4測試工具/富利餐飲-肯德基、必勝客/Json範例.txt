@@ -1,0 +1,22 @@
+{
+   "PlatformID":"10523348",
+   "MerchantID":"10523348",
+   "MerchantTradeNo":"202211091732001001",
+   "StoreID":"ICASH-001",
+   "StoreName":"肯德基",
+   "MerchantTradeDate":"2022/11/09 17:32:01",
+   "TotalAmount":"100",
+   "ItemAmt":"100",
+   "UtilityAmt":"0",
+   "ItemNonRedeemAmt":"0",
+   "UtilityNonRedeemAmt":"0",
+   "NonPointAmt":"0",
+   "TradeMode":"1",
+   "CallbackURL":"http://localhost/MockMerchant/api/Test/CheckoutResult"
+}
+
+{
+   "PlatformID":"10523348",
+   "MerchantID":"10523348",
+   "MerchantTradeNo":"202211091732001001"
+}

@@ -35,9 +35,9 @@ const data = {
     BindingSubject:"YOXI綁定",
     RedeemFlag:"0",
     ExpiredType:"1",
-    TotalAmtLimit:"10000",
+    TotalAmtLimit:"1000",
     NonPointAmt: "0", 
-    MaxMonthAmt: "30000000",
+    MaxMonthAmt: "711",
 };
 
 // AES 密鑰與 IV
@@ -118,28 +118,6 @@ const req = https.request(options, (res) => {
            if (approveBindingToken) {
     console.log('ApproveBindingToken:', approveBindingToken);
 
-    // 確保生成 QR Code
-    try {
-        // 輸出至終端
-        const qrCode = await QRCode.toString(approveBindingToken, { type: 'terminal' });
-        console.log('QR Code for ApproveBindingToken:\n', qrCode);
-
-        // 儲存為圖片檔案
-        await QRCode.toFile('qrcode.png', approveBindingToken, {
-            width: 300,
-            margin: 2,
-        });
-        console.log('QR Code saved as qrcode.png');
-    } catch (err) {
-        console.error('Error generating QR Code:', err);
-    }
-} else {
-    console.error('ApproveBindingToken not found in response data.');
-}
-
-           if (approveBindingToken) {
-    console.log('ApproveBindingToken:', approveBindingToken);
-
 
     // 確保生成 QR Code
     try {
@@ -148,11 +126,11 @@ const req = https.request(options, (res) => {
         console.log('QR Code for ApproveBindingToken:\n', qrCode);
 
         // 儲存為圖片檔案
-        await QRCode.toFile('qrcode.png', approveBindingToken, {
+        await QRCode.toFile('yoxisit.png', approveBindingToken, {
             width: 300,
             margin: 2,
         });
-        console.log('QR Code saved as qrcode.png');
+        console.log('QR Code saved as yoxisit.png');
     } catch (err) {
         console.error('Error generating QR Code:', err);
     }

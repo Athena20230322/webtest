@@ -1,0 +1,33 @@
+使用 Windows 登錄檔（Registry）
+你可以在 Windows 登錄檔中添加一個啟動項，讓系統在開機時自動執行你的 .bat 腳本。
+
+步驟：
+創建批處理腳本：
+同方法 1，創建一個 start-server.bat 檔案。
+打開登錄編輯器：
+按下 Win + R，輸入 regedit，然後按 Enter，打開「登錄編輯器」。
+導航到啟動項路徑：
+在登錄編輯器中，導航到以下路徑：
+text
+
+
+
+複製
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+或者，如果你希望對所有使用者生效，可以導航到：
+text
+
+
+
+複製
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+添加新的啟動項：
+在右側窗格中，右鍵點擊空白處，選擇「新建 > 字串值」。
+將其命名為任意名稱（例如 StartNodeServer）。
+雙擊該字串值，在「數值資料」欄位中輸入你的 .bat 檔案的完整路徑，例如：
+text
+
+
+
+複製
+C:\path\to\your\project\folder\start-server.bat
