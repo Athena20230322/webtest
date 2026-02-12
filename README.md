@@ -104,53 +104,54 @@ C:\webtest> node Express.js
 
 此區段提供 `.js` 腳本與後端 API 的對應關係，供開發人員除錯或手動執行時參考。
 
-| 腳本名稱 (.js)                   | 功能說明                       | 對應 API      | 備註                             |
-|------------------------------|----------------------------| ----------- |--------------------------------|
-| **反掃/Web掃碼支付**               |                            |             |                                |
-| `cosmed.js`                  | 康是美 - 反掃扣款                 | `ICPOF001`  |                                |
-| `simplemart.js`              | 美廉社 - 反掃扣款                 | `ICPOF001`  |                                |
-| `icashclubno99.js`           | 愛金卡褔利社99號-反掃扣款             |   `ICPOF001` |                                |
-| `ai-rider.js`                | 剛鈺停車場(統一精工) - 反掃扣款         | `ICPOF001`  |                                |
-| `books.js`                   | 博客來 - 反掃扣款                 | `ICPOF001`  |                                |
-| `carrefourUAT.js`            | 家樂褔 - 反掃扣款                 | `ICPOF001`  |                                |
-| `dreammall.js`               | 高雄夢時代 -反掃扣款                |  `ICPOF001` |                                |
-| `marketpayment.js`           | 統一超商 - 反掃付款                | `ICPOS001`  |                                |
-| `cosmedweb.js`               | 康是美 - 掃描Web付款              | `ICPO0008`  |                                |
-| `booksweb.js`                | 博客來 - 掃描Web付款              | `ICPO0008`  |                                |
-| `JGBwebUAT.js`               | 金箍棒JGBWeb - Web付款 (房東001)  | `ICPO0008`  | `UAT 環境`                       |
-| **主掃/跳轉支付**                  |                            |             |                                |
-| `kfcjump.js`                 | KFC - 產出跳轉付款URL            | `IPCO0002`  |                                |
-| `starbucksjump.js`           | 星巴克 - 產出儲值跳轉URL            | `IPCO0002`  |                                |
-| `bookjumpUAT.js`             | 博客來 - 產出付款成功跳轉URL          |   `IPCO0002`|                                |
-| `iyugo.js`                   | 統一超商(隨時取) - 主掃QR Code      | `ICPO0001` + `ICPO0002` |                                |
-| `iyugoslack.js`              | 統一超商(隨時取) - 主掃QR Code並發送通知 | `(同上)`      | 含 Slack 通知                     |
-| `obedientstore.js`           | 乘乘 - 主掃QR Code             | `ICPO0001` + `ICPO0002` | 未開啟 OP 點數                      |
-| `hotaiconnected.js`          | 和泰聯網 - 主掃QR Code付款         | `ICPO0001` + `ICPO0002` |                                |
-| `tarokouat.js`               | 大魯閣宏誌                      | `ICPO0001`  | `UAT 環境`, `2025/05/06`         |
-| **交易退款**                     |                            |             |                                |
-| `cosmedrefund.js`            | 康是美 - 退款                   | `ICPO0004`  | 需先執行扣款                         |
-| `marketpaymentrefund.js`     | 統一超商 - 反掃退款                | `ICPOS002`  |                                |
-| `markettoprefund.js`         | 統一超商 - 儲值退款                | `ICPOS005`  | 2025/02/06 顯示退貨失敗，需同店退         |
-| `iyugorefund.js`             | 統一超商(隨時取) - 退款             | `ICPO0004`  | 需先執行iyugoquerytrade.js查詢       |
-| `kfcjumprefund.js`           | KFC - 退款                   | `ICPO0004`  | 需先完成查詢, `2025/02/23`           |
-| **交易查詢**                     |                            |             |                                |
-| `cosmedquerytrade.js`        | 康是美 - 查詢交易結果               | `ICPO0005`  | `EncData` 需載入 `MerchantTradeNo` |
-| `iyugoquerytrade.js`         | 統一超商(隨時取) - 查詢交易結果         | `ICPO0005`  |                                |
-| `kfcjumpquerytrade.js`       | KFC - 查詢交易結果               | `ICPO0005`  | `2025/02/23`                   |
-| **儲值**                       |                            |             |                                |
-| `markettopup.js`             | 統一超商 - 儲值                  | `ICPOS004`  |                                |
-| `markettopupuat.js`          | 統一超商 - 儲值                  | `ICPOS004`  | `UAT環境`                        |
-| **授權綁定**                     |                            |             |                                |
-| `statbucksbinding.js`        | 星巴克(悠遊生活) - 授權綁定           | `ICPOB0000` | 固定扣款額度                         |
-| `Mertotaxibinding.js`        | 大都會車隊 - 授權綁定               | `ICPOB0000` | 固定扣款額度                         |
-| `Mertotaxibindingtoslack.js` | 大都會車隊 - 授權綁定 (含 Slack 通知)  | `ICPOB0000` |                                |
-| `bookhouse.js`               | 財團法人孩子的書屋 - 授權綁定           | `ICPOB0000` | 固定扣款額度                         |
-| `yoxibinding.js`             | YOXI - 授權綁定                | `ICPOB0000` | 可自訂每月扣款上限                      |
-| `yoxibindingUAT.js`          | YOXI - 授權綁定                | `ICPOB0000` | `UAT 環境`                       |
-| `yuantabinding.js`           | 元大投信 - 授權綁定                | `ICPOB0000` | 可自訂每月扣款上限                      |
-| `yuantabingingtoslack.js`    | 元大投信 - 授權綁定 (含 Slack 通知)   | `ICPOB0000` |                                |
-| `binding711paid.js`          | UAT 統一超商付費會員               | `(N/A)`     | 年扣定額可改                         |
-| `Mertotaxicancelbinding.js`  | 大都會車隊 - 取消授權綁定             | `ICPO0003`  | 需先成功綁定                         |
+| 腳本名稱 (.js)              | 功能說明                       | 對應 API                  | 備註                           |
+|-------------------------|----------------------------|-------------------------|------------------------------|
+| **反掃/Web掃碼支付**          |                            |                         |                              |
+| `cosmed.js`             | 康是美 - 反掃扣款                 | `ICPOF001`              |                              |
+| `simplemart.js`         | 美廉社 - 反掃扣款                 | `ICPOF001`              |                              |
+| `icashclubno99.js`      | 愛金卡褔利社99號-反掃扣款             | `ICPOF001`              |                              |
+| `ai-rider.js`           | 剛鈺停車場(統一精工) - 反掃扣款         | `ICPOF001`              |                              |
+| `books.js`              | 博客來 - 反掃扣款                 | `ICPOF001`              |                              |
+| `carrefourUAT.js`       | 家樂褔 - 反掃扣款                 | `ICPOF001`              |                              |
+| `dreammall.js`          | 高雄夢時代 -反掃扣款                | `ICPOF001`              |                              |
+| `marketpayment.js`      | 統一超商 - 反掃付款                | `ICPOS001`              |                              |
+| `cosmedweb.js`          | 康是美 - 掃描Web付款              | `ICPO0008`              |                              |
+| `booksweb.js`           | 博客來 - 掃描Web付款              | `ICPO0008`              |                              |
+| `JGBwebUAT.js`          | 金箍棒JGBWeb - Web付款 (房東001)  | `ICPO0008`              | `UAT 環境`                     |
+| **主掃/跳轉支付**             |                            |                         |                              |
+| `kfcjump.js`            | KFC - 產出跳轉付款URL            | `IPCO0002`              |                              |
+| `starbucksjump.js`      | 星巴克 - 產出儲值跳轉URL            | `IPCO0002`              |                              |
+| `bookjumpUAT.js`        | 博客來 - 產出付款成功跳轉URL          | `IPCO0002`              |                              |
+| `iyugo.js`              | 統一超商(隨時取) - 主掃QR Code      | `ICPO0001` + `ICPO0002` |                              |
+| `iyugoslack.js`         | 統一超商(隨時取) - 主掃QR Code並發送通知 | `(同上)`                  | 含 Slack 通知                   |
+| `foodomo.js`            | Foodmo 付款                  |      `(同上)`                   |     含 Slack 通知                 |
+| `obedientstore.js`      | 乘乘 - 主掃QR Code             | `ICPO0001` + `ICPO0002` | 未開啟 OP 點數                    |
+| `hotaiconnected.js`     | 和泰聯網 - 主掃QR Code付款         | `ICPO0001` + `ICPO0002` |                              |
+| `tarokouat.js`          | 大魯閣宏誌                      | `ICPO0001`              | `UAT 環境`, `2025/05/06`       |
+| **交易退款**                |                            |                         |                              |
+| `cosmedrefund.js`       | 康是美 - 退款                   | `ICPO0004`              | 需先執行扣款                       |
+| `marketpaymentrefund.js` | 統一超商 - 反掃退款                | `ICPOS002`              |                              |
+| `markettoprefund.js`    | 統一超商 - 儲值退款                | `ICPOS005`              | 2025/02/06 顯示退貨失敗，需同店退       |
+| `iyugorefund.js`        | 統一超商(隨時取) - 退款             | `ICPO0004`              | 需先執行iyugoquerytrade.js查詢     |
+| `kfcjumprefund.js`      | KFC - 退款                   | `ICPO0004`              | 需先完成查詢, `2025/02/23`         |
+| **交易查詢**                |                            |                         |                              |
+| `cosmedquerytrade.js`   | 康是美 - 查詢交易結果               | `ICPO0005`              | `EncData` 需載入 `MerchantTradeNo` |
+| `iyugoquerytrade.js`    | 統一超商(隨時取) - 查詢交易結果         | `ICPO0005`              |                              |
+| `kfcjumpquerytrade.js`  | KFC - 查詢交易結果               | `ICPO0005`              | `2025/02/23`                 |
+| **儲值**                  |                            |                         |                              |
+| `markettopup.js`        | 統一超商 - 儲值                  | `ICPOS004`              |                              |
+| `markettopupuat.js`     | 統一超商 - 儲值                  | `ICPOS004`              | `UAT環境`                      |
+| **授權綁定**                |                            |                         |                              |
+| `statbucksbinding.js`   | 星巴克(悠遊生活) - 授權綁定           | `ICPOB0000`             | 固定扣款額度                       |
+| `Mertotaxibinding.js`   | 大都會車隊 - 授權綁定               | `ICPOB0000`             | 固定扣款額度                       |
+| `Mertotaxibindingtoslack.js` | 大都會車隊 - 授權綁定 (含 Slack 通知)  | `ICPOB0000`             |                              |
+| `bookhouse.js`          | 財團法人孩子的書屋 - 授權綁定           | `ICPOB0000`             | 固定扣款額度                       |
+| `yoxibinding.js`        | YOXI - 授權綁定                | `ICPOB0000`             | 可自訂每月扣款上限                    |
+| `yoxibindingUAT.js`     | YOXI - 授權綁定                | `ICPOB0000`             | `UAT 環境`                     |
+| `yuantabinding.js`      | 元大投信 - 授權綁定                | `ICPOB0000`             | 可自訂每月扣款上限                    |
+| `yuantabingingtoslack.js` | 元大投信 - 授權綁定 (含 Slack 通知)   | `ICPOB0000`             |                              |
+| `binding711paid.js`     | UAT 統一超商付費會員               | `(N/A)`                 | 年扣定額可改                       |
+| `Mertotaxicancelbinding.js` | 大都會車隊 - 取消授權綁定             | `ICPO0003`              | 需先成功綁定                       |
 
 > **⚠️ 重要提示: 授權綁定**
 >
@@ -168,6 +169,7 @@ C:\webtest> node Express.js
     4.  `processRidePaymentold.js`: 整合dopayment and dopayment2 即可模擬市車敬老票乘車碼扣款。
     5.  `processRidePaymentmrts.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
     6.  `processRidePaymentmrtadult.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
+    7.  `processhoshinebusuat.js`: 整合dopayment and dopaymentmrt 即可模擬UAT市車乘車碼扣款。
     
    
   - **其他相關腳本:**
