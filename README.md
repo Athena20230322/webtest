@@ -171,6 +171,15 @@ C:\webtest> node Express.js
     6.  `processRidePaymentmrtadult.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
     7.  `processhoshinebusuat.js`: 整合dopayment and dopaymentmrt 即可模擬UAT市車乘車碼扣款。
     
+     報錯RtnCode:9999
+  - Merchant ID 與 Terminal ID 的綁定關係：
+    雖然你用了範例中的 terminalId: A01630526，但 Staging Server 可能規定：A01630526 這個終端機必須隸屬於某個特定的 merchantId。
+  - 如果你傳的 10524012 與該終端機在後端系統中沒有關聯，後端查詢時會噴 Exception。
+  - 本地測試 (Target: Local) ✅ 成功：
+     這證明了你的 Node.js 程式碼在加密邏輯 (AES/RSA)、封包結構 (JSON)、時間格式、MAC 生成、網路傳輸這幾個環節是 100% 正確的。
+  - 如果程式碼格式有誤，本地 Server 會直接噴錯。 
+  - Staging 測試 (Target: Staging) ❌ 失敗 (9999)： 
+  - 這說明 Staging Server 雖然接收並解開了你的封包，但在執行「後端商務邏輯」時發生了崩潰
    
   - **其他相關腳本:**
       - `dopaymentmrt.js`: 直接模擬北捷乘車碼扣款。
