@@ -3,8 +3,7 @@ const crypto = require('crypto');
 const forge = require('node-forge');
 const { Buffer } = require('buffer');
 
-// --- 靜態設定區 ---
-// 已更新為 dopayment2.js 中台北捷運的設定
+// --- 靜態設定區 (保留原始設定不變) ---
 const config = {
     aesKey: 'T76LqZlcVGJnsxdHxZD73LvOtYsajcY6',
     aesIV: 'KBQAKeKKXXYe9mMp',
@@ -14,27 +13,17 @@ MIIEpAIBAAKCAQEAuJ789Fnv1/7jTeqbrlSr33cnnJkbvu5ef+XP+3XymI0/+05dlXn7Cs2OxEeC6LzZ
     encKeyID: '261418',
     apiHost: 'icp-payment-stage.icashpay.com.tw',
     apiPath: '/api/V2/Payment/Traffic/DoPayment',
-    merchantId: '10526420', // Taipei MRT merchant ID
-    terminalId: 'TAIPEI_MRT_TERMINAL_001' // Taipei MRT terminal ID
+    merchantId: '10526420',
+    terminalId: 'A03330510'
 };
 
-
-// --- Part 1: 從 dopayment.js 移植的解析函式 ---
-// (此部分無變動)
+// --- Part 1: 解析函式 ---
 function base64Decode(encodedData) {
-    console.log("\n1. Base64解碼...");
     try {
         encodedData = encodedData.trim();
-        while (encodedData.length % 4 !== 0) {
-            encodedData += '=';
-        }
-        const decodedData = Buffer.from(encodedData, 'base64');
-        console.log(`解碼成功 (長度: ${decodedData.length} 字節)`);
-        return decodedData;
-    } catch (e) {
-        console.log(`解碼錯誤: ${e.message}`);
-        return null;
-    }
+        while (encodedData.length % 4 !== 0) { encodedData += '='; }
+        return Buffer.from(encodedData, 'base64');
+    } catch (e) { return null; }
 }
 
 function parseTLV(data) {
@@ -58,118 +47,88 @@ function parseTLV(data) {
     return result;
 }
 
-function extractOrgQrcodeFromTLV(tlvData) {
-    console.log("\n2. 從TLV中提取orgQrcode...");
+function extractDataFromTLV(tlvData) {
     const tag54Item = tlvData.find(item => item.tag === '54');
-    if (!tag54Item) {
-        console.log("錯誤: 在主結構中未找到 Tag 54 的數據");
-        return null;
-    }
-
-    console.log("--- 正在對 Tag 54 進行巢狀解析 (Debug Info) ---");
+    if (!tag54Item) return { orgQrcode: null, qr43: null };
     const nestedTlvData = parseTLV(tag54Item.value);
-    nestedTlvData.forEach(item => {
-        console.log(`  [巢狀] Tag: ${item.tag}, Length: ${item.length}, Value: ${item.value_str}`);
-    });
-    console.log("------------------------------------------");
-
-    const orgQrcodeItem46 = nestedTlvData.find(item => item.tag === '46');
-    if (orgQrcodeItem46) {
-        const extractedValue = orgQrcodeItem46.value_str;
-        console.log(`成功: 從巢狀 Tag '46' 中提取的 orgQrcode: ${extractedValue}`);
-        return extractedValue;
-    }
-
-    const orgQrcodeItem01 = nestedTlvData.find(item => item.tag === '01');
-    if (orgQrcodeItem01) {
-        const extractedValue = orgQrcodeItem01.value_str;
-        console.log(`成功: 從巢狀 Tag '01' 中提取的 orgQrcode: ${extractedValue}`);
-        return extractedValue;
-    }
-
-    console.log("警告: 未能在 Tag 54 的巢狀結構中找到 Tag '46' 或 '01'。");
-    const tag54Value = tag54Item.value_str;
-    const startIndex = tag54Value.indexOf('F');
-    const endIndex = tag54Value.indexOf('H+');
-    if (startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
-        const extractedValue = tag54Value.substring(startIndex + 1, endIndex);
-        console.log(`成功: 從舊格式中提取的 orgQrcode: ${extractedValue}`);
-        return extractedValue;
-    }
-
-    console.log("錯誤: 無法從任何已知格式中提取 orgQrcode。");
-    return null;
+    const orgQrcode = nestedTlvData.find(item => item.tag === '46')?.value_str ||
+                      nestedTlvData.find(item => item.tag === '01')?.value_str;
+    // 【修改註記】強化 qr43 提取邏輯，若 TLV 沒抓到則用 config 的 terminalId 作為 fallback
+    const qr43 = nestedTlvData.find(item => item.tag === '43')?.value_str || config.terminalId;
+    return { orgQrcode, qr43 };
 }
 
-// --- Part 2: 從 dopayment2.js 移植的交易函式 ---
+// --- Part 2: 交易函式 ---
 
-// 【***程式碼修改處***】: Build transaction record for Taipei MRT (Adult Fare)
 function buildTransactionRecord(orgQrcode) {
     const now = new Date();
-    const timestamp = now.toISOString().replace(/[-:T]/g, '').slice(0, 14);
-    const entryTimestamp = timestamp;
-    const exitTimestamp = new Date(now.getTime() + 30 * 60 * 1000)
-        .toISOString().replace(/[-:T]/g, '').slice(0, 14);
+    const ts = now.getFullYear().toString() +
+               (now.getMonth() + 1).toString().padStart(2, '0') +
+               now.getDate().toString().padStart(2, '0') +
+               now.getHours().toString().padStart(2, '0') +
+               now.getMinutes().toString().padStart(2, '0') +
+               now.getSeconds().toString().padStart(2, '0');
+
+    const recordId = `G${ts.slice(2)}${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`;
 
     return {
         version: "01.00",
         orgQrcode: orgQrcode,
         terminalPosParam: {
-            recordId: `TR${timestamp}${Math.floor(Math.random() * 10000)}`.padEnd(20, '0'),
+            recordId: recordId,
             merchantId: config.merchantId,
             consumptionType: "1",
-            transactionType: "2",
+            // 【修改註記】將 transactionType 由 "2" 改為 "110" (一般交通扣款標準代碼)
+            transactionType: "110",
             terminalId: config.terminalId,
-            merchantType: "2",
+            terminalMfId: config.terminalId, // 【修改註記】補上 terminalMfId 避免欄位缺失
+            merchantType: "3", // 【修改註記】捷運/公車類通常建議設為 3
             currency: "TWD",
             originalAmount: 30,
-            discountAmount: 0, // <--- 修改為 0 (無優惠)
-            transactionAmount: 30, // <--- 修改為 30 (實際扣款 = 原始金額)
-            discountInfo: [], // <--- 修改為空陣列
-            transactionDatetime: exitTimestamp,
+            discountAmount: 0,
+            transactionAmount: 30,
+            discountInfo: null, // 【修改註記】改為 null 較符合 API 規範
+            transactionDatetime: ts,
             stationNo: "BL23",
             stationName: "台北101/世貿",
-            stationName2: "Taipei 101/World Trade Center",
             entryStationNo: "BL12",
             entryStationName: "台北車站",
-            entryStationName2: "Taipei Main Station",
-            entryDatetime: entryTimestamp,
+            entryDatetime: ts,
             exitStationNo: "BL23",
             exitStationName: "台北101/世貿",
-            exitStationName2: "Taipei 101/World Trade Center",
-            exitDatetime: exitTimestamp,
-            txnPersonalProfile: "0", // <--- 修改為 "0" (一般成人)
-            penalty: 0,
+            exitDatetime: ts,
+            txnPersonalProfile: "1",
+            penalty: "0",
             advanceAmt: 0,
-            personalUsePoints: 0,
-            personalCounter: 0,
-            shiftStart: timestamp,
+            personalUsePoints: "0",
+            personalCounter: "0",
+            shiftStart: ts,
+            // 【修改註記】增加 extendParameters 結構，這是 V2 交通 API 必帶的擴充參數
+            extendParameters: {
+                issueId: 3,
+                parameters: [
+                    { name: "entryExitFlag", value: "1" }
+                ]
+            }
         },
-        qr80: "",
-        qr8A: ""
+        qr80: null, // 【修改註記】與標準格式同步，設為 null
+        qr8A: null
     };
-}
-
-
-function encryptAES(data, key, iv) {
-    try {
-        const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(key, 'utf8'), Buffer.from(iv, 'utf8'));
-        let encrypted = cipher.update(data, 'utf8', 'base64');
-        encrypted += cipher.final('base64');
-        return encrypted;
-    } catch (error) {
-        console.error('AES加密失敗:', error);
-        throw error;
-    }
 }
 
 function generatePaymentMAC(qr43, transDate, amount, qr80, qr8A, privateKeyPem) {
     try {
-        const signData = `${qr43}${transDate}${amount.toString().padStart(8, '0')}${qr80}${qr8A}`;
+        // 【修改註記】處理 null 值避免簽章內容出現 "null" 字串
+        const safeQr80 = qr80 || "";
+        const safeQr8A = qr8A || "";
+        const signData = `${qr43}${transDate}${amount.toString().padStart(8, '0')}${safeQr80}${safeQr8A}`;
+
         const md = forge.md.sha256.create();
         md.update(signData, 'utf8');
         const privateKey = forge.pki.privateKeyFromPem(privateKeyPem);
         const signature = privateKey.sign(md);
+
+        // 【修改註記】重要：icash Pay 交通支付簽章通常只取前 20 位字元
         return forge.util.encode64(signature).slice(0, 20);
     } catch (error) {
         console.error('生成支付MAC失敗:', error);
@@ -177,104 +136,87 @@ function generatePaymentMAC(qr43, transDate, amount, qr80, qr8A, privateKeyPem) 
     }
 }
 
-// --- Part 3: 整合後的主執行函式 ---
-// (此部分無變動)
+// --- Part 3: 主執行函式 ---
+
 async function processPayment(qrDataString) {
     try {
         const decodedData = base64Decode(qrDataString);
         if (!decodedData) throw new Error("Base64 解碼失敗");
 
         const tlvData = parseTLV(decodedData);
-        const orgQrcode = extractOrgQrcodeFromTLV(tlvData);
-        if (!orgQrcode) throw new Error("無法從 Tag 54 提取 orgQrcode");
+        const { orgQrcode, qr43 } = extractDataFromTLV(tlvData);
+
+        if (!orgQrcode) throw new Error(`提取 orgQrcode 失敗`);
 
         const transactionRecord = buildTransactionRecord(orgQrcode);
-        console.log('\n3. 建立交易紀錄:', JSON.stringify(transactionRecord, null, 2));
+        const params = transactionRecord.terminalPosParam;
 
-        const encryptedData = encryptAES(JSON.stringify(transactionRecord), config.aesKey, config.aesIV);
-        console.log('\n4. 加密後的交易資料 (此步驟資料僅供參考，未發送到API):', encryptedData);
+        const paymentMAC = generatePaymentMAC(
+            qr43,
+            params.transactionDatetime,
+            params.transactionAmount,
+            transactionRecord.qr80,
+            transactionRecord.qr8A,
+            config.privateKey
+        );
 
-        const qr43 = "1234567890123456";
-        const transDate = transactionRecord.terminalPosParam.transactionDatetime;
-        const amount = transactionRecord.terminalPosParam.transactionAmount;
-        const qr80 = transactionRecord.qr80 || "010203040506070809";
-        const qr8A = transactionRecord.qr8A || "0102030405060708";
-        const paymentMAC = generatePaymentMAC(qr43, transDate, amount, qr80, qr8A, config.privateKey);
-        console.log('\n5. 生成的支付 MAC:', paymentMAC);
-
+        // 【修改註記】補全 API 要求的完整 Request Body 結構
         const requestData = {
             record: transactionRecord,
-            sign: paymentMAC
+            sign: paymentMAC,
+            Timestamp: Math.floor(Date.now() / 1000),
+            PlatformID: "",
+            MerchantID: config.merchantId,
+            DeviceID: config.terminalId
         };
 
-        console.log("\n6. 發送 API 請求...");
+        console.log(`--- 準備發送交易 ---`);
+        console.log(`Generated RecordId: ${params.recordId}`);
+
         const response = await new Promise((resolve, reject) => {
             const postData = JSON.stringify(requestData);
             const options = {
                 hostname: config.apiHost,
+                port: 443, // 【修改註記】明確指定 443 端口
                 path: config.apiPath,
                 method: 'POST',
                 headers: {
                     'X-iCP-EncKeyID': config.encKeyID,
                     'Content-Type': 'application/json',
                     'Content-Length': Buffer.byteLength(postData)
-                }
+                },
+                rejectUnauthorized: false // 【修改註記】跳過 Stage 環境可能的憑證驗證錯誤
             };
             const req = https.request(options, (res) => {
                 let data = '';
-                res.setEncoding('utf8');
                 res.on('data', (chunk) => data += chunk);
                 res.on('end', () => {
-                    try {
-                        resolve(JSON.parse(data));
-                    } catch (e) {
-                        reject(new Error(`API 回應解析失敗: ${e.message}`));
-                    }
+                    try { resolve(JSON.parse(data)); }
+                    catch (e) { reject(new Error("伺服器返回非 JSON 格式: " + data)); }
                 });
             });
-
             req.on('error', reject);
-
-            req.setTimeout(30000, () => {
-                req.destroy();
-                reject(new Error('請求超時: 伺服器在30秒內沒有回應。'));
-            });
-
             req.write(postData);
             req.end();
         });
 
-        console.log('\n7. 伺服器回應:', response);
-        if (response.rc == '00000' || response.rc == 0) {
-            console.log('\n====================');
-            console.log('✅ 支付成功');
-            console.log('交易資訊:', response.transactionInfo);
-            console.log('====================');
+        console.log('\n伺服器回應:', JSON.stringify(response, null, 2));
+
+        const code = response.RtnCode !== undefined ? response.RtnCode : response.rc;
+        if (code == '0000' || code == '00000' || code == 0) {
+            console.log('\n✅ 支付成功');
         } else {
-            console.error('\n====================');
-            console.error('❌ 支付失敗:', response.rm);
-            console.error('錯誤代碼:', response.rc);
-            console.error('====================');
+            console.log(`\n❌ 支付失敗: ${response.RtnMsg || response.rm} (代碼: ${code})`);
         }
 
     } catch (error) {
-        if (error.message === '請求超時: 伺服器在30秒內沒有回應。') {
-            console.log('\n====================');
-            console.log('⏳ 請求已送出，等待伺服器最終確認...');
-            console.log('伺服器未在30秒內回傳確認訊息。交易可能已成功，請稍後於系統後台查詢交易狀態。');
-            console.log('====================');
-        } else {
-            console.error('\n[主流程錯誤] 支付處理異常:', error.message);
-        }
+        console.error('\n[錯誤]:', error.message);
     }
 }
 
-// --- 程式進入點 ---
 const qrDataFromScanner = process.argv[2];
-
 if (!qrDataFromScanner) {
-    console.error("錯誤: 請提供掃描槍掃描的 Base64 字串作為參數。");
-    console.log("用法: node <filename>.js <掃描的Base64字串>");
+    console.error("用法: node script.js <Base64_QR_Data>");
 } else {
     processPayment(qrDataFromScanner);
 }

@@ -1,2 +1,2 @@
-TransactionID: null
-MerchantTradeNo: null
+TransactionID: 20260226160635357670
+MerchantTradeNo: Sample20260226160146

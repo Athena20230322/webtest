@@ -37,7 +37,7 @@ const data = {
     ExpiredType:"1",
     TotalAmtLimit:"10000",
     NonPointAmt: "0", 
-    MaxMonthAmt: "30000000",
+    MaxMonthAmt: "3000",
 };
 
 // AES 密鑰與 IV

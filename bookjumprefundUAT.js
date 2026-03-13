@@ -62,8 +62,8 @@ const data = {
     StoreID: "TM01",
     StoreName: "BOOK",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
-    RefundTotalAmount: "10000",
-    RefundItemAmt: "10000",
+    RefundTotalAmount: "1000",
+    RefundItemAmt: "1000",
     RefundUtilityAmt: "0",
     RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,

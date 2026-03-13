@@ -65,8 +65,8 @@ rl.question('請輸入付款條碼 (BarCode): ', (inputBarCode) => {
         StoreID: "TM01",
         StoreName: "家樂褔購物",
         MerchantTradeDate: tradeDate, // 動態 MerchantTradeDate
-        TotalAmount: "10000",
-        ItemAmt: "10000",
+        TotalAmount: "1000",
+        ItemAmt: "1000",
         UtilityAmt: "0",
         CommAmt: "0",
         ItemNonRedeemAmt: "0",

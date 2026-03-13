@@ -3,9 +3,19 @@ const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 const axios = require('axios');
 const fs = require('fs'); // 引入 fs 模組以進行檔案操作
+const dotenv = require('dotenv'); // 引入 dotenv 模組
+require('dotenv').config();
+const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
+// 指定 .env 檔案的絕對路徑並載入環境變數
+dotenv.config({ path: 'c:/webtest20250123/.env' });
 
+
+if (!SLACK_WEBHOOK_URL) {
+    console.error("錯誤：找不到 SLACK_WEBHOOK_URL 環境變數");
+    process.exit(1);
+    }
 // 你的 Slack Webhook URL
-const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+//const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 // 取得當前時間
 function getCurrentTime() {
@@ -130,7 +140,7 @@ const req = https.request(options, (res) => {
                     console.log('Trade Token:', parsedData.TradeToken);
 
                     // 產生 ICP 支付 URL
-                    const icpPaymentUrl = `https://icpbridge.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
+                    const icpPaymentUrl = `https://icpbridge-dev.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
                     console.log('ICP Payment URL:', icpPaymentUrl);
 
                     // 傳送到 Slack

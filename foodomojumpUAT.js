@@ -130,7 +130,7 @@ const req = https.request(options, (res) => {
                     console.log('Trade Token:', parsedData.TradeToken);
 
                     // 產生 ICP 支付 URL
-                    const icpPaymentUrl = `https://icpbridge.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
+                    const icpPaymentUrl = `https://icpbridge-test.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
                     console.log('ICP Payment URL:', icpPaymentUrl);
 
                     // 傳送到 Slack

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP 解鎖助手</title>
+    <style>
+        :root { --primary-color: #007bff; --success-color: #28a745; }
+        body { font-family: "Microsoft JhengHei", sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 350px; text-align: center; }
+        h2 { margin-top: 0; color: #333; font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .input-group { margin: 20px 0; }
+        input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
+        input:focus { border-color: var(--primary-color); outline: none; }
+        button { width: 100%; padding: 12px; background-color: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
+        button:active { opacity: 0.8; }
+        #msg { margin-top: 15px; font-size: 14px; min-height: 20px; color: var(--success-color); font-weight: 500; }
+        .hint { font-size: 12px; color: #888; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>OTP 解鎖工具</h2>
+    
+    <div class="input-group">
+        <input type="text" id="midInput" placeholder="請輸入 MID (如: 10554433)" autofocus>
+    </div>
+    
+    <button onclick="runUnlock()">立即解鎖</button>
+    
+    <div id="msg"></div>
+    
+    <p class="hint">※ 執行前請確認已登入預博後台</p>
+</div>
+
+<script>
+    // 支援按下 Enter 鍵直接執行
+    document.getElementById('midInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') runUnlock();
+    });
+
+    function runUnlock() {
+        const input = document.getElementById('midInput');
+        const msg = document.getElementById('msg');
+        const mid = input.value.trim();
+
+        if (!mid) {
+            msg.style.color = 'red';
+            msg.innerText = '錯誤：尚未輸入 MID';
+            return;
+        }
+
+        // 構造與截圖一致的 URL
+        const url = `https://icp-admin-preprod.icashpay.com.tw/Admin/CustomerManager/UnlockSMS/${mid}`;
+
+        // 使用 window.open 開啟極小視窗執行
+        const win = window.open(url, 'unlockWin', 'width=10,height=10,left=2000,top=2000');
+
+        // 顯示成功狀態
+        msg.style.color = 'var(--success-color)';
+        msg.innerText = `✅ MID ${mid} 請求已送出`;
+
+        // 自動清空輸入框並聚焦，方便下一筆輸入
+        input.value = '';
+        input.focus();
+
+        // 2秒後自動關閉背景視窗與清除提示
+        setTimeout(() => {
+            if (win) win.close();
+            msg.innerText = '';
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>
