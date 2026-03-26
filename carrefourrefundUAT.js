@@ -59,11 +59,11 @@ const data = {
     MerchantID: "10533993",
     OMerchantTradeNo: OMerchantTradeNo, // 載入 MerchantTradeNo 的值
     TransactionID: TransactionID,       // 載入 TransactionID 的值
-    StoreID: "TM01",
+    StoreID: "QATM01",
     StoreName: "家樂褔購物",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
-    RefundTotalAmount: "10000",
-    RefundItemAmt: "10000",
+    RefundTotalAmount: "1000",
+    RefundItemAmt: "1000",
     RefundUtilityAmt: "0",
     RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,
