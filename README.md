@@ -180,7 +180,7 @@ C:\webtest> node Express.js
     4.  `processRidePaymentold.js`: 整合dopayment and dopayment2 即可模擬市車敬老票乘車碼扣款。
     5.  `processRidePaymentmrts.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
     6.  `processRidePaymentmrtadult.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
-    7.  `processhoshinebusuat.js`: 整合dopayment and dopaymentmrt 即可模擬UAT市車乘車碼扣款。
+    7.  `processhoshinebusuat.js`: 整合dopayment and dopaymentmrt 即可模擬UAT市車乘車碼扣款。 2026/03/16 測試修改OK
     
      報錯RtnCode:9999
   - Merchant ID 與 Terminal ID 的綁定關係：
@@ -204,7 +204,17 @@ C:\webtest> node Express.js
   - `fisckor.js`: 韓國跨境支付 (依賴財金公司測試環境)。
   - `logreport_generator.py`: 網頁小工具使用率統計。
   - `comedonline3ds.js`: 待中心調整ok再次確認。
+  -  `carrefourUATreadbarcode.js`: 讀取家樂褔付款條碼UAT。
   -  `bookswebUAT.js`: 博客來web付款成功，再打取消交易->ICPO0006，待10分鐘後台才能看到。
+  -  `run_login711paycashandOP.js`: 搭配執行登入此帳號執行超商SIT 部分點+金。
+  -   `marketpaymentautocashandop.js`: 超商SIT付款 部分點+金。
+  -   `marketpaymentrefundauto.js`: 超商SIT退款 部分點+金。
+     正掃Qrcode 退款步驟
+
+     1.家樂褔UAT正掃QRcode
+     2.先到後台查詢 特店訂單編號 載入，carrefourjumpquerytradeUATICPO.js_查詢訂單號碼API
+     3.carrefourrefundUATICPO.js_退款API 
+  - 
   - Pilot : https://icpbridge.icashsys.com.tw
   - SIT : https://icpbridge-dev.icashsys.com.tw
   - UAT:https://icpbridge-test.icashsys.com.tw
