@@ -210,10 +210,12 @@ C:\webtest> node Express.js
   -   `marketpaymentautocashandop.js`: 超商SIT付款 部分點+金。
   -   `marketpaymentrefundauto.js`: 超商SIT退款 部分點+金。
      正掃Qrcode 退款步驟
-
+       
      1.家樂褔UAT正掃QRcode
      2.先到後台查詢 特店訂單編號 載入，carrefourjumpquerytradeUATICPO.js_查詢訂單號碼API
      3.carrefourrefundUATICPO.js_退款API 
+     4. carrefourCancelUATICPO.js 取消API, 正掃付款成功，打取消API，即會沖正。
+
   - 
   - Pilot : https://icpbridge.icashsys.com.tw
   - SIT : https://icpbridge-dev.icashsys.com.tw
