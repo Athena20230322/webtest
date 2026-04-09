@@ -230,6 +230,10 @@ C:\webtest> node Express.js
     1.博客來 booksatoa.js app to app sit 扣款
     2.博客來 booksatoaquerytrade.js sit 查詢交易
     3.博客來 bookatoarefund.js  sit 退款
+    ===============================================================
+    4.康事美91APP cosmed91app.js sit 扣款_50元
+    5.康事美91APP cosmed91appquerytrade.js sit 查詢交易
+    6.康事美91APP cosmed91apprefund.js sit 退款
   - 
   - Pilot : https://icpbridge.icashsys.com.tw
   - SIT : https://icpbridge-dev.icashsys.com.tw
