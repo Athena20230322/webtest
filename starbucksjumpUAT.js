@@ -36,10 +36,10 @@ const { tradeNo, tradeDate } = getCurrentTime();
 
 // 交易數據
 const data = {
-    PlatformID: "10524652",
-    MerchantID: "10524652",
+    PlatformID: "10500855",
+    MerchantID: "10500855",
     MerchantTradeNo: tradeNo,
-    StoreID: "TM01",
+    StoreID: "QATM01",
     StoreName: "星巴克icashpay支付",
     MerchantTradeDate: tradeDate,
     TotalAmount: "50000",
@@ -55,12 +55,12 @@ const data = {
 };
 
 // AES 密鑰與 IV
-const AES_Key = "obix0KiPMQqlDrDKEwtCGHaXPuoytAJZ";
-const AES_IV = "yJQHlnghifLjKLqJ";
+const AES_Key = "1pKBKW0V196IUXLv5R0edxvhwMTycx4j";
+const AES_IV = "cXeUoyqAkgq56aEq";
 
 // 客戶端私鑰
 const Client_Private_Key = `-----BEGIN PRIVATE KEY-----
-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
+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
 -----END PRIVATE KEY-----`;
 
 // AES 加密
@@ -111,11 +111,11 @@ console.log("X-iCP-Signature:", X_iCP_Signature);
 
 // 發送 HTTP 請求
 const options = {
-    hostname: 'icp-payment-stage.icashpay.com.tw',
+    hostname: 'icp-payment-preprod.icashpay.com.tw',
     path: '/api/V2/Payment/Cashier/CreateTradeICPO',
     method: 'POST',
     headers: {
-        'X-iCP-EncKeyID': '218069',
+        'X-iCP-EncKeyID': '217216',
         'X-iCP-Signature': X_iCP_Signature,
         'Content-Type': 'application/x-www-form-urlencoded',
     },
@@ -140,7 +140,7 @@ const req = https.request(options, (res) => {
                     console.log('Trade Token:', parsedData.TradeToken);
 
                     // 產生 ICP 支付 URL
-                    const icpPaymentUrl = `https://icpbridge-dev.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
+                    const icpPaymentUrl = `https://icpbridge-test.icashsys.com.tw/ICP?Actions=Mainaction&Event=ICPO002&Value=${parsedData.TradeToken}&Valuetype=1`;
                     console.log('ICP Payment URL:', icpPaymentUrl);
 
                     // 傳送到 Slack

@@ -122,7 +122,7 @@ C:\webtest> node Express.js
 | `JGBwebUAT.js`                     | 金箍棒JGBWeb - Web付款 (房東001)      | `ICPO0008`            | `UAT 環境`                        |
 | **主掃/跳轉支付**                        |                                |                       |                                 |
 | `kfcjump.js`                       | KFC - 產出跳轉付款URL                | `IPCO0002`            |                                 |
-| `starbucksjump.js`                 | 星巴克 - 產出儲值跳轉URL                | `IPCO0002`            |                                 |
+| `starbucksjumpUAT.js`              | 星巴克 - 產出儲值跳轉URL                | `IPCO0002`            | `UAT 環境` 04/10 ok               |
 | `bookjumpUAT.js`                   | 博客來 - 產出付款成功跳轉URL              | `IPCO0002`            |                                 |
 | `bookjumptwqrUAT.js`               | 博客來TWQR - 產出付款成功跳轉URL          | `IPCO0002`            | `UAT 環境_TWQR跨平台購物URL`           |
 | `iyugo.js`                         | 統一超商(隨時取) - 主掃QR Code          | `ICPO0001` + `ICPO0002` |                                 |
@@ -153,12 +153,12 @@ C:\webtest> node Express.js
 | `markettopup.js`                   | 統一超商 - 儲值                      | `ICPOS004`            |                                 |
 | `markettopupuat.js`                | 統一超商 - 儲值                      | `ICPOS004`            | `UAT環境`                         |
 | **授權綁定**                           |                                |                       |                                 |
-| `statbucksbinding.js`              | 星巴克(悠遊生活) - 授權綁定               | `ICPOB0000`           | 固定扣款額度                          |
+| `statbucksbindingUAT.js`           | 星巴克(悠遊生活) - 授權綁定               | `ICPOB0000`           | 固定扣款額度  `UAT環境`  04/10 ok       |
 | `Mertotaxibinding.js`              | 大都會車隊 - 授權綁定                   | `ICPOB0000`           | 固定扣款額度                          |
 | `Mertotaxibindingtoslack.js`       | 大都會車隊 - 授權綁定 (含 Slack 通知)      | `ICPOB0000`           |                                 |
 | `bookhouse.js`                     | 財團法人孩子的書屋 - 授權綁定               | `ICPOB0000`           | 固定扣款額度                          |
 | `yoxibinding.js`                   | YOXI - 授權綁定                    | `ICPOB0000`           | 可自訂每月扣款上限                       |
-| `yoxibindingUAT.js`                | YOXI - 授權綁定                    | `ICPOB0000`           | `UAT 環境`                        |
+| `yoxibindingUAT.js`                | YOXI - 授權綁定                    | `ICPOB0000`           | `UAT 環境` 04/10 ok               |
 | `yuantabinding.js`                 | 元大投信 - 授權綁定                    | `ICPOB0000`           | 可自訂每月扣款上限                       |
 | `yuantabingingtoslack.js`          | 元大投信 - 授權綁定 (含 Slack 通知)       | `ICPOB0000`           |                                 |
 | `binding711paid.js`                | UAT 統一超商付費會員                   | `(N/A)`               | 年扣定額可改                          |
@@ -217,15 +217,15 @@ C:\webtest> node Express.js
      4. carrefourCancelUATICPO.js 取消API, 正掃付款成功，打取消API，即會沖正。
     =====================================================================
      1.大都會車隊SIT正掃QRcode_這個要嘛純點、要嘛純金，不然就是另外ICP帳戶+剩餘點數扣款
-    2.先到後台查詢 特店訂單編號 載入，MertotaxiSITreadbarcodeICPO.js_查詢訂單號碼API
-    3.MertotaxirefundSITreadbarcodeICPO.js_退款API_退款10元
-    4.MertotaxiSITCancelUATICPO.js_取消API
+     2.先到後台查詢 特店訂單編號 載入，MertotaxiSITreadbarcodeICPO.js_查詢訂單號碼API
+     3.MertotaxirefundSITreadbarcodeICPO.js_退款API_退款10元
+     4.MertotaxiSITCancelUATICPO.js_取消API
     ========================================================================
-    1.多拿滋SIT_TWQR正掃QRcode
-    2.先到後台查詢 特店訂單編號 載入，donutSITreadbarcodeICPO.js_查詢訂單號碼API
-    3.donutrefundSITreadbarcodeICPO.js_退款API_20元 
-    4.donutSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
-    5.donutrefundSITreadbarcodeICPObatch.js 一次性批次退款
+     1.多拿滋SIT_TWQR正掃QRcode
+     2.先到後台查詢 特店訂單編號 載入，donutSITreadbarcodeICPO.js_查詢訂單號碼API
+     3.donutrefundSITreadbarcodeICPO.js_退款API_20元 
+     4.donutSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
+     5.donutrefundSITreadbarcodeICPObatch.js 一次性批次退款
    ==============================================================
     1.博客來 booksatoa.js app to app sit 扣款
     2.博客來 booksatoaquerytrade.js sit 查詢交易
