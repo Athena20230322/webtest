@@ -21,7 +21,7 @@ if (!SLACK_WEBHOOK_URL) {
 function getCurrentTime() {
     const now = new Date();
     const yyyy = now.getFullYear();
-    const MM = String(now.getMonth() + 1).padStart(2, '0'); 
+    const MM = String(now.getMonth() + 1).padStart(2, '0');
     const dd = String(now.getDate()).padStart(2, '0');
     const hh = String(now.getHours()).padStart(2, '0');
     const mm = String(now.getMinutes()).padStart(2, '0');
@@ -40,7 +40,7 @@ const data = {
     MerchantID: "10500855",
     MerchantTradeNo: tradeNo,
     StoreID: "QATM01",
-    StoreName: "星巴克線上儲值支付",
+    StoreName: "APP to APP支付",
     MerchantTradeDate: tradeDate,
     TotalAmount: "5000",
     ItemAmt: "5000",
@@ -49,7 +49,7 @@ const data = {
     UtilityNonRedeemAmt: "0",
     NonPointAmt: "0",
     Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
-    TradeMode: "2",
+    TradeMode: "1",
     CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke",
     RedirectURL: "https://www.starbucks.com.tw/home/",
 };
