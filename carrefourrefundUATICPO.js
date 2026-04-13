@@ -62,8 +62,8 @@ const data = {
     StoreID: "QATM01",
     StoreName: "家樂褔購物",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
-    RefundTotalAmount: "600",
-    RefundItemAmt: "600",
+    RefundTotalAmount: "500",
+    RefundItemAmt: "500",
     RefundUtilityAmt: "0",
     RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,
