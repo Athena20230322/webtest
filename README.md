@@ -215,31 +215,33 @@ C:\webtest> node Express.js
      2.先到後台查詢 特店訂單編號 載入，carrefourjumpquerytradeUATICPO.js_查詢訂單號碼API
      3.carrefourrefundUATICPO.js_退款API /carrefourrefundUATqrcodefivedollars.js_退款5元，可用部份退款
      4.carrefourCancelUATICPO.js 取消API, 正掃付款成功，打取消API，即會沖正。
-    =====================================================================
+     =====================================================================
      1.大都會車隊SIT正掃QRcode_這個要嘛純點、要嘛純金，不然就是另外ICP帳戶+剩餘點數扣款
      2.先到後台查詢 特店訂單編號 載入，MertotaxiSITreadbarcodeICPO.js_查詢訂單號碼API
      3.MertotaxirefundSITreadbarcodeICPO.js_退款API_退款10元
-     4.MertotaxiSITCancelUATICPO.js_取消API
-    ========================================================================
+     4.MertotaxiSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
+     5.MertotaxirefundSITreadbarcodeICPObatch.js  一次性批次退款
+     6.MertotaxiSITCancelUATICPO.js_取消API
+     ========================================================================
      1.多拿滋SIT_TWQR正掃QRcode
      2.先到後台查詢 特店訂單編號 載入，donutSITreadbarcodeICPO.js_查詢訂單號碼API
      3.donutrefundSITreadbarcodeICPO.js_退款API_20元 
      4.donutSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
      5.donutrefundSITreadbarcodeICPObatch.js 一次性批次退款
-   ==========================================================================
-    1.博客來 booksatoa.js app to app sit 扣款
-    2.博客來 booksatoaquerytrade.js sit 查詢交易
-    3.博客來 bookatoarefund.js  sit 退款
-    ===============================================================
-    4.康事美91APP cosmed91app.js sit 扣款_50元
-    5.康事美91APP cosmed91appquerytrade.js sit 查詢交易
-    6.康事美91APP cosmed91apprefund.js sit 退款
-    ===============================================================
-    1.星巴克 starbucksjumpUAT.js web UAT扣款 50元
-    2.星巴克 starbucksjumpUATatoa.js UAT扣款 50元
-    3.星巴克 starbucksquerytradeUATICPO.js UAT 查詢交易
-    4.星巴克 starbucksrefundUATICPO.js UAT 退款
-    ===============================================================
+     ==========================================================================
+     1.博客來 booksatoa.js app to app sit 扣款
+     2.博客來 booksatoaquerytrade.js sit 查詢交易
+     3.博客來 bookatoarefund.js  sit 退款
+     ===============================================================
+     1.康事美91APP cosmed91app.js sit 扣款_50元
+     2.康事美91APP cosmed91appquerytrade.js sit 查詢交易
+     3.康事美91APP cosmed91apprefund.js sit 退款
+     ===============================================================
+     1.星巴克 starbucksjumpUAT.js web UAT扣款 50元
+     2.星巴克 starbucksjumpUATatoa.js UAT扣款 50元
+     3.星巴克 starbucksquerytradeUATICPO.js UAT 查詢交易
+     4.星巴克 starbucksrefundUATICPO.js UAT 退款
+     ===============================================================
   - 
   - Pilot : https://icpbridge.icashsys.com.tw
   - SIT : https://icpbridge-dev.icashsys.com.tw
