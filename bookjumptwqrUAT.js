@@ -8,7 +8,7 @@ const fs = require('fs');
 const dotenv = require('dotenv');
 
 // 1. 先指定絕對路徑並載入環境變數
-dotenv.config({ path: 'c:/webtest20250123/.env' });
+dotenv.config({ path: 'c:/webtes20250123/.env' });
 
 // 2. 載入後再進行賦值
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
@@ -47,7 +47,7 @@ const data = {
     MerchantID: "10510711",
     MerchantTradeNo: tradeNo,
     StoreID: "TM01",
-    StoreName: "Book1223",
+    StoreName: "QA博客來跨平台TWQR",
     MerchantTradeDate: tradeDate,
     TotalAmount: "1000",
     ItemAmt: "1000",
