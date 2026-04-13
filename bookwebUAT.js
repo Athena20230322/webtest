@@ -26,11 +26,11 @@ const data = {
     PlatformID: "10510711",
     MerchantID: "10510711",
     MerchantTradeNo: tradeNo,
-    StoreID: "ICASH-001",
+    StoreID: "QAICASH-001",
     StoreName: "BooksWEB",
     MerchantTradeDate: tradeDate,
-    TotalAmount: "10000",
-    ItemAmt: "10000",
+    TotalAmount: "1000",
+    ItemAmt: "1000",
     UtilityAmt: "0",
     ItemNonRedeemAmt: "0",
     UtilityNonRedeemAmt: "0",
@@ -38,7 +38,7 @@ const data = {
     Item: [{ ItemNo: "001", ItemName: "測試商品1", Quantity: "1" }],
     TradeMode: "2",
     CallbackURL: "https://prod-21.japaneast.logic.azure.com/workflows/896a5a51348c488386c686c8e83293c8/triggers/ICPOB002/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FICPOB002%2Frun&sv=1.0&sig=81SiqqBYwWTplvxc3OSCCU6sk9oNT6nI4w5t9Z8v6j4",
-    RedirectURL: "https://www.google.com",
+    RedirectURL: "https://www.books.com.tw/",
 };
 
 const AES_Key = "59953mTrHoNvVrXITDi9e8EQUD6wChxE";
