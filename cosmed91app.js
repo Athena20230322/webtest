@@ -1,8 +1,19 @@
 const https = require('https');
-const fs = require('fs'); // 引入檔案系統模組
+const fs = require('fs');
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
+const axios = require('axios');
 const { exec } = require('child_process');
+const dotenv = require('dotenv');
+
+// 載入環境變數 (請確保路徑正確)
+dotenv.config({ path: 'c:/webtes20250123/.env' });
+const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
+
+if (!SLACK_WEBHOOK_URL) {
+    console.error("錯誤：找不到 SLACK_WEBHOOK_URL 環境變數");
+    // process.exit(1); // 若沒設定 Webhook 則停止，或註解掉以繼續執行 API
+}
 
 // 動態生成當前時間的函式
 function getCurrentTime() {
@@ -29,8 +40,8 @@ const data = {
     StoreID: "QAICASH-001",
     StoreName: "Cosmed91APP",
     MerchantTradeDate: tradeDate,
-    TotalAmount: "5000",
-    ItemAmt: "5000",
+    TotalAmount: "500",
+    ItemAmt: "500",
     UtilityAmt: "0",
     ItemNonRedeemAmt: "0",
     UtilityNonRedeemAmt: "0",
@@ -78,6 +89,16 @@ function signData(data, privateKey) {
     return rsa.sign(md);
 }
 
+// 發送 Slack 訊息
+async function sendToSlack(message) {
+    try {
+        await axios.post(SLACK_WEBHOOK_URL, { text: message });
+        console.log("✅ Sent to Slack successfully");
+    } catch (error) {
+        console.error("❌ Error sending to Slack:", error.message);
+    }
+}
+
 const encdata = encryptAES_CBC_256(JSON.stringify(data), AES_Key, AES_IV);
 const signature = signData(encdata, Client_Private_Key);
 const X_iCP_Signature = forge.util.encode64(signature);
@@ -96,27 +117,33 @@ const options = {
 const req = https.request(options, (res) => {
     let response = '';
     res.on('data', (chunk) => { response += chunk; });
-    res.on('end', () => {
+    res.on('end', async () => {
         try {
             const responseData = JSON.parse(response);
             if (responseData.EncData) {
                 const decryptedData = decryptAES_CBC_256(responseData.EncData, AES_Key, AES_IV);
                 const parsedData = JSON.parse(decryptedData);
 
+                const paymentUrl = parsedData.PaymentURL;
+                const mTradeNo = parsedData.MerchantTradeNo;
+
                 console.log('--- 91APP SIT 交易建立成功 ---');
-                console.log('MerchantTradeNo:', parsedData.MerchantTradeNo);
-                console.log('Payment URL:', parsedData.PaymentURL);
+                console.log('MerchantTradeNo:', mTradeNo);
+                console.log('Payment URL:', paymentUrl);
 
-                // 【將 MerchantTradeNo 存成檔案供查詢使用】
-                const fileContent = `MerchantTradeNo: ${parsedData.MerchantTradeNo}`;
-                // 請確保 C:/webtest 目錄已存在
-                fs.writeFileSync('C:/webtest/91appMerchantTradeNo.txt', fileContent);
-                console.log('已將交易單號儲存至 C:/webtest/91appMerchantTradeNo.txt');
+                // 【將 MerchantTradeNo 存成檔案】
+                const fileContent = `MerchantTradeNo: ${mTradeNo}`;
+                // 確保 c:/webtest 目錄存在，若不存在 fs 會報錯
+                fs.writeFileSync('c:/webtest/91appMerchantTradeNo.txt', fileContent);
+                console.log('已將交易單號儲存至 c:/webtest/91appMerchantTradeNo.txt');
 
-                // 開啟瀏覽器 (使用雙引號包裹 URL)
+                // 【傳送 Slack 通知】
+                await sendToSlack(`🚀 **91APP SIT Payment URL**\nMerchantTradeNo: ${mTradeNo}\nURL: ${paymentUrl}`);
+
+                // 【開啟瀏覽器】
                 const command = process.platform === 'win32' ? 'start' :
                                 process.platform === 'darwin' ? 'open' : 'xdg-open';
-                exec(`${command} "${parsedData.PaymentURL}"`);
+                exec(`${command} "${paymentUrl}"`);
             } else {
                 console.log('API 回傳錯誤或無加密資料:', responseData);
             }

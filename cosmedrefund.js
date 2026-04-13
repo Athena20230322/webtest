@@ -62,8 +62,8 @@ const data = {
     StoreID: "TM01",
     StoreName: "COSMEDabcdefghijklmno我是第二行",
     MerchantTradeNo: MerchantTradeNo,   // 載入 MerchantTradeNo 的值
-    RefundTotalAmount: "10000",
-    RefundItemAmt: "10000",
+    RefundTotalAmount: "5000",
+    RefundItemAmt: "5000",
     RefundUtilityAmt: "0",
     RefundCommAmt: "0",
     MerchantTradeDate: tradeDate,
