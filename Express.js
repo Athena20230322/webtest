@@ -3,9 +3,15 @@ const { spawn } = require('child_process');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
 const path = require('path');
+const http = require('http');
+const { Server } = require('socket.io');
+const pty = require('node-pty');
+const os = require('os');
 
 const app = express();
 const port = 3000;
+const server = http.createServer(app);
+const io = new Server(server);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -33,6 +39,34 @@ const marketTopUpUatScriptPath = 'C:\\webtest\\markettopupuat.js';
 
 const clickLogPath = path.join('C:\\webtest', 'click_log.txt');
 
+// --- WebSocket 終端機邏輯 ---
+io.on('connection', (socket) => {
+    // 根據作業系統選擇 shell (Windows 預設使用 powershell)
+    const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
+
+    const ptyProcess = pty.spawn(shell, [], {
+        name: 'xterm-color',
+        cols: 80,
+        rows: 25,
+        cwd: 'C:\\webtest',
+        env: process.env
+    });
+
+    // 將 PTY 輸出傳送到前端
+    ptyProcess.onData((data) => {
+        socket.emit('terminal-output', data);
+    });
+
+    // 接收前端輸入
+    socket.on('terminal-input', (data) => {
+        ptyProcess.write(data);
+    });
+
+    socket.on('disconnect', () => {
+        ptyProcess.kill();
+    });
+});
+
 app.get('/', (req, res) => {
     res.send(`
         <!DOCTYPE html>
@@ -40,19 +74,23 @@ app.get('/', (req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>網頁測試工具</title>
+            <title>網頁測試工具 + 終端機系統</title>
             <script src="https://cdn.tailwindcss.com"></script>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.1.0/css/xterm.css" />
+            <script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
             <style>
                 body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
                 .section-card { background-color: #ffffff; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); display: flex; flex-direction: column; }
                 .section-title { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; }
                 #output { background-color: #0f172a; color: #93c5fd; border-radius: 0.5rem; padding: 1rem; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New', monospace; min-height: 150px; }
+                #terminal-container { background-color: #000; padding: 10px; border-radius: 0.5rem; }
             </style>
         </head>
         <body class="p-4 sm:p-6 text-slate-700">
             <div class="max-w-7xl mx-auto">
-                <h1 class="text-3xl font-bold text-center text-slate-800 mb-6">網頁測試工具</h1>
+                <h1 class="text-3xl font-bold text-center text-slate-800 mb-6">網頁測試工具系統</h1>
 
                 <div class="mb-8">
                     <button onclick="toggleStatus()" class="w-full flex justify-between items-center bg-white border border-slate-200 px-6 py-4 rounded-xl shadow-sm hover:bg-slate-50 transition-all">
@@ -136,12 +174,38 @@ app.get('/', (req, res) => {
                     </div>
                 </div>
 
+                <div class="section-card mb-8">
+                    <h2 class="section-title text-slate-800">即時本機命令字元 (Terminal)</h2>
+                    <div id="terminal-container"></div>
+                </div>
+
                 <div class="section-card">
+                    <h2 class="section-title text-slate-800">按鈕指令執行輸出</h2>
                     <pre id="output" class="text-xs">等待指令執行...</pre>
                 </div>
             </div>
 
             <script>
+                // --- 1. 終端機 (xterm.js) 與 Socket.io 設定 ---
+                const term = new Terminal({
+                    cursorBlink: true,
+                    fontSize: 14,
+                    theme: { background: '#000000', foreground: '#ffffff' }
+                });
+                const socket = io();
+                term.open(document.getElementById('terminal-container'));
+
+                // 接收後端 PTY 輸出
+                socket.on('terminal-output', (data) => {
+                    term.write(data);
+                });
+
+                // 傳送前端輸入到後端 PTY
+                term.onData((data) => {
+                    socket.emit('terminal-input', data);
+                });
+
+                // --- 2. 原有的 UI 狀態設定 ---
                 const testData = [
                     { cat: "手機測試工具/網頁", func: "現金儲值", status: "正常", note: "" },
                     { cat: "手機測試工具/網頁", func: "超商反掃付款", status: "正常", note: "" },
@@ -190,6 +254,7 @@ app.get('/', (req, res) => {
                 }
                 window.onload = initStatus;
 
+                // --- 3. 原有的腳本執行函式 ---
                 function logClick(buttonName) { fetch('/log-click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ buttonName }) }); }
                 function executeScript() { logClick('康事美扣款'); const barcode = document.getElementById('barcode').value; fetch('/execute', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ barcode }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeWebScript() { fetch('/execute-web-script', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
@@ -215,6 +280,7 @@ app.get('/', (req, res) => {
     `);
 });
 
+// --- 後端執行 Node 腳本邏輯 ---
 const executeNodeScript = (scriptFullPath, reqBody, res) => {
     let inputData = '';
     if (scriptFullPath === scriptPath && reqBody.barcode) inputData = reqBody.barcode + "\n";
@@ -232,6 +298,7 @@ const executeNodeScript = (scriptFullPath, reqBody, res) => {
     proc.on('close', (code) => res.send(`執行 ${path.basename(scriptFullPath)} 結果:\n${output}`));
 };
 
+// --- API 路由設定 ---
 app.post('/execute', (req, res) => executeNodeScript(scriptPath, req.body, res));
 app.post('/execute-fisc-kor', (req, res) => executeNodeScript(fiscKorScriptPath, req.body, res));
 app.post('/execute-process-ride-payment', (req, res) => {
@@ -269,7 +336,9 @@ app.post('/log-click', async (req, res) => {
 
 app.use(express.static('C:\\webtest'));
 
-app.listen(port, () => {
+// 使用 server.listen 而非 app.listen 以支援 Socket.io
+server.listen(port, () => {
     console.log(`[Node.js] 伺服器啟動於 http://localhost:${port}`);
+    // 啟動背景 Python 腳本
     spawn('python', ['C:\\icppython\\download_files.py'], { stdio: 'inherit' });
 });
