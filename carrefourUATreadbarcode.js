@@ -72,7 +72,7 @@ try {
         MerchantID: "10533993",
         MerchantTradeNo: tradeNo,
         StoreID: "QATM01",
-        StoreName: "家樂褔購物",
+        StoreName: "QA家樂褔購物",
         MerchantTradeDate: tradeDate,
         TotalAmount: "1000",
         ItemAmt: "1000",
