@@ -215,7 +215,7 @@ C:\webtest> node Express.js
      1.家樂褔UAT正掃QRcode
      2.先到後台查詢 特店訂單編號 載入，carrefourjumpquerytradeUATICPO.js_查詢訂單號碼API
      3.carrefourrefundUATICPO.js_退款API /carrefourrefundUATqrcodefivedollars.js_退款5元，可用部份退款
-     4.carrefourCancelUATICPO.js 取消API, 正掃付款成功，打取消API，即會沖正。
+     4.carrefourCancelUATICPO.js 取消API, 正掃付款成功(確認反掃付款付款/carrefourUAT.js)，打取消API，即會沖正。
       =====================================================================
      1.大都會車隊SIT正掃QRcode_這個要嘛純點、要嘛純金，不然就是另外ICP帳戶+剩餘點數扣款
      2.先到後台查詢 特店訂單編號 載入，MertotaxiSITreadbarcodeICPO.js_查詢訂單號碼API
@@ -234,15 +234,20 @@ C:\webtest> node Express.js
      2.博客來 booksatoaquerytrade.js sit 查詢交易
      3.博客來 bookatoarefund.js  sit 退款
      ===============================================================
-     1.康事美91APP cosmed91app.js sit 扣款_50元
+     1.康事美91APP cosmed91app.js sit 扣款_5元
      2.康事美91APP cosmed91appquerytrade.js sit 查詢交易
      3.康事美91APP cosmed91apprefund.js sit 退款
      ===============================================================
-     1.康事美91APP cosmed91appUAT.js UAT
+     1.康事美91APP cosmed91appUAT.js UAT 扣款_5元
+     2.康事美91APP cosmed91appquerytradeUAT.js UAT 查詢交易
+     3.康事美91APP cosmed91apprefundUAT.js UAT退款
+     ===============================================================
      1.星巴克 starbucksjumpUAT.js web UAT扣款 50元
      2.星巴克 starbucksjumpUATatoa.js UAT扣款 50元
-     3.星巴克 starbucksquerytradeUATICPO.js UAT 查詢交易
-     4.星巴克 starbucksrefundUATICPO.js UAT 退款
+     3 星巴克 正掃後，完成扣款，再執行查詢交易
+     4.星巴克 starbucksquerytradeUATICPO.js UAT 查詢交易
+     5.星巴克 starbucksrefundUATICPO.js UAT 退款
+     6.星巴克 starbucksCancelUATICPO.js UAT 取消API 20260421121300211876 正掃扣款成功後，沖正後，受理退款
      ===============================================================
   - 
   - Pilot : https://icpbridge.icashsys.com.tw
