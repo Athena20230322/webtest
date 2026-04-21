@@ -64,11 +64,11 @@ readFileData(({ buyerID, opSeq, bankSeq }) => {
     const data = {
         OPSeq: opSeq,
         BankSeq: bankSeq,
-        TxAmt: "3",             // 修正欄位名稱為 RefundAmt 並改為數字
+        TxAmt: "20",             // 修正欄位名稱為 RefundAmt 並改為數字
         OPRefundSeq: bankSeq,     // 若文件要求唯一序號，建議加後綴以免重複
         OPRefundTime: tradeDate,
         StoreId: "217477",
-        StoreName: "見晴",
+        StoreName: "見晴_QA",
         PosNo: "01",
         CorpID: "22555003",
         Remark: "123456",

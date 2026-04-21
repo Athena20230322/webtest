@@ -1,0 +1,554 @@
+[週三 2026/04/15 11:50:26.80] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415114936
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260415115009211626',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 11:50:09',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415114936',
+  TotalAmount: '1000',
+  ICPAmount: '1000',
+  BonusAmt: '0',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 11:50:27'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260415114936, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 11:50:28.01 
+---------------------------------------- 
+[週三 2026/04/15 11:52:30.04] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415115145
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260415115216211627',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 11:52:16',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415115145',
+  TotalAmount: '1000',
+  ICPAmount: '800',
+  BonusAmt: '200',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 11:52:30'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260415115145, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 11:52:32.07 
+---------------------------------------- 
+[週三 2026/04/15 11:53:48.19] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415115302
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260415115339211628',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 11:53:39',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415115302',
+  TotalAmount: '1000',
+  ICPAmount: '0',
+  BonusAmt: '1000',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 11:53:48'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260415115302, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 11:53:49.75 
+---------------------------------------- 
+[週三 2026/04/15 13:52:44.77] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415135138
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260415135223211637',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 13:52:23',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415135138',
+  TotalAmount: '500',
+  ICPAmount: '500',
+  BonusAmt: '0',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 13:52:45'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8WvsuP0az/yBDvpECNRwhOBNjJEqtrLt5pTUpZ8ZyQL9XqJE4Icoc8P5yL08U1Hgo47WS1TXfgKkZRIqVMItbrCtA/XoHUVCOIPYUo48OcQS065cnuuMtlm5KvJFxITxGf+rnArE3K7rbQv/JsCUc/80D4d+w53h6ULhgG5Y8dbNIyrWi4TMcEL29zfcoThSd67F8K2RMa1BKo1AERx0o1DFasQXHuQ334eie5oauK9Z4URniTRlm6EuOU6G2I4pCy94vLPua9L5gLD4axaFN9oDbH7EKBatMU5F0H4DYwYkTli0F6Gr/3l1EhZM+mKpqi+YKdyvxesaz6hXPeu1yQsAaJk7Q08005FkD8lMdq12krUJKFfNHwUguJX1Y9tIMM=
+X-iCP-Signature: KZNKosbzyi8xCcPX1dbRQGIt/k8I4DCSs18xV0KmwuLgnX40EsQ01WtPKJsqIBRrjwGP1S6PdIKKTiu9yJFw6wO9OWyYKaZIsx7DhtJjN6gX2Y260/F3N0V3zYXuLPc2lTmj4AtZUMdMCULGtDk89X0hYpFVxBwKukjykF37axpm+l2k31BHXkmnnd9cP7JvTc4q5qPJiu4pQTO1bNPR7sabNCB5jSYKpQMUZErT75d8fd2llQFTVdNhsUd6AFSZptwWbZLRfyb3v0D1x5HehiodBx/I8aewjGrWxCJuDi5ul1CaqQ7zh+Da74LsfUfdZClf46dluFAFXO3SlheNqQ==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj24G5V9QJ8ujovKDMkX2wUFh/fRBisvllXi5m2VgzLsVeo3mtV6QZspCr2jJMTManjmuvXVVMEII/y/nKUuYIxclExMqHl31tANNCCiwlPRyylipFvK9wTy5uLM1U0NHfaLoHEr7LvoD2ss8oAI4u7gd1HnFs7ybegHBLO1OTiO6Rrxo2lmMIkiibVHUK1/nKMtVvrMo2VyhB38Mr4WR5/LJOjd7hjt4k4OjhNS/Vre4vAkzO8cua8D3Y2+w6x5GavplTtNi6KDiEHw4FgWYjLUwS4M5jXYRwW28ybwFxdKqjsccoXwy/EuWVibQxKlp0fl4/6Hg83Flf5vOh+lfD7CNPtubiwnkTLDnvJBG2nw3sVXy2etnvLNV5zpf4g5csdfzNsWPmS/DlvlY44byYF4jXLz6gwg9hKel8GFsJNWDL","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 13:52:45.93 
+---------------------------------------- 
+[週三 2026/04/15 13:57:21.46] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415135445
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260415135545211638',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 13:55:45',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415135445',
+  TotalAmount: '500',
+  ICPAmount: '300',
+  BonusAmt: '200',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 13:57:22'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8UmBFo17I0rvlTeYk0+wRu3AnXnTS9Wnfli1J+WDzdwdRVgIINYUJl01XQD8rN4waynEEMYCxaQA8AvDvUEO8H8Lq/VubkM1rbQnbaQRfRoQJEYxYtv+DhcqF2Qewi+fCQm/uFbetjxyJBuSs1w/9vlL4mahIVSJR6OqcPkHIJMR6lp62nvnV+UwwB80gAGPsmZVGThhFQniZ9tedOUBjTCh0fSCEgTBoQcclb+MTwQ2ivyI1uDeI5dAa+maAAhE5lq5g9Ulfv9spPxmELlysXiH7J6YVewfvBHPIJblXsuU/uUAga9wM20lYfN+FczrzS0UtOJxhOPDozzg2qkCvu//1D131ZPpVaMuJp15fWzMyGssx/ar3s9PCcxdV905aE=
+X-iCP-Signature: np9Z4rK/DYV7Up7ZtfDICDaLj7kh6fKnW7PIsfFEN/vojaBzGiR6u00DOyvv7JRiPpVFZZirC8aFS4exUmcWtbbr4GYTVJ3vDZcn/L81oK7SWnVvuXKVx5dYlLCzr6gcggW7v9nBd+k0zLYz94LVQQfDKllIKcqe2y0yeYByj3hkEhvyRDDeMix39Vaeg2Wh43aOD9j1h8ZGhUmcPVNAlktK0y5RY8Z5AtPz0UvrubWkYr4Vt2Gi5XGcisZ+KKQjYKkCNv8U/ZcsAoYfZZPUmumqKCLZ5s79p4wlDJmi1bF2mmvfhgIWzequDNNEeYbOYcHc00z3OXwEDcbpToGSbg==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj22IuApcxNfwsDRQYHzsbyQ6CyJ5ndrfCpL4q0x6tpGpSgWP9wX8ZdCwqijLXHTunU7xtcQ7n27ydwc/KNMIkSjR0dEZzvvOoVLjydbpgDKv+4jEzdMrdvUbcEnhmqk5JVd3D6FxsHqzac7GE8CDpikEvOQX9MEA/4DYm/4g2J/VE7Ui+SCqOdMz/ADyscv97TRT7RI7bd9483O9AkVlaQ1M4E58P43jKxX1Ak3rUWagZHKJgp+R9N7I5Ug7K9v30ONgkZlnup8+iUSEHmpVdC5gREHQVoQC0IGv3KaGXninedqeepS/GsT8KQYlrO2mZeQMSe6bBCZcEjYPKEssISNLFOO0TVrlqIYYAj8XFmt0H22oswlkfu5Yx+U1yWlY/xr7FjGqe0cyXfDliwaJd6JhLNEqBQnLAsdPA9F4pEaajosrcqHG7p3JkowzR+c3Uqg==","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 13:57:23.31 
+---------------------------------------- 
+[週三 2026/04/15 14:04:52.78] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260415135832
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260415135920211639',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/15 13:59:20',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260415135832',
+  TotalAmount: '500',
+  ICPAmount: '0',
+  BonusAmt: '500',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/15 14:04:53'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8WHJfTey/ELHRQy8NoU81i/2ZaIiGnzE8FJdBf6RusSJEUt4RscKD7mKWeecZL3DyEpiYo9TMOg57StWIhC+xO6EpKIBUhixUBJ5Kko7AZPhJReCSqnfPbghzZNMsQXwiJGa9JbiBrArkT4QeZvBNSDOlnwuqjwa7etQ/FirHw9IxK1cZvVsbSvvILoub3+p9zbs9hAS+KoD6yfK5wltC3LtbRlyBJTjNM9m/wTWnjxY3PbiY4KkigulgCp4UbrUKoVr435HZ+oah0C6tsz8WsryoEzERhT470ZqTOLEMBC/k3rH3IdUe1itsLTiR3/7WCr2NMDzUe4vzHcYVEP7itfnLzawvK6X9utc+/pQDVI7UVWtsdawRp3c8hXoCtIgfY=
+X-iCP-Signature: t0uAgd8001FzrgN6KVKCBDvuwan2qPk3USyGjJFNCDL+MUzkw4tHozm29Bsren2yHr7rCEym7GfEct6VHWP7OU/RPsWbHeSlZ2bOgTsGo45IeUP8cfr62d0ClMpFca4KPJ92nTvH12OQfZcCZP8kehBfyE6Ao1apQKYaalcJ7zracHQC0aPfKIqE8LM4VCReAaLtFpsG8wPxsiXcgsXgkhGg5+wA1EKQBvHhpxDCPUDRFzJwLwQ+akNlx6qAnpRZDeacTw1ZUqSeOzmPsEXoe9Eoy6ulQuZkRYSHwRr4IC03YjuzRVu2Td6WIdxG0jCLnO4xabyje3g8INwyh2swIQ==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj2wOq07sI3J7oL6RZ7kfQKxI6SR4K3LI8in5mwp17/wKxDSdQnDegC0jWALFyfiDhDEIHey7x3XVaBnFS0DqnhNpDkNKHeA3A1uwROXoxEdpOsbnItPbML7lcqhonqjf740CzUgYi3gdYbfIV9iQ8o7/y+mJB8U1WhWL7iKqlxFcHbpKuFhecxodfjEmvn5WL305cHAG/Goh5Q8WmtccDdw/oFBL2uO+tBsORKj1l6JQG+l2e96+CtcfGC/oasbojxlLZI2aY0RT5e7nHqJtBQ0i/8mRcfV1da62Jq68y4ofo18yHRzNGPcbFvUk5AUTI2aIrvpclx7EV/nZBXOBP3VnEYvC3htPlIRIfBTKgA39FA7mnN45Gj5PIXvewaCCpOx2RsCao/ohPRxeC6zRwleZHJk45heZdyU71ZD6PRTUU","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週三 2026/04/15 14:04:54.40 
+---------------------------------------- 
+[週四 2026/04/16 16:18:33.55] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260416161154
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260416161825211669',
+  ICPAccount: '1682411000000399',
+  PaymentDate: '2026/04/16 16:18:25',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260416161154',
+  TotalAmount: '1000',
+  ICPAmount: '1000',
+  BonusAmt: '0',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/16 16:18:34'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260416161154, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週四 2026/04/16 16:18:34.88 
+---------------------------------------- 
+[週四 2026/04/16 16:20:13.17] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260416161912
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260416161959211670',
+  ICPAccount: '1682411000000399',
+  PaymentDate: '2026/04/16 16:20:00',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260416161912',
+  TotalAmount: '1000',
+  ICPAmount: '800',
+  BonusAmt: '200',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/16 16:20:13'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260416161912, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週四 2026/04/16 16:20:14.78 
+---------------------------------------- 
+[週四 2026/04/16 16:22:15.95] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260416162142
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260416162203211671',
+  ICPAccount: '1682411000000399',
+  PaymentDate: '2026/04/16 16:22:03',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260416162142',
+  TotalAmount: '1000',
+  ICPAmount: '100',
+  BonusAmt: '900',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/16 16:22:16'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260416162142, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週四 2026/04/16 16:22:17.96 
+---------------------------------------- 
+[週四 2026/04/16 16:31:07.85] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260416163014
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260416163042211673',
+  ICPAccount: '1682411000000399',
+  PaymentDate: '2026/04/16 16:30:42',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260416163014',
+  TotalAmount: '1000',
+  ICPAmount: '0',
+  BonusAmt: '1000',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/16 16:31:08'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260416163014, 金額: 1000
+[週四 2026/04/16 16:31:58.40] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260416163014
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510711',
+  MerchantID: '10510711',
+  TransactionID: '20260416163042211673',
+  ICPAccount: '1682411000000399',
+  PaymentDate: '2026/04/16 16:30:42',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260416163014',
+  TotalAmount: '1000',
+  ICPAmount: '0',
+  BonusAmt: '1000',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/16 16:31:58'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/bookTransactionDetails.txt
+[STEP 2 退款開始] 
+[執行退款] 單號: Sample20260416163014, 金額: 1000
+
+--- 伺服器回應 ---
+RtnCode: 1, RtnMsg: 成功
+✅ 退款成功！
+ 
+---------------------------------------- 
+執行完畢時間: 週四 2026/04/16 16:32:00.05 
+---------------------------------------- 
+[週五 2026/04/17  9:16:13.91] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260417090609
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260417091412211680',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/17 09:14:12',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260417090609',
+  TotalAmount: '500',
+  ICPAmount: '500',
+  BonusAmt: '0',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/17 09:16:14'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8UOmQhhcliM2HqZVCRLQjn/WyaWQd2TtYjrEYRpfCIuJRWe6hhWO8lX6eOtWNi78C3mAOs1SMJPm9WI2G5qNDiRCPXVK0mYap8o23pYcq7Nw9lPjhsUHAVgRinBPiscrUeIF3BxFnKVsNlCJEIyZpJY0hUIOWyFaHbBdLuB8ZAhdfFLWanLTcf8DeZjYEQ2zGlxfFBlbJQxsDiL+gQbetDuTo5VKK3kReq4MBmKnMORo6xBS4h2RNA3z59rs5xg7AqcP6JxG8t5QeB5eaWCcIYitzP2XO3JJunnJy8btwXnKREICm8gTT1QWv8Np/+16b5WW2MdSezqeSJrxd4Acp/LpaaANIq+DAOzR8x1SU/h1FlR1nh/UcQd9vU32iURHBA=
+X-iCP-Signature: qA5gMe3oYi0NiNmxlBUb0U5uiFbRAqv3mZKjHC1SU77rwaP99cJ9ztzMiXcPj5mL4gUG6iW+LKKS2hPXvA91JM5/+MfyK/0Sm9beSS4IpHx7vU/V2eD+HiV4YGrrBAB67GBF9h8YbiHV3JNvKO+B4wqsctmR2P8LLf0NcaeRY97ko5KW3xS6HWNxFUtr8Z3Rl0k53CmwmQAaWibwhsSfOsJKrqSh0SxF6hvrVJG2t7I+vXaZ2PUfOdMqViIyJCmJxgXrz0gJhsC6MZC5qqfNoXDsrOh1asGB2PrAZUWahRo+M0lh4JigCqyEG7Vi5aI2fQ75FGB4EF2Ob49SwzWmUw==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj2zyrdq+RP8xjPgIu+PhrGalW/jkmvGEanc0Z/by2gvwVuget6FAkZjBV8TIVOW7AE9De5TM2gYzveZL8Bta9a5UzEgaTUFKEsGg2DxfkFreCsqB/2+vhXlySV9kOE+RDXeRdbHJRRGtkjdYV9+umkwEfv2xecLRoiJ5bLQ0PzC8G1XLNjv25r14d9/8FYr/EmSNyy6KKY4W7AYggohNDMqkYHN31dIWwINXcd0RP0NOsR7nhhErOlUfZAxWIDg47Iuo0T1OdR2bp2ebSmbUUv4Ig7qC0v11/iipaB3CrS44HI1U9u5qHjsp2vcvZdl99gpf35wCmdlIwa1noL5af1GrbtKrXyBFPa1KTZRCxRCcGoBeWHWHep4MKS4al6ZTdh0Fc5Vggau2xuYTGMRl9JWWCRL8V5dxhsu/90PqV6uBY","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週五 2026/04/17  9:16:15.16 
+---------------------------------------- 
+[週五 2026/04/17  9:18:29.82] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260417091751
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260417091817211681',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/17 09:18:17',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260417091751',
+  TotalAmount: '500',
+  ICPAmount: '400',
+  BonusAmt: '100',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/17 09:18:30'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8XD4oflwWdnshZF65eAVHzcs4ZuZiyzJuO72iA7U/DVkoyYsato1j6k6Q4rby6hyVIv5OaWrmFN7JRXA1qahvyacK2srPfpOC4cbUFsBo3kCbZOSyUVXll2grOooicD7vcrynFZPsLgSmdCtKzjYRTZCmSs8agYajoN4NP888so90674RlJZAQoY8c6UzS8b+w52GOZX40wLu6orR2bgx+libckwdrC66HKLHSo4O86SjPCMAMkVrhMI1eQTCH5YVltYVwBWFvEFcF25nApVe2BwSskv/tmxMQzuf8QP0bD8Qt5b4idPeFdXOHB4AtT0ws7apmjhsfFQrxXN6K19GTPAEfyJGHlTrlorq0tmCqbhG3zj3OC5hlfhK8J6Mxhsk8=
+X-iCP-Signature: vyGJAgW1umIW7GAI9xzq7mID7sF4V15h6aOtsR3hFGEAFqwwe/W6Okvjm6pJNrJonO0i4/ivCnTsM6JVsiqMlSvm0Un7P35YDrTIBW8+6Yw6ws3akuIqxqt3jbyo67vTnla+0xtOVZwRTTxe6EBuTTx1yc1WhZ06Myv4GGyU403zShYdXD7+dIKY67Sy8VxR8hiF0hvrfr2wK6HV86v16gRF2plWnOOgw1fBabZ0Q272j+P4Xg59UKvO2HBbRoJOtUHZt83uti0IYzw8D7b8vaXkUExxi0fbw9KWpuUPaoODwPurL++WZ+6TnRG8snBgCjyRchvnX2+DG6+GPh6mYA==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj25A3QGVHvsUpnvnxkBHrKFvw4S9DB0h76KC/mTtMqrhxM0dgvQYsgUHT385QefkMlT2eZTj2iiIUsfyb4bB+8zHIaNxMHmAU6MgItuxaNWUmiRRbcN70iSXiZSe30VOU4B4cs7Eagd8pdIn/lSrysXBuPM/WEtOSGp6iqVmFTbiAfD8MxsnR5HBC0WN9LrAnlfLpcn31Ip5usqokS31gE/k7o+7w8TPcisLGm7NffMerxiFMmgGnUiRax/VOrwnl+djUdxcW4/oc1iqBbaiDCcAfXJiNqf9YYAkXk2Wf+K7CQRevOmFm5QNA+TxR74KwKB5/NLi8l/IzxAm/s9dhfTKwezbROVAJJJNZZ5+U4f8jkiaBXWtYakPU7nUgWg3zADbep8RDohZLuR5xNrd1bYD37emLS7x2cAGC9QTeg21PR4nAqlQCOIGClvJK0pbyig==","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週五 2026/04/17  9:18:31.53 
+---------------------------------------- 
+[週五 2026/04/17  9:19:18.58] 執行測試自動化開始 
+[STEP 1 查詢開始] 
+[執行查詢] 訂單編號: Sample20260417091842
+--- 查詢結果 (解密後) ---
+{
+  PlatformID: '10510220',
+  MerchantID: '10510220',
+  TransactionID: '20260417091908211682',
+  ICPAccount: '1682611000000939',
+  PaymentDate: '2026/04/17 09:19:08',
+  PaymentType: '1',
+  MerchantTradeNo: 'Sample20260417091842',
+  TotalAmount: '500',
+  ICPAmount: '0',
+  BonusAmt: '500',
+  TradeStatus: '1',
+  TradeType: '0',
+  MaskedPan: null,
+  VToken: null,
+  AllocateStatus: '0',
+  MMemberID: '',
+  MobileInvoiceCarry: '',
+  IsFiscTWQR: 0,
+  FiscTWQRIssCode: '',
+  GID: '',
+  CreditCardType: null,
+  Timestamp: '2026/04/17 09:19:19'
+}
+-----------------------------------------
+✅ 查詢成功！
+✅ 退款/銷退燃料已更新至 C:/webtest/91appTransactionDetails.txt
+[STEP 2 退款開始] 
+Encrypted Data (EncData): 7loQn8lFK5/+3possFOF9q67fpGZCOHD5Yi3SVsQt8irUc98PgdwymDmBXQ5RymbAirtNUJmGzFsatqfFK6c+7J1mwdvEH9iG3agkKIcj8XJ2BcWnL8UZNEuSf51Os7c2iv8bsPK0dKx4r5QTMs8rtb1XD4C3JeydMS1ARd7rpPgB2m0fpx3yDeUubJuz6V6/pWqCIcQSVWdkcfzia7wE+XYE/AfA1eC9Y/3Ll+TeOa1V7RCz13RTsyiUZkYX8kv1GG1cKDCJGD0e26cIxJg4VUH2KwIV8epDDUUplq2eQYGifdFQoOjoiwXBu2sWrmw/IiZCrHs7RTINifQddPPUuKUfQgeH273nqO0/qMZwm3e/ljPLR4GJTBfy3fwUrtxqISndTl6W9QEYqFaUH/0o2PEY5uQu4ygW1WLiiBB2C2NEbfmEC94v2rwf6Ib8DJh7SS3QTGkdM4KtcUda+kCdAZz4dny8qVzuFGsS5ctzzA=
+X-iCP-Signature: SxWr3w5+9GR35FzedBy7AnbI3d/kwmvKi9J5RShACfiUy+7uIYBygPZzx+G67lW9yD5ut5cJ76QjEn9xe35sQNT6mOB4gABfGlFwdkw0RnGgBue9ikcYiXLMBdM6B1uvaWPca8ct53nhMbE1TJy5xPfBFAjLWcvnL71aarPgNPiHm1riKREqHYHfgCk8ei759Pil7wcwa1eYWzUOBFHf5oGk5YtlSQHEJoGnvpO7ADKKvj5I/rznYs3O0nHZ8+LaY+EYy/EbEQPHn2lcO6eMyIg4xbNPmZHuOAJzbYVcjUQTZnnfDpCYO6xtBrnQBTVjv+hM+/flVLgjn83AiBFuyQ==
+Response: {"EncData":"LHsndZ0Kqxt5JX8ZTvUfLVcp9QtBCgsaf2kSZVZ8D0kkitb7T1oLN+QyVq7jI4KSXE/T0mt66Hqgt6SQUQKj21WiWYDMx5M97SZx9XYINabj8ily50v93Jl1p87DfYaoFcZopAnrsXlDCEb5qolm/kIGPxj5cj0gKifMpVZMXK3yHKzMYp4w14jla7amVuzMvtjs1w/aSL9ol/YgvyUNJZeAOAw/q+0JohZNe0WSZy35znKDpbjP9ecNGgq9vtMvNIviwPcP3pWOfO8CiGMSPFMY9cif9aSs+YB4+1Hp+5lOWb1RPCjTZjR6y1JFkNJS10I6/Y8E6N+dujG4CwDjyvARX91r2e37AJ/s1uttOcCyXFWlTJOmEyvvITJVI7rr51FgprJDCggyVy4yEvGdRftwvJQAODwj3uUvflJwRHndFoYeFv7slAR2KCm5zjcOmWTg9crycQ9Ts2uM7hKUeKu9h8+DxVUE/bPImfdfS1T/cq9hPeToWD10Vwh9Umbz","RtnCode":1,"RtnMsg":"成功"}
+ 
+---------------------------------------- 
+執行完畢時間: 週五 2026/04/17  9:19:20.29 
+---------------------------------------- 

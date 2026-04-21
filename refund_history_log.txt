@@ -1,0 +1,285 @@
+[純金] 週三 2026/04/15 16:22:24.43 | [點+金] 週三 2026/04/15 16:22:47.74 | === 第一組退款測試紀錄 (週四 2026/04/16  8:20:42.96) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416082036",
+  "BankSeq": "20260416082038361218",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416082038361218",
+  "OPRefundTime": "2026/04/16 08:20:43",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC17274KRQS09YTAWQ"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhQv74BTxuWHu4ktZ/mP9im3sMzpyWteJ+x2g03iuE3hUWxsqtyounpabPvKq9BYT7RViAeUFoTFv/Xq2a63j6YhJ+/RJmpVc0sQpm5rwvbG/kWjYDMcQ9O/2CG/L9Baahnw+mQAoacB6Zvj2jVxgkSTZjw2AWJlcsbaJd299VAYZeq/PjuJVWsdyIHgIiDMtDJpNBfucdsFNhg3y1fDDM+sHN7R9l8zZneJzWXgtz/UJ+C1bYbSNRmJS0FABfPVxQsuZkDeU+638sZc6BcskjgZALECLxPjBZpO4Oga56slkB+NLHMsRSLBrq3DtV/EFMEX6UFLNETGIowfKfZ4i87uxnbsBkJ+eVZJTLuIj+M8v
+X-iCP-Signature: PUnbnjOYpEz5pf8WbHltEx9tCK3pT22zPLI8iPDQmqFdFblEF6YN44qpNFv7iv6HIxw+k1KsEVFM6N9oSYSRPSwz+yPl6nL24xLsInGwvNs5EG9sj89uJSNxeVnpZaVZXmtUjAeLXuUYhwpfzOYgdWpTIMbMvHxX+i61YdnsUUUkduok8DYdYxjZHsOCnHHZs1rwcjTKuxnjqSOAdGPUE/7/CjVjaBKAss2Xw2UKV3NsysKaIbTkajykDwsoUf/f/d6fiEXp4RuPIlKIk9oT8EuDz/KwVxpe8uNsUI7RE1z4yVd4S/ecavdAgFO/O3PbqW3E+LISgIwDnb5hLxH3lQ==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO9QrXDKF2pX1qPe7chf9ksWhYVQlfL2CRMwHflGX/xJ7CxALAVTqCVVY/xAm8EJjxdeftPa+OnKcftjqjNbr3ETbTj/Ur5o+lqsdJzCQXHIE3RiB7segxacJiCTJMJGKTKHE340Dp59GGksdEBW3bthVon2C2z4xOiibKTjSpOTI+7O0KqrrzEWTQkKBK6kOAGrCKx2M33416Nq/brcseuzarCoQyxhD3r5BTP7jkhHbN4MPbts2hfNFilq+hCT2/p6d3nqhNRkSL0RgJ5VsseJHUnu49t8fyE27NY1d/1k/TsE5QPTMrvF4LNxv7+F1qOeUVJnlVUF9Kx4P4yvcwLOKbWwSkl7Fh5McJDDCu5fp5/3vlAEc4L5TjQXzxHBOz0=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16  8:20:55.61) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416082054",
+  "BankSeq": "20260416082055361219",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416082055361219",
+  "OPRefundTime": "2026/04/16 08:20:55",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC163O9WS67IQAH0UP"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhfZRkccyh+S0rl1EOVuP2w0Q9G6AZ+IrXEp3ZwHRsiSbNQLwpYRaq1/dkqLjXO+fw7YfYntq55iMGxbFOYRHtjjHNJVycdPQFCkCqvXUHRwmI5DPXHdeKPTuVpeJcnpd0gVjLZf8oV+kxjClv+bkt/WoiY3FNsegF00C414nSdS6vzQMSbZFPiifuhMhhs1PewTbFL6YZoQmkNBXcH5dZZgsDacA5jTVsAvtPYJGBJBlhtj42bMFAndVen8ht7OUGffsqE/1jV9gyabF7p8k1uh9c4IlTHiPEV1Mzje0KbpS8SWNLJpH9U8b7dh1eSVF8t4Sdk/IIAuKsrgSmM6AQpxAaw0/ko6sSL+0MP8G6BXM
+X-iCP-Signature: JYLcAx8T0sZmWEwK11FYqs+7Pr9y/W9TmKBstdvqNVVAGOKE/DK+Twaamy0HMEnEwtx1Rc0OYyxnWskP7mn/iE1vv/3uWdDwUaoyfVicfK7AydCV+nw1ZTgXll9t0IdqET7I7TNL2yz6GyjfsrqnHCIU4mIE2V0frh7S0AERele19DYQK4HXeaKps/UcTFkqMOkTiUcQV4lXrXU1spX5LZPU7M8AMnHrnwURBMpE1RY0oAYm3lrkBuCw63qsziuiULMttwozCw0U7jyQOQX18g7GW/wFzI3YI7oHCb95/uhPr85VjI7FwwfC4oRGjKNjSNRvJhs+Q1o6tfHIqhB1rA==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO/SUvJeZkrzzvDSnmh9iady/dAaJxkXFEJhFTQXoQHweTP+nHckRU9z96NH1FnyYtRIwVdSDVRse49uN7VGs0zkeJcjvI5y1qJ8rAyJMJMENpRzgvH1JPupwSNrWfWhlSu42aRdHWIIBxUvQeuf0ni4t5v3WOXWaDQgLctFe5NlP5wL9mTrm9GHs0xuVryGkyL1l9ZKN4CK2+vV+oMClNsLLfNXlIf8GU3/G3bPby6T7EDELPg2NjJMb/yjDkd9VKxWpu4+UseY8TPXqkWyvSBgHxLAllEJzjmGMlAGVvJijPdmRnidjV/sBrVDoETB6ivzXu5Z+DIy1PwOKY8gtbIVtcE/ke578T6daw5mozM5506SJnLKnXnYqlz/BWbcoGw=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+執行時間: 週四 2026/04/16  8:35:25.68 |   "OPRefundSeq": "20260416083525361220",
+ 
+[純金] 週四 2026/04/16  9:21:52.00 | [點+金] 週四 2026/04/16  9:25:13.30 | === 第一組退款測試紀錄 (週四 2026/04/16 10:54:30.16) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416105428",
+  "BankSeq": "20260416105429361243",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416105429361243",
+  "OPRefundTime": "2026/04/16 10:54:30",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC123U84WIMY02SSBA"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhU05P539q3GksRG41lwpkKTWKRf6doREwzvP6+0e1mwW8uSv5VuTVoJbQm7vcA+QTRai1ewyUhosBWS9+79T9BZzIn1DJr0B6ufTtri6GOYMapgJFvoLQp6NiZr72B3lfx4anO8yIwmxt+3YEUDL9C9YLD3t8KtIEihMmwZLQTAFLQAkHbQGrYjsS5MiyELfl7/xPEmLB8jjnOXOqF2rz0epMV4fT3uIlijAWJ/uezvhpQAWhxFMD1qNhwTjuxoT0VRP4zn14FNMqGZ08aO0NOXII5G/K4T2Zb5+Fena6HHMNd2kzqQPpy86o4ZLTeOQTRSYG6YxM+5ix3/VPhuaEjlpFoMoIebNQb59Sgd3ybTW
+X-iCP-Signature: NVg4aIcAQ6atDdJQzmWCordHslWvPzJ7ZOUz3oQun1TiSEwHIThqZVwvf4lNsNFbxX1ew6/HivS4zoeXQKQgGsBmZmsLGyJqtgNg7pfXX6qUCPGIrA1nC1tngizBBuczWnqLLgdYrUbZLMiqgqFyN8LQrrR3sTqBqps4p3n4iCOD299u9x+UrL/fAIAPRs0B6nswVBkzawzMIMlPaO7Hcr0EcydGH4s+gKXyr8HhD03SNADvKt5cwNQvTbNKXPdpFqy3GIAXIfXrF6u+CMbESL+3BkETHpum+LZMCtCDdDfacs/qyhEtCHCdY6fsKP44Ko3Me36nR0d/Gey0+oi4UQ==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO97LOhbDgbdUEhWG5dXJhUTA1/z+cYr8sQC9X1K/bWuQBCk4K04mXRL6y7sQH4KOkzjoL2UzemsXMbR8S7ISHGwYuyug3zNQ/vR/Cu7zDnc/29EqW1vH76Lbv71VfInWErqRtR/U8yWnlGOB8WW8kbzROzrGruPS3XVFvED4OHBY57WHZ6c6Gr1sTpgkbgZ5C9mAFI0A/XRC/dSua90lratzqD2RPXuVZL1/sFH9H1jjsEFOxwMp3t7Aa3P5bL7JaS1jjW62ESWU/N63kz3KcqATQDrvhqTY/CrWyxyC6Hs7U/ZFLebT7v7Jg00JZ+hAXrMzLg6ZPKe8zp/R+SzJC8eQmcJvalpz6ntP296jc5oMqCqbGlxMPhdXxDn979Og7Q=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16 10:54:41.82) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 10:54:42",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC123U84WIMY02SSBA"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu54zsYBNL0RLlYyFnj3Se2dhBUIOO99s8F0IBVIQ2G7wgyamAKSoMGr3+bmUGrMoT7FdwpwgZZF4GKKDzYIB6RnEGmMe6c4ONyKH+ejnIxvQQjqb/EBD2cus9d0ukXMfGq8prnuBfHy4QEmyaAeMkOlWNWl4MtswWyCYWyjruEf6N64Njx//NpTzJuWVL6T/mw4CSf4DaMVFOt13GGbTe4Y
+X-iCP-Signature: yf7WlqZHRw9N0PxM0higYamqnxp4HKdg+2AcDcYMz3RSVH2CsTFs4V+QDy4fT9cr+o6/+L5Hew/YtZydR4DD+fwiF9Ak+N+ARkyfpE2biLZnjxas8T/aO0W+Fy2BiseT3PhBair5Mag3Wz1yNQSn6FZXT9xQix/RSA1S94FAdUq9hq8QbKGlGpcWn3hr+rlcD15ktEqT/2R9qQM8uwKMfHlx7TwzWowIlMD6iFMMxB/c5RRfI7G148OSxAWmWr7nu7+0XmFjtaqU2yKAscgu0wFzhx/IL0BqecQm7eax4ojwYH4vSJl2NGqF2v6MLLMwoLR4zV3R9YOgf6uQPlm+sg==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第一組退款測試紀錄 (週四 2026/04/16 11:00:01.83) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416110000",
+  "BankSeq": "20260416110001361247",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416110001361247",
+  "OPRefundTime": "2026/04/16 11:00:02",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC111PPYQ4IS1B4FY0"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhWtYkwPL+5aknDjbTMD5NSo6iqvuWv6jIwTEiv4nLj6j64aiy92S3vcKeBduGR10nMlfzHuB4OMXy0+RvWvwt+L5rl+Otx/Pq4ej4hxoGGkuMFxx4wKh3TKzlvrLS9+rMMy2fRYkZA7rQQ+ml+7iR+jCXc3+XD4yAxIVYDVi0kHgA1DWKdjdarOc80jnD0VyPLvtNU4ewA7AImkOx7L9yZtHneKApKqzFHbTGA+1QGSxohaI8i/Ul70yol6aSVDl8Mqm/Znm3hb7tPMkYQlmbe9+j39XiWFzWzjgrNgW1+6ky97QhuUhEbeX0ajo12H18En8KNPRCrzwy+iTPqITjYhLfcTemD+ok7J9yWFQ2wML
+X-iCP-Signature: PbG1G7ZCLSj1/vjQpCwNFnArllxaKMYmDCyKTB6QjG22I1bwla8cmU3w2DHHMDqhqzDZaUCe3wX4Yk+qJRIIfKk9Q/d90yo6gK77KTdCv0lpbTCey35qq5MWtslRSwGOG6NzSETKjnuUoZvqtaO28iPsVC2IksBsyR0fl33KJ0SPV4mBP97VMlH1xGMKaLnxsIH9rCFKE1kohQhQBsIS2eDpxvIPQqJZH/R8kUyV9iJmebEoO9dDUYqEgR5PgPQBTwhXCncasB72EZ960JkIDTtW9zOYeP61AffrIPwEFBz+h3nm++dlezhXFn82Iqp6KrdAtxBOCBS+LRZEnQ8ZTA==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO9w2YDWSD76nIZlrU6iTqaqvoz2Mx4lzy+NnACXIMqxMkaA59SNZhYUzOWqXHNAAwtxOyQG3ziWJ5FAunRnHP7feNbdV1olnzsk5Fgt/MaQWmxLOo2v/iAjmsbMOil/e/Xrcl4S+hk1G40XQjv8wq06A+f7fvWRLad+0UNzgNHF2Fhi/Oc/UsMlRjPjwBb2M112XtdVV25BUJYr5DSjqye0FtgGH4DiU3XYDjAVlU686tHs9DulIAbyChgCzXACCy7xZyyAonqO9DRNe2d6n/tAxJwtlKjEE95Uh1hA0iMe8iAXEqvgdnkKgxtZlwiIsYBhnhdk8H1Qnl/6bHCkgwRKyK+JpPjnyMuXoWlrgPmP2KrVS5YZwe9rlJUkkZIHkuk=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16 11:00:16.25) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 11:00:16",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC111PPYQ4IS1B4FY0"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6A1Ie9HVkPosoLSBEmf7Y6B47q+tp2nofM54GiI3IW5/Juhgq5SVhAiqhL11I6y/3sFxlPcfFtklL3PtOqtXEUjvz7iWrVpT1MrefoGD69KCC2T3m9irOgQmN3Ed5dNTpDq0JnKe/nQLVaidHawPnWNMimJI0F9zjsKy3pUPodvM45CoEsGMTsLtEG8nbN77pSiIEw6pfke/aXjut2dVbF
+X-iCP-Signature: wwSu/+1DVX6dl3KYpqtrUaRoIp6FFSY1m139fS7RmMt/QQP1TagjppIa6d8t+aHl3/e1EWU33wj8iQPgxRjP62YR+Od69gk9eV1pUOYEyboJDhCbiWmN/JrpTG0gdCTsPjwkY441T0/P+qSKNIe4TQswiEJR7C4pRm4jeLY/kQwfpPkikUutagC5ttWVbHvvtwDk+P7p961eiM5DUmT4tQu4EaScEK+DGxHZirTWmIVCD6rUO+iT0p1lhzi3yIzsttVEEFwa7/sHHt+zcHSNEHAgmaIbjPlNA51oVZIiy0Yz2YSHoJ5sXeIhDaqrrZKpXG2Uy6qaqvWMsN3drvmOfQ==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第一組退款測試紀錄 (週四 2026/04/16 12:27:03.63) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 12:27:03",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC111PPYQ4IS1B4FY0"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6L/3eWMJfVgGp7C9chCpbwmICgblr+4yv0wlg57XG7UvMecHX82uEi7VDHkC9VNSccFYewTFYtc5FEJUm6r4fc/3/KTiokqbkOxI1TXoPmsYjFzu2tQxYLy2jcZljT75ukoDSQDiNol7rwI9Z6AqRX21pLhMcWntpiivikkqBeRTrQwcpgfDbVQ2eXyy7CQs9T7EnK1LgfCOQWx3kE1eov
+X-iCP-Signature: iJQ+aHfGAS4tpzHVvPl/cE5ae2cCh4N1bh+28I2rMDhdM1ydB1eQKuSHdAvNDmnQVjAgr2BNZYfVks7TxIwDd1q38tu2Yq5WY9nEhvDOkFYOSPEntLfWlzMjjto1d+0x6J6IFyVfnw8k0BuscW+G4zLBOCggi4ua7ZamnExfWC1bfuqFCl5UyJvsM7mrnU7pUA1XYDZcMoNIqgGnpfEFsqeektR+Z9Xqm+XC/NOb7OxClFk0oK5eaJ+oPfYiL4MGZq1IBzjy4BdGEbSiMcEQtKt+R+BuV1xJr1fdlgfk3qtMHYUblBT3bfEwU66fVWg4ZCJD4+5WWtAR+Oq0hnLEbA==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+執行時間: 週四 2026/04/16 12:27:34.94 |   "OPRefundSeq": "null",
+ 
+=== 第一組退款測試紀錄 (週四 2026/04/16 12:29:18.87) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 12:29:19",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC111PPYQ4IS1B4FY0"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6L/3eWMJfVgGp7C9chCpbw2CW+0iGnmvRyD4RBEOaZfq1wUh2yS1SNhisvank5j2GXx4+dhN2N6u2Is0l9NrUaXUVYNHVwjbwzfLYn2wEmUxGkKZvnZbGX8pG2gqo+Q6JTvyUtbqMJfpyWI/vNGEF183hyGPEya/kZX3oIR6Ei3PkFHQyEd6GMAqJXS8lbEPF98fkrB6egBEoGXuxAh01Z
+X-iCP-Signature: X1/fLJ4xRCguhbXeb21Iya8yZhI4DGZQl79CUzhHo0V11oAJ4SHzCRwJpzvJSKlDczpRMpXovMxJQjJGwYEAs0ctasKCYvO/qjnIFX3ePTAnsClpRFFc/YqNKgxXcOAGMML8nzS7BGSZz2DITYaZKzMEdIZVvDBVhijHQvIVG+J9vpAR6T8C8Q+BrlqU7qsTeVnFyTfxnAPNh9aT0WDXERORo89m/2In1sUeLR43OwjUX4a3MKfaGuqBp8CS+snaqU4GUj4fBzLVPRtrCi45cdTd0s+zoEn+uy4J05UxNQcfvxtD+Eir32R0B9yNq8Hf+GIorMw9ZLLnRw/6hRRZxg==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16 12:29:32.43) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 12:29:32",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC111PPYQ4IS1B4FY0"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6L/3eWMJfVgGp7C9chCpbwwMvd/bG/uDQxa8zDAWMAUZxZbOwXY9vmPO3zniqg7NqM4SZkebl00QmYGFutnGnpCAPZS0BYWg89RbcJ1YvUB+NBuOS2gC2byTpMC/CGHbwoY7u9eV2sgNH9MU8TRffLUTGqbzmg0m+4ns1emDo+o3LdUYpvnkYbvWx7pvgSs4P0RnaYGyjH/TqEKfmFK3lV
+X-iCP-Signature: jLTS8wcf5Z0G1fSJ/bfN394hmGf1kwMr9f2SxObUSeyKrzEKyJAwn8Aq9YUL2GnJLtzj/t1T8xsy6FqDhjlx3ufcscBRiieMLfU538+LT/S0o9qqEiO4BMksCmjHbs9rEtl85g4g01l3lTaGuN4Hqi1oYfxlRcthrmIwGLiho0vCKVidn54GLf4xMUXlt3SZV1HQRSFa3CXnp3bKC/23+WxJfgzuoTj30bQMPvxAvnbYAGvbSlVrXr+V6V8bJVQpVx/HGeuqmyLsWjkQC1xiPu4ZZGVrqAa3gOt+CMtwfaQRdf7hM6S2m8R0skX8PliS1VHGNC8HsMGmFwyozfG5XA==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第一組退款測試紀錄 (週四 2026/04/16 12:30:30.85) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 12:30:31",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC1141XLB5ORJGWQQA"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6L/3eWMJfVgGp7C9chCpbwoWFbaAbOKWqxos/oTeASxRsS8OBLBY07kTDcAIj6GrBT1qZlF+Dlykj7ngnYib7Xu62bXSKC/slpSpL/adCrg1c0MqMzt1MibrWMZmK9u3uwZ9rJRGbtpB4Xvn2i0XK53eN9K8fp3uiXqCqsBMPrxPYJrBQiKdmU6w+p5YIiMmxZpF6U0zA9CcXhoNJZWTsT
+X-iCP-Signature: gky1cWFjRCD08SQZv80VlkdlDYRiEqm3lS9uzhIZdbkZ3bcT0QA5CTRlge7PuQezmwLn0Evma/xnXo9h7Mmf3fC/pAVN/gU43EKVjZivzPHnNajdd4jhumjJBGv2vbqRcoPxNvsHjrqDY/3mRun3jrfO4MG540i+QnQtSWBZRZJ9Nt17+mLk/XjrTRXTA981knlz15KCazyp3fh/c4+14saWIkzvMnsXv3MdmBlM+a+BpCIgWi9dJYs2+fz2pyMRSfrKQWjUbAy4bTck5i1BGVI+oXJa15MkGG5Ma+ByCiCj4pic09aC5Nmw2EUi43N7s27YX7UTUAAQZ5PMzPB7Qw==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16 12:30:48.28) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "null",
+  "BankSeq": "null",
+  "TxAmt": "3",
+  "OPRefundSeq": "null",
+  "OPRefundTime": "2026/04/16 12:30:48",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC116CBHJYXKDBYGKA"
+}
+Encrypted Data (EncData): mOwJBf7XY6r7Wn0vs74/RciyMuJrl1gvsnRBe+XZ9bhSH6AW9OGT+LwxQWdRpSBO5WxHcGe3xHjjeNlWQBgYr3ZgtbvL5EdIYVcSwOM/fu6L/3eWMJfVgGp7C9chCpbwQNjvqO+aRl8i6pT/wNIOU34fXww4cIX6bCsELdz8FOGZSVFcT0/2ouWCZf8OjoK1Az9fFSUzf8NsNlwoKI0vn5d3+yALtX1yPL5Whsuz378Ha8uF9lS7Rd5F5WZ4wcqhwLZpJESv/2cSeCMW/+ikzGSYrmB7QkZHL0AHm1jIH6o5wxZIHnKwFanI4/VFGLhC
+X-iCP-Signature: tNxt3gn81R/t8NVopkvSjW68/jmvtdyGeejmmsqDDcZSYGw16AaK66UGYqdxxuGkCy95kx/qOMpVc3zvbfAq5wXbzhdQlRP6qVWa4w4mSoUIJUOV4xqff5oqJnxpcpJhWUx3RKytu8yb60ZcrmpENf/d4+Y1G74FEtF1cuiw1fjdRMAqe7qzIBw2EHxOf9TsVNhy1FvDrC31l75glJqjgGT6V0JXxw1zg0tuQneUI+2JdcsMDtRWBf/mXGNzDgT4BZeWh8V7wOIhWJNe1hIKMZ5FEhZhjDhO26DX63L66HucFDfaXQFkoKcrm/huD5A/Z9pkGhUxG6oaiqW3RvViTw==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJDYL0sg7YKMWureKXKpC4MOY5LgeIFaN35bpgY7Y9/+T0Bx7h7bPnQBG09Q1EcNdxuVIOyFVIQTufis/fOMSYb/dmmOgToqjvey1+pO9IozwCdH3t/2YEfWVEQdoPYlMo6D7G1ebFXVHaK9U/cCsTmmVb2lT/uKWXEgCF4ZcF75S3duO7hUHMz1aK/a5v6F7y97wG6hQm/HeK7e9ubP/x01/qEOZHlod/gk9pXYYOINC2a5xL6ixz1EbO35Cj1ZrGfNVUMs2ksnknPbQDcEO1b4Mx0OevpqSBymTIj9cokK5sKjJI3nx6u35JSFYxbzfS8wcZJ3TO+RwCu+XnIFrMksbfh4kyw0FnTNkjp/kVgJc4gTZkKKuFmkRh0UEClYxI6rNCOiR8IrdMrck2yiBsuY=","RtnCode":2107,"RtnMsg":"傳入資料廠商編號格式錯誤"}
+退款失敗：傳入資料廠商編號格式錯誤 (代碼: 2107)
+------------------------------------------ 
+=== 第一組退款測試紀錄 (週四 2026/04/16 12:35:50.94) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416123550",
+  "BankSeq": "20260416123550361263",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416123550361263",
+  "OPRefundTime": "2026/04/16 12:35:51",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC112UGWZ6FT0QBOO3"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhb1jkxcrMgJhzQo2/ciIIOMgIVooYUDYwqJVM7x7GIsVLrJrgql+zAEGpi50rXb/YnGJG5AxPjRtL+zu8mpkIoj00m1Sb5KScwIESbwF1AhYfwobtvkJyhIrOAdJ1yMlG56NNCGMUIw5ThDTE/SPAX/22fLtn4uqt4EGqNQz7LFIiLQ1xeWBvJg45FOiIPAkyMNw879B3j6MrUKEU1dltFi91hQUzN1fsxACxgYJG0oUzypBXLVdbuLjHlx7Ie5vQKOYddgxvht72OMbb0Q3kbO5VcYF0/Y/mUTHmDQSRCM2hyhwrmgHDcqbK80lcAW7lKIe7SiuXkx2XjvxfysiAXBkBiT98n3WbD7GbXMhGzqA
+X-iCP-Signature: qdEUmLgFYoHtw3ksxLFo9OeIoQAFHIB3HdIwa8/6KNwk+Qtfhb9addHuLK4kqLun9j4Pf8BeTRMOIyUluWHHNY/gAZdJDvYWxsELN+eVBfwvdxf443i80Sn2+H6CTUZJ8U+PntTkqwqmskSyGOStCsRNOWzWVikitMwMjOb+SB8pAfuJNVh9ldxdgN3gqPg1JWBo+FM/zZTe3rPGb2+9mpxdADBdSPqieaD0+Fjn1e148CgBUuqnRxBaPRAvtJ34C8LvkCNvO7CPaSoviD6gny/s/RGWWUNp3PBoQbw59i6gETnfNNVCamZ02sXHnNxbvI0WC+EVJirCUIxUC5xkTg==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO80jXq1CVutEhXlaTnm5hMddpLm/TQOqoE4Sl8lvyI+UxGDL+/ly7PNj4h0rbjdljDEN/Wu0kDIqaMfqSWYNDVrH4XoaZwhkhL+yqGlIZrRr5iGcAES1i4o8GOvXm8Ekw32olBUqwWNE8N6mIAjXTfkEyB8RSIfVGN7vnwrmODCdXFEl9PHM7vhoRB12uJIzVDJMpkYRCO70Ry4gjg7qVCZF+j3KyefGnop51AXSXnoe4Q2lKQ7pDyFmzCjbKYtXgRjsCa8476FVIShRdb2rdKqk1WTc9/wcU2M26HOACmzA8ja0phPXR7HbJ+t0Tnn56vFm3IF0VIBXeSSbtnCioRC28L3uh9RW+ZqkZ7gwmomSamM0BSu/1vebEFOSPBwkgo=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+=== 第二組退款測試紀錄 (週四 2026/04/16 12:36:05.05) === 
+--- 待加密原始資料 (Plain JSON) ---
+{
+  "OPSeq": "Sample20260416123603",
+  "BankSeq": "20260416123605361264",
+  "TxAmt": "3",
+  "OPRefundSeq": "20260416123605361264",
+  "OPRefundTime": "2026/04/16 12:36:05",
+  "StoreId": "217477",
+  "StoreName": "見晴_QA",
+  "PosNo": "01",
+  "CorpID": "22555003",
+  "Remark": "123456",
+  "BuyerID": "IC1584QG1AI853UYLL"
+}
+Encrypted Data (EncData): We+nIVbmguomAExXAfwzhZRuGe99VmnPmr30/PeUNlD52kXZEQBwbgaYmWUsIW6keS7NW9j7sJlsCUm8RgkbFzkrKBYetwwnEB9DZ2iRqq5XOx41aeuOil051Gu4/xqTlDDrhz4ZXJIOSGaRU53cbTbRtYzc8P2hAZ8ym0mB6kTBhUGOq4x3xRq0QCDJw2R178dtoUzH2K7Jlh0HhnnNpmtEJWYxjUP9fHdc8fpafxxLjaKJG86U4kXrMeWHW6DKQPj3NHo0q87ann+qs8BHq38DNPXF3HYipSP22CgpM+5kyUoPCMdzfwgA7uMUNZFBl6V2njyQYhmE5NZbcR+ksD6aAdkijqcQ9BpF+lOAqiJp4uIEdUaPIDNqqW4T6Vuq
+X-iCP-Signature: vhnldzFcaOFHsb8oL1ysnQoWOplVoAfRVB/gSEj+R2KtgspDFGU/2zyQZjApA2G6sJDiYyhZ+7vPfgXohXloseyTIG8X+SnZdS8tMjg8aYWDrZL5/6MeZ0IunUQ4uVpsFwQLAmVxg1hvmFsoQYHC5z/mRYDh5B9KR7GwWMbVnyUFypQBwsODumqkUCBX6roc6Gqrzsv20hldw+q8LWwPogwF0fjuqi8znfkKSouTYobX5JpZAD02+yj06cODbUKmwfQykOQ9qH9V+qq3GXRm8F0bouo/b0pjwKpzPpNcOXoQ1CrXL3EH8lzRZjJOxLZrmLN5JXqLshF9rde7oUY5Ew==
+--- Server Response ---
+{"EncData":"Vlg03BjoN0UEAkA4no0WJPoJRfLoHOo8vLq/FZ55hO9ZgfP0Ik3DESFP5zoSyqwJrS0ey0yE6PrBoBP3/F655vLHwmocsnr6b5MC/Yasipfqvgr8w5YBKFI31HbtH49o4OPcq9oqzu902nw4Bgw5H0l6sOTma1j43QVjQRftoyf1sh1zHmyPwTf+AQOIjNuyCmKa6Zuy7vPy8xEPXcPvwgLUYdrMkKDgfDnmp3sKIpq3bJFUVd5NnsXb8js+5JhmbDW5wteqR7IfIQUzdb/+U5cT4CgM3sx8+vA77Kn8cRX/JPNPl7bcB13flZB7rsC4GuXAxoJ7ov5PwcRPPeio/nQkxMJTj4lQ2LPeXy4AmjRU2Dk/JyASipIiYXZ0xiu9fNmeAB3nh5hx10oAEu7rG++FxCW8G0DfgsQO7L0Ds2c=","RtnCode":1,"RtnMsg":"成功"}
+退款成功！
+------------------------------------------ 
+執行時間: 週四 2026/04/16 13:35:38.39 |   "OPRefundSeq": "null",
+ 
+執行時間: 週四 2026/04/16 13:44:29.84 |   "OPRefundSeq": "null",
+ 
+執行時間: 週四 2026/04/16 13:48:57.44 |   "OPRefundSeq": "null",
+ 
+執行時間: 週四 2026/04/16 14:32:36.78 |   "OPRefundSeq": "20260416143236361293",
+ 

@@ -1,0 +1,4 @@
+MerchantTradeNo: Sample20260417091842
+TransactionID: 20260417091908211682
+TotalAmount: 500
+TradeStatus: 1

@@ -36,9 +36,9 @@ const data = {
     BindingSubject:"綁定大都會車隊",
     RedeemFlag:"0",
     ExpiredType:"1",
-    TotalAmtLimit:"10000",
+    TotalAmtLimit:"1000",
     NonPointAmt: "0", 
-    MaxMonthAmt: "30000000",
+    MaxMonthAmt: "3000000",
 };
 
 // AES 密鑰與 IV

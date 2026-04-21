@@ -16,7 +16,12 @@ const io = new Server(server);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// --- 腳本路徑設定 ---
+// --- 腳本路徑與目錄設定 ---
+const batFolderPath = 'C:\\onebat';
+const webtestFolderPath = 'C:\\webtest';
+const clickLogPath = path.join(webtestFolderPath, 'click_log.txt');
+
+// 原有的個別 JS 腳本路徑
 const scriptPath = 'C:\\webtest\\cosmed.js';
 const webScriptPath = 'C:\\webtest\\cosmedweb.js';
 const foodomoScriptPath = 'C:\\webtest\\foodomo.js';
@@ -37,36 +42,22 @@ const processRidePaymentMrtAdultScriptPath = 'C:\\webtest\\processRidePaymentmrt
 const iyugoSlackScriptPath = 'C:\\webtest\\iyugoslack.js';
 const marketTopUpUatScriptPath = 'C:\\webtest\\markettopupuat.js';
 
-const clickLogPath = path.join('C:\\webtest', 'click_log.txt');
-
 // --- WebSocket 終端機邏輯 ---
 io.on('connection', (socket) => {
-    // 根據作業系統選擇 shell (Windows 預設使用 powershell)
     const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
-
     const ptyProcess = pty.spawn(shell, [], {
         name: 'xterm-color',
         cols: 80,
         rows: 25,
-        cwd: 'C:\\webtest',
+        cwd: webtestFolderPath,
         env: process.env
     });
-
-    // 將 PTY 輸出傳送到前端
-    ptyProcess.onData((data) => {
-        socket.emit('terminal-output', data);
-    });
-
-    // 接收前端輸入
-    socket.on('terminal-input', (data) => {
-        ptyProcess.write(data);
-    });
-
-    socket.on('disconnect', () => {
-        ptyProcess.kill();
-    });
+    ptyProcess.onData((data) => { socket.emit('terminal-output', data); });
+    socket.on('terminal-input', (data) => { ptyProcess.write(data); });
+    socket.on('disconnect', () => { ptyProcess.kill(); });
 });
 
+// --- 主要網頁介面 ---
 app.get('/', (req, res) => {
     res.send(`
         <!DOCTYPE html>
@@ -74,7 +65,7 @@ app.get('/', (req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>網頁測試工具 + 終端機系統</title>
+            <title>網頁測試工具系統</title>
             <script src="https://cdn.tailwindcss.com"></script>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.1.0/css/xterm.css" />
@@ -86,6 +77,7 @@ app.get('/', (req, res) => {
                 .section-title { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; }
                 #output { background-color: #0f172a; color: #93c5fd; border-radius: 0.5rem; padding: 1rem; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New', monospace; min-height: 150px; }
                 #terminal-container { background-color: #000; padding: 10px; border-radius: 0.5rem; }
+                .bat-btn { transition: all 0.2s; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
             </style>
         </head>
         <body class="p-4 sm:p-6 text-slate-700">
@@ -112,6 +104,20 @@ app.get('/', (req, res) => {
                             </thead>
                             <tbody id="test-status-body" class="divide-y divide-slate-50"></tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div class="section-card mb-6">
+                    <h2 class="section-title text-orange-700">C:\\onbat 批次執行腳本</h2>
+                    <div id="onbat-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                        <p class="text-xs text-slate-400">載入中...</p>
+                    </div>
+                </div>
+
+                <div class="section-card mb-6">
+                    <h2 class="section-title text-blue-700">C:\\webtest 批次執行腳本</h2>
+                    <div id="webtest-bat-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                        <p class="text-xs text-slate-400">載入中...</p>
                     </div>
                 </div>
 
@@ -147,31 +153,6 @@ app.get('/', (req, res) => {
                             </div>
                         </div>
                     </div>
-                    <div class="section-card">
-                        <h2 class="section-title text-sky-700">綁定扣款 (Slack)</h2>
-                        <div class="grid grid-cols-2 gap-2 mt-auto text-[10px] font-bold">
-                            <button onclick="executeBindingDay()" class="bg-sky-600 py-2 text-white rounded hover:bg-sky-500">天扣-定額</button>
-                            <button onclick="executeBindingMonth()" class="bg-sky-600 py-2 text-white rounded hover:bg-sky-500">月扣-不定額</button>
-                            <button onclick="executeBindingSeason()" class="bg-sky-600 py-2 text-white rounded hover:bg-sky-500">季扣-不定額</button>
-                            <button onclick="executeBindingYear()" class="bg-sky-600 py-2 text-white rounded hover:bg-sky-500">年扣-定額</button>
-                            <button onclick="executeBinding711()" class="bg-slate-600 py-2 text-white rounded hover:bg-slate-500 col-span-2">7-11 會員 (UAT)</button>
-                        </div>
-                    </div>
-                    <div class="section-card">
-                        <h2 class="section-title text-emerald-700">其他服務</h2>
-                        <div class="grid grid-cols-1 gap-2 mt-auto">
-                            <button onclick="executeFoodomoScript()" class="bg-emerald-600 py-2 text-sm font-semibold text-white rounded hover:bg-emerald-500">foodomo</button>
-                            <button onclick="executeIyugoSlack()" class="bg-emerald-600 py-2 text-sm font-semibold text-white rounded hover:bg-emerald-500">i預購隨時取</button>
-                            <button onclick="executekfcjumpScript()" class="bg-emerald-600 py-2 text-xs font-semibold text-white rounded hover:bg-emerald-500">KFC 跳轉</button>
-                        </div>
-                    </div>
-                    <div class="section-card">
-                        <h2 class="section-title text-indigo-700 text-xs">韓國跨境支付</h2>
-                        <div class="space-y-3 mt-auto">
-                            <input type="text" id="fiscKorBuyerID" placeholder="BuyerID" class="w-full ring-1 ring-slate-200 py-2 px-3 rounded-md text-xs">
-                            <button onclick="executeFiscKor()" class="w-full bg-indigo-600 py-2 text-xs font-semibold text-white rounded hover:bg-indigo-500">執行跨境扣款</button>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="section-card mb-8">
@@ -186,40 +167,17 @@ app.get('/', (req, res) => {
             </div>
 
             <script>
-                // --- 1. 終端機 (xterm.js) 與 Socket.io 設定 ---
-                const term = new Terminal({
-                    cursorBlink: true,
-                    fontSize: 14,
-                    theme: { background: '#000000', foreground: '#ffffff' }
-                });
+                const term = new Terminal({ cursorBlink: true, fontSize: 14, theme: { background: '#000000', foreground: '#ffffff' } });
                 const socket = io();
                 term.open(document.getElementById('terminal-container'));
+                socket.on('terminal-output', (data) => { term.write(data); });
+                term.onData((data) => { socket.emit('terminal-input', data); });
 
-                // 接收後端 PTY 輸出
-                socket.on('terminal-output', (data) => {
-                    term.write(data);
-                });
-
-                // 傳送前端輸入到後端 PTY
-                term.onData((data) => {
-                    socket.emit('terminal-input', data);
-                });
-
-                // --- 2. 原有的 UI 狀態設定 ---
                 const testData = [
                     { cat: "手機測試工具/網頁", func: "現金儲值", status: "正常", note: "" },
                     { cat: "手機測試工具/網頁", func: "超商反掃付款", status: "正常", note: "" },
-                    { cat: "手機測試工具/網頁", func: "超商反掃退款", status: "正常", note: "" },
-                    { cat: "手機測試工具/網頁", func: "康事美實體店家扣款", status: "正常", note: "" },
-                    { cat: "手機測試工具/網頁", func: "康事美跳轉付款", status: "正常", note: "" },
-                    { cat: "網頁", func: "康事美WEB付款", status: "正常", note: "" },
-                    { cat: "網頁", func: "授權綁定/解綁/天扣", status: "正常", note: "" },
-                    { cat: "網頁", func: "授權綁定/解綁/月扣", status: "正常", note: "" },
-                    { cat: "網頁", func: "授權綁定/解綁/季扣", status: "正常", note: "" },
-                    { cat: "網頁", func: "授權綁定/解綁/年扣", status: "正常", note: "" },
-                    { cat: "手機測試工具/網頁", func: "北捷乘車碼扣款", status: "正常", note: "" },
-                    { cat: "手機測試工具", func: "美廉社3DS驗證", status: "正常", note: "" },
-                    { cat: "手機測試工具/網頁", func: "韓國跨境支付", status: "正常", note: "" }
+                    { cat: "手機測試工具/網頁", func: "康事美扣款", status: "正常", note: "" },
+                    { cat: "網頁", func: "授權綁定系統", status: "正常", note: "" }
                 ];
 
                 function initStatus() {
@@ -234,111 +192,152 @@ app.get('/', (req, res) => {
                             <tr class="\${isFail ? 'bg-red-50 hover:bg-red-100' : 'hover:bg-slate-50'} transition-colors">
                                 <td class="px-6 py-3 text-[9px] font-bold text-slate-400 uppercase">\${item.cat}</td>
                                 <td class="px-6 py-3 text-sm font-medium text-slate-700">\${item.func}</td>
-                                <td class="px-6 py-3 text-sm"><span class="\${isFail ? 'text-red-600 font-bold animate-pulse' : 'text-green-600 font-semibold'}">\${isFail ? '❌ ' + item.status : '● ' + item.status}</span></td>
+                                <td class="px-6 py-3 text-sm"><span class="\${isFail ? 'text-red-600 font-bold' : 'text-green-600 font-semibold'}">● \${item.status}</span></td>
                                 <td class="px-6 py-3 text-[10px] text-slate-400 font-medium">\${item.note || '-'}</td>
                             </tr>\`;
                     }).join('');
-
                     if (errorCount > 0) {
-                        indicator.className = "w-3 h-3 bg-red-500 rounded-full mr-4 shadow-[0_0_8px_rgba(239,68,68,0.7)] animate-pulse";
-                        summary.innerText = errorCount + " 項功能異常"; summary.className = "text-sm text-red-600 font-bold";
+                        indicator.className = "w-3 h-3 bg-red-500 rounded-full mr-4 animate-pulse";
+                        summary.innerText = errorCount + " 項功能異常";
                     } else {
-                        indicator.className = "w-3 h-3 bg-green-500 rounded-full mr-4 shadow-[0_0_8px_rgba(34,197,94,0.7)]";
-                        summary.innerText = "所有功能正常"; summary.className = "text-sm text-green-600 font-medium";
+                        indicator.className = "w-3 h-3 bg-green-500 rounded-full mr-4";
+                        summary.innerText = "所有功能正常";
                     }
+                }
+
+                async function loadBatButtons(folder, containerId, btnClass) {
+                    const container = document.getElementById(containerId);
+                    try {
+                        const response = await fetch('/list-bats?folder=' + encodeURIComponent(folder));
+                        const files = await response.json();
+                        if (files.length === 0) {
+                            container.innerHTML = '<p class="text-xs text-slate-400">無批次檔</p>';
+                            return;
+                        }
+                        container.innerHTML = files.map(file => \`
+                            <button onclick="runBat('\${file}', '\${folder.replace(/\\\\/g, '\\\\\\\\')}')"
+                                class="\${btnClass} text-white text-[10px] py-2 px-2 rounded shadow-sm hover:opacity-80 bat-btn"
+                                title="\${file}">
+                                \${file.replace('.bat', '')}
+                            </button>
+                        \`).join('');
+                    } catch (err) {
+                        container.innerHTML = '<p class="text-xs text-red-500">讀取失敗</p>';
+                    }
+                }
+
+                function runBat(fileName, folder) {
+                    const out = document.getElementById('output');
+                    out.innerText = '正在執行 [' + folder + '] ' + fileName + '...';
+                    fetch('/execute-bat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ fileName: fileName, folder: folder })
+                    })
+                    .then(res => res.text())
+                    .then(t => { out.innerText = t; });
                 }
 
                 function toggleStatus() {
                     document.getElementById('statusSection').classList.toggle('hidden');
                     document.getElementById('statusArrow').classList.toggle('rotate-180');
                 }
-                window.onload = initStatus;
 
-                // --- 3. 原有的腳本執行函式 ---
-                function logClick(buttonName) { fetch('/log-click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ buttonName }) }); }
-                function executeScript() { logClick('康事美扣款'); const barcode = document.getElementById('barcode').value; fetch('/execute', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ barcode }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
+                window.onload = () => {
+                    initStatus();
+                    // 將原本的 \\ 改成 /
+                    loadBatButtons('C:/onbat', 'onbat-container', 'bg-orange-600');
+                    loadBatButtons('C:/webtest', 'webtest-bat-container', 'bg-blue-600');
+                };
+
+                function executeScript() { const barcode = document.getElementById('barcode').value; fetch('/execute', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ barcode }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeWebScript() { fetch('/execute-web-script', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeProcessRidePayment() { const rideArgument = document.getElementById('rideCodeArgument').value; fetch('/execute-process-ride-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ rideArgument }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeProcessRidePaymentMrtAdult() { const mrtRideArgument = document.getElementById('mrtRideCodeArgument').value; fetch('/execute-process-ride-payment-mrt-adult', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mrtRideArgument }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeMarketPayment() { const buyerID = document.getElementById('buyerID').value; fetch('/execute-market-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ buyerID }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeMarketTopUp() { const topUpAmt = document.getElementById('topUpAmt').value; const buyerID = document.getElementById('topUpBuyerID').value; fetch('/execute-market-topup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ topUpAmt, buyerID }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeMarketTopUpUat() { const topUpAmt = document.getElementById('topUpAmt').value; const buyerID = document.getElementById('topUpBuyerID').value; fetch('/execute-market-topup-uat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ topUpAmt, buyerID }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeMarketRefund() { const refundBuyerID = document.getElementById('refundBuyerID').value; fetch('/execute-market-refund', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ refundBuyerID }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeBindingDay() { fetch('/execute-binding-day', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeBindingMonth() { fetch('/execute-binding-month', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeBindingSeason() { fetch('/execute-binding-season', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeBindingYear() { fetch('/execute-binding-year', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeBinding711() { fetch('/execute-binding-711', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
                 function executeBooksWebScript() { fetch('/execute-books-web-script', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeFoodomoScript() { fetch('/execute-foodomo', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executekfcjumpScript() { fetch('/execute-kfc-jump-script', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeIyugoSlack() { fetch('/execute-iyugo-slack', { method: 'POST' }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
-                function executeFiscKor() { const buyerID = document.getElementById('fiscKorBuyerID').value; fetch('/execute-fisc-kor', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ buyerID }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
             </script>
         </body>
         </html>
     `);
 });
 
-// --- 後端執行 Node 腳本邏輯 ---
+// --- API 路由 ---
+
+app.get('/list-bats', async (req, res) => {
+    const folder = req.query.folder;
+    try {
+        const files = await fs.readdir(folder);
+        const batFiles = files.filter(f => f.toLowerCase().endsWith('.bat'));
+        res.json(batFiles);
+    } catch (err) {
+        // 新增這行，在黑視窗顯示具體錯誤
+        console.error("讀取目錄失敗:", folder, err.message);
+        res.status(500).send("無法讀取目錄: " + err.message);
+    }
+});
+
+app.post('/execute-bat', (req, res) => {
+    const { fileName, folder } = req.body;
+    const fullPath = path.join(folder, fileName);
+    const proc = spawn('cmd.exe', ['/c', fullPath], { cwd: folder });
+    let output = '';
+    proc.stdout.on('data', (d) => output += d.toString());
+    proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
+    proc.on('close', (code) => res.send('執行 [' + fileName + '] 結果 (代碼: ' + code + '):\n' + output));
+});
+
 const executeNodeScript = (scriptFullPath, reqBody, res) => {
     let inputData = '';
-    if (scriptFullPath === scriptPath && reqBody.barcode) inputData = reqBody.barcode + "\n";
-    else if (scriptFullPath === fiscKorScriptPath && reqBody.buyerID) inputData = reqBody.buyerID + "\n";
-    else if (scriptFullPath === marketPaymentScriptPath && reqBody.buyerID) inputData = reqBody.buyerID + "\n";
-    else if (scriptFullPath === marketTopUpScriptPath && reqBody.topUpAmt && reqBody.buyerID) inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
-    else if (scriptFullPath === marketTopUpUatScriptPath && reqBody.topUpAmt && reqBody.buyerID) inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
-    else if (scriptFullPath === marketTopRefundScriptPath && reqBody.refundBuyerID) inputData = reqBody.refundBuyerID + "\n";
+    if (scriptFullPath === scriptPath && reqBody.barcode) {
+        inputData = reqBody.barcode + "\n";
+    } else if (scriptFullPath === fiscKorScriptPath && reqBody.buyerID) {
+        inputData = reqBody.buyerID + "\n";
+    } else if (scriptFullPath === marketPaymentScriptPath && reqBody.buyerID) {
+        inputData = reqBody.buyerID + "\n";
+    } else if (scriptFullPath === marketTopUpScriptPath && (reqBody.topUpAmt && reqBody.buyerID)) {
+        inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
+    } else if (scriptFullPath === marketTopUpUatScriptPath && (reqBody.topUpAmt && reqBody.buyerID)) {
+        inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
+    }
 
     const proc = spawn('node', [scriptFullPath]);
     if (inputData) { proc.stdin.write(inputData); proc.stdin.end(); }
     let output = '';
     proc.stdout.on('data', (d) => output += d.toString());
     proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
-    proc.on('close', (code) => res.send(`執行 ${path.basename(scriptFullPath)} 結果:\n${output}`));
+    proc.on('close', () => res.send('執行 ' + path.basename(scriptFullPath) + ' 結果:\n' + output));
 };
 
-// --- API 路由設定 ---
 app.post('/execute', (req, res) => executeNodeScript(scriptPath, req.body, res));
 app.post('/execute-fisc-kor', (req, res) => executeNodeScript(fiscKorScriptPath, req.body, res));
-app.post('/execute-process-ride-payment', (req, res) => {
-    const { rideArgument } = req.body;
-    const proc = spawn('node', [processRidePaymentScriptPath, rideArgument]);
-    let output = ''; proc.stdout.on('data', (d) => output += d.toString());
-    proc.on('close', () => res.send(output));
-});
-app.post('/execute-process-ride-payment-mrt-adult', (req, res) => {
-    const { mrtRideArgument } = req.body;
-    const proc = spawn('node', [processRidePaymentMrtAdultScriptPath, mrtRideArgument]);
-    let output = ''; proc.stdout.on('data', (d) => output += d.toString());
-    proc.on('close', () => res.send(output));
-});
 app.post('/execute-web-script', (req, res) => executeNodeScript(webScriptPath, req.body, res));
 app.post('/execute-market-payment', (req, res) => executeNodeScript(marketPaymentScriptPath, req.body, res));
 app.post('/execute-market-topup', (req, res) => executeNodeScript(marketTopUpScriptPath, req.body, res));
 app.post('/execute-market-topup-uat', (req, res) => executeNodeScript(marketTopUpUatScriptPath, req.body, res));
-app.post('/execute-market-refund', (req, res) => executeNodeScript(marketTopRefundScriptPath, req.body, res));
-app.post('/execute-binding-day', (req, res) => executeNodeScript(bindingDayScriptPath, req.body, res));
-app.post('/execute-binding-month', (req, res) => executeNodeScript(bindingMonthScriptPath, req.body, res));
-app.post('/execute-binding-season', (req, res) => executeNodeScript(bindingSeasonScriptPath, req.body, res));
-app.post('/execute-binding-year', (req, res) => executeNodeScript(bindingYearScriptPath, req.body, res));
-app.post('/execute-binding-711', (req, res) => executeNodeScript(binding711ScriptPath, req.body, res));
 app.post('/execute-books-web-script', (req, res) => executeNodeScript(booksWebScriptPath, req.body, res));
-app.post('/execute-foodomo', (req, res) => executeNodeScript(foodomoScriptPath, req.body, res));
-app.post('/execute-kfc-jump-script', (req, res) => executeNodeScript(kfcjumpScriptPath, req.body, res));
-app.post('/execute-iyugo-slack', (req, res) => executeNodeScript(iyugoSlackScriptPath, req.body, res));
+app.post('/execute-process-ride-payment', (req, res) => {
+    const proc = spawn('node', [processRidePaymentScriptPath, req.body.rideArgument]);
+    let output = ''; proc.stdout.on('data', (d) => output += d.toString());
+    proc.on('close', () => res.send(output));
+});
+app.post('/execute-process-ride-payment-mrt-adult', (req, res) => {
+    const proc = spawn('node', [processRidePaymentMrtAdultScriptPath, req.body.mrtRideArgument]);
+    let output = ''; proc.stdout.on('data', (d) => output += d.toString());
+    proc.on('close', () => res.send(output));
+});
 
 app.post('/log-click', async (req, res) => {
-    const entry = `Button: ${req.body.buttonName} | Time: ${new Date().toLocaleString()}\n`;
+    const entry = 'Button: ' + req.body.buttonName + ' | Time: ' + new Date().toLocaleString() + '\n';
     await fs.appendFile(clickLogPath, entry);
     res.send('ok');
 });
 
-app.use(express.static('C:\\webtest'));
+app.use(express.static(webtestFolderPath));
 
-// 使用 server.listen 而非 app.listen 以支援 Socket.io
 server.listen(port, () => {
-    console.log(`[Node.js] 伺服器啟動於 http://localhost:${port}`);
-    // 啟動背景 Python 腳本
+    console.log('[Node.js] 伺服器已啟動於 http://localhost:' + port);
     spawn('python', ['C:\\icppython\\download_files.py'], { stdio: 'inherit' });
 });

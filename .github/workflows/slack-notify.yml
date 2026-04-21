@@ -12,7 +12,7 @@ jobs:
       - name: Send Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}  # 使用 GitHub Secrets 中儲存的 Webhook URL
-          SLACK_MESSAGE: '{"text": "🚀 *New push to main branch!* 🔗 [View commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})"}'
+          SLACK_WEBHOOK:  ${{ secrets.SLACK_WEBHOOK_URL }}  # 使用 GitHub Secrets 中儲存的 Webhook URL
+          SLACK_MESSAGE: "Test Message from GitHub Actions" # 先改用簡單純文字測試
           SLACK_USERNAME: "GitHub Actions"
           SLACK_COLOR: "#36a64f"

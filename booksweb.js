@@ -1,4 +1,5 @@
 const https = require('https');
+const fs = require('fs'); // 引入檔案系統模組
 const CryptoJS = require('crypto-js');
 const forge = require('node-forge');
 const { exec } = require('child_process');
@@ -26,11 +27,11 @@ const data = {
     PlatformID: "10525512",
     MerchantID: "10525512",
     MerchantTradeNo: tradeNo,
-    StoreID: "ICASH-001",
-    StoreName: "Books",
+    StoreID: "QATM01",
+    StoreName: "QABooks",
     MerchantTradeDate: tradeDate,
-    TotalAmount: "10000",
-    ItemAmt: "10000",
+    TotalAmount: "1000",
+    ItemAmt: "1000",
     UtilityAmt: "0",
     ItemNonRedeemAmt: "0",
     UtilityNonRedeemAmt: "0",
@@ -113,27 +114,42 @@ const req = https.request(options, (res) => {
                 console.log('Decrypted Response Data:', decryptedData);
 
                 const parsedData = JSON.parse(decryptedData);
+
+                // 1. 將 MerchantTradeNo 儲存至檔案
+                if (parsedData.MerchantTradeNo) {
+                    const fileContent = `MerchantTradeNo: ${parsedData.MerchantTradeNo}`;
+                    // 請確保 C:/webtest 目錄已存在
+                    fs.writeFileSync('C:/webtest/bookMerchantTradeNo.txt', fileContent);
+                    console.log('已將交易單號儲存至 C:/webtest/bookMerchantTradeNo.txt');
+                }
+
+                // 2. 開啟支付 URL
                 if (parsedData.PaymentURL) {
                     console.log('Payment URL:', parsedData.PaymentURL);
 
-                    // 在系統上開啟 PaymentURL
-                    const command = process.platform === 'win32' ? 'start' :
+                    // 針對 Windows 平台使用 'start ""' 以避免標題解析錯誤，並用雙引號包裹 URL
+                    const command = process.platform === 'win32' ? 'start ""' :
                                     process.platform === 'darwin' ? 'open' : 'xdg-open';
-                    exec(`${command} ${parsedData.PaymentURL}`, (err) => {
+
+                    exec(`${command} "${parsedData.PaymentURL}"`, (err) => {
                         if (err) {
                             console.error('Failed to open URL:', err);
+                        } else {
+                            console.log('已成功調用系統指令開啟瀏覽器');
                         }
                     });
                 }
+            } else {
+                console.log('API 回傳錯誤或無加密資料:', responseData);
             }
         } catch (e) {
-            console.error('Failed to process response:', e);
+            console.error('處理回應失敗:', e);
         }
     });
 });
 
 req.on('error', (e) => {
-    console.error('Error:', e);
+    console.error('HTTP Request Error:', e);
 });
 
 // 發送請求

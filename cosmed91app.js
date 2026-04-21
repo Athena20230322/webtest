@@ -38,7 +38,7 @@ const data = {
     MerchantID: "10536635",
     MerchantTradeNo: tradeNo,
     StoreID: "QAICASH-001",
-    StoreName: "Cosmed91APP",
+    StoreName: "QACosmed91APP",
     MerchantTradeDate: tradeDate,
     TotalAmount: "500",
     ItemAmt: "500",
