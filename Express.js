@@ -2,6 +2,7 @@ const express = require('express');
 const { spawn } = require('child_process');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
+const fsSync = require('fs');
 const path = require('path');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -9,7 +10,7 @@ const pty = require('node-pty');
 const os = require('os');
 
 const app = express();
-const port = 3000;
+const port = Number(process.env.PORT) || 3000;
 const server = http.createServer(app);
 const io = new Server(server);
 
@@ -17,34 +18,42 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // --- 腳本路徑與目錄設定 ---
-const batFolderPath = 'C:\\onebat';
-const webtestFolderPath = 'C:\\webtest';
+const isWindows = os.platform() === 'win32';
+const webtestFolderPath = process.env.WEBTEST_DIR || __dirname;
+const batFolderPath = process.env.ONBAT_DIR || (isWindows ? 'C:\\onebat' : path.join(webtestFolderPath, 'BAT'));
+const webtestBatFolderPath = path.join(webtestFolderPath, 'BAT');
+const allowedBatFolders = [batFolderPath, webtestBatFolderPath, webtestFolderPath].map(normalizePath);
 const clickLogPath = path.join(webtestFolderPath, 'click_log.txt');
+const resolveWebtestScript = (fileName) => path.join(webtestFolderPath, fileName);
+const resolveExternalScript = (fileName) =>
+    process.env.WEBTES20250123_DIR
+        ? path.join(process.env.WEBTES20250123_DIR, fileName)
+        : (isWindows ? path.join('C:\\webtes20250123', fileName) : path.join(webtestFolderPath, fileName));
 
 // 原有的個別 JS 腳本路徑
-const scriptPath = 'C:\\webtest\\cosmed.js';
-const webScriptPath = 'C:\\webtest\\cosmedweb.js';
-const foodomoScriptPath = 'C:\\webtest\\foodomo.js';
-const marketPaymentScriptPath = 'C:\\webtest\\marketpayment.js';
-const marketTopUpScriptPath = 'C:\\webtest\\markettopup.js';
-const marketTopRefundScriptPath = 'C:\\webtest\\markettoprefund.js';
-const bindingDayScriptPath = 'C:\\webtes20250123\\bindingday.js';
-const bindingMonthScriptPath = 'C:\\webtes20250123\\bindingmonth.js';
-const bindingSeasonScriptPath = 'C:\\webtes20250123\\bindingseason.js';
-const bindingYearScriptPath = 'C:\\webtes20250123\\bindingyear.js';
-const binding711ScriptPath = 'C:\\webtes20250123\\binding711paid.js';
-const binding711memformalScriptPath = 'C:\\webtes20250123\\binding711memformal.js';
-const booksWebScriptPath = 'C:\\webtest\\booksweb.js';
-const kfcjumpScriptPath = 'C:\\webtes20250123\\kfcjump.js';
-const fiscKorScriptPath = 'C:\\webtest\\fisckor.js';
-const processRidePaymentScriptPath = 'C:\\webtest\\processRidePayment.js';
-const processRidePaymentMrtAdultScriptPath = 'C:\\webtest\\processRidePaymentmrtadult.js';
-const iyugoSlackScriptPath = 'C:\\webtest\\iyugoslack.js';
-const marketTopUpUatScriptPath = 'C:\\webtest\\markettopupuat.js';
+const scriptPath = resolveWebtestScript('cosmed.js');
+const webScriptPath = resolveWebtestScript('cosmedweb.js');
+const foodomoScriptPath = resolveWebtestScript('foodomo.js');
+const marketPaymentScriptPath = resolveWebtestScript('marketpayment.js');
+const marketTopUpScriptPath = resolveWebtestScript('markettopup.js');
+const marketTopRefundScriptPath = resolveWebtestScript('markettoprefund.js');
+const bindingDayScriptPath = resolveExternalScript('bindingday.js');
+const bindingMonthScriptPath = resolveExternalScript('bindingmonth.js');
+const bindingSeasonScriptPath = resolveExternalScript('bindingseason.js');
+const bindingYearScriptPath = resolveExternalScript('bindingyear.js');
+const binding711ScriptPath = resolveExternalScript('binding711paid.js');
+const binding711memformalScriptPath = resolveExternalScript('binding711memformal.js');
+const booksWebScriptPath = resolveWebtestScript('booksweb.js');
+const kfcjumpScriptPath = resolveExternalScript('kfcjump.js');
+const fiscKorScriptPath = resolveWebtestScript('fisckor.js');
+const processRidePaymentScriptPath = resolveWebtestScript('processRidePayment.js');
+const processRidePaymentMrtAdultScriptPath = resolveWebtestScript('processRidePaymentmrtadult.js');
+const iyugoSlackScriptPath = resolveWebtestScript('iyugoslack.js');
+const marketTopUpUatScriptPath = resolveWebtestScript('markettopupuat.js');
 
 // --- WebSocket 終端機邏輯 ---
 io.on('connection', (socket) => {
-    const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
+    const shell = isWindows ? 'powershell.exe' : (process.env.SHELL || 'bash');
     const ptyProcess = pty.spawn(shell, [], {
         name: 'xterm-color',
         cols: 80,
@@ -246,8 +255,8 @@ app.get('/', (req, res) => {
                 window.onload = () => {
                     initStatus();
                     // 將原本的 \\ 改成 /
-                    loadBatButtons('C:/onbat', 'onbat-container', 'bg-orange-600');
-                    loadBatButtons('C:/webtest', 'webtest-bat-container', 'bg-blue-600');
+                    loadBatButtons('${batFolderPath.replace(/\\/g, '\\\\')}', 'onbat-container', 'bg-orange-600');
+                    loadBatButtons('${path.join(webtestFolderPath, 'BAT').replace(/\\/g, '\\\\')}', 'webtest-bat-container', 'bg-blue-600');
                 };
 
                 function executeScript() { const barcode = document.getElementById('barcode').value; fetch('/execute', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ barcode }) }).then(res => res.text()).then(t => document.getElementById('output').innerText = t); }
@@ -266,8 +275,21 @@ app.get('/', (req, res) => {
 
 // --- API 路由 ---
 
+app.get('/health', (req, res) => {
+    res.json({
+        ok: true,
+        platform: os.platform(),
+        webtestFolderPath,
+        batFolderPath,
+    });
+});
+
 app.get('/list-bats', async (req, res) => {
-    const folder = req.query.folder;
+    const folder = resolveAllowedBatFolder(req.query.folder);
+    if (!folder) {
+        return res.status(400).send('不允許讀取此目錄');
+    }
+
     try {
         const files = await fs.readdir(folder);
         const batFiles = files.filter(f => f.toLowerCase().endsWith('.bat'));
@@ -281,15 +303,28 @@ app.get('/list-bats', async (req, res) => {
 
 app.post('/execute-bat', (req, res) => {
     const { fileName, folder } = req.body;
-    const fullPath = path.join(folder, fileName);
-    const proc = spawn('cmd.exe', ['/c', fullPath], { cwd: folder });
+    const batFolder = resolveAllowedBatFolder(folder);
+    const fullPath = resolveBatFilePath(batFolder, fileName);
+    if (!batFolder || !fullPath) {
+        return res.status(400).send('不允許執行此批次檔');
+    }
+
+    if (!isWindows) {
+        return res.status(400).send('BAT 批次檔只能在 Windows 環境執行；目前系統為 ' + os.platform() + '。');
+    }
+
+    const proc = spawn('cmd.exe', ['/c', fullPath], { cwd: batFolder });
     let output = '';
     proc.stdout.on('data', (d) => output += d.toString());
     proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
+    proc.on('error', (err) => res.status(500).send('執行失敗：' + err.message));
     proc.on('close', (code) => res.send('執行 [' + fileName + '] 結果 (代碼: ' + code + '):\n' + output));
 });
 
 const executeNodeScript = (scriptFullPath, reqBody, res) => {
+    if (!fsSyncExists(scriptFullPath)) {
+        return res.status(404).send('找不到腳本：' + scriptFullPath);
+    }
     let inputData = '';
     if (scriptFullPath === scriptPath && reqBody.barcode) {
         inputData = reqBody.barcode + "\n";
@@ -303,12 +338,21 @@ const executeNodeScript = (scriptFullPath, reqBody, res) => {
         inputData = reqBody.topUpAmt + "\n" + reqBody.buyerID + "\n";
     }
 
-    const proc = spawn('node', [scriptFullPath]);
+    const proc = spawn(process.execPath, [scriptFullPath], { cwd: webtestFolderPath });
     if (inputData) { proc.stdin.write(inputData); proc.stdin.end(); }
     let output = '';
+    let responseSent = false;
     proc.stdout.on('data', (d) => output += d.toString());
     proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
-    proc.on('close', () => res.send('執行 ' + path.basename(scriptFullPath) + ' 結果:\n' + output));
+    proc.on('error', (err) => {
+        responseSent = true;
+        res.status(500).send('執行失敗：' + err.message);
+    });
+    proc.on('close', () => {
+        if (!responseSent) {
+            res.send('執行 ' + path.basename(scriptFullPath) + ' 結果:\n' + output);
+        }
+    });
 };
 
 app.post('/execute', (req, res) => executeNodeScript(scriptPath, req.body, res));
@@ -319,13 +363,25 @@ app.post('/execute-market-topup', (req, res) => executeNodeScript(marketTopUpScr
 app.post('/execute-market-topup-uat', (req, res) => executeNodeScript(marketTopUpUatScriptPath, req.body, res));
 app.post('/execute-books-web-script', (req, res) => executeNodeScript(booksWebScriptPath, req.body, res));
 app.post('/execute-process-ride-payment', (req, res) => {
-    const proc = spawn('node', [processRidePaymentScriptPath, req.body.rideArgument]);
+    if (!fsSyncExists(processRidePaymentScriptPath)) {
+        return res.status(404).send('找不到腳本：' + processRidePaymentScriptPath);
+    }
+
+    const proc = spawn(process.execPath, [processRidePaymentScriptPath, req.body.rideArgument], { cwd: webtestFolderPath });
     let output = ''; proc.stdout.on('data', (d) => output += d.toString());
+    proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
+    proc.on('error', (err) => res.status(500).send('執行失敗：' + err.message));
     proc.on('close', () => res.send(output));
 });
 app.post('/execute-process-ride-payment-mrt-adult', (req, res) => {
-    const proc = spawn('node', [processRidePaymentMrtAdultScriptPath, req.body.mrtRideArgument]);
+    if (!fsSyncExists(processRidePaymentMrtAdultScriptPath)) {
+        return res.status(404).send('找不到腳本：' + processRidePaymentMrtAdultScriptPath);
+    }
+
+    const proc = spawn(process.execPath, [processRidePaymentMrtAdultScriptPath, req.body.mrtRideArgument], { cwd: webtestFolderPath });
     let output = ''; proc.stdout.on('data', (d) => output += d.toString());
+    proc.stderr.on('data', (d) => output += 'Error: ' + d.toString());
+    proc.on('error', (err) => res.status(500).send('執行失敗：' + err.message));
     proc.on('close', () => res.send(output));
 });
 
@@ -339,5 +395,44 @@ app.use(express.static(webtestFolderPath));
 
 server.listen(port, () => {
     console.log('[Node.js] 伺服器已啟動於 http://localhost:' + port);
-    spawn('python', ['C:\\icppython\\download_files.py'], { stdio: 'inherit' });
+    const downloadScriptPath = process.env.DOWNLOAD_FILES_SCRIPT || (isWindows ? 'C:\\icppython\\download_files.py' : '');
+    if (downloadScriptPath && fsSyncExists(downloadScriptPath)) {
+        spawn(isWindows ? 'python' : 'python3', [downloadScriptPath], { stdio: 'inherit' });
+    }
 });
+
+function fsSyncExists(filePath) {
+    try {
+        fsSync.accessSync(filePath);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+function normalizePath(filePath) {
+    return path.resolve(filePath).toLowerCase();
+}
+
+function resolveAllowedBatFolder(folder) {
+    if (!folder || typeof folder !== 'string') {
+        return null;
+    }
+
+    const resolvedFolder = path.resolve(folder);
+    return allowedBatFolders.includes(normalizePath(resolvedFolder)) ? resolvedFolder : null;
+}
+
+function resolveBatFilePath(folder, fileName) {
+    if (!folder || typeof fileName !== 'string' || !fileName.toLowerCase().endsWith('.bat')) {
+        return null;
+    }
+
+    const safeName = path.basename(fileName);
+    if (safeName !== fileName) {
+        return null;
+    }
+
+    const fullPath = path.resolve(folder, safeName);
+    return normalizePath(path.dirname(fullPath)) === normalizePath(folder) ? fullPath : null;
+}

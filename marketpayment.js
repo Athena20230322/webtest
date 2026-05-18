@@ -1,51 +1,5 @@
-const https = require('https');
-const fs = require('fs');
 const readline = require('readline');
-const CryptoJS = require('crypto-js');
-const forge = require('node-forge');
-
-// AES 加密
-function encryptAES_CBC_256(data, key, iv) {
-    const encrypted = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7,
-    });
-    return encrypted.toString();
-}
-
-// AES 解密
-function decryptAES_CBC_256(encData, key, iv) {
-    const decrypted = CryptoJS.AES.decrypt(encData, CryptoJS.enc.Utf8.parse(key), {
-        iv: CryptoJS.enc.Utf8.parse(iv),
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7,
-    });
-    return decrypted.toString(CryptoJS.enc.Utf8);
-}
-
-// RSA 簽名
-function signData(data, privateKey) {
-    const rsa = forge.pki.privateKeyFromPem(privateKey);
-    const md = forge.md.sha256.create();
-    md.update(data, 'utf8');
-    return rsa.sign(md);
-}
-
-// 取得當前時間
-function getCurrentTime() {
-    const now = new Date();
-    const yyyy = now.getFullYear();
-    const MM = String(now.getMonth() + 1).padStart(2, '0'); 
-    const dd = String(now.getDate()).padStart(2, '0');
-    const hh = String(now.getHours()).padStart(2, '0');
-    const mm = String(now.getMinutes()).padStart(2, '0');
-    const ss = String(now.getSeconds()).padStart(2, '0');
-    return {
-        tradeNo: `Sample${yyyy}${MM}${dd}${hh}${mm}${ss}`,
-        tradeDate: `${yyyy}/${MM}/${dd} ${hh}:${mm}:${ss}`,
-    };
-}
+const { getCurrentTime, sendEncryptedRequest, writeKeyValueFile } = require('./lib/icpCommon');
 
 const AES_Key = "VhoGVCInVF2UJ1cQBVZCF48lGUVIoCng";
 const AES_IV = "z3P4Se8qTFE0F1xI";
@@ -58,7 +12,7 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question('請輸入付款條碼 (BuyerID): ', (inputBarCode) => {
+rl.question('請輸入付款條碼 (BuyerID): ', async (inputBarCode) => {
     const { tradeNo, tradeDate } = getCurrentTime();
     
     const data = {
@@ -96,52 +50,36 @@ rl.question('請輸入付款條碼 (BuyerID): ', (inputBarCode) => {
         BuyerID: inputBarCode.trim(),    
     };
     
-    const encdata = encryptAES_CBC_256(JSON.stringify(data), AES_Key, AES_IV);
-    const signature = signData(encdata, Client_Private_Key);
-    const X_iCP_Signature = forge.util.encode64(signature);
-    
-    const options = {
-        hostname: 'icp-payment-stage.icashpay.com.tw',
-        path: '/api/V2/Payment/Pos/SETPay',
-        method: 'POST',
-        headers: {
-            'X-iCP-EncKeyID': '288768',
-            'X-iCP-Signature': X_iCP_Signature,
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-    };
+    try {
+        const result = await sendEncryptedRequest({
+            payload: data,
+            aesKey: AES_Key,
+            aesIv: AES_IV,
+            privateKey: Client_Private_Key,
+            encKeyId: '288768',
+            path: '/api/V2/Payment/Pos/SETPay',
+        });
 
-    const req = https.request(options, (res) => {
-        let responseData = '';
-        res.on('data', (chunk) => {
-            responseData += chunk;
+        console.log("Encrypted Data (EncData):", result.encData);
+        console.log("X-iCP-Signature:", result.signature);
+
+        if (result.dryRun) {
+            console.log("DRY_RUN=1 enabled; request was not sent.");
+            return;
+        }
+
+        console.log('Response:', result.responseData);
+        console.log("Decrypted Response Data:", result.decryptedResponse);
+
+        writeKeyValueFile('marketpaymentrefund.txt', {
+            BuyerID: inputBarCode,
+            OPSeq: result.parsedResponse.OPSeq,
+            BankSeq: result.parsedResponse.BankSeq,
         });
-        res.on('end', () => {
-            console.log('Response:', responseData);
-            try {
-                const jsonResponse = JSON.parse(responseData);
-                if (jsonResponse.EncData) {
-                    const decryptedData = decryptAES_CBC_256(jsonResponse.EncData, AES_Key, AES_IV);
-                    console.log("Decrypted Response Data:", decryptedData);
-                    
-                    const responseJson = JSON.parse(decryptedData);
-                    const logData = `BuyerID: ${inputBarCode}\nOPSeq: ${responseJson.OPSeq}\nBankSeq: ${responseJson.BankSeq}\n`;
-                    fs.writeFileSync('marketpaymentrefund.txt', logData);
-                    console.log('Data saved to marketpaymentrefund.txt');
-                }
-            } catch (error) {
-                console.error("Error parsing response JSON:", error);
-            }
-        });
-    });
-    
-    req.on('error', (e) => {
-        console.error('Error:', e);
-    });
-    
-    const encodedEncData = `EncData=${encodeURIComponent(encdata)}`;
-    req.write(encodedEncData);
-    req.end();
-    
-    rl.close();
+        console.log('Data saved to marketpaymentrefund.txt');
+    } catch (error) {
+        console.error("Error sending, decrypting, or parsing response:", error);
+    } finally {
+        rl.close();
+    }
 });

@@ -1,9 +1,13 @@
 {
   "name": "webtest",
   "version": "1.0.0",
-  "main": "cosmed.js",
+  "main": "Express.js",
   "scripts": {
-    "start": "node cosmed.js"
+    "start": "node Express.js",
+    "start:payment": "node cosmed.js",
+    "start:mock-bill": "node server.js",
+    "check:js": "find . -maxdepth 2 -type f -name '*.js' -print0 | xargs -0 -n1 node --check",
+    "check:py": "find . -maxdepth 2 -type f -name '*.py' -print0 | xargs -0 python3 -m py_compile"
   },
   "dependencies": {
     "@zxing/library": "^0.21.3",
