@@ -181,6 +181,12 @@ C:\webtest> node Express.js
     5.  `processRidePaymentmrts.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
     6.  `processRidePaymentmrtadult.js`: 整合dopayment and dopaymentmrt 即可模擬北捷乘車碼扣款。
     7.  `processhoshinebusuat.js`: 整合dopayment and dopaymentmrt 即可模擬UAT市車乘車碼扣款。 2026/03/16 測試修改OK
+    8.  `processhoshinebusrefunduat.js`: 模擬UAT市車乘車碼退款。 2026/04/23 目前無法退款
+    9.  `fuzz_test.js`: 乘車壓力測試
+    C:\webtest>node processhoshinebusrefunduat.js UQZUV1RWMDFSSmEBMWIMMTIzNDU2Nzg5QUJaYwEyZA4yMDI2MDQyMzExMTUxM2UUODNENDY2NzM5QjhCQjNERUE0MTdnDjAwMDAwMDAwMDAwMDAwVElBATNCEDE2ODI2MTEwMDAwMDExNDRDEDMyOTA0MDkwMTMxMDAwMDBEATFGFDAwMDAwMDAwMDAwMDAwMDU5NDc5SAcrMDAwMTAwVWlxBTAxLjAwgBMAAAAAAAAAAAAAAAAAAAAAAAAAhTkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKEAAAAAAAAAAAAAAAAAAAAAA= 105544050674334386 20260423111830211956
+     --- [Preprod] 執行全聯會規格退款測試 ---
+    DEBUG - 伺服器原始回傳內容: {"rc":-130000,"rm":"系統尚不開放此類型交易","transactionInfo":{"recordId":"105544050052027129","merchantId":"10554405","currency":"TWD","paymentMethod":0,"transactionAmount":30.0000,"baseAmount":30.0000,"point":0,"transactionDate":"20260423123013","transactionId":"0"}}
+   ❌ 退款失敗: 系統尚不開放此類型交易 (代碼: -130000)
     
      報錯RtnCode:9999
   - Merchant ID 與 Terminal ID 的綁定關係：
@@ -210,45 +216,74 @@ C:\webtest> node Express.js
   -   `marketpaymentautocashandop.js`: 超商SIT付款 部分點+金。
   -   `marketpaymentrefundauto.js`: 超商SIT退款 部分點+金。
   -    `c:\icppython\switch_user`: 超商一鍵執行純金、純點扣款，當日次數已滿切換帳號。
+  - 
+  - ====================================================================================
+     C:\webtest>node marketpayment.js ->模擬金額邏輯錯誤
+     修改方式：將 TxAmt 設為 "100"，但 ItemAmt 保持 "36"。
+     預期結果：中心端驗證失敗，回傳 ServiceResult: "N" 或特定的錯誤 StatusCode
+     請輸入付款條碼 (BuyerID): ic149holsnj0a1v6jt
+     Response: {"EncData":"IfhxhIr4yX8IsHxoPoRD4TYQbFGqwqUMsCr6L2UZTQCOp7bed51PcCfTs6tXROddoe4l71yfjeZdqCQREcsYQAS0P5IPm50xNvciTHZg5NTaB4H9DuVaxwhsIc3sa7g+AzCUFQALu5lx4ncZe2qTd8DfJf+MfgAsjDMIpgYrjuD4MTWlIWZnWEKv3y/B/g1nivM76UNjJMETfxBL4xePS9O3MDqa72X/t7GYnoLa+Sx/DEM6TURvLgP9Dm7guLRYtW93GBx5FK1b4DN9Xm3mo8RRmsszwElb6gF23kMFFkb/AiTNEE8W8SQoElrQui66usJ+bIO2lTQXrqRoZmtc7CNTmH6uCNcQkR3BcRf+TCaQNAkPIeQ6ecSGDNSu/1M4yHA4G/7QjGNJtBVO4X7W0LnF9gJqv8oWhvZ/nh00ol8gh629eaco33v56LuF6yntdXGMarW67gzqIE/DQVezW1ODZKN1hDEx0ZJIKWXKYD8=","RtnCode":2057,"RtnMsg":"交易金額有誤"}
+     Decrypted Response Data: {"TxAmt":null,"DebitAmt":null,"PaymentChannel":null,"ChannelStatusCode":null,"ChannelStatusDesc":null,"CardID":null,"Cardkind":null,"BonusList":[],"OPSeq":null,"BankSeq":null,"BankTime":null,"WalletSeq":null,"WalletTime":null,"WalletID":null,"VehicleType":null,"VehicleNo":null,"ServiceResult":"N","StatusCode":"B11082057","StatusDesc":"交易金額有誤"}
+     Data saved to marketpaymentrefund.txt
+
+     C:\webtest>node marketpaymenttimeout_intergrated.js
+     請輸入付款條碼 (BuyerID): ic149holsnj0a1v6jt
+
+     [系統] 付款請求已發送 (序號: OP20260424101214)
+     [🚨 警報] 已達 10 秒超時！正在強制中斷付款連線並啟動「取消交易」...
+     --- 🚀 執行取消交易 API (ICPOS003) ---
+     --- 🎯 取消回應 (Response) ---
+     回傳代碼 (RtnCode): 1
+     回傳訊息 (RtnMsg): 成功
+     解密 EncData 內容: { OPSeq: 'OP20260424101214' }
+    ✅ 取消成功：原序號 OP20260424101214 已撤銷。
+    ====================================================================================== 
      正掃Qrcode 退款步驟
        
      1.家樂褔UAT正掃QRcode
      2.先到後台查詢 特店訂單編號 載入，carrefourjumpquerytradeUATICPO.js_查詢訂單號碼API
      3.carrefourrefundUATICPO.js_退款API /carrefourrefundUATqrcodefivedollars.js_退款5元，可用部份退款
      4.carrefourCancelUATICPO.js 取消API, 正掃付款成功(確認反掃付款付款/carrefourUAT.js)，打取消API，即會沖正。
-      =====================================================================
+     =================================================================================
+     巧克力正掃Qrcode
+     1.先到後台查詢 特店訂單編號 載入, chocolatequerytradeUATICPO.js_查詢訂單號碼API
+     2.chocolaterefundUATICPO.js 退款API
+     =========================================================================
+     1.先到後台將特店訂單編號 一次下載excel多筆特店訂單編號, chocolatequerytradeUATICPOexcel.js_查詢訂單號碼API
+     2.chocolaterefundUATICPObatch.js  一次性批次退款API 
+     ==================================================================================
      1.大都會車隊SIT正掃QRcode_這個要嘛純點、要嘛純金，不然就是另外ICP帳戶+剩餘點數扣款
      2.先到後台查詢 特店訂單編號 載入，MertotaxiSITreadbarcodeICPO.js_查詢訂單號碼API
      3.MertotaxirefundSITreadbarcodeICPO.js_退款API_退款10元
      4.MertotaxiSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
      5.MertotaxirefundSITreadbarcodeICPObatch.js  一次性批次退款
      6.MertotaxiSITCancelUATICPO.js_取消API
-     ========================================================================
+     =====================================================================================
      1.多拿滋SIT_TWQR正掃QRcode
      2.先到後台查詢 特店訂單編號 載入，donutSITreadbarcodeICPO.js_查詢訂單號碼API
      3.donutrefundSITreadbarcodeICPO.js_退款API_20元 
      4.donutSITreadbarcodeICPOexcel.js 讀取後台批次特店訂單編號
      5.donutrefundSITreadbarcodeICPObatch.js 一次性批次退款
-     ==========================================================================
+     ========================================================================================
      1.博客來 booksatoa.js app to app sit 扣款
      2.博客來 booksatoaquerytrade.js sit 查詢交易
      3.博客來 bookatoarefund.js  sit 退款
-     ===============================================================
+     ==========================================================================================
      1.康事美91APP cosmed91app.js sit 扣款_5元
      2.康事美91APP cosmed91appquerytrade.js sit 查詢交易
      3.康事美91APP cosmed91apprefund.js sit 退款
-     ===============================================================
+     ==========================================================================================
      1.康事美91APP cosmed91appUAT.js UAT 扣款_5元
      2.康事美91APP cosmed91appquerytradeUAT.js UAT 查詢交易
      3.康事美91APP cosmed91apprefundUAT.js UAT退款
-     ===============================================================
+     ============================================================================================
      1.星巴克 starbucksjumpUAT.js web UAT扣款 50元
      2.星巴克 starbucksjumpUATatoa.js UAT扣款 50元
      3 星巴克 正掃後，完成扣款，再執行查詢交易
      4.星巴克 starbucksquerytradeUATICPO.js UAT 查詢交易
      5.星巴克 starbucksrefundUATICPO.js UAT 退款
      6.星巴克 starbucksCancelUATICPO.js UAT 取消API 20260421121300211876 正掃扣款成功後，沖正後，受理退款
-     ===============================================================
+     =========================================================================================
   - 
   - Pilot : https://icpbridge.icashsys.com.tw
   - SIT : https://icpbridge-dev.icashsys.com.tw
